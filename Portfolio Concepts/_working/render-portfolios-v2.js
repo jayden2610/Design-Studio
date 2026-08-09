@@ -1,5 +1,4 @@
 const { chromium } = require('playwright');
-const { pathToFileURL } = require('url');
 const path = require('path');
 
 const root = 'C:/Users/angdo/Desktop/Carousel Design Studio/Portfolio Concepts';
@@ -17,7 +16,8 @@ const frames = [
   const page = await browser.newPage({ viewport: { width: 1200, height: 900 }, deviceScaleFactor: 1 });
   for (const concept of concepts) {
     const folder = path.join(root, concept);
-    await page.goto(pathToFileURL(path.join(folder, '08-portfolio-board.html')).href, { waitUntil: 'networkidle' });
+    const board = path.join(folder, '08-portfolio-board.html');
+    await page.goto('file:///' + board.replace(/\\/g, '/'), { waitUntil: 'networkidle' });
     for (const [output, selector] of frames) {
       await page.locator(selector).screenshot({ path: path.join(folder, output) });
     }

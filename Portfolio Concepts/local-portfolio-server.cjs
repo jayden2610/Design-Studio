@@ -19,7 +19,7 @@ const contentTypes = {
 
 http.createServer((request, response) => {
   const requested = decodeURIComponent((request.url || '/').split('?')[0]);
-  const target = path.resolve(root, `.${requested === '/' ? '/Noodle Signal v2/08-portfolio-board.html' : requested}`);
+  const target = path.resolve(root, `.${requested === '/' ? '/index.html' : requested}`);
   if (target !== root && !target.startsWith(`${root}${path.sep}`)) {
     response.writeHead(403);
     return response.end('Forbidden');

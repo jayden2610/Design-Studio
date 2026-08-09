@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Monochrome Food Identity — Three Portfolio Concepts</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#e9e7df;color:#111;font-family:Arial,Helvetica,sans-serif}
+main{width:min(1200px,100%);margin:auto;background:#f7f5ef;padding:48px 42px 64px;min-height:100vh}
+.eyebrow{font:700 10px/1.2 monospace;letter-spacing:.13em}
+header{padding-bottom:28px;border-bottom:2px solid #111}
+h1{font-size:clamp(42px,7vw,92px);letter-spacing:-.08em;line-height:.82;margin:16px 0 10px;font-weight:800}
+header p{max-width:540px;font-size:14px;line-height:1.55;color:#555}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+.card{border:2px solid #111;background:#fff;text-decoration:none;color:#111;display:flex;flex-direction:column;transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-5px);box-shadow:10px 10px 0 #111}
+.card .preview{position:relative;aspect-ratio:1/1;overflow:hidden;border-bottom:2px solid #111}
+.card .preview img{position:absolute;width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;filter:grayscale(1) contrast(1.05)}
+.card .preview .swatch{position:absolute;left:12px;bottom:12px;width:34px;height:34px;border-radius:50%;border:2px solid #111}
+.card .body{padding:20px 18px 22px;display:flex;flex-direction:column;gap:10px}
+.card .num{font:700 10px monospace;letter-spacing:.13em}
+.card h2{font-size:38px;line-height:.84;letter-spacing:-.07em;margin:0;font-weight:800}
+.card .tag{font:700 10px monospace;letter-spacing:.14em}
+.card .apps{display:flex;gap:6px;margin-top:6px}
+.card .apps span{flex:1;aspect-ratio:1/1;border:1px solid #ddd;overflow:hidden;background:#faf8f2}
+.card .apps img{width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;filter:grayscale(1) contrast(1.05)}
+/* per-concept accents */
+.c-first .swatch{background:#c89a62}
+.c-first .tag{color:#7a2f16}
+.c-noodle .swatch{background:#ff6a2b}
+.c-noodle .tag{color:#b33d0a}
+.c-gimbap .swatch{background:#3d6b52}
+.c-gimbap .tag{color:#3d6b52}
+.foot{margin-top:44px;padding-top:20px;border-top:1px solid #ccc;font:700 10px monospace;letter-spacing:.1em;color:#666}
+@media(max-width:860px){.cards{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <div class="eyebrow">MONOCHROME FOOD IDENTITY / PORTFOLIO CONCEPTS</div>
+  <h1>Three brands.<br>Three worlds.</h1>
+  <p>Three illustrated identity systems, each built from one memorable food ritual. Choose a concept to open its full case study — logo, packaging, menu, signage and launch social.</p>
+</header>
+
+<div class="cards">
+
+  <a class="card c-first" href="First Crumb v2/08-portfolio-board.html">
+    <div class="preview">
+      <img src="First Crumb v2/01-logo-illustration.png" alt="First Crumb logo">
+      <span class="swatch"></span>
+    </div>
+    <div class="body">
+      <div class="num">01 / THE BREAK</div>
+      <h2>FIRST<br>CRUMB</h2>
+      <div class="tag">BAKERY · WARM KRAFT PAPER GOODS</div>
+      <div class="apps">
+        <span><img src="First Crumb v2/03-packaging-application.png" alt=""></span>
+        <span><img src="First Crumb v2/04-menu-application.png" alt=""></span>
+        <span><img src="First Crumb v2/05-signage-application.png" alt=""></span>
+      </div>
+    </div>
+  </a>
+
+  <a class="card c-noodle" href="Noodle Signal v2/08-portfolio-board.html">
+    <div class="preview">
+      <img src="Noodle Signal v2/01-logo-illustration.png" alt="Noodle Signal logo">
+      <span class="swatch"></span>
+    </div>
+    <div class="body">
+      <div class="num">02 / THE LIFTED RIBBON</div>
+      <h2>NOODLE<br>SIGNAL</h2>
+      <div class="tag">NOODLE TAKEAWAY · NEON NIGHT MARKET</div>
+      <div class="apps">
+        <span><img src="Noodle Signal v2/03-packaging-application.png" alt=""></span>
+        <span><img src="Noodle Signal v2/04-menu-application.png" alt=""></span>
+        <span><img src="Noodle Signal v2/05-signage-application.png" alt=""></span>
+      </div>
+    </div>
+  </a>
+
+  <a class="card c-gimbap" href="Gimbap Roll v2/08-portfolio-board.html">
+    <div class="preview">
+      <img src="Gimbap Roll v2/01-logo-illustration.png" alt="Gimbap Roll logo">
+      <span class="swatch"></span>
+    </div>
+    <div class="body">
+      <div class="num">03 / THE SLICE REVEAL</div>
+      <h2>GIMBAP<br>ROLL</h2>
+      <div class="tag">KOREAN MARKET · BRIGHT PATTERN-LED</div>
+      <div class="apps">
+        <span><img src="Gimbap Roll v2/03-packaging-application.png" alt=""></span>
+        <span><img src="Gimbap Roll v2/04-menu-application.png" alt=""></span>
+        <span><img src="Gimbap Roll v2/05-signage-application.png" alt=""></span>
+      </div>
+    </div>
+  </a>
+
+</div>
+
+<div class="foot">ILLUSTRATED IDENTITY SYSTEMS / ONE RITUAL · ONE MARK · ONE WORLD</div>
+</main>
+</body>
+</html>
