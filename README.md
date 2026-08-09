@@ -22,7 +22,7 @@ Design production workspace for two revenue tracks: **Female Lifestyle Carousels
 
 ## Structure
 - `00 Project HQ/` — planning, quickstart scripts, reference
-- `01 Female Lifestyle Carousels/` — Etsy carousel MVP working files (active design, design system, sticker pack, exports/prototypes, Soft iOS kit, UGC batch)
+- `01 Female Lifestyle Carousels/` — Etsy carousel MVP working files (sticker pack, exports/prototypes, Soft iOS kit, UGC batch). Canva import workflow: [`Canva Import Bundle/CANVA-IMPORT-WORKFLOW.md`](<01 Female Lifestyle Carousels/05 Soft iOS Photo Diary Carousel Kit/Canva Import Bundle/CANVA-IMPORT-WORKFLOW.md>)
 - `02 Monochrome Branding/` — monochrome identity kits (concepts, launch/sales, rebuilt studies, explorations, research)
 - `03 Reference Library/` — references and research
 - `Portfolio Concepts/` — portfolio concept work

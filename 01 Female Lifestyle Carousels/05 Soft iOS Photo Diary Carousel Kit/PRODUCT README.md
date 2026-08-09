@@ -5,10 +5,10 @@
 For the current Canva work, approved UGC source, saved Direction 1/Direction 2 links, and exact next-agent instructions, read [AGENT HANDOFF.md](AGENT HANDOFF.md) first.
 
 ## Deliverables
-- 40 editable-style SVG stickers in `40 New Stickers`.
-- 30 original lifestyle PNG stickers are retained in `../03 Sticker Pack`.
+- 70-sticker library (30 outlined lifestyle PNGs + 40 iOS photo-diary widget PNGs) in `Canva Import Bundle/sticker-library.html`, sourced from `../03 Sticker Pack` and `../03 Sticker Pack/04 iOS Photo Diary Additions`.
 - 40-page 4:5 carousel HTML import in `Canva Import Bundle`.
 - Etsy gallery HTML in `Etsy Listing Gallery`.
+- Canva import workflow (HTML → editable Canva design, copy-paste-ready elements): `Canva Import Bundle/CANVA-IMPORT-WORKFLOW.md`.
 
 ## Customer licence
 Commercial use is allowed for the purchaser's finished social media content. The template, stickers, and editable files may not be resold, redistributed, sublicensed, shared, or used to create competing template or asset packs.
