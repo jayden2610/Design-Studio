@@ -13,12 +13,12 @@ body{margin:0;background:#17100c;color:#f7f2ea;font-family:Arial,Helvetica,sans-
 .head h1{font-size:clamp(54px,10vw,118px);letter-spacing:-.09em;line-height:.8;margin:15px 0 8px;font-weight:900;text-shadow:0 0 24px rgba(255,106,43,.35)}
 .head p{max-width:320px;font-size:15px;line-height:1.35;margin:0 0 4px;color:#c9bfb2}
 .hero{min-height:520px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:20px;border-bottom:2px solid #ff6a2b}
-.hero img{width:100%;mix-blend-mode:screen}
+.hero img{width:100%;display:block;object-fit:contain}
 .hero .story{padding:24px}
 .story h2{font-size:34px;letter-spacing:-.06em;line-height:.95;margin:0 0 18px;font-weight:900}
 .story p{font-size:16px;line-height:1.4;color:#c9bfb2}
 .mark{display:flex;align-items:center;gap:16px;margin-top:30px}
-.mark img{width:64px;height:64px;mix-blend-mode:screen}
+.mark img{width:64px;height:64px;display:block;object-fit:contain}
 .mark span{font:700 10px monospace;letter-spacing:.1em;color:#ff6a2b}
 .rule{font:700 10px monospace;letter-spacing:.1em;padding:12px 0;border-bottom:1px solid #ff6a2b;color:#ff6a2b}
 .application{margin-top:42px;border:2px solid #3a2b20;min-height:620px;position:relative;overflow:hidden}
@@ -30,7 +30,7 @@ body{margin:0;background:#17100c;color:#f7f2ea;font-family:Arial,Helvetica,sans-
 .carton .body{width:100%;background:#161210;border:2px solid #2e241c;border-radius:6px;padding:26px 24px;display:flex;align-items:center;justify-content:space-between;position:relative;box-shadow:0 0 40px rgba(255,106,43,.12)}
 .carton .body:before{content:"";position:absolute;left:0;top:0;bottom:0;width:14px;background:#ff6a2b}
 .carton .word{font-size:44px;line-height:.78;letter-spacing:-.07em;font-weight:900;color:#f7f2ea;text-shadow:0 0 18px rgba(255,106,43,.4)}
-.carton .body img{width:190px;mix-blend-mode:screen}
+.carton .body img{width:190px;display:block;object-fit:contain}
 .ribbon{width:70%;height:14px;background:#ff6a2b;border-radius:8px;margin-top:-14px;box-shadow:0 0 24px rgba(255,106,43,.7);position:relative}
 .chopsticks{display:flex;gap:10px;margin-top:20px}
 .chopsticks span{width:9px;height:150px;background:#1a1410;border:1px solid #3a2b20;border-radius:5px;transform-origin:bottom center}
@@ -43,19 +43,19 @@ body{margin:0;background:#17100c;color:#f7f2ea;font-family:Arial,Helvetica,sans-
 .tri .ribbon-line{height:6px;background:#ff6a2b;margin:18px 0;border-radius:4px;box-shadow:0 0 16px rgba(255,106,43,.6)}
 .tri .items{font:700 14px/2.2 monospace;color:#e8ddcf}
 .tri .items b{color:#ff6a2b}
-.menu img{width:100%;mix-blend-mode:screen;align-self:center;box-shadow:0 0 30px rgba(255,106,43,.15)}
-/* ---- 05 · neon sign ---- */
-.signage{background:#060505;display:grid;place-items:center;padding:60px 40px}
-.signage:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,106,43,.03) 0 2px,transparent 2px 70px)}
-.sign{width:76%;min-height:380px;background:#0a0807;border:2px solid #2e241c;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:40px 24px;position:relative}
-.sign img{width:150px;mix-blend-mode:screen;filter:drop-shadow(0 0 10px rgba(255,106,43,.5))}
+.menu img{width:100%;display:block;object-fit:contain;align-self:center;filter:drop-shadow(0 0 18px rgba(255,106,43,.18))}
+/* ---- 05 · neon window · rebuilt ---- */
+.signage{background:#060505;display:grid;place-items:center;padding:72px 48px}
+.signage:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,106,43,.035) 0 2px,transparent 2px 72px)}
+.sign{width:78%;min-height:400px;background:#0a0807;border:2px solid #2e241c;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:48px 28px;position:relative;box-shadow:inset 0 0 42px rgba(255,106,43,.15), 0 10px 40px rgba(0,0,0,.7)}
+.sign img{width:150px;display:block;object-fit:contain;filter:drop-shadow(0 0 10px rgba(255,106,43,.55))}
 .sign .word{font-size:66px;line-height:.8;letter-spacing:-.07em;font-weight:900;color:#f7f2ea;text-shadow:0 0 8px rgba(247,242,234,.9),0 0 30px rgba(255,106,43,.8),0 0 60px rgba(255,106,43,.5)}
 .sign .sub{font:700 11px monospace;letter-spacing:.16em;color:#ff6a2b;text-shadow:0 0 12px rgba(255,106,43,.8)}
-/* ---- 06 · black tile with neon glow ---- */
+/* ---- 06-07 · paired social · rebuilt ---- */
 .social{display:grid;grid-template-columns:1fr 1fr;gap:20px;border:0;min-height:520px}
 .tile{position:relative;overflow:hidden;border:2px solid #3a2b20;min-height:520px;padding:26px}
 .tile h3{font-size:52px;line-height:.85;letter-spacing:-.07em;margin:64px 0 0;max-width:420px;font-weight:900}
-.tile img{position:absolute;width:86%;bottom:-15px;right:-12px;mix-blend-mode:screen}
+.tile img{position:absolute;width:86%;bottom:-15px;right:-12px;display:block;object-fit:contain}
 .tile.dark{background:#0a0705;color:#f7f2ea}
 .tile.dark:before{content:"";position:absolute;top:-40px;right:10%;width:340px;height:340px;background:radial-gradient(circle,rgba(255,106,43,.32),transparent 65%)}
 .tile.dark h3{text-shadow:0 0 22px rgba(255,106,43,.45)}

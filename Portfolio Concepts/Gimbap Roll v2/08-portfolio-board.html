@@ -13,12 +13,12 @@ body{margin:0;background:#e2e9e4;color:#15221a;font-family:'Segoe UI',Arial,Helv
 .head h1{font-size:clamp(54px,10vw,118px);letter-spacing:-.09em;line-height:.8;margin:15px 0 8px;font-weight:800}
 .head p{max-width:320px;font-size:15px;line-height:1.35;margin:0 0 4px;color:#4a5c50}
 .hero{min-height:520px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:20px;border-bottom:2px solid #3d6b52}
-.hero img{width:100%;mix-blend-mode:multiply}
+.hero img{width:100%;display:block;object-fit:contain}
 .hero .story{padding:24px}
 .story h2{font-size:34px;letter-spacing:-.06em;line-height:.95;margin:0 0 18px;font-weight:800}
 .story p{font-size:16px;line-height:1.4;color:#4a5c50}
 .mark{display:flex;align-items:center;gap:16px;margin-top:30px}
-.mark img{width:64px;height:64px}
+.mark img{width:64px;height:64px;display:block;object-fit:contain}
 .mark span{font:700 10px monospace;letter-spacing:.1em;color:#3d6b52}
 .rule{font:700 10px monospace;letter-spacing:.1em;padding:12px 0;border-bottom:1px solid #3d6b52;color:#3d6b52}
 .application{margin-top:42px;border:2px solid #15221a;min-height:620px;position:relative;overflow:hidden}
@@ -29,7 +29,7 @@ body{margin:0;background:#e2e9e4;color:#15221a;font-family:'Segoe UI',Arial,Helv
 .rollwrap{width:60%;background:#fff;border-radius:40px 40px 14px 14px;box-shadow:16px 22px 0 rgba(21,34,26,.18);display:flex;align-items:center;justify-content:space-between;padding:26px 24px;position:relative;overflow:hidden}
 .rollwrap:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 12% 20%,rgba(61,107,82,.08),transparent 55%)}
 .rollwrap .word{font-size:42px;line-height:.8;letter-spacing:-.07em;font-weight:800;color:#15221a}
-.rollwrap img{width:200px;mix-blend-mode:multiply}
+.rollwrap img{width:200px;display:block;object-fit:contain}
 .ring-band{position:absolute;left:0;right:0;bottom:0;height:26px;display:flex;align-items:center;justify-content:space-around;background:#f0f3ec}
 .ring-band i{width:16px;height:16px;border-radius:50%;border:3px solid #3d6b52;box-sizing:border-box}
 .ring-band i:nth-child(odd){border-color:#d9772b}
@@ -44,21 +44,21 @@ body{margin:0;background:#e2e9e4;color:#15221a;font-family:'Segoe UI',Arial,Helv
 .bifold .items{font:400 15px/2.1 'Segoe UI',sans-serif;color:#314a3a}
 .bifold .items b{font-weight:800}
 .bifold .items small{color:#8a9c90;font-size:12px}
-.menu img{width:100%;mix-blend-mode:multiply;align-self:center;box-shadow:10px 10px 0 rgba(21,34,26,.08)}
-/* ---- 05 · backlit acrylic panel ---- */
-.signage{background:#e8efe8;display:grid;place-items:center;padding:60px 40px}
-.signage:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.6),transparent 60%)}
-.sign{width:76%;min-height:380px;background:#fff;border:1px solid #d8ded4;border-radius:12px;box-shadow:0 0 60px rgba(61,107,82,.35),0 14px 0 rgba(21,34,26,.12);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:40px 24px;position:relative}
-.sign img{width:150px;mix-blend-mode:multiply}
+.menu img{width:100%;display:block;object-fit:contain;align-self:center;filter:drop-shadow(8px 8px 0 rgba(21,34,26,.06))}
+/* ---- 05 · backlit acrylic · rebuilt ---- */
+.signage{background:#e8efe8;display:grid;place-items:center;padding:72px 48px}
+.signage:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.62),transparent 62%)}
+.sign{width:76%;min-height:390px;background:#fff;border:1px solid #d8ded4;border-radius:14px;box-shadow:0 0 60px rgba(61,107,82,.35),0 14px 0 rgba(21,34,26,.12), inset 0 1px 0 rgba(255,255,255,.85);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:48px 24px;position:relative}
+.sign img{width:150px;display:block;object-fit:contain}
 .sign .word{font-size:66px;line-height:.82;letter-spacing:-.07em;font-weight:800;color:#15221a}
 .sign .sub{font:700 11px monospace;letter-spacing:.16em;color:#3d6b52}
-/* ---- 06 · white tile with tone-on-tone rings ---- */
+/* ---- 06-07 · ring tiles · rebuilt ---- */
 .social{display:grid;grid-template-columns:1fr 1fr;gap:20px;border:0;min-height:520px}
 .tile{position:relative;overflow:hidden;border:2px solid #15221a;min-height:520px;padding:26px;background:#fff;color:#15221a}
 .tile h3{font-size:50px;line-height:.85;letter-spacing:-.08em;margin:64px 0 0;max-width:430px;font-weight:800}
-.tile img{position:absolute;width:86%;bottom:-15px;right:-12px;mix-blend-mode:multiply}
+.tile img{position:absolute;width:86%;bottom:-15px;right:-12px;display:block;object-fit:contain}
 .tile.dark{background:#15221a;color:#faf9f4}
-.tile.dark img{filter:invert(1);mix-blend-mode:screen}
+.tile.dark img{filter:brightness(0) invert(1)}
 .tile.dark h3{color:#faf9f4}
 .rings{position:absolute;top:24px;right:24px;width:130px;height:130px}
 .rings i{position:absolute;border-radius:50%;box-sizing:border-box}

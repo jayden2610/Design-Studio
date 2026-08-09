@@ -13,12 +13,12 @@ body{margin:0;background:#e4d5c0;color:#2a1c12;font-family:Georgia,'Times New Ro
 .head h1{font-size:clamp(54px,10vw,118px);letter-spacing:-.09em;line-height:.8;margin:15px 0 8px;font-weight:800}
 .head p{max-width:320px;font-size:15px;line-height:1.35;margin:0 0 4px}
 .hero{min-height:520px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:20px;border-bottom:2px solid #2a1c12}
-.hero img{width:100%;mix-blend-mode:multiply}
+.hero img{width:100%;display:block;object-fit:contain}
 .hero .story{padding:24px}
 .story h2{font-size:34px;letter-spacing:-.06em;line-height:.95;margin:0 0 18px;font-weight:800}
 .story p{font-size:16px;line-height:1.4}
 .mark{display:flex;align-items:center;gap:16px;margin-top:30px}
-.mark img{width:64px;height:64px}
+.mark img{width:64px;height:64px;display:block;object-fit:contain}
 .mark span{font:700 10px 'Courier New',monospace;letter-spacing:.1em}
 .rule{font:700 10px 'Courier New',monospace;letter-spacing:.1em;padding:12px 0;border-bottom:1px solid #2a1c12}
 .application{margin-top:42px;border:2px solid #2a1c12;min-height:620px;position:relative;overflow:hidden}
@@ -29,7 +29,7 @@ body{margin:0;background:#e4d5c0;color:#2a1c12;font-family:Georgia,'Times New Ro
 .sleeve{width:62%;background:#c89a62;padding:30px;box-shadow:18px 20px 0 rgba(42,28,18,.45);display:flex;flex-direction:column;justify-content:space-between;gap:22px;position:relative}
 .sleeve:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.25),transparent 55%)}
 .sleeve .word{font-size:54px;line-height:.76;letter-spacing:-.1em;font-weight:800;color:#3a2413}
-.sleeve img{width:210px;align-self:center;mix-blend-mode:multiply;position:relative}
+.sleeve img{width:210px;align-self:center;display:block;object-fit:contain;position:relative}
 .sleeve .sub{font:700 11px 'Courier New',monospace;letter-spacing:.12em;color:#3a2413;border-top:2px dashed rgba(58,36,19,.5);padding-top:12px}
 .twine{position:absolute;top:-26px;left:12%;width:76%;height:52px;border:3px solid #7a5230;border-radius:50%;border-bottom-color:transparent;border-top-color:transparent;opacity:.9}
 .crumbs{position:absolute;bottom:-18px;right:-14px;width:120px;height:40px}
@@ -49,25 +49,24 @@ body{margin:0;background:#e4d5c0;color:#2a1c12;font-family:Georgia,'Times New Ro
 .ticket .menu-title{font-size:58px;line-height:.8;letter-spacing:-.08em;font-weight:800;color:#3a2413}
 .ticket .stamp{margin-top:18px;display:inline-block;border:3px double #7a2f16;padding:6px 12px;transform:rotate(-6deg);color:#7a2f16;font:700 10px 'Courier New',monospace;letter-spacing:.14em}
 .ticket .items{border-top:2px dashed #3a2413;padding-top:12px;font:700 14px/2.2 'Courier New',monospace;color:#3a2413}
-.menu img{width:100%;mix-blend-mode:multiply;align-self:center;box-shadow:12px 12px 0 rgba(42,28,18,.2)}
-/* ---- 05 · wooden hanging board ---- */
-.signage{background:#5d4033;display:grid;place-items:center;padding:60px 40px}
-.signage:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.12) 0 3px,transparent 3px 58px)}
-.sign{width:76%;min-height:380px;background:linear-gradient(115deg,#4a2c17,#6b4423 55%,#52301a);border-radius:10px;box-shadow:0 18px 0 rgba(0,0,0,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;position:relative;padding:40px 24px}
+.menu img{width:100%;display:block;object-fit:contain;align-self:center;filter:drop-shadow(10px 10px 0 rgba(42,28,18,.12))}
+/* ---- 05 · wooden hanging board · rebuilt ---- */
+.signage{background:#5d4033;display:grid;place-items:center;padding:72px 48px}
+.signage:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(0,0,0,.08) 0 3px,transparent 3px 58px)}
+.sign{width:76%;min-height:390px;background:linear-gradient(115deg,#4a2c17,#6b4423 55%,#52301a);border-radius:12px;box-shadow:0 18px 0 rgba(0,0,0,.35);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;position:relative;padding:48px 24px}
 .sign:before,.sign:after{content:"";position:absolute;top:-26px;width:70px;height:34px;border:6px solid #1d1209;border-radius:8px;background:#2a1c12}
 .sign:before{left:18%}
 .sign:after{right:18%}
-.sign img{width:140px;mix-blend-mode:screen;filter:invert(1)}
+.sign img{width:140px;display:block;object-fit:contain;filter:brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0,0,0,.4))}
 .sign .word{font-size:64px;line-height:.8;letter-spacing:-.08em;font-weight:800;color:#f7f5ef}
 .sign .sub{font:700 11px 'Courier New',monospace;letter-spacing:.14em;color:#d8b98a}
-/* ---- 06 · kraft-texture tile ---- */
+/* ---- 06-07 · kraft tiles · rebuilt ---- */
 .social{display:grid;grid-template-columns:1fr 1fr;gap:20px;border:0;min-height:520px}
 .tile{position:relative;overflow:hidden;border:2px solid #2a1c12;min-height:520px;padding:26px}
 .tile h3{font-size:52px;line-height:.85;letter-spacing:-.08em;margin:64px 0 0;max-width:400px;font-weight:800}
-.tile img{position:absolute;width:86%;bottom:-15px;right:-12px;mix-blend-mode:multiply}
+.tile img{position:absolute;width:86%;bottom:-15px;right:-12px;display:block;object-fit:contain}
 .tile.dark{background:#c89a62;color:#3a2413}
-.tile.dark:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(255,255,255,.2),transparent 60%)}
-.tile.dark img{filter:sepia(.3) contrast(1.05)}
+.tile.dark:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(255,255,255,.18),transparent 60%)}
 .tile.light{background:#f3ead9;color:#3a2413}
 .tile.light .crumbs{position:absolute;top:30%;left:6%;width:150px;height:60px}
 .tile.light .crumbs span{position:absolute;background:#3a2413;border-radius:50%}

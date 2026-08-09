@@ -12,7 +12,7 @@ const wrapper = pathToFileURL(path.join(root, '_working', 'small-logo-wrapper.ht
   for (const concept of concepts) {
     const image = pathToFileURL(path.join(root, concept, '01-logo-illustration.png')).href;
     await page.goto(`${wrapper}?src=${encodeURIComponent(image)}`, { waitUntil: 'networkidle' });
-    await page.locator('body').screenshot({ path: path.join(root, concept, '02-logo-small.png') });
+    await page.locator('body').screenshot({ path: path.join(root, concept, '02-logo-small.png'), omitBackground: true });
   }
   await browser.close();
 })();
