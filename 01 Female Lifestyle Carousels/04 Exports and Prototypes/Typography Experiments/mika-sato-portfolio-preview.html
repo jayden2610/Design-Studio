@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mika Sato - Product Designer &amp; Front-End Developer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "on-error-container": "#93000a",
+          secondary: "#5c5f61",
+          error: "#ba1a1a",
+          "surface-bright": "#faf8ff",
+          "on-secondary-fixed-variant": "#44474a",
+          "on-primary-container": "#a5bdff",
+          "surface-container-highest": "#e2e2eb",
+          "on-secondary-fixed": "#191c1e",
+          "tertiary-fixed-dim": "#ffb59a",
+          "surface-variant": "#e2e2eb",
+          "secondary-container": "#e0e3e6",
+          "inverse-primary": "#b1c5ff",
+          "on-tertiary-fixed": "#380d00",
+          "on-error": "#ffffff",
+          "surface-dim": "#d9d9e2",
+          "on-secondary": "#ffffff",
+          "on-tertiary": "#ffffff",
+          "on-surface": "#191b22",
+          background: "#faf8ff",
+          "surface-container-lowest": "#ffffff",
+          "secondary-fixed": "#e0e3e6",
+          "surface-tint": "#2559bd",
+          "primary-fixed-dim": "#b1c5ff",
+          "tertiary-container": "#8b2e01",
+          primary: "#00327d",
+          "secondary-fixed-dim": "#c4c7ca",
+          "inverse-surface": "#2e3037",
+          "on-surface-variant": "#434653",
+          "surface-container-high": "#e7e7f0",
+          "surface-container": "#ededf6",
+          "outline-variant": "#c3c6d5",
+          "primary-fixed": "#dae2ff",
+          "primary-container": "#0047ab",
+          "inverse-on-surface": "#f0f0f9",
+          "on-primary-fixed-variant": "#00419e",
+          surface: "#faf8ff",
+          outline: "#737784",
+          tertiary: "#651f00",
+          "on-secondary-container": "#626567",
+          "error-container": "#ffdad6",
+          "on-tertiary-container": "#ffaa8a",
+          "surface-container-low": "#f3f3fc",
+          "on-tertiary-fixed-variant": "#802900",
+          "on-primary": "#ffffff",
+          "on-background": "#191b22",
+          "on-primary-fixed": "#001946",
+          "tertiary-fixed": "#ffdbcf"
+        },
+        borderRadius: {
+          DEFAULT: "0.125rem",
+          lg: "0.25rem",
+          xl: "0.5rem",
+          full: "0.75rem"
+        },
+        spacing: {
+          "container-max": "1280px",
+          "margin-desktop": "2.5rem",
+          "card-padding": "2rem",
+          base: "4px",
+          "margin-mobile": "1.25rem",
+          "grid-gap": "1.5rem"
+        },
+        fontFamily: {
+          "body-lg": ["Inter"],
+          "display-lg": ["Playfair Display"],
+          "label-caps": ["Inter"],
+          caption: ["Inter"],
+          "display-lg-mobile": ["Playfair Display"],
+          "body-md": ["Inter"],
+          "headline-md": ["Playfair Display"]
+        },
+        fontSize: {
+          "body-lg": ["18px", { lineHeight: "1.6", letterSpacing: "-0.01em", fontWeight: "400" }],
+          "display-lg": ["48px", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
+          "label-caps": ["12px", { lineHeight: "1", letterSpacing: "0.08em", fontWeight: "600" }],
+          caption: ["14px", { lineHeight: "1.4", fontWeight: "400" }],
+          "display-lg-mobile": ["32px", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700" }],
+          "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+          "headline-md": ["24px", { lineHeight: "1.3", fontWeight: "600" }]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .btn-primary {
+    background-color: theme('colors.primary');
+    color: theme('colors.on-primary');
+    padding: 0.75rem 1.5rem;
+    font-family: theme('fontFamily.label-caps');
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: opacity 0.2s;
+  }
+  .btn-primary:hover { opacity: 0.9; }
+
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .carousel-track {
+    display: flex;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+  }
+  .carousel-container:hover .carousel-track { animation-play-state: paused; }
+
+  .reveal { opacity: 0; transform: translateY(24px); }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased pt-24">
+
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-desktop py-4 bg-background/80 backdrop-blur-md border-b border-outline-variant">
+  <div class="font-headline-md text-headline-md font-bold text-on-background">Mika Sato</div>
+  <ul class="hidden md:flex space-x-8 font-label-caps text-label-caps">
+    <li><a class="text-primary font-bold border-b-2 border-primary pb-1" href="#">Work</a></li>
+    <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">About</a></li>
+    <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#contact">Contact</a></li>
+  </ul>
+  <a class="hidden md:inline-flex btn-primary" href="#contact">Open for work</a>
+</nav>
+
+<main>
+
+  <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16 md:py-24 flex flex-col items-center text-center">
+    <div class="inline-flex items-center space-x-2 mb-12 reveal" id="hero-badge">
+      <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+      <span class="font-label-caps text-label-caps text-primary uppercase tracking-widest">Available for new projects</span>
+    </div>
+    <h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-8 max-w-4xl leading-tight reveal" id="hero-title">
+      Product Designer <span class="italic font-normal text-secondary">&amp;</span> Front-End Developer
+    </h1>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto reveal" id="hero-sub">
+      <span class="block text-on-background font-bold mb-4">"I design and build interfaces that feel inevitable."</span>
+      <span class="block max-w-xl mx-auto opacity-80">Solo 0-1 product design for startups, bridging the gap between pixel-perfection and production-ready code.</span>
+    </p>
+  </section>
+
+  <section class="w-full overflow-hidden py-12 bg-surface-container-low border-y border-outline-variant carousel-container relative">
+    <div class="carousel-track gap-8 px-8" id="carouselTrack">
+
+      <div class="w-[320px] md:w-[480px] bg-surface-container-lowest border border-outline-variant rounded-2xl flex flex-col overflow-hidden shrink-0 group hover:border-outline transition-all duration-300">
+        <div class="h-56 bg-surface-variant relative overflow-hidden border-b border-outline-variant">
+          <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Zenith Finance Mockup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA61BSrYTNsOrPAfn0vMF64N7xju6uRq_olwKJ7Ua5E2NVkWYAbzhvx43WTZmOEURZqSGmHoONfsI7UW3e0ZB7Cp98HuLckgkKzT8WH7Kgx5vLg-gnWmWbXylhSeKOXiFO2obi122ahjdhZSJtu6mjM_7WVocwSphjPFVSQQBx8eh1KRScgwjI16sIf9MQD-udsO_hcBroEWVerIfqtcZ454QgP-Zp2W-0TcYEodt55sQuTiiwh0qLUEApWCAZy5E9S22c4PA7N5EVB"/>
+        </div>
+        <div class="p-8 flex-grow flex flex-col justify-between">
+          <div>
+            <h2 class="font-headline-md text-headline-md text-on-background mb-3">Zenith Finance</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6">Full design and development of a modern neo-banking interface.</p>
+          </div>
+          <div class="font-caption text-caption text-secondary border-t border-outline-variant pt-4 mt-auto">
+            <strong>Outcome:</strong> 40% increase in user onboarding efficiency.
+          </div>
+        </div>
+      </div>
+
+      <div class="w-[320px] md:w-[480px] bg-surface-container-lowest border border-outline-variant rounded-2xl flex flex-col overflow-hidden shrink-0 group hover:border-outline transition-all duration-300">
+        <div class="h-56 bg-surface-variant relative overflow-hidden border-b border-outline-variant">
+          <img alt="Kuro Health Mockup" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMM4b0fC5Wa5fZusnazFBTLdS2F3T8OKwSqw4FbaArKDwbxKopvYEda5c-NMN2Sv545ptCMG0x93YRU8xs_CbKShF5uVWhpbPg2DYvVBkgwJlEtRJScapvlp1PiwvrVL5OuaTAC80ijGoayz7cZfMY-Qci-oM2-HXJPfmfMgKMiRlSFWWRU7CkSZYovK3jy4-x26kzrn4PLJd3ohOmL4mgO5VhYsmRQBmF_T31qFq-3LD_z_39LlnQbVKX5BUEYjJqBGFECvJ3zksk"/>
+        </div>
+        <div class="p-8 flex-grow flex flex-col justify-between">
+          <div>
+            <h2 class="font-headline-md text-headline-md text-on-background mb-3">Kuro Health</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6">Minimalist wearable companion app for holistic wellness.</p>
+          </div>
+          <div class="flex items-center text-primary font-label-caps text-label-caps group-hover:opacity-80 transition-opacity mt-auto">
+            View Case Study <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-[320px] md:w-[480px] bg-surface-container-lowest border border-outline-variant rounded-2xl flex flex-col overflow-hidden shrink-0 group hover:border-outline transition-all duration-300">
+        <div class="h-56 bg-surface-variant relative overflow-hidden border-b border-outline-variant">
+          <img alt="Logos OS Mockup" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzZQ7d5oAZ7vFJqfPXpEFQoO8bhZPYKdz7KfVJF2ATttqsQHPB1Gvl-zAV0lLRLt-IksTNKf8igmIRUOckRYERyQ4570BJdMpiV49v5fY0468fe1tavSltbzPbJj9Zk5CoUH_AX59ZnXcULw6zvf067Zv98odXsTXEOkTLxuh_1LiyuzyrSkoXR6EXLnm1Nt4BL2eJdRxXF9fRGtBM0JlANzeK3rwR1m0RXMxQtHoiFBd0jPLFSWqBjwdpDTdbZft0MGM8jEbGI6sW"/>
+        </div>
+        <div class="p-8 flex-grow flex flex-col justify-between">
+          <div>
+            <h2 class="font-headline-md text-headline-md text-on-background mb-3">Logos OS</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-6">A custom internal design system and component library built in React.</p>
+          </div>
+          <div class="flex items-center text-primary font-label-caps text-label-caps group-hover:opacity-80 transition-opacity mt-auto">
+            View Case Study <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+
+      <div class="flex flex-col gap-12">
+        <div class="reveal" id="about-block">
+          <h3 class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-6">About</h3>
+          <div class="flex flex-col sm:flex-row items-start gap-6">
+            <div class="w-20 h-20 rounded-full overflow-hidden shrink-0 border border-outline-variant shadow-sm">
+              <img class="w-full h-full object-cover" alt="Mika Sato Portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXAt_e9e8ONY7sgjvysZrNzPz5ATUKZc3JHLcPN2PMV4TLVDvSINIhmNLbp_BRLdf0LNV9m4oSU6jSjckPKBo_1kNkdMy0PeZAMPMODIGQGJmzmfHFkyEa-JoK1SAa7Ic6X98mocp9vF8FlK8jUdOtiYE0kzDKJ491dbxGwP6Ae-FD91xVkZSp4zf2OsfoHYRqnZs8GVC1uPebeDsH9naAEFRNpwZn-avceG9IEMnDupEmp_YXgKeGfB_rZiigwJABNk_9lr8l94S6"/>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+              I take a hybrid approach to product creation, writing logic alongside layouts to ensure design intent survives development.
+            </p>
+          </div>
+        </div>
+        <div class="reveal" id="currently-block">
+          <h3 class="font-label-caps text-label-caps text-secondary uppercase tracking-widest mb-4">Currently</h3>
+          <p class="font-body-md text-body-md text-on-background leading-relaxed p-6 bg-surface-container-lowest border border-outline-variant rounded-xl">
+            Building an open-source animation library for accessible UIs and learning Rust for WebAssembly performance optimizations.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex flex-col justify-center border-l-4 border-l-primary pl-8 md:pl-12 py-4 reveal" id="testimonial-block">
+        <blockquote class="font-headline-md text-[28px] md:text-[32px] leading-tight text-on-background mb-8 italic">
+          "Mika's ability to move from high-fidelity prototypes to functional code in record time changed our product roadmap for the better."
+        </blockquote>
+        <cite class="font-caption text-caption text-secondary not-italic flex items-center tracking-wide">
+          <span class="w-8 h-[1px] bg-outline-variant mr-4 inline-block"></span>
+          DAVID CHEN, CEO AT SPARK
+        </cite>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="bg-primary text-on-primary py-20 px-margin-mobile md:px-margin-desktop border-y border-primary-fixed-dim" id="contact">
+    <div class="max-w-container-max mx-auto flex flex-col md:flex-row gap-16">
+      <div class="md:w-1/2 reveal" id="cta-text">
+        <h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg mb-6 text-on-primary">Let's work together.</h2>
+        <p class="font-body-lg text-body-lg text-primary-fixed-dim max-w-md">Currently accepting new solo 0-1 projects for Q3.</p>
+      </div>
+      <form class="md:w-1/2 space-y-8 reveal" id="cta-form">
+        <div>
+          <label class="sr-only" for="name">Name</label>
+          <input class="w-full bg-transparent border-0 border-b border-primary-fixed-dim text-on-primary placeholder-primary-fixed-dim focus:ring-0 focus:border-on-primary transition-colors px-0 py-3 font-body-md text-body-md" id="name" placeholder="Name" type="text"/>
+        </div>
+        <div>
+          <label class="sr-only" for="email">Email</label>
+          <input class="w-full bg-transparent border-0 border-b border-primary-fixed-dim text-on-primary placeholder-primary-fixed-dim focus:ring-0 focus:border-on-primary transition-colors px-0 py-3 font-body-md text-body-md" id="email" placeholder="Email Address" type="email"/>
+        </div>
+        <div>
+          <label class="sr-only" for="message">Message</label>
+          <textarea class="w-full bg-transparent border-0 border-b border-primary-fixed-dim text-on-primary placeholder-primary-fixed-dim focus:ring-0 focus:border-on-primary transition-colors px-0 py-3 font-body-md text-body-md resize-none" id="message" placeholder="Project details" rows="3"></textarea>
+        </div>
+        <button class="bg-on-primary text-primary px-8 py-4 mt-4 font-label-caps text-label-caps uppercase tracking-wider hover:bg-primary-fixed transition-colors inline-block" type="submit">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="w-full py-12 px-margin-mobile md:px-margin-desktop flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto bg-background">
+  <div class="font-label-caps text-label-caps text-on-surface mb-4 md:mb-0">Mika Sato</div>
+  <div class="font-caption text-caption text-secondary">© 2026 Mika Sato. Built with precision.</div>
+  <ul class="flex space-x-6 mt-4 md:mt-0 font-caption text-caption">
+    <li><a class="text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Twitter</a></li>
+    <li><a class="text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">GitHub</a></li>
+    <li><a class="text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">LinkedIn</a></li>
+  </ul>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('carouselTrack');
+    if (track) {
+      const content = track.innerHTML;
+      track.innerHTML = content + content;
+    }
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to('#hero-badge', { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' });
+    gsap.to('#hero-title', { opacity: 1, y: 0, duration: 0.7, delay: 0.1, ease: 'power2.out' });
+    gsap.to('#hero-sub', { opacity: 1, y: 0, duration: 0.7, delay: 0.2, ease: 'power2.out' });
+
+    document.querySelectorAll('.carousel-container .reveal, .reveal').forEach((el) => {
+      if (['hero-badge', 'hero-title', 'hero-sub'].includes(el.id)) return;
+      gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        duration: 0.7,
+        ease: 'power2.out',
+        scrollTrigger: { trigger: el, start: 'top 85%' }
+      });
+    });
+
+    gsap.utils.toArray('.carousel-track > div').slice(0, 3).forEach((card, i) => {
+      gsap.from(card, {
+        opacity: 0,
+        y: 20,
+        duration: 0.6,
+        delay: i * 0.1,
+        ease: 'power2.out',
+        scrollTrigger: { trigger: '.carousel-container', start: 'top 80%' }
+      });
+    });
+  });
+</script>
+</body>
+</html>

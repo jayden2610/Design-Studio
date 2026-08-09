@@ -1,0 +1,69 @@
+{"kind":"deck","id":"pr/iheg35","name":"Deck"}
+{"kind":"layout","layoutId":"591d60bb-09b4-4f0b-877e-26421b7702b0","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"a0a227a5-3c63-47f1-9a9a-01700e935c62","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/n4jtaa","slide":1,"title":"WEEKEND PHOTO DIARY","textShapes":5}
+{"kind":"textbox","id":"sh/svelov25","slide":1,"text":"WEEKEND PHOTO DIARY","textPreview":"WEEKEND PHOTO DIARY","textChars":19,"textLines":1,"bbox":[78,78,700,30]}
+{"kind":"textbox","id":"sh/7u5kvqlk","slide":1,"text":"a weekend\nthat felt like\na deep breath","textPreview":"a weekend | that felt like | a deep breath","textChars":38,"textLines":3,"bbox":[78,146,410,300]}
+{"kind":"shape","id":"sh/6tw3ml4z","slide":1,"bbox":[78,475,88,4]}
+{"kind":"textbox","id":"sh/5sn2tg3e","slide":1,"text":"sunlight, slow pages, and nowhere urgent to be.","textPreview":"sunlight, slow pages, and nowhere urgent to be.","textChars":47,"textLines":1,"bbox":[78,512,350,130]}
+{"kind":"textbox","id":"sh/krelkbmt","slide":1,"text":"swipe for the little moments →","textPreview":"swipe for the little moments →","textChars":30,"textLines":1,"bbox":[78,720,370,46]}
+{"kind":"textbox","id":"sh/jq5krqlo","slide":1,"text":"[CITY] · [MONTH] · [YEAR]","textPreview":"[CITY] · [MONTH] · [YEAR]","textChars":25,"textLines":1,"bbox":[78,1204,500,34]}
+{"kind":"shape","id":"sh/ipw3il43","slide":1,"bbox":[737,338,184,48]}
+{"kind":"shape","id":"sh/onilwf2d","slide":1,"bbox":[875,1145,120,82]}
+{"kind":"image","id":"im/cny54r2l","slide":1,"name":"","geometry":"roundRect","alt":"User-provided sunlit reading lifestyle image","bbox":[507,370,495,655]}
+{"kind":"notes","id":"nt/n4jtaa","slide":1,"text":""}
+{"kind":"slide","id":"sl/jznduz","slide":2,"title":"01 · LITTLE MOMENTS","textShapes":7}
+{"kind":"textbox","id":"sh/dwbu9oba","slide":2,"text":"01 · LITTLE MOMENTS","textPreview":"01 · LITTLE MOMENTS","textChars":19,"textLines":1,"bbox":[78,78,700,30]}
+{"kind":"textbox","id":"sh/qtkve9cj","slide":2,"text":"a few things\ni want to remember","textPreview":"a few things | i want to remember","textChars":31,"textLines":2,"bbox":[78,142,640,200]}
+{"kind":"textbox","id":"sh/butc7et4","slide":2,"text":"the kind of moments that make a weekend feel longer in the best way.","textPreview":"the kind of moments that make a weekend feel longer in the best way.","textChars":68,"textLines":1,"bbox":[78,382,425,120]}
+{"kind":"shape","id":"sh/or2dcjut","slide":2,"bbox":[78,700,405,510]}
+{"kind":"textbox","id":"sh/psbu5obe","slide":2,"text":"DROP PHOTO 01","textPreview":"DROP PHOTO 01","textChars":13,"textLines":1,"bbox":[102,939,357,32]}
+{"kind":"shape","id":"sh/250ba9cn","slide":2,"bbox":[597,350,405,575]}
+{"kind":"textbox","id":"sh/369c3et8","slide":2,"text":"DROP PHOTO 02","textPreview":"DROP PHOTO 02","textChars":13,"textLines":1,"bbox":[621,621.5,357,32]}
+{"kind":"shape","id":"sh/8nmdo3ux","slide":2,"bbox":[635,985,320,185]}
+{"kind":"textbox","id":"sh/9ovuh8bi","slide":2,"text":"A LITTLE NOTE","textPreview":"A LITTLE NOTE","textChars":13,"textLines":1,"bbox":[675,1024,230,28]}
+{"kind":"textbox","id":"sh/1szq5gfm","slide":2,"text":"“more slow mornings, please.”","textPreview":"“more slow mornings, please.”","textChars":29,"textLines":1,"bbox":[676,1070,235,70]}
+{"kind":"shape","id":"sh/gr6pcveh","slide":2,"bbox":[115,667,170,46]}
+{"kind":"notes","id":"nt/jznduz","slide":2,"text":""}
+{"kind":"slide","id":"sl/ncky0y","slide":3,"title":"02 · THE LITTLE THINGS","textShapes":9}
+{"kind":"textbox","id":"sh/214nq187","slide":3,"text":"02 · THE LITTLE THINGS","textPreview":"02 · THE LITTLE THINGS","textChars":22,"textLines":1,"bbox":[78,78,700,30]}
+{"kind":"textbox","id":"sh/p4v6lg7i","slide":3,"text":"small favourites\nfrom lately","textPreview":"small favourites | from lately","textChars":28,"textLines":2,"bbox":[78,142,700,190]}
+{"kind":"shape","id":"sh/o3m5sbqd","slide":3,"bbox":[78,422,555,610]}
+{"kind":"textbox","id":"sh/b6donqpo","slide":3,"text":"THIS WEEKEND:","textPreview":"THIS WEEKEND:","textChars":13,"textLines":1,"bbox":[123,469,250,28]}
+{"kind":"textbox","id":"sh/a54nul83","slide":3,"text":"01  [a book / a place / a tiny ritual]","textPreview":"01  [a book / a place / a tiny ritual]","textChars":38,"textLines":1,"bbox":[123,535,440,45]}
+{"kind":"shape","id":"sh/x8f6p07u","slide":3,"bbox":[123,592,420,1]}
+{"kind":"textbox","id":"sh/c7m5wvq9","slide":3,"text":"02  [a meal / a moment / a thought]","textPreview":"02  [a meal / a moment / a thought]","textChars":35,"textLines":1,"bbox":[123,647,440,45]}
+{"kind":"shape","id":"sh/rat4bmpk","slide":3,"bbox":[123,704,420,1]}
+{"kind":"textbox","id":"sh/q9knih8z","slide":3,"text":"03  [something i want to do again]","textPreview":"03  [something i want to do again]","textChars":34,"textLines":1,"bbox":[123,759,440,45]}
+{"kind":"shape","id":"sh/kjilcbm9","slide":3,"bbox":[123,816,420,1]}
+{"kind":"textbox","id":"sh/lkrmlgnu","slide":3,"text":"04  [a song on repeat]","textPreview":"04  [a song on repeat]","textChars":22,"textLines":1,"bbox":[123,871,440,45]}
+{"kind":"shape","id":"sh/yx03a143","slide":3,"bbox":[695,490,307,307]}
+{"kind":"textbox","id":"sh/zi94j65o","slide":3,"text":"DROP PHOTO 03","textPreview":"DROP PHOTO 03","textChars":13,"textLines":1,"bbox":[719,627.5,259,32]}
+{"kind":"shape","id":"sh/8n2lgbm5","slide":3,"bbox":[720,865,250,54]}
+{"kind":"textbox","id":"sh/tobmpgnq","slide":3,"text":"SAVE THIS FEELING","textPreview":"SAVE THIS FEELING","textChars":17,"textLines":1,"bbox":[734,881,222,22]}
+{"kind":"notes","id":"nt/ncky0y","slide":3,"text":""}
+{"kind":"slide","id":"sl/hdapbp","slide":4,"title":"03 · CAMERA ROLL","textShapes":7}
+{"kind":"textbox","id":"sh/bitkj614","slide":4,"text":"03 · CAMERA ROLL","textPreview":"03 · CAMERA ROLL","textChars":16,"textLines":1,"bbox":[78,78,700,30]}
+{"kind":"textbox","id":"sh/cj2lsbip","slide":4,"text":"four frames\nfrom the weekend","textPreview":"four frames | from the weekend","textChars":28,"textLines":2,"bbox":[78,142,720,190]}
+{"kind":"shape","id":"sh/xkbmlgju","slide":4,"bbox":[78,390,432,380]}
+{"kind":"textbox","id":"sh/ylk3ul0f","slide":4,"text":"DROP PHOTO 04","textPreview":"DROP PHOTO 04","textChars":13,"textLines":1,"bbox":[102,564,384,32]}
+{"kind":"shape","id":"sh/zmt4nq10","slide":4,"bbox":[570,390,432,380]}
+{"kind":"textbox","id":"sh/kn2lwvil","slide":4,"text":"DROP PHOTO 05","textPreview":"DROP PHOTO 05","textChars":13,"textLines":1,"bbox":[594,564,384,32]}
+{"kind":"shape","id":"sh/lovmp0j6","slide":4,"bbox":[78,835,432,380]}
+{"kind":"textbox","id":"sh/mp43y50r","slide":4,"text":"DROP PHOTO 06","textPreview":"DROP PHOTO 06","textChars":13,"textLines":1,"bbox":[102,1009,384,32]}
+{"kind":"shape","id":"sh/7qd4ra1c","slide":4,"bbox":[570,835,432,380]}
+{"kind":"textbox","id":"sh/nqhovep8","slide":4,"text":"DROP PHOTO 07","textPreview":"DROP PHOTO 07","textChars":13,"textLines":1,"bbox":[594,1009,384,32]}
+{"kind":"shape","id":"sh/mp8n29on","slide":4,"bbox":[405,367,230,46]}
+{"kind":"textbox","id":"sh/9cz6x47e","slide":4,"text":"[ADD DATE STAMP]","textPreview":"[ADD DATE STAMP]","textChars":16,"textLines":1,"bbox":[756,1240,246,26]}
+{"kind":"notes","id":"nt/hdapbp","slide":4,"text":""}
+{"kind":"slide","id":"sl/1t2jei","slide":5,"title":"04 · UNTIL NEXT TIME","textShapes":6}
+{"kind":"textbox","id":"sh/vep0fe94","slide":5,"text":"04 · UNTIL NEXT TIME","textPreview":"04 · UNTIL NEXT TIME","textChars":20,"textLines":1,"bbox":[78,78,700,30]}
+{"kind":"textbox","id":"sh/gfyh8jap","slide":5,"text":"until the next\nlittle weekend","textPreview":"until the next | little weekend","textChars":29,"textLines":2,"bbox":[78,142,670,190]}
+{"kind":"textbox","id":"sh/hg7ihora","slide":5,"text":"[one closing thought that feels true to you.]","textPreview":"[one closing thought that feels true to you.]","textChars":45,"textLines":1,"bbox":[78,375,530,82]}
+{"kind":"shape","id":"sh/6pwzi9sn","slide":5,"bbox":[778,144,224,54]}
+{"kind":"textbox","id":"sh/7q5gbet8","slide":5,"text":"SAVE FOR LATER","textPreview":"SAVE FOR LATER","textChars":14,"textLines":1,"bbox":[792,160,196,22]}
+{"kind":"shape","id":"sh/8rehkjat","slide":5,"bbox":[78,690,924,410]}
+{"kind":"textbox","id":"sh/tcnidoby","slide":5,"text":"DROP LANDSCAPE PHOTO","textPreview":"DROP LANDSCAPE PHOTO","textChars":20,"textLines":1,"bbox":[102,879,876,32]}
+{"kind":"textbox","id":"sh/ylcze9sb","slide":5,"text":"WEEKEND PHOTO DIARY · [YOUR HANDLE]","textPreview":"WEEKEND PHOTO DIARY · [YOUR HANDLE]","textChars":35,"textLines":1,"bbox":[78,1215,600,28]}
+{"kind":"shape","id":"sh/jm5g7utw","slide":5,"bbox":[848,276,130,82]}
+{"kind":"notes","id":"nt/1t2jei","slide":5,"text":""}

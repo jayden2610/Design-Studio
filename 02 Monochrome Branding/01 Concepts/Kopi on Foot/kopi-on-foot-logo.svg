@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Kopi on Foot primary illustrated logo</title>
+  <desc id="desc">A small kopi stall passes a cup and kaya toast through its window; a dotted route leaves the counter.</desc>
+  <rect width="1000" height="1000" fill="#f7f5ef"/>
+  <g fill="none" stroke="#111" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M170 276h660v438H154Z" stroke-width="25"/>
+    <path d="M142 276c72-63 171-79 267-35 105 48 190 43 283-5 92-48 177-32 254 40" stroke-width="21"/>
+    <path d="M228 358h528v209H228Z" stroke-width="20"/>
+    <path d="M228 358h528M228 405h528" stroke-width="11"/>
+    <path d="M389 446h128l-12 117H401Z" stroke-width="18"/>
+    <path d="M382 446c0-29 36-48 71-48s71 19 71 48M517 474c74-29 92 52 30 67" stroke-width="15"/>
+    <path d="M434 387c-9-31-3-57 18-78m54 79c-8-31-2-57 20-78" stroke-width="10"/>
+    <path d="M604 467l128-43 30 93-130 30Z" stroke-width="18"/>
+    <path d="M635 467l92-23m-79 55 89-25" stroke-width="9"/>
+    <path d="M332 607c-46-30-87-34-118-13-23 16-19 43 10 55 31 13 61-6 88 14 23 17 48 18 76 7" stroke-width="23"/>
+    <path d="M716 686c59 12 97 43 116 91 17 42 44 65 86 72" stroke-width="12" stroke-dasharray="1 30"/>
+  </g>
+  <g fill="#111"><circle cx="826" cy="776" r="9"/><circle cx="866" cy="837" r="7"/><circle cx="917" cy="860" r="5"/></g>
+</svg>

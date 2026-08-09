@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Kopi on Foot — Breakfast set direction</title>
+  <desc id="desc">A kaya toast fold and coffee saucer share one compact breakfast ritual silhouette.</desc>
+  <rect width="1200" height="900" fill="#f7f5ef"/>
+  <g fill="none" stroke="#111" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M296 451 427 276l251 107-131 176Z" fill="#111" stroke="#111" stroke-width="20"/>
+    <path d="M365 443 449 329l154 66-85 111Z" fill="#f7f5ef" stroke-width="16"/>
+    <path d="M407 402 520 449" stroke-width="14"/>
+    <path d="M647 472c96-34 194-7 231 64 38 73-12 145-109 157-98 12-192-28-212-92-19-59 22-105 90-129Z" stroke-width="24"/>
+    <path d="M628 555c45-33 105-38 149-10 37 24 42 63 7 91-38 30-100 33-143 9-38-21-42-61-13-90Z" stroke-width="17"/>
+    <path d="M704 510c-14-44-3-79 33-104m49 105c-13-42-2-75 31-99" stroke-width="13"/>
+    <path d="M343 690h514" stroke-width="16"/>
+  </g>
+  <text x="600" y="787" text-anchor="middle" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="57" font-weight="700" letter-spacing="5">KOPI ON FOOT</text>
+</svg>

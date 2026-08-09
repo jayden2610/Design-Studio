@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Noodle Signal small mark">
+  <rect width="160" height="160" fill="#f7f5ef"/>
+  <path d="M37 94h86l-10 35H47L37 94Z" fill="#111111"/>
+  <path d="M45 94 56 77h48l11 17" fill="none" stroke="#111111" stroke-width="9" stroke-linejoin="round"/>
+  <path d="M80 78c-23-10-25-35-10-47 10-8 27-4 24 9-3 14-26 10-22-1" fill="none" stroke="#111111" stroke-width="9" stroke-linecap="round"/>
+  <path d="M76 77c17-8 29-17 30-31" fill="none" stroke="#111111" stroke-width="7" stroke-linecap="round"/>
+</svg>

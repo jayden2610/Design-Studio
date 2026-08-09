@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poster Style — SGAI Daily Test</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0a0a0c;
+    color: #e8e8ed;
+    font-family: 'Space Grotesk', sans-serif;
+    padding: 2.5rem 1rem 4rem;
+  }
+
+  header { max-width: 1100px; margin: 0 auto 2.5rem; text-align: center; }
+  header h1 { font-family: 'Playfair Display', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; margin-bottom: 0.4rem; }
+  header p { color: #8a8a98; font-size: 0.95rem; }
+
+  .gallery {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  @media (min-width: 720px) { .gallery { grid-template-columns: 1fr 1fr; } }
+
+  .card { background: #141418; border-radius: 12px; overflow: hidden; border: 1px solid #252530; }
+  .card-label { padding: 0.75rem 1.1rem; font-size: 0.78rem; color: #8a8a98; border-bottom: 1px solid #252530; display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; }
+
+  .poster { position: relative; width: 100%; aspect-ratio: 9 / 14; overflow: hidden; }
+  .poster__bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
+  .poster__overlay { position: absolute; inset: 0; }
+  .poster__content { position: absolute; inset: 0; display: flex; flex-direction: column; padding: 1.75rem; color: #f5f0e8; }
+
+  /* ===== 02 — Script poster style, borrowed from Grok directly ===== */
+  .c2 .poster__bg {
+    background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1200&auto=format&fit=crop');
+    background-position: center 40%;
+  }
+  .c2 .poster__overlay { background: linear-gradient(to bottom, rgba(10,15,12,0.15) 0%, rgba(10,15,12,0.12) 40%, rgba(8,12,10,0.62) 100%); }
+  .c2 .poster__content { justify-content: center; align-items: center; text-align: center; }
+  .c2 .script { font-family: 'Great Vibes', cursive; font-size: clamp(3rem, 10.5vw, 3.9rem); color: #f5f0e8; text-shadow: 0 2px 16px rgba(0,0,0,0.35); }
+  .c2 .main { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.7rem, 6vw, 2.2rem); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #f0ebe3; margin-top: -0.1em; }
+  .c2 .meta { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,240,232,0.65); margin-top: 1.15rem; font-family: 'JetBrains Mono', monospace; }
+
+  /* ===== 03 — SGAI Daily, built on the vault's Nature Typography Poster System =====
+     Foundation: Classic Spirit + Classical Pure White (README.md)
+     Display: EB Garamond · Script accent: Great Vibes (short phrase only)
+     Color: Warm Charcoal dark framework (typography-color-framework.md)
+       bg #1a1612 / primary #f5ebe0 / secondary #d4c0a8 / muted #a89078 / accent #f59e0b
+     Hierarchy: label -> display -> script accent -> supporting line -> footer
+     Composition: centered (photo has a centered, symmetrical horizon)
+     Fixed (previously had the same bug c4 was built to correct): overlay
+     was a transparent-center radial vignette, so the darkening happened
+     away from center while the centered text sat in the lightest, least
+     scrimmed spot. Now flat/uniform through the center 60-70% per
+     typography-color-framework.md "Photo-Background Legibility Rules".
+     Script line demoted off amber (#f59e0b risks merging into golden-hour
+     foliage/bark) onto the same warm off-white as the display line; amber
+     survives only on the tiny ✦ mark. */
+  .c3 .poster__bg {
+    background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop');
+    background-position: center 42%;
+  }
+  .c3 .poster__overlay {
+    background:
+      radial-gradient(ellipse at center, rgba(20,17,14,0.58) 0%, rgba(20,17,14,0.6) 55%, rgba(20,17,14,0.82) 100%),
+      linear-gradient(to bottom, rgba(20,17,14,0.55) 0%, rgba(20,17,14,0.5) 38%, rgba(16,13,10,0.85) 100%);
+  }
+  .c3 .poster__content { justify-content: center; align-items: center; text-align: center; }
+  .c3 .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #d4c0a8;
+    margin-bottom: 1.3rem;
+  }
+  .c3 .display {
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(2rem, 7vw, 2.6rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: #f5ebe0;
+    text-shadow: 0 2px 18px rgba(0,0,0,0.55);
+  }
+  .c3 .script {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(2rem, 7.5vw, 2.6rem);
+    line-height: 1.2;
+    color: #f5ebe0;
+    text-shadow: 0 2px 18px rgba(0,0,0,0.55);
+    margin-top: -0.15em;
+  }
+  .c3 .support {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(0.95rem, 3vw, 1.1rem);
+    color: #d4c0a8;
+    max-width: 26ch;
+    line-height: 1.5;
+    margin-top: 1.4rem;
+  }
+  .c3 .mark { font-size: 0.7rem; color: #f59e0b; margin-top: 1.2rem; }
+  .c3 .meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #a89078;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.6rem;
+    right: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* ===== 04 — SGAI Daily, photo-legibility fix over c3 =====
+     Same content + same photo as c3, corrected per
+     typography-color-framework.md "Photo-Background Legibility Rules":
+       - Overlay: flat/uniform dark scrim through the center 60-70% of the
+         frame (no transparent-center radial) so the darkening is guaranteed
+         exactly where the centered text sits, not lightest there.
+       - Script accent: amber #f59e0b removed as text color (amber-on-forest
+         is a real contrast failure risk against golden-hour foliage/bark).
+         Script line now uses the same warm off-white as the display line.
+         Amber survives only as the tiny ✦ mark, which can afford to lose
+         contrast for an instant without breaking the read. */
+  .c4 .poster__bg {
+    background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop');
+    background-position: center 42%;
+  }
+  .c4 .poster__overlay {
+    background:
+      radial-gradient(ellipse at center, rgba(20,17,14,0.58) 0%, rgba(20,17,14,0.6) 55%, rgba(20,17,14,0.82) 100%),
+      linear-gradient(to bottom, rgba(20,17,14,0.55) 0%, rgba(20,17,14,0.5) 38%, rgba(16,13,10,0.85) 100%);
+  }
+  .c4 .poster__content { justify-content: center; align-items: center; text-align: center; }
+  .c4 .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #d4c0a8;
+    margin-bottom: 1.3rem;
+  }
+  .c4 .display {
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(2rem, 7vw, 2.6rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: #f5ebe0;
+    text-shadow: 0 2px 18px rgba(0,0,0,0.55);
+  }
+  .c4 .script {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(2rem, 7.5vw, 2.6rem);
+    line-height: 1.2;
+    color: #f5ebe0;
+    text-shadow: 0 2px 18px rgba(0,0,0,0.55);
+    margin-top: -0.15em;
+  }
+  .c4 .support {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(0.95rem, 3vw, 1.1rem);
+    color: #d4c0a8;
+    max-width: 26ch;
+    line-height: 1.5;
+    margin-top: 1.4rem;
+  }
+  .c4 .mark { font-size: 0.7rem; color: #f59e0b; margin-top: 1.2rem; }
+  .c4 .meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #a89078;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.6rem;
+    right: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* ===== 06 — Ref-2 style (_designforgestudio "park"): dark-on-light, moved off the trees =====
+     Two compounding failures found by inspection: (1) white text sitting in
+     the upper band where dappled bright trees/foliage break up the value
+     behind every letter — no scrim weight fixes text sitting directly on
+     high-frequency bright/dark speckle; (2) white was also fighting the
+     photo's own bright tone, same value-collision as c5. Fix: moved the
+     whole stack down into the lower band (flatter grass/ground, not
+     tree canopy) and flipped to dark warm-charcoal text on a solid,
+     flat light scrim block — a real "card" of light behind dark ink,
+     not a gradient hoping the photo cooperates. */
+  .c6 .poster__bg {
+    background-image: url('https://images.unsplash.com/photo-1444492417251-9c84a5fa18e0?q=80&w=1200&auto=format&fit=crop');
+    background-position: center 45%;
+  }
+  .c6 .poster__overlay {
+    background: linear-gradient(to bottom, rgba(245,240,230,0) 0%, rgba(245,240,230,0) 46%, rgba(248,243,235,0.72) 58%, rgba(248,243,235,0.88) 100%);
+  }
+  .c6 .poster__content { justify-content: flex-end; padding: 1.9rem 1.9rem 2.2rem; }
+  .c6 .stack {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #1a1612;
+    text-shadow: none;
+    line-height: 0.98;
+  }
+  .c6 .stack.l1 { font-size: clamp(1.3rem, 5.2vw, 1.7rem); letter-spacing: 0.01em; opacity: 0.75; }
+  .c6 .stack.l2 { font-size: clamp(3.1rem, 13.5vw, 4.6rem); letter-spacing: -0.01em; margin-top: 0.08em; }
+  .c6 .stack.l3 { font-size: clamp(1.05rem, 4.2vw, 1.3rem); color: #3c332a; margin-top: 0.35em; letter-spacing: 0.03em; font-weight: 600; }
+  .c6 .quiet {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.78rem, 2.6vw, 0.9rem);
+    color: #3c332a;
+    opacity: 0.9;
+    margin-top: 1.1rem;
+    max-width: 24ch;
+    text-shadow: none;
+  }
+  .c6 .meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(26,22,18,0.6);
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.75rem;
+    right: 1.75rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* ===== 07 — Hybrid: c4's centered DNA, zone-justified not scrim-forced =====
+     Photo: a valley/hills scene where the center of the frame is itself the
+     photo's dark, uniform zone (shadowed valley floor between two brighter
+     ridgelines) -> centering is the correct zone read for THIS photo, not a
+     default. Scrim is cut roughly in half vs c4 since the zone already
+     supplies most of the contrast. Same content/hierarchy as c3/c4 for a
+     direct side-by-side of "centered forced" vs "centered earned". */
+  .c7 .poster__bg {
+    background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1200&auto=format&fit=crop');
+    background-position: center 50%;
+  }
+  .c7 .poster__overlay {
+    background:
+      radial-gradient(ellipse at center, rgba(20,17,14,0.3) 0%, rgba(20,17,14,0.32) 55%, rgba(20,17,14,0.42) 100%),
+      linear-gradient(to bottom, rgba(20,17,14,0.28) 0%, rgba(20,17,14,0.22) 38%, rgba(16,13,10,0.5) 100%);
+  }
+  .c7 .poster__content { justify-content: center; align-items: center; text-align: center; }
+  .c7 .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #d4c0a8;
+    margin-bottom: 1.3rem;
+  }
+  .c7 .display {
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(2rem, 7vw, 2.6rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: #f5ebe0;
+    text-shadow: 0 2px 18px rgba(0,0,0,0.5);
+  }
+  .c7 .script {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(2rem, 7.5vw, 2.6rem);
+    line-height: 1.2;
+    color: #f5ebe0;
+    text-shadow: 0 2px 18px rgba(0,0,0,0.5);
+    margin-top: -0.15em;
+  }
+  .c7 .support {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(0.95rem, 3vw, 1.1rem);
+    color: #d4c0a8;
+    max-width: 26ch;
+    line-height: 1.5;
+    margin-top: 1.4rem;
+  }
+  .c7 .mark { font-size: 0.7rem; color: #f59e0b; margin-top: 1.2rem; }
+  .c7 .meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #a89078;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.6rem;
+    right: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* ===== 08 — Asymmetric multi-moment, editorial-magazine feel =====
+     Photo: tall pine/forest treeline with a bright open sky filling the
+     upper third and a dark, dense tree mass filling the lower two-thirds.
+     Zone read: small label top-right on open sky. Large bold headline
+     pinned to the lower-third dark treeline (busiest/darkest zone gets the
+     heaviest weight). Tiny split footer sits in the same dark lower band,
+     small enough to not compete with the headline above it. */
+  .c8 .poster__bg {
+    background-image: url('https://images.unsplash.com/photo-1441716844725-09cedc13a4e7?q=80&w=1200&auto=format&fit=crop');
+    background-position: center 55%;
+  }
+  .c8 .poster__overlay {
+    background: linear-gradient(to bottom, rgba(16,13,10,0.05) 0%, rgba(16,13,10,0.08) 45%, rgba(14,12,9,0.55) 66%, rgba(12,10,8,0.78) 100%);
+  }
+  .c8 .poster__content { padding: 1.9rem 1.75rem; justify-content: flex-end; }
+  .c8 .label {
+    position: absolute;
+    top: 1.9rem;
+    right: 1.75rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #f0e6d6;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+  }
+  .c8 .headline {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: clamp(2.3rem, 9vw, 3.1rem);
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+    color: #f5ebe0;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.55);
+    max-width: 12ch;
+  }
+  .c8 .support {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1rem, 3.4vw, 1.15rem);
+    color: #d4c0a8;
+    max-width: 24ch;
+    line-height: 1.45;
+    margin-top: 0.9rem;
+  }
+  .c8 .meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #b8a68c;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.6rem;
+  }
+  /* ===== 09 — Coastal cliff, asymmetric: subject dodges left, headline hugs right =====
+     Photo: cliff/ocean horizon with the darker rock mass on the left third,
+     open bright sky/sea on the right two-thirds. Busiest zone = the rock
+     silhouette edge (mixed value, distracting). Calmest zone = the flat sea
+     just above the horizon on the right. Headline anchored right, small
+     scrim only behind text block, not full-frame. */
+  .c9 .poster__bg {
+    background-image: url('https://images.unsplash.com/photo-1439405326854-014607f694d7?q=80&w=1200&auto=format&fit=crop');
+    background-position: center 55%;
+  }
+  .c9 .poster__overlay {
+    background: linear-gradient(115deg, rgba(12,16,20,0) 0%, rgba(12,16,20,0) 42%, rgba(10,14,18,0.55) 62%, rgba(8,12,16,0.72) 100%);
+  }
+  .c9 .poster__content { justify-content: center; align-items: flex-end; text-align: right; padding: 1.9rem 1.8rem; }
+  .c9 .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #dce8ea;
+    margin-bottom: 1.3rem;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+  }
+  .c9 .display {
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(2rem, 7vw, 2.6rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: #f5f7f5;
+    text-shadow: 0 2px 18px rgba(0,0,0,0.5);
+  }
+  .c9 .script {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(2rem, 7.5vw, 2.6rem);
+    line-height: 1.2;
+    color: #f5f7f5;
+    text-shadow: 0 2px 18px rgba(0,0,0,0.5);
+    margin-top: -0.15em;
+  }
+  .c9 .support {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(0.95rem, 3vw, 1.1rem);
+    color: #cdd8da;
+    max-width: 24ch;
+    line-height: 1.5;
+    margin-top: 1.4rem;
+    margin-left: auto;
+  }
+  .c9 .mark { font-size: 0.7rem; color: #f59e0b; margin-top: 1.2rem; }
+  .c9 .meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #a8b8ba;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.75rem;
+    right: 1.75rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* ===== 10 — Foggy mountain ridge, top-anchored, dark-on-light =====
+     Photo: layered mountain ridges fading into fog, top band pale/flat
+     (calmest zone, near-uniform light grey), bottom band darker forest.
+     Text flipped to dark charcoal per "light scene -> dark text" rule
+     since top band is genuinely light, not a default. Anchored top so it
+     never touches the busier tree line below. */
+  .c10 .poster__bg {
+    background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop');
+    background-position: center 8%;
+  }
+  .c10 .poster__overlay {
+    background: linear-gradient(to bottom, rgba(232,232,236,0.85) 0%, rgba(232,232,236,0.78) 18%, rgba(224,224,230,0.25) 30%, rgba(10,10,10,0.05) 100%);
+  }
+  .c10 .poster__content { justify-content: flex-start; align-items: center; text-align: center; padding: 2.1rem 1.9rem; }
+  .c10 .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #4a4640;
+    margin-bottom: 1.1rem;
+  }
+  .c10 .display {
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(2rem, 7vw, 2.6rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: #1a1612;
+  }
+  .c10 .script {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(2rem, 7.5vw, 2.6rem);
+    line-height: 1.2;
+    color: #1a1612;
+    margin-top: -0.15em;
+  }
+  .c10 .support {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(0.95rem, 3vw, 1.1rem);
+    color: #3c332a;
+    max-width: 26ch;
+    line-height: 1.5;
+    margin-top: 1.2rem;
+  }
+  .c10 .mark { font-size: 0.7rem; color: #b8860b; margin-top: 1rem; }
+  .c10 .meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(26,22,18,0.55);
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.75rem;
+    right: 1.75rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* ===== 11 — Desert mesa (Monument Valley), asymmetric left, minimal single-line stack =====
+     Photo: rock formations against open sky in the upper two-thirds, flat
+     shadowed scrub/dirt foreground filling the lower third. Busiest zone =
+     the mesa silhouettes against sky. Calmest zone = the flat dark
+     foreground ground. Headline anchored lower-left, entirely inside the
+     flat ground, clear of the rock silhouettes above it. Single dominant
+     line only, no script, to keep the quiet/minimal read this photo calls
+     for. */
+  .c11 .poster__bg {
+    background-image: url('https://images.unsplash.com/photo-1509316785289-025f5b846b35?q=80&w=1200&auto=format&fit=crop');
+    background-position: center 60%;
+  }
+  .c11 .poster__overlay {
+    background: linear-gradient(200deg, rgba(20,14,8,0) 0%, rgba(20,14,8,0) 45%, rgba(18,12,7,0.6) 68%, rgba(14,9,5,0.8) 100%);
+  }
+  .c11 .poster__content { justify-content: flex-end; align-items: flex-start; text-align: left; padding: 1.9rem 1.9rem 2.2rem; }
+  .c11 .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #e8d5b8;
+    margin-bottom: 1.2rem;
+  }
+  .c11 .headline {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: clamp(2.3rem, 9vw, 3.1rem);
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+    color: #f5ebe0;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.5);
+    max-width: 11ch;
+  }
+  .c11 .support {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(1rem, 3.4vw, 1.15rem);
+    color: #d4c0a8;
+    max-width: 24ch;
+    line-height: 1.45;
+    margin-top: 0.9rem;
+  }
+  .c11 .meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #b8a68c;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.6rem;
+    width: 100%;
+  }
+
+  /* ===== 12 — Still lake reflection, centered on the water band =====
+     Photo: calm lake, mirror-flat water band sits center-frame between a
+     treeline above and a dock below. Text block centered and sized to sit
+     inside that water band; scrim strengthened through the center so the
+     treeline directly behind the label line and the dock below the meta
+     line both drop well under the ~4.5:1 contrast floor. Not a perfectly
+     clean zone (this photo's two hard edges bracket the water tightly) but
+     the flattest available read after testing top-anchor and bottom-anchor
+     placements, both of which put text ON the treeline or ON the dock
+     planking instead of past it. */
+  .c12 .poster__bg {
+    background-image: url('https://images.unsplash.com/photo-1439066615861-d1af74d74000?q=80&w=1200&auto=format&fit=crop');
+    background-position: center 42%;
+  }
+  .c12 .poster__overlay {
+    background: linear-gradient(to bottom, rgba(10,14,16,0.35) 0%, rgba(9,13,15,0.55) 40%, rgba(8,12,14,0.6) 60%, rgba(7,10,12,0.4) 100%);
+  }
+  .c12 .poster__content { justify-content: center; align-items: center; text-align: center; }
+  .c12 .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #cfe0dc;
+    margin-bottom: 1.3rem;
+  }
+  .c12 .display {
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+    font-size: clamp(2rem, 7vw, 2.6rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: #f0f5f2;
+    text-shadow: 0 2px 18px rgba(0,0,0,0.5);
+  }
+  .c12 .script {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(2rem, 7.5vw, 2.6rem);
+    line-height: 1.2;
+    color: #f0f5f2;
+    text-shadow: 0 2px 18px rgba(0,0,0,0.5);
+    margin-top: -0.15em;
+  }
+  .c12 .support {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(0.95rem, 3vw, 1.1rem);
+    color: #b8ccc8;
+    max-width: 26ch;
+    line-height: 1.5;
+    margin-top: 1.4rem;
+  }
+  .c12 .mark { font-size: 0.7rem; color: #f59e0b; margin-top: 1.2rem; }
+  .c12 .meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #9cb0ac;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.75rem;
+    right: 1.75rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  /* ===== 13 — Aerial forest + road, split-band editorial (top label / bottom stack) =====
+     Photo: aerial pine canopy with a road cutting through, upper frame
+     dappled/uneven light through treetops (busiest zone), lower-left
+     corner falls into full shadow — a solid, flat dark band (calmest,
+     flattest zone in frame). Label sits top-left on a small dark chip (not
+     directly on the dappled canopy), full headline stack anchored to the
+     flat dark lower-left corner, same logic as c8 but with a visible label
+     chip instead of relying on shadow alone. */
+  .c13 .poster__bg {
+    background-image: url('https://images.unsplash.com/photo-1476231682828-37e571bc172f?q=80&w=1200&auto=format&fit=crop');
+    background-position: center 50%;
+  }
+  .c13 .poster__overlay {
+    background: linear-gradient(to bottom, rgba(20,14,8,0.1) 0%, rgba(20,14,8,0.12) 40%, rgba(16,11,6,0.6) 62%, rgba(12,8,5,0.82) 100%);
+  }
+  .c13 .poster__content { padding: 1.9rem 1.8rem; justify-content: flex-end; }
+  .c13 .label {
+    position: absolute;
+    top: 1.9rem;
+    left: 1.8rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #f5ebe0;
+    background: rgba(16,11,6,0.55);
+    padding: 0.4rem 0.7rem;
+    border-radius: 4px;
+  }
+  .c13 .stack {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #f5ebe0;
+    text-shadow: 0 2px 16px rgba(0,0,0,0.55);
+    line-height: 0.98;
+  }
+  .c13 .stack.l1 { font-size: clamp(1.3rem, 5.2vw, 1.7rem); letter-spacing: 0.01em; opacity: 0.8; }
+  .c13 .stack.l2 { font-size: clamp(3.1rem, 13.5vw, 4.6rem); letter-spacing: -0.01em; margin-top: 0.08em; }
+  .c13 .quiet {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(0.95rem, 3vw, 1.1rem);
+    color: #d4c0a8;
+    margin-top: 1rem;
+    max-width: 26ch;
+  }
+  .c13 .meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #b8a68c;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Poster Style Test — Photo + Overlay + Script Type</h1>
+  <p>Grok's pattern (bg / overlay / content, script fonts over real photos) applied to an SGAI Daily slide</p>
+</header>
+
+<div class="gallery">
+
+  <div class="card c2">
+    <div class="card-label"><span>02 — Grok reference pattern</span><span>reused as-is</span></div>
+    <div class="poster">
+      <div class="poster__bg"></div>
+      <div class="poster__overlay"></div>
+      <div class="poster__content">
+        <div class="script">Nature</div>
+        <div class="main">Ambience</div>
+        <div class="meta">Stories &middot; With &middot; Typography</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card c3">
+    <div class="card-label"><span>03 — SGAI Daily, per vault spec</span><span>Classic Spirit system</span></div>
+    <div class="poster">
+      <div class="poster__bg"></div>
+      <div class="poster__overlay"></div>
+      <div class="poster__content">
+        <div class="label">This Week in AI &middot; Singapore</div>
+        <div class="display">Twelve stories,</div>
+        <div class="script">read in a minute</div>
+        <div class="support">Everything that mattered this week, without the twelve tabs.</div>
+        <div class="mark">&#10022;</div>
+        <div class="meta"><span>Vol. 032</span><span>sgai-daily.com</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card c4">
+    <div class="card-label"><span>04 — SGAI Daily, photo-legibility fix</span><span>flat scrim, no amber text</span></div>
+    <div class="poster">
+      <div class="poster__bg"></div>
+      <div class="poster__overlay"></div>
+      <div class="poster__content">
+        <div class="label">This Week in AI &middot; Singapore</div>
+        <div class="display">Twelve stories,</div>
+        <div class="script">read in a minute</div>
+        <div class="support">Everything that mattered this week, without the twelve tabs.</div>
+        <div class="mark">&#10022;</div>
+        <div class="meta"><span>Vol. 032</span><span>sgai-daily.com</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card c6">
+    <div class="card-label"><span>06 — Ref-2 style (park)</span><span>open corridor, pure white, no scrim</span></div>
+    <div class="poster">
+      <div class="poster__bg"></div>
+      <div class="poster__overlay"></div>
+      <div class="poster__content">
+        <div class="stack l1">LESS TABS.</div>
+        <div class="stack l2">MORE SIGNAL.</div>
+        <div class="stack l3">TWELVE STORIES.</div>
+        <div class="quiet">Everything that mattered this week in AI, Singapore — read in a minute.</div>
+        <div class="meta"><span>@sgai_daily</span><span>sgai-daily.com</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card c7">
+    <div class="card-label"><span>07 — Hybrid: centered, zone-justified</span><span>valley photo, half the scrim of c4</span></div>
+    <div class="poster">
+      <div class="poster__bg"></div>
+      <div class="poster__overlay"></div>
+      <div class="poster__content">
+        <div class="label">This Week in AI &middot; Singapore</div>
+        <div class="display">Twelve stories,</div>
+        <div class="script">read in a minute</div>
+        <div class="support">Everything that mattered this week, without the twelve tabs.</div>
+        <div class="mark">&#10022;</div>
+        <div class="meta"><span>Vol. 032</span><span>sgai-daily.com</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card c8">
+    <div class="card-label"><span>08 — Asymmetric multi-moment</span><span>editorial, lower-third dark zone</span></div>
+    <div class="poster">
+      <div class="poster__bg"></div>
+      <div class="poster__overlay"></div>
+      <div class="poster__content">
+        <div class="label">Vol. 032</div>
+        <div class="headline">Twelve stories, read in a minute</div>
+        <div class="support">Everything that mattered this week in AI, Singapore — without the twelve tabs.</div>
+        <div class="meta"><span>This Week in AI &middot; Singapore</span><span>sgai-daily.com</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card c9">
+    <div class="card-label"><span>09 — Coastal, asymmetric right</span><span>rock silhouette dodged left</span></div>
+    <div class="poster">
+      <div class="poster__bg"></div>
+      <div class="poster__overlay"></div>
+      <div class="poster__content">
+        <div class="label">This Week in AI &middot; Singapore</div>
+        <div class="display">Twelve stories,</div>
+        <div class="script">read in a minute</div>
+        <div class="support">Everything that mattered this week, without the twelve tabs.</div>
+        <div class="mark">&#10022;</div>
+        <div class="meta"><span>Vol. 032</span><span>sgai-daily.com</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card c10">
+    <div class="card-label"><span>10 — Foggy ridge, top-anchored</span><span>light scene, dark charcoal text</span></div>
+    <div class="poster">
+      <div class="poster__bg"></div>
+      <div class="poster__overlay"></div>
+      <div class="poster__content">
+        <div class="label">This Week in AI &middot; Singapore</div>
+        <div class="display">Twelve stories,</div>
+        <div class="script">read in a minute</div>
+        <div class="support">Everything that mattered this week, without the twelve tabs.</div>
+        <div class="mark">&#10022;</div>
+        <div class="meta"><span>Vol. 032</span><span>sgai-daily.com</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card c11">
+    <div class="card-label"><span>11 — Desert mesa, asymmetric left</span><span>single line, no script</span></div>
+    <div class="poster">
+      <div class="poster__bg"></div>
+      <div class="poster__overlay"></div>
+      <div class="poster__content">
+        <div class="label">Vol. 032</div>
+        <div class="headline">Twelve stories, read in a minute</div>
+        <div class="support">Everything that mattered this week in AI, Singapore.</div>
+        <div class="meta"><span>This Week in AI</span><span>sgai-daily.com</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card c12">
+    <div class="card-label"><span>12 — Still lake, centered (earned)</span><span>reflection band is the calm zone</span></div>
+    <div class="poster">
+      <div class="poster__bg"></div>
+      <div class="poster__overlay"></div>
+      <div class="poster__content">
+        <div class="label">This Week in AI &middot; Singapore</div>
+        <div class="display">Twelve stories,</div>
+        <div class="script">read in a minute</div>
+        <div class="support">Everything that mattered this week, without the twelve tabs.</div>
+        <div class="mark">&#10022;</div>
+        <div class="meta"><span>Vol. 032</span><span>sgai-daily.com</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card c13">
+    <div class="card-label"><span>13 — Aerial forest, split-band</span><span>label chip top, stack on shadowed corner</span></div>
+    <div class="poster">
+      <div class="poster__bg"></div>
+      <div class="poster__overlay"></div>
+      <div class="poster__content">
+        <div class="label">Vol. 032</div>
+        <div class="stack l1">LESS TABS.</div>
+        <div class="stack l2">MORE SIGNAL.</div>
+        <div class="quiet">Everything that mattered this week in AI, Singapore — read in a minute.</div>
+        <div class="meta"><span>This Week in AI</span><span>sgai-daily.com</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

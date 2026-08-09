@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Gimbap Roll small mark">
+  <rect width="160" height="160" fill="#111111"/>
+  <circle cx="80" cy="80" r="55" fill="#f7f5ef"/>
+  <circle cx="80" cy="80" r="41" fill="#111111"/>
+  <path d="M48 77c12-17 22-13 32-2 10-11 22-15 34 2-6 21-17 35-34 35S54 98 48 77Z" fill="#f7f5ef"/>
+  <path d="M63 80l11 7m12-8-9 16m19-13-13 7m-22 7 12 5m15-1 8-11" fill="none" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+</svg>

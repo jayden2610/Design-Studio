@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Kopi on Foot — Walk and carry direction</title>
+  <desc id="desc">A simplified person takes one confident step while carrying a warm kopi cup.</desc>
+  <rect width="1200" height="900" fill="#f7f5ef"/>
+  <g fill="#111" stroke="#111" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="548" cy="190" r="58"/>
+    <path d="M532 253c-22 80-20 151 6 212l56 122c18 39 5 72-30 80-27 6-47-8-60-40l-58-143c-20-50-27-96-18-140l17-91Z" stroke-width="18"/>
+    <path d="M492 318c-44 33-71 71-81 115-10 44-31 72-66 90-29 15-48 4-49-22-1-31 26-53 54-79 36-33 61-78 77-134Z" stroke-width="18"/>
+    <path d="M553 333c61-12 113-6 157 17l104 55c27 15 34 40 18 62-15 21-39 23-66 9l-122-59c-42-20-81-30-119-28Z" stroke-width="18"/>
+    <path d="M545 646c-4 36-13 69-30 101l-63 93c-19 28-47 33-69 16-20-16-20-41 0-66l54-70c19-26 28-56 29-90Z" stroke-width="18"/>
+    <path d="M579 648c42 13 82 38 118 75l67 68c24 24 25 50 5 68-20 18-46 13-70-10l-77-69c-26-23-53-36-82-40Z" stroke-width="18"/>
+    <path d="M770 375h119v91H770Z" fill="#f7f5ef" stroke-width="17"/>
+    <path d="M889 397c52-14 60 59 5 64" fill="none" stroke-width="17"/>
+    <path d="M789 375c-4-27 4-49 24-67m37 67c-3-26 5-48 24-66" fill="none" stroke-width="13"/>
+    <path d="M299 814h628" fill="none" stroke-width="16"/>
+  </g>
+  <text x="600" y="865" text-anchor="middle" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700" letter-spacing="4">KOPI ON FOOT</text>
+</svg>

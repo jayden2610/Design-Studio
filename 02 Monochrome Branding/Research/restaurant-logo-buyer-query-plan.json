@@ -1,0 +1,35 @@
+{
+  "intent": "opinion",
+  "freshness_mode": "balanced_recent",
+  "cluster_mode": "debate",
+  "subqueries": [
+    {
+      "label": "buyer-demand",
+      "search_query": "restaurant cafe bakery branding logo designer",
+      "ranking_query": "Who is actively looking for restaurant, cafe, bakery, or food-business brand identity and logo design, and what are they asking to buy?",
+      "sources": ["reddit", "x", "youtube", "tiktok", "instagram", "hackernews", "polymarket"],
+      "weight": 1.0
+    },
+    {
+      "label": "opening-operators",
+      "search_query": "opening restaurant cafe food truck brand identity logo",
+      "ranking_query": "What brand-identity needs do new restaurant, cafe, bakery, and food-truck operators describe when opening or rebranding?",
+      "sources": ["reddit", "x", "youtube", "tiktok", "instagram"],
+      "weight": 0.8
+    },
+    {
+      "label": "illustrated-food-branding",
+      "search_query": "illustrated food branding restaurant logo packaging",
+      "ranking_query": "Which illustrated food-branding styles and deliverables are getting attention from restaurants and food brands?",
+      "sources": ["reddit", "x", "youtube", "tiktok", "instagram"],
+      "weight": 0.7
+    },
+    {
+      "label": "design-marketplaces",
+      "search_query": "restaurant logo design freelance marketplace Upwork Fiverr 99designs",
+      "ranking_query": "Where do restaurant owners actually look for designers and buy restaurant logo or identity work?",
+      "sources": ["reddit", "x", "youtube", "tiktok", "instagram"],
+      "weight": 0.6
+    }
+  ]
+}

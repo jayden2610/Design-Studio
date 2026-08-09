@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0",
+  "style_name": "Playful Monochrome Neighborhood Illustration",
+  "status": "working design direction",
+  "source_references": ["image-01-novena-style.json", "image-02-bagel-house-style.json", "image-03-woke-style.json", "image-04-market-stall-style.json"],
+  "art_style": {
+    "primary_label": "monochrome hand-drawn indie neighborhood-brand illustration",
+    "secondary_labels": ["editorial line art", "naive/outsider-inspired drawing", "food mascot illustration", "black-and-white screen-print sensibility"],
+    "one_sentence": "Expressive neighborhood identity built from imperfect black ink, simplified silhouettes, custom lettering, and generous white space."
+  },
+  "core_invariants": [
+    "black ink on white or paper-like background",
+    "silhouette-first readability",
+    "visible hand-drawn irregularity",
+    "simplified forms instead of realism",
+    "minimal or absent shading",
+    "generous negative space",
+    "friendly, local, handmade, slightly quirky personality",
+    "clear neighborhood, service, craft, retail, or community context"
+  ],
+  "allowed_variations": {
+    "composition_archetypes": [
+      { "name": "mascot", "priority": "selective", "description": "Person, object, tool, or product becomes a character through expressive posture, gesture, or interaction; food mascots are optional." },
+      { "name": "emblem", "priority": "primary", "description": "Compact mark with one strong dark organic anchor and reverse lettering or white linework." },
+      { "name": "storefront", "priority": "supporting", "description": "Isometric kiosk, stall, or shop with small architectural details and hand-lettered signage." },
+      { "name": "market-scene", "priority": "primary", "description": "Worker, customer, maker, counter, tools, packages, or objects arranged on a grounding baseline." }
+    ],
+    "personality_range": ["welcoming", "playful", "social", "quirky", "energetic", "nostalgic", "indie"],
+    "detail_range": { "minimum": "bold silhouette with one memorable detail", "maximum": "fine facade, packaging, clothing, or food texture details without losing the silhouette" }
+  },
+  "recommended_direction": {
+    "primary": "illustration-led vignette",
+    "secondary": "emblem",
+    "supporting": ["market-scene", "storefront"],
+    "hybrid_formula": "Image 3 anchor silhouette + Image 4 human warmth + Image 1 micro-details + Image 2 gesture energy applied to original people or objects",
+    "reason": "This preserves the human, environmental, and object details that create personality while avoiding copied motifs."
+  },
+  "logo_system": {
+    "primary": "standalone illustrated vignette",
+    "secondary": "vignette plus hand-lettered wordmark",
+    "optional": "simplified secondary mark derived from the vignette",
+    "rule": "Do not force the optional secondary mark to replace the primary illustration.",
+    "selection_method": "Choose one evocative brand interaction and reduce it to the essential visual cues.",
+    "simple_story_rule": ["one action", "one anchor", "one supporting cue"],
+    "retain": ["the action", "the memorable object or gesture", "one contextual cue", "handmade line quality"],
+    "remove": ["unnecessary borders", "complete room or storefront context", "unnecessary background detail", "generic badge treatment"],
+    "distinctness_rule": "Sibling logo directions must differ in silhouette and framing; do not repeat the same interior, character pairing, or object cluster.",
+    "avoid_as_default": ["abstract cup icon", "generic seal", "badge", "compressed emblem", "anthropomorphic food mascot"]
+  },
+  "originality_guardrails": {
+    "principle": "borrow the medium, not the motifs",
+    "minimum_changed_variables": 3,
+    "change_options": ["subject", "composition", "narrative", "signature object", "lettering placement", "scale"],
+    "avoid_source_motifs": ["bagel character pair", "copied food poses", "matching source emblem silhouette", "default copied storefront perspective"],
+    "preferred_new_anchors": ["human worker", "tool", "architecture", "receipt", "packaging", "furniture", "instrument", "plant", "service gesture"],
+    "signature_device_rule": "Add one original recurring device per brand, such as connected steam-like lines, a recurring awning, a stamp edge, a counter baseline, or a distinctive object rhythm.",
+    "generation_rule": "Use the source references to understand style, not as direct composition inputs for the final concept."
+  },
+  "visual_tokens": {
+    "colors": [
+      { "name": "ink", "value": "#111111", "role": "primary contour and fill", "confidence": 0.98 },
+      { "name": "paper", "value": "#FFFFFF", "role": "background and negative space", "confidence": 0.99 }
+    ],
+    "strokes": [
+      { "name": "primary-contour", "value": "bold rounded black line", "role": "silhouette", "confidence": 0.96 },
+      { "name": "secondary-detail", "value": "fine black line", "role": "interior texture and small details", "confidence": 0.90 },
+      { "name": "ink-imperfection", "value": "subtle stroke irregularity and uneven spacing", "role": "human handmade quality", "confidence": 0.96 }
+    ],
+    "spacing": [
+      { "name": "clear-space", "value": "30-45% around compact subject", "unit": "ratio", "role": "breathing room and recognition", "confidence": 0.85 },
+      { "name": "silhouette-first", "value": "legible without interior detail", "unit": "rule", "role": "small-size reproduction", "confidence": 0.94 }
+    ],
+    "lettering": [
+      { "name": "custom-wordmark", "value": "narrow, irregular, hand-drawn lettering", "role": "brand personality", "confidence": 0.94 },
+      { "name": "reverse-emblem-type", "value": "rounded lettering knocked out of a dark organic shape", "role": "compact emblem option", "confidence": 0.88 }
+    ],
+    "surface": [
+      { "name": "flat-ink", "value": "opaque black fill with white cutouts", "role": "primary surface treatment", "confidence": 0.96 },
+      { "name": "no-gradient", "value": true, "role": "avoid polished digital rendering", "confidence": 0.97 }
+    ]
+  },
+  "composition_rules": [
+    "Make the subject recognizable as a silhouette before detail is inspected.",
+    "Center or intentionally balance the subject around a clear focal point.",
+    "Use a baseline for counter or market scenes.",
+    "Use diagonal or isometric construction only when it adds character or world-building.",
+    "Allow asymmetry when it creates personality.",
+    "Keep generous white space around compact marks."
+  ],
+  "lettering_rules": [
+    "Treat lettering as part of the illustration, not as a separate typesetting layer.",
+    "Prefer custom lettering or manually altered type.",
+    "Use irregular spacing, narrow proportions, or rounded forms when appropriate.",
+    "Do not default to a generic corporate sans-serif."
+  ],
+  "avoid": [
+    "perfect geometric vector icons",
+    "corporate mascot polish",
+    "generic stock food symbols",
+    "photorealism",
+    "heavy tonal shading",
+    "excessive line density",
+    "sterile symmetry",
+    "font-only branding",
+    "color before monochrome identity is strong"
+  ],
+  "evaluation_criteria": [
+    "reads as a silhouette at thumbnail size",
+    "linework feels intentionally human",
+    "business, service, craft, or neighborhood context is clear",
+    "contains one memorable gesture, shape, or character detail",
+    "white space feels confident",
+    "feels plausible for a distinctive neighborhood brand",
+    "lettering feels integrated with the drawing",
+    "story reads through one action, one anchor, and one supporting cue"
+  ],
+  "confidence": {
+    "overall": 0.95,
+    "stable_traits": ["monochrome palette", "hand-drawn linework", "simplified food-brand storytelling", "negative space", "local handmade personality"],
+    "open_decisions": ["final balance between mascot and emblem", "whether future work should remain strictly black-and-white", "preferred level of micro-detail"],
+    "note": "This is a chosen design direction synthesized from the references, not a claim that every source image shares every token exactly."
+  }
+}

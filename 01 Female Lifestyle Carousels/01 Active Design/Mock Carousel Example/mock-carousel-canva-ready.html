@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Mock Carousel — "A Slow Morning" (Canva-import example)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,400&family=Great+Vibes&family=Caveat:wght@500;600&family=Inter:wght@400;500&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0d0d0d; font-family:'Inter',sans-serif; }
+  .intro { max-width:1200px; margin:0 auto; padding:28px 28px 0; color:#888; font-size:13px; line-height:1.7; }
+  .intro b { color:#ccc; }
+  .grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 28px;
+    padding: 20px 28px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .cardwrap { position:relative; }
+  .label { position:absolute; top:-24px; left:0; color:#999; font-size:11px; letter-spacing:0.5px; }
+
+  /* 4:5 = 1080x1350 Instagram carousel ratio */
+  .card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/5;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 34px rgba(0,0,0,0.5);
+    background-color: #f4ede3;
+  }
+
+  /* ===== SLIDE 1 — Cover: real photo + centered v6 typography ===== */
+  .s1 .photo {
+    position:absolute; inset:0;
+    background-image: url('source-photo/window-reading-editorial.jpg');
+    background-size: cover;
+    background-position: 72% 50%;
+  }
+  .s1 .overlay {
+    position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse at 50% 42%, rgba(24,16,20,0) 22%, rgba(24,16,20,0.30) 100%),
+      linear-gradient(180deg,
+        rgba(30,20,16,0.42) 0%,
+        rgba(30,20,16,0.05) 26%,
+        rgba(30,20,16,0.05) 46%,
+        rgba(30,20,16,0.20) 64%,
+        rgba(30,20,16,0.72) 100%);
+  }
+  .content { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:9% 8%; }
+  .rule { width:28px; height:1px; background:#f0d9c6; opacity:0.75; margin-bottom:16px; }
+  .chip { font-family:'Space Mono',monospace; font-weight:400; font-size:9.5px; letter-spacing:0.22em; text-transform:uppercase; color:#f0d9c6; opacity:0.85; margin-bottom:20px; }
+  .display { font-family:'Fraunces',serif; font-weight:600; font-optical-sizing:auto; font-size:clamp(24px, 6vw, 34px); line-height:1.08; letter-spacing:-0.015em; color:#faf6f0; }
+  .accent { font-family:'Great Vibes',cursive; font-size:clamp(22px,5.5vw,28px); margin-top:0.05em; color:#e8b98f; }
+  .accent-caveat { font-family:'Caveat',cursive; font-weight:600; font-size:clamp(26px,6.5vw,33px); margin-top:0.05em; color:#e8b98f; }
+  .support { margin-top:20px; max-width:80%; font-family:'Inter',sans-serif; font-weight:400; font-size:13px; line-height:1.65; color:#f3ece2; opacity:0.92; }
+  .footer { position:absolute; bottom:6%; left:8%; right:8%; display:flex; justify-content:space-between; font-family:'Space Mono',monospace; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:#f0d9c6; opacity:0.65; }
+
+  .sticker-datestamp { position:absolute; top:6%; right:6%; width:19%; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.25)); }
+
+  /* ===== SLIDE 2 — Journal note over cream, no photo ===== */
+  .s2 { background: #f4ede3; }
+  .s2 .journalcard {
+    position:absolute; left:10%; right:10%; top:16%; bottom:20%;
+    background:#fffaf2;
+    border-radius: 6px;
+    box-shadow: 0 18px 40px rgba(120,90,70,0.18);
+    padding: 11% 9%;
+    display:flex; flex-direction:column; justify-content:center;
+    transform: rotate(-1.2deg);
+  }
+  .s2 .journal-label { font-family:'Space Mono',monospace; font-size:9px; letter-spacing:0.2em; text-transform:uppercase; color:#b98a6f; margin-bottom:18px; }
+  .s2 .journal-quote { font-family:'Fraunces',serif; font-weight:500; font-style:italic; font-size:clamp(19px,4.6vw,25px); line-height:1.45; color:#5b463b; }
+  .s2 .journal-quote b { font-weight:600; font-style:normal; color:#a4655a; }
+  .s2 .journal-sign { margin-top:26px; font-family:'Great Vibes',cursive; font-size:22px; color:#b98a6f; }
+  .s2 .journal-sign-caveat { margin-top:22px; font-family:'Caveat',cursive; font-weight:600; font-size:28px; color:#b98a6f; }
+  .s2 .journal-quote-caveat { font-family:'Caveat',cursive; font-weight:600; font-size:clamp(24px,5.8vw,31px); line-height:1.3; color:#5b463b; }
+  .s2 .journal-quote-caveat b { color:#a4655a; }
+  .s2 .sticker-tape { position:absolute; top:-4%; left:50%; transform:translateX(-50%) rotate(-3deg); width:34%; }
+  .s2 .sticker-paperclip { position:absolute; top:10%; right:5%; width:12%; }
+  .s2 .footer-plain { position:absolute; bottom:6%; left:0; right:0; text-align:center; font-family:'Space Mono',monospace; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:#a4655a; opacity:0.6; }
+
+  /* ===== SLIDE 3 — Photo-dump close: polaroid + postcard collage on cream ===== */
+  .s3 { background: #efe6d8; }
+  .s3 .polaroid {
+    position:absolute; left:9%; top:10%; width:52%;
+    filter: drop-shadow(0 14px 24px rgba(0,0,0,0.22));
+    transform: rotate(-3deg);
+  }
+  .s3 .polaroid img { width:100%; display:block; border-radius: 2px; }
+  .s3 .postcard-sticker { position:absolute; right:6%; top:30%; width:44%; filter: drop-shadow(0 12px 22px rgba(0,0,0,0.2)); }
+  .s3 .caption { position:absolute; left:9%; right:9%; bottom:14%; font-family:'Fraunces',serif; font-weight:500; font-style:italic; font-size:15px; line-height:1.6; color:#5b463b; }
+  .s3 .caption b { font-weight:600; font-style:normal; color:#a4655a; }
+  .s3 .chip-bottom { position:absolute; left:9%; bottom:8%; font-family:'Space Mono',monospace; font-size:9px; letter-spacing:0.18em; text-transform:uppercase; color:#a4655a; opacity:0.7; }
+</style>
+</head>
+<body>
+
+<div class="intro">
+  <b>Mock example — "A Slow Morning," 3-slide storytelling carousel, 4:5 (1080×1350).</b>
+  Built on the researched Etsy top-seller framework (AndDoneStudio "Storytelling Carousel," 943 sales,
+  5.0★ — real embedded photos, scrapbook stickers, warm serif/script typography, journal-style quote
+  cards mixed with photo slides) + your locked v6 typography system (Fraunces 600 display, Great Vibes
+  script accent, warm amber #e8b98f / taupe #c9beb0). Background photo is a real, licensed Unsplash
+  photo (Thought Catalog, free Unsplash License, no attribution required) — not AI-generated.
+  Stickers pulled from your existing 70-pack (date-stamp, tape, paperclip, polaroid frame, postcard).
+  Flatten each card as a PNG and drop straight into Canva as a background layer, or import the whole
+  page — every element here is a plain positioned div/image, no JS.
+</div>
+
+<div class="grid">
+
+  <div class="cardwrap">
+    <div class="label">Slide 1 / 3 — Cover (real photo + type)</div>
+    <div class="card s1">
+      <div class="photo"></div>
+      <div class="overlay"></div>
+      <img class="sticker-datestamp" src="../../03 Sticker Pack/04 iOS Photo Diary Additions/21-date-stamp.svg" alt="">
+      <div class="content">
+        <div class="rule"></div>
+        <div class="chip">Field Notes — Morning</div>
+        <div class="display">A slow<br>morning, kept</div>
+        <div class="accent">just for me</div>
+        <div class="support">The kind of morning that asks nothing of you.</div>
+        <div class="footer"><span>05 · 08 · 2026</span><span>The Reading Corner</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cardwrap">
+    <div class="label">Slide 1B — same cover, Caveat script instead of Great Vibes</div>
+    <div class="card s1">
+      <div class="photo"></div>
+      <div class="overlay"></div>
+      <img class="sticker-datestamp" src="../../03 Sticker Pack/04 iOS Photo Diary Additions/21-date-stamp.svg" alt="">
+      <div class="content">
+        <div class="rule"></div>
+        <div class="chip">Field Notes — Morning</div>
+        <div class="display">A slow<br>morning, kept</div>
+        <div class="accent-caveat">just for me</div>
+        <div class="support">The kind of morning that asks nothing of you.</div>
+        <div class="footer"><span>05 · 08 · 2026</span><span>The Reading Corner</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cardwrap">
+    <div class="label">Slide 2 / 3 — Journal quote, Great Vibes (locked v6)</div>
+    <div class="card s2">
+      <div class="journalcard">
+        <img class="sticker-tape" src="../../03 Sticker Pack/04 iOS Photo Diary Additions/25-transparent-tape-strip.svg" alt="">
+        <img class="sticker-paperclip" src="../../03 Sticker Pack/04 iOS Photo Diary Additions/26-paperclip.svg" alt="">
+        <div class="journal-label">Today I Learned</div>
+        <div class="journal-quote">You don't have to <b>earn</b> your rest.<br>Some mornings are just <b>for you</b>.</div>
+        <div class="journal-sign">— a note to myself</div>
+      </div>
+      <div class="footer-plain">Swipe for the little details →</div>
+    </div>
+  </div>
+
+  <div class="cardwrap">
+    <div class="label">Slide 2B — same journal card, Caveat handwriting (recommended)</div>
+    <div class="card s2">
+      <div class="journalcard">
+        <img class="sticker-tape" src="../../03 Sticker Pack/04 iOS Photo Diary Additions/25-transparent-tape-strip.svg" alt="">
+        <img class="sticker-paperclip" src="../../03 Sticker Pack/04 iOS Photo Diary Additions/26-paperclip.svg" alt="">
+        <div class="journal-label">Today I Learned</div>
+        <div class="journal-quote-caveat">You don't have to <b>earn</b> your rest.<br>Some mornings are just <b>for you</b>.</div>
+        <div class="journal-sign-caveat">— a note to myself</div>
+      </div>
+      <div class="footer-plain">Swipe for the little details →</div>
+    </div>
+  </div>
+
+  <div class="cardwrap">
+    <div class="label">Slide 3 / 3 — Photo-dump close (polaroid + postcard)</div>
+    <div class="card s3">
+      <div class="polaroid">
+        <img src="source-photo/window-reading-editorial.jpg" alt="">
+      </div>
+      <img class="postcard-sticker" src="../../03 Sticker Pack/04 iOS Photo Diary Additions/20-postcard.svg" alt="">
+      <div class="caption">Old book, warm mug, borrowed light.<br><b>Nothing else on the list today.</b></div>
+      <div class="chip-bottom">Saved to: Slow Mornings</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

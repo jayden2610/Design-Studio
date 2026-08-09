@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "style_reference": "playful-monochrome-food-style.json",
+  "title": "Second Shelf - Three Simple Story-Led Logo Directions",
+  "business": "independent bookstore",
+  "mode": "simple illustration-led vignette logo",
+  "shared_constraints": ["black ink on white paper", "one action", "one visual anchor", "one supporting cue", "generous negative space", "remove unnecessary framing", "add wordmark after illustration resolution", "no generic badge", "no abstract symbol as primary mark"],
+  "directions": [
+    { "id": "the-next-book", "name": "The Next Book", "story": "A hand places an open book on a small shelf.", "anchor": "hand plus open book", "supporting_cue": "tiny sprout on the shelf", "composition": "close-up diagonal gesture with isolated shelf", "personality": ["thoughtful", "handmade", "quietly optimistic"], "best_use": ["primary mark", "website header", "bags", "bookmarks"], "complexity": "low", "risk": "the hand must remain recognizable without becoming realistic" },
+    { "id": "the-window-light", "name": "The Window Light", "story": "A small hand pulls back a curtain to reveal a lamp and one book.", "anchor": "open curtain and hand", "supporting_cue": "straight-on shop window", "composition": "simple architectural frame", "personality": ["curious", "intimate", "welcoming"], "best_use": ["storefront", "website", "packaging", "signage"], "complexity": "low-to-medium", "risk": "the window must stay open and readable at small sizes" },
+    { "id": "the-passing-book", "name": "The Passing Book", "story": "Two hands exchange one wrapped book.", "anchor": "shared wrapped book", "supporting_cue": "thin neighborhood street line and one star", "composition": "centered horizontal exchange", "personality": ["human", "communal", "generous"], "best_use": ["membership cards", "social profile", "community campaigns"], "complexity": "low", "risk": "the exchange gesture must not look like a generic handshake" }
+  ],
+  "simple_story_rule": { "action": "what is happening", "anchor": "what is unmistakable", "supporting_cue": "what establishes context", "reduction_test": "If the concept needs more than three major visual ideas, reduce it." },
+  "recommended_system": { "primary": "the-next-book", "architectural_variant": "the-window-light", "community_variant": "the-passing-book", "rule": "Keep the primary identity illustration-led and simple. Derive any simplified mark from the chosen vignette rather than replacing it." },
+  "logo_distillation": { "borrow": ["monochrome ink", "imperfect contour", "white space", "editorial detail", "local warmth"], "invent": ["simple bookstore gesture", "custom wordmark relationship", "ownable shelf/window/exchange cues"], "changed_variables": ["subject framing", "composition", "narrative focus", "supporting context", "scale"], "distinctness_rule": "Sibling directions must differ in silhouette and framing; do not repeat the same interior, character pairing, or object cluster." }
+}

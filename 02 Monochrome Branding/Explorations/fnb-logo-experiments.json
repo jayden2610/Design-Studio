@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "title": "F&B Branding Experiments: Bagel Shop",
+  "style_reference": "playful-monochrome-food-style.json",
+  "mode": "simple story-led food branding",
+  "branding_formula": ["one bagel cue", "one business cue", "one human gesture"],
+  "review_set": [
+    {
+      "id": "01-the-bagel-handoff",
+      "name": "The Bagel Handoff",
+      "story": "A hand slides a branded paper bag across a counter.",
+      "bagel_cue": "one bagel peeking from the bag",
+      "business_cue": "takeout bag, counter edge, attached receipt",
+      "human_gesture": "service handoff",
+      "composition": "close-up horizontal gesture",
+      "personality": ["warm", "everyday", "neighborhood", "generous"],
+      "best_use": ["primary logo", "takeaway bags", "stickers", "social avatar"],
+      "asset": "fnb-logo-01-bagel-handoff.png"
+    },
+    {
+      "id": "02-open-for-bagels",
+      "name": "Open for Bagels",
+      "story": "A hand turns a bagel-shaped hanging sign toward open beneath a small awning.",
+      "bagel_cue": "round bagel-shaped sign",
+      "business_cue": "shop awning and opening ritual",
+      "human_gesture": "turning the sign",
+      "supporting_cue": "one tiny coffee-steam line",
+      "composition": "compact frontal architectural mark",
+      "personality": ["bright", "local", "morning-oriented", "welcoming"],
+      "best_use": ["storefront", "website header", "cups", "opening-hours signage"],
+      "asset": "fnb-logo-02-open-for-bagels.png"
+    }
+  ],
+  "status": "awaiting review before continuing"
+}

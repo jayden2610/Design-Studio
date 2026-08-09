@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Kopi on Foot logo with wordmark</title>
+  <desc id="desc">A tiny kopi stall serves a cup and kaya toast through its window, with the Kopi on Foot wordmark integrated below.</desc>
+  <rect width="1000" height="1000" fill="#f7f5ef"/>
+  <g fill="none" stroke="#111" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M174 238h652v330H158Z" stroke-width="23"/>
+    <path d="M148 238c72-59 169-72 260-32 99 43 180 39 267-5 88-44 170-29 244 37" stroke-width="19"/>
+    <path d="M224 321h530v171H224Z" stroke-width="18"/>
+    <path d="M224 321h530M224 360h530" stroke-width="10"/>
+    <path d="M373 398h124l-11 94H385Z" stroke-width="16"/>
+    <path d="M366 398c0-26 34-42 69-42s69 16 69 42M497 423c67-26 82 45 27 58" stroke-width="14"/>
+    <path d="M416 347c-8-28-2-50 17-68m50 69c-7-28-1-50 18-68" stroke-width="9"/>
+    <path d="M580 415l119-40 27 86-121 27Z" stroke-width="16"/>
+    <path d="M610 415l85-21m-74 52 81-23" stroke-width="8"/>
+    <path d="M318 537c-42-27-80-30-109-11-20 14-16 37 9 48 28 12 56-5 80 12 20 15 44 16 69 6M705 596c54 12 87 40 104 82 15 36 39 55 76 62" stroke-width="21" stroke-dasharray="1 28"/>
+  </g>
+  <text x="500" y="760" text-anchor="middle" fill="#111" font-family="Georgia,serif" font-size="82" font-weight="700" letter-spacing="-8" transform="rotate(-1 500 760)"><tspan dx="-6">K</tspan><tspan dy="4">O</tspan><tspan dy="-3">P</tspan><tspan dy="5">I</tspan><tspan dx="15">O</tspan><tspan dy="-4">N</tspan><tspan dx="15">F</tspan><tspan dy="5">O</tspan><tspan dy="-4">O</tspan><tspan dy="4">T</tspan></text>
+  <path d="M250 802c158 10 316 7 500-2" fill="none" stroke="#111" stroke-width="7"/>
+</svg>

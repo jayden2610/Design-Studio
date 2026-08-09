@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">First Crumb primary illustrated logo</title>
+  <desc id="desc">A baker's hand passes a paper bag with a split bagel across a small bakery counter; a receipt is the only business cue.</desc>
+  <rect width="1600" height="1000" fill="#f7f5ef"/>
+  <g fill="none" stroke="#111" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M120 690h1360M150 711c244 17 470 12 686 0 221-12 434-10 614 2" stroke-width="22"/>
+    <path d="M650 284l470 19 38 365-478-12Z" stroke-width="27"/>
+    <path d="M648 284c117-37 238-37 356 0m-315 82c99-20 181-18 281 3" stroke-width="15"/>
+    <path d="M808 296c-28-86-16-155 33-194 40-32 101-27 137 12 44 48 24 119-17 160-28 28-43 59-42 100" stroke-width="25"/>
+    <path d="M864 218c24-22 60-22 84 1 25 24 24 61 0 85-25 25-61 24-85 0-24-24-24-62 1-86Z" stroke-width="14"/>
+    <path d="M886 180c-4-23 2-42 18-58m52 74c7-21 19-36 38-47" stroke-width="11"/>
+    <path d="M1128 352l157 27-23 163-151-21Z" stroke-width="16"/>
+    <path d="M1154 399l92 13m-87 31 76 11m-71 30 60 8" stroke-width="8"/>
+    <path d="M309 655c87-54 153-59 204-22 49 35 92 38 154 11" stroke-width="30"/>
+    <path d="M284 635c-55-32-104-38-140-10-27 21-22 52 10 65 37 15 72-9 105 15 27 20 60 21 94 6" stroke-width="25"/>
+    <path d="M196 589c-11 28-7 55 10 78m41-84c-4 23 3 42 20 58" stroke-width="10"/>
+    <path d="M1270 746c57-22 107-10 147 34m-105-16c44-11 81-2 112 27" stroke-width="11"/>
+  </g>
+  <g fill="#111"><circle cx="1340" cy="809" r="10"/><circle cx="1423" cy="817" r="7"/><circle cx="1280" cy="790" r="6"/></g>
+</svg>

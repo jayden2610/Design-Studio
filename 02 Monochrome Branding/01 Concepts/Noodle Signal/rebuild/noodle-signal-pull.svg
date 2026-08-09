@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Noodle Signal — Pull direction</title>
+  <desc id="desc">A single squared noodle ribbon rises from a dry noodle pack like a clear signal.</desc>
+  <rect width="1200" height="900" fill="#f7f5ef"/>
+  <g fill="none" stroke="#111" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M423 557h354l-42 103H465Z" fill="#111" stroke="#111" stroke-width="20"/>
+    <path d="M464 557h272m-260 36h246" stroke="#f7f5ef" stroke-width="11"/>
+    <path d="M516 553V298c0-56 34-88 84-88s84 32 84 88v147" stroke-width="30"/>
+    <path d="M560 296c0-24 16-42 40-42s40 18 40 42v149" stroke-width="16"/>
+    <path d="M600 210v-76m-44 52 44-52 44 52" stroke-width="18"/>
+    <path d="M470 681h260" stroke-width="16"/>
+  </g>
+  <circle cx="600" cy="744" r="12" fill="#111"/>
+  <text x="600" y="818" text-anchor="middle" fill="#111" font-family="Arial, Helvetica, sans-serif" font-size="55" font-weight="700" letter-spacing="6">NOODLE SIGNAL</text>
+</svg>

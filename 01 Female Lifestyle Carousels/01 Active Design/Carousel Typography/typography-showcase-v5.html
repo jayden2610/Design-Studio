@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Carousel Typography v5 — Composition Diagnosed Per Photo (Projects/typography)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,400&family=Bodoni+Moda:ital,wght@0,500;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,500;1,400&family=Great+Vibes&family=Inter:wght@400;500&family=Space+Mono&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0d0d0d; font-family:'Inter',sans-serif; }
+  .intro { max-width:1200px; margin:0 auto; padding:28px 28px 0; color:#888; font-size:13px; line-height:1.7; }
+  .intro b { color:#ccc; }
+  .grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 28px;
+    padding: 20px 28px 28px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .cardwrap { position:relative; }
+  .label { position:absolute; top:-24px; left:0; color:#999; font-size:11px; letter-spacing:0.5px; }
+
+  /* Format: 9:16 exactly, per README spec */
+  .card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9/16;
+    border-radius: 17px;
+    overflow: hidden;
+    background-image: url('Nature-Sunset/valley-beyond-last-light.webp');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 10px 34px rgba(0,0,0,0.5);
+  }
+
+  .mark { color:#f5e6c8; opacity:0.75; font-size:14px; }
+
+  /* ====================================================================
+     CARD 1 — CENTERED (default mode). Sampled sky is genuinely symmetric
+     around the sun disc at ~44% height, so centered is the photo's own
+     geometry, not an assumption. Kept from v4 but pushed further:
+     bigger scale jump (3.2x), one thin rule instead of a chip box, and
+     a warmer accent pulled from the actual left/right-mid sample
+     (246,217,197 / 227,190,184 — warm rose-cream), not generic gold.
+  ==================================================================== */
+  .c1-overlay {
+    position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse at 50% 44%, rgba(24,16,20,0) 28%, rgba(24,16,20,0.38) 100%),
+      linear-gradient(180deg,
+        rgba(24,16,20,0.5) 0%,
+        rgba(24,16,20,0.08) 24%,
+        rgba(24,16,20,0.08) 44%,
+        rgba(24,16,20,0.22) 62%,
+        rgba(24,16,20,0.78) 100%);
+  }
+  .c1-content {
+    position:absolute; inset:0;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:9% 8%;
+  }
+  .c1-rule { width:28px; height:1px; background:#f0d9c6; opacity:0.65; margin-bottom:16px; }
+  .c1-chip {
+    font-family:'Space Mono',monospace; font-weight:400; font-size:9.5px;
+    letter-spacing:0.22em; text-transform:uppercase; color:#f0d9c6;
+    opacity:0.7; margin-bottom:20px;
+  }
+  .c1-display {
+    font-family:'Fraunces',serif; font-weight:600; font-optical-sizing:auto;
+    font-size:clamp(32px, 9vw, 46px);
+    line-height:1.04; letter-spacing:-0.015em;
+    color:#faf6f0;
+  }
+  .c1-accent {
+    font-family:'Great Vibes',cursive;
+    font-size:clamp(24px,6vw,30px);
+    margin-top:0.02em;
+    color:#e8b98f;
+  }
+  .c1-support {
+    margin-top:22px; max-width:78%;
+    font-family:'Inter',sans-serif; font-weight:400; font-size:13px; line-height:1.65;
+    color:#c9beb0; opacity:0.92;
+  }
+  .c1-footer {
+    position:absolute; bottom:6%; left:8%; right:8%;
+    display:flex; justify-content:space-between;
+    font-family:'Space Mono',monospace; font-size:9px; letter-spacing:0.12em;
+    text-transform:uppercase; color:#f0d9c6; opacity:0.5;
+  }
+
+  /* ====================================================================
+     CARD 2 — ASYMMETRIC (upper-left lockup). The photo's tree silhouette
+     sits upper-left (near-black, ~33,31,27) — busiest zone, avoided.
+     Headline pushed to upper-right clean sky (~157,166,195 cool lavender-
+     blue), right-edge-anchored not centered, per README's new asymmetric
+     mode. Mixed voice in one lockup (serif caps + italic accent, README's
+     "never more than two typefaces" honored — both are Cormorant).
+     Footer stays split left/right per the unchanged footer rule.
+  ==================================================================== */
+  .c2-overlay {
+    position:absolute; inset:0;
+    background:
+      linear-gradient(200deg, rgba(18,16,28,0.55) 0%, rgba(18,16,28,0.05) 38%, rgba(18,16,28,0) 55%),
+      linear-gradient(180deg, rgba(18,16,28,0.12) 0%, rgba(18,16,28,0.05) 40%, rgba(18,16,28,0.18) 62%, rgba(18,16,28,0.72) 100%);
+  }
+  .c2-content {
+    position:absolute; inset:0;
+    padding: 11% 8% 14%;
+    display:flex; flex-direction:column; justify-content:flex-start; align-items:flex-end;
+  }
+  .c2-chip {
+    font-family:'Space Mono',monospace; font-weight:400; font-size:9.5px;
+    letter-spacing:0.2em; text-transform:uppercase; color:#c9b8dd;
+    opacity:0.8; margin-bottom:14px; text-align:right;
+  }
+  .c2-display {
+    font-family:'Cormorant Garamond',serif; font-weight:500;
+    font-size:clamp(34px, 10.5vw, 50px);
+    line-height:1.0; letter-spacing:-0.01em;
+    color:#f5f2ea; text-align:right; max-width:78%;
+  }
+  .c2-accent {
+    font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:400;
+    font-size:clamp(17px,4vw,21px);
+    margin-top:10px; text-align:right;
+    color:#a996c9;
+  }
+  .c2-support {
+    margin-top:auto;
+    max-width:62%; align-self:flex-start;
+    font-family:'Inter',sans-serif; font-weight:400; font-size:12.5px; line-height:1.6;
+    color:#b8b6c4; opacity:0.9;
+    text-shadow: 0 1px 6px rgba(10,20,10,0.55);
+  }
+  .c2-footer {
+    position:absolute; bottom:5.5%; left:8%; right:8%;
+    display:flex; justify-content:space-between;
+    font-family:'Space Mono',monospace; font-size:9px; letter-spacing:0.12em;
+    text-transform:uppercase; color:#dfe2ef; opacity:0.55;
+  }
+
+  /* ====================================================================
+     CARD 3 — CENTERED, sharper contemporary (Bodoni Moda) but with more
+     personality than v4: asterisk accent marks (from the OBSERVE reference
+     Jayden liked), justified two-column footer credit strip, tighter
+     tracked-out chip. Still centered because the sun-disc symmetry holds,
+     but composition is denser / more editorial than v4's card 3.
+  ==================================================================== */
+  .c3-overlay {
+    position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse at 50% 46%, rgba(16,14,22,0) 26%, rgba(16,14,22,0.4) 100%),
+      linear-gradient(180deg,
+        rgba(16,14,22,0.58) 0%,
+        rgba(16,14,22,0.12) 20%,
+        rgba(16,14,22,0.1) 46%,
+        rgba(16,14,22,0.28) 66%,
+        rgba(16,14,22,0.82) 100%);
+  }
+  .c3-content {
+    position:absolute; inset:0;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:9% 7%;
+  }
+  .c3-marks { display:flex; gap:10px; align-items:center; margin-bottom:16px; }
+  .c3-ast { color:#e3c9d4; opacity:0.7; font-size:13px; }
+  .c3-chip {
+    font-family:'Space Mono',monospace; font-weight:400; font-size:10px;
+    letter-spacing:0.24em; text-transform:uppercase; color:#f2e6ea;
+    opacity:0.8;
+  }
+  .c3-display {
+    font-family:'EB Garamond',serif; font-weight:500;
+    font-size:clamp(32px, 9vw, 45px);
+    line-height:1.06; letter-spacing:0.005em;
+    text-transform:uppercase;
+    color:#f7ede9;
+  }
+  .c3-accent {
+    font-family:'EB Garamond',serif; font-style:italic; font-weight:400;
+    font-size:clamp(17px,4vw,20px);
+    margin-top:14px;
+    color:#cf9fa8;
+  }
+  .c3-support {
+    margin-top:20px; max-width:76%;
+    font-family:'Inter',sans-serif; font-weight:400; font-size:12.5px; line-height:1.6;
+    color:#b8a8a2; opacity:0.9;
+  }
+  .c3-footer {
+    position:absolute; bottom:6%; left:8%; right:8%;
+    display:flex; justify-content:space-between; align-items:baseline;
+    font-family:'Space Mono',monospace; font-size:9px; letter-spacing:0.1em;
+    color:#f2e6ea; opacity:0.55;
+  }
+  .c3-footer .credit { font-style:italic; font-family:'EB Garamond',serif; letter-spacing:0; opacity:0.9; }
+</style>
+</head>
+<body>
+
+<div class="intro">
+  <b>v5 — applies the updated README composition rule (centered = default, asymmetric = equally valid
+  alternative, chosen by reading the photo's own geometry, not applied automatically).</b> Card 1 stays
+  centered because the sun disc genuinely sits on the frame's vertical axis — fighting that with an
+  off-center lockup would be arbitrary. Card 2 goes asymmetric: the tree silhouette occupies the upper-left,
+  so the headline is pushed right into the clean lavender sky and right-aligned, not fought into the center.
+  Card 3 stays centered but adds asterisk accent marks and a justified credit-strip footer for more editorial
+  density. Each card now runs its own accent hue (warm amber / cool lavender / dusty rose) instead of one
+  color repeated across all three, and each display line sits in a warmer/brighter shade than its support
+  line so head and body read as distinct tiers. Same 3-card 9:16 grid as v4, same photo, max 2 typefaces
+  per card, one accent color per card.
+</div>
+
+<div class="grid">
+
+  <div class="cardwrap">
+    <div class="label">01 — Centered (default mode): Fraunces + Great Vibes, warm rose-cream from sampled pixels</div>
+    <div class="card">
+      <div class="c1-overlay"></div>
+      <div class="c1-content">
+        <div class="c1-rule"></div>
+        <div class="c1-chip">Field Notes — Dusk</div>
+        <div class="c1-display">Softly, the<br>light lets go</div>
+        <div class="c1-accent">stay a little longer</div>
+        <div class="c1-support">Every evening asks the same quiet thing of you.</div>
+        <div class="c1-footer"><span>26 · 07 · 2026</span><span>The Valley</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cardwrap">
+    <div class="label">02 — Asymmetric (new mode): Cormorant Garamond, headline dodges upper-left tree silhouette</div>
+    <div class="card">
+      <div class="c2-overlay"></div>
+      <div class="c2-content">
+        <div class="c2-chip">Field Notes — Dusk</div>
+        <div class="c2-display">Nothing here<br>needs fixing</div>
+        <div class="c2-accent">the field simply is</div>
+        <div class="c2-support">Stillness lives between the folds of the hills, in the part of the day nobody names.</div>
+        <div class="c2-footer"><span>26 · 07 · 2026</span><span>The Valley</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cardwrap">
+    <div class="label">03 — Centered, denser editorial: EB Garamond caps + asterisk marks + justified credit strip</div>
+    <div class="card">
+      <div class="c3-overlay"></div>
+      <div class="c3-content">
+        <div class="c3-marks"><span class="c3-ast">*</span><div class="c3-chip">Field Notes — Dusk</div><span class="c3-ast">*</span></div>
+        <div class="c3-display">Peace is not<br>found</div>
+        <div class="c3-accent">it is remembered</div>
+        <div class="c3-support">One field, one fading sky, and enough quiet to notice both.</div>
+        <div class="c3-footer"><span>The Valley, 26.07</span><span class="credit">ph. field notes</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Noodle Signal primary illustrated logo</title>
+  <desc id="desc">A hand lifts one noodle from a dry noodle packet; the noodle becomes the only upward signal gesture.</desc>
+  <rect width="1000" height="1000" fill="#f7f5ef"/>
+  <path d="M193 285c68-103 176-153 313-143 113 9 210 61 290 153 56 65 83 155 77 260-8 147-116 252-285 275-174 24-319-44-374-184-43-110-29-245-21-361Z" fill="#111"/>
+  <g fill="none" stroke="#f7f5ef" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M326 605h348l-43 151H362Z" stroke-width="22"/>
+    <path d="M325 605h349M362 646h278m-266 43h254" stroke-width="12"/>
+    <path d="M474 605c-30-58-21-109 21-141 38-29 92-17 111 25 22 49-14 84-36 112" stroke-width="21"/>
+    <path d="M447 503l-82-136m127 122L417 332" stroke-width="15"/>
+    <path d="M465 600c-36 10-66 8-89-7-25-16-27-40-8-56 21-18 52-8 74 3 23 12 45 9 67-9" stroke-width="20"/>
+    <path d="M545 325c54-49 113-66 174-50 55 15 96 51 121 104M575 367c35-27 75-36 114-27 35 8 63 28 82 58" stroke-width="14"/>
+  </g>
+  <g fill="#f7f5ef"><circle cx="775" cy="444" r="10"/><circle cx="818" cy="476" r="7"/><circle cx="851" cy="514" r="5"/></g>
+</svg>

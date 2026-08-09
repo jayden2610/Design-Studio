@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Carousel Typography v4 — Canonical System (Projects/typography)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Playfair+Display:ital,wght@0,600;1,500&family=Bodoni+Moda:ital,wght@0,500;0,600;1,400&family=Great+Vibes&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0d0d0d; font-family:'Inter',sans-serif; }
+  .intro { max-width:1200px; margin:0 auto; padding:28px 28px 0; color:#888; font-size:13px; line-height:1.7; }
+  .intro b { color:#ccc; }
+  .grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 28px;
+    padding: 20px 28px 28px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .cardwrap { position:relative; }
+  .label { position:absolute; top:-24px; left:0; color:#999; font-size:11px; letter-spacing:0.5px; }
+
+  /* Format: 9:16 exactly, per README spec */
+  .card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9/16;
+    border-radius: 17px;
+    overflow: hidden;
+    background-image: url('Nature-Sunset/valley-beyond-last-light.webp');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 10px 34px rgba(0,0,0,0.5);
+  }
+
+  /* Multi-stop linear gradient top->bottom + radial vignette, per README:
+     "so type always sits on a readable dark zone" — never bake gradient into photo */
+  .overlay {
+    position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse at 50% 50%, rgba(20,14,26,0) 30%, rgba(20,14,26,0.35) 100%),
+      linear-gradient(180deg,
+        rgba(20,14,26,0.55) 0%,
+        rgba(20,14,26,0.15) 22%,
+        rgba(20,14,26,0.10) 45%,
+        rgba(20,14,26,0.25) 65%,
+        rgba(20,14,26,0.75) 100%);
+  }
+
+  .content {
+    position:absolute; inset:0;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:9% 8%;
+  }
+
+  /* 1. tiny uppercase label/chip, letter-spacing 0.18-0.22em */
+  .chip {
+    font-family:'Inter',sans-serif; font-weight:500; font-size:10.5px;
+    letter-spacing:0.20em; text-transform:uppercase; color:#f5e6c8;
+    opacity:0.85; margin-bottom:18px;
+  }
+
+  /* 2. one dominant display line — tight line-height, slight negative tracking */
+  .display {
+    font-size:clamp(30px, 8vw, 42px);
+    line-height:1.05; letter-spacing:-0.01em;
+    color:#faf4e8;
+  }
+
+  /* 3. emotional script/italic accent — close to display, short phrase only (4-6 words) */
+  .accent {
+    margin-top:-0.05em;
+    color:#f5e6c8;
+  }
+
+  /* 4. short supporting sentence */
+  .support {
+    margin-top:20px; max-width:80%;
+    font-family:'Inter',sans-serif; font-weight:400; font-size:13.5px; line-height:1.6;
+    color:#e8ddd0; opacity:0.9;
+  }
+
+  /* 5. micro footer, split left/right, low opacity */
+  .footer {
+    position:absolute; bottom:6%; left:8%; right:8%;
+    display:flex; justify-content:space-between;
+    font-family:'Inter',sans-serif; font-size:9.5px; letter-spacing:0.15em;
+    text-transform:uppercase; color:#f5e6c8; opacity:0.55;
+  }
+
+  .mark { margin-top:16px; color:#f5e6c8; opacity:0.7; font-size:14px; }
+
+  /* ============ CARD 1: Classic Spirit — Playfair + Great Vibes, warm cream ============ */
+  .c1 .display { font-family:'Playfair Display',serif; font-weight:600; }
+  .c1 .accent { font-family:'Great Vibes',cursive; font-size:clamp(26px,6.5vw,34px); }
+
+  /* ============ CARD 2: Classical Pure White — EB Garamond, quiet authority ============ */
+  .c2 .display { font-family:'EB Garamond',serif; font-weight:500; }
+  .c2 .accent { font-family:'EB Garamond',serif; font-style:italic; font-weight:400; font-size:clamp(16px,3.6vw,19px); letter-spacing:0.02em; }
+
+  /* ============ CARD 3: Bodoni Moda — sharp high-contrast Didone, contemporary ============ */
+  .c3 .display { font-family:'Bodoni Moda',serif; font-weight:600; }
+  .c3 .accent { font-family:'Bodoni Moda',serif; font-style:italic; font-weight:400; font-size:clamp(16px,3.6vw,19px); }
+</style>
+</head>
+<body>
+
+<div class="intro">
+  <b>v4 — built strictly from Projects/typography/README.md + typography-color-framework.md</b>, the already-approved
+  system found in the vault. Fixes the oversized type from v3: display line is now sized to <b>2.5-3.5× the support
+  line</b> (not "as big as the card allows"), format is true 9:16, composition is centered per spec, gradient overlay
+  sits between photo and type (not raw photo), and each card uses only ONE accent color on warm cream/white text —
+  never pure white, never more than 2 typefaces. Three approved variants: <b>Classic Spirit (Playfair + Great Vibes),
+  Classical Pure White (EB Garamond), Bodoni Moda</b>.
+</div>
+
+<div class="grid">
+
+  <div class="cardwrap">
+    <div class="label">01 — Classic Spirit: Playfair Display + Great Vibes script, warm gold</div>
+    <div class="card">
+      <div class="overlay"></div>
+      <div class="content c1">
+        <div class="chip">Field Notes — Dusk</div>
+        <div class="display">Softly, the<br>light lets go</div>
+        <div class="accent">stay a little longer</div>
+        <div class="support">Every evening asks the same quiet thing of you.</div>
+        <div class="footer"><span>26 · 07 · 2026</span><span>The Valley</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cardwrap">
+    <div class="label">02 — Classical Pure White: EB Garamond only, quiet refined authority</div>
+    <div class="card">
+      <div class="overlay"></div>
+      <div class="content c2">
+        <div class="chip">Field Notes — Dusk</div>
+        <div class="display">Nothing here<br>needs fixing</div>
+        <div class="accent">the field simply is</div>
+        <div class="support">Stillness lives between the folds of the hills.</div>
+        <div class="footer"><span>26 · 07 · 2026</span><span>The Valley</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cardwrap">
+    <div class="label">03 — Bodoni Moda: high-contrast Didone, sharper contemporary voice</div>
+    <div class="card">
+      <div class="overlay"></div>
+      <div class="content c3">
+        <div class="chip">Field Notes — Dusk</div>
+        <div class="display">Peace is not<br>found</div>
+        <div class="accent">it is remembered</div>
+        <div class="support">One field, one fading sky, and enough quiet to notice both.</div>
+        <div class="footer"><span>26 · 07 · 2026</span><span>The Valley</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

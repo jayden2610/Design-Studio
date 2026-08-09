@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">First Crumb logo with wordmark</title>
+  <desc id="desc">A handoff of a bagel bag across a bakery counter with the First Crumb wordmark integrated below.</desc>
+  <rect width="1600" height="1000" fill="#f7f5ef"/>
+  <g fill="none" stroke="#111" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M160 628h1280M190 649c244 17 470 12 686 0 221-12 434-10 614 2" stroke-width="20"/>
+    <path d="M654 250l456 18 37 338-465-11Z" stroke-width="25"/>
+    <path d="M654 250c113-36 228-35 341 0m-303 76c95-19 174-17 268 3" stroke-width="14"/>
+    <path d="M812 266c-26-78-14-142 31-179 37-30 91-25 125 11 40 44 22 109-16 147-26 26-39 54-38 91" stroke-width="23"/>
+    <path d="M864 195c22-20 54-20 76 1 23 22 22 55 0 77-23 23-55 22-77 0-22-22-22-56 1-78Z" stroke-width="13"/>
+    <path d="M1107 312l146 25-21 151-140-20Z" stroke-width="15"/>
+    <path d="M1131 355l86 12m-80 28 71 10m-66 28 55 7" stroke-width="7"/>
+    <path d="M320 598c79-50 140-54 188-20 45 32 84 35 142 10M294 580c-51-30-96-34-129-9-25 19-20 47 9 59 34 14 67-8 97 14 25 18 55 19 86 5" stroke-width="25"/>
+  </g>
+  <g fill="#111"><circle cx="1303" cy="690" r="8"/><circle cx="1373" cy="699" r="6"/></g>
+  <text x="800" y="806" text-anchor="middle" fill="#111" font-family="Georgia,serif" font-size="128" font-weight="700" letter-spacing="-10" transform="rotate(-1 800 806)"><tspan dx="-8">F</tspan><tspan dy="5">I</tspan><tspan dy="-4">R</tspan><tspan dy="5">S</tspan><tspan dy="-3">T</tspan><tspan dx="24">C</tspan><tspan dy="-4">R</tspan><tspan dy="5">U</tspan><tspan dy="-3">M</tspan><tspan dy="4">B</tspan></text>
+  <path d="M470 850c221 14 442 8 662-2" fill="none" stroke="#111" stroke-width="8"/>
+</svg>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Monochrome Branding - Logo Review</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;1,500&display=swap');
+    :root { --ink:#171717; --paper:#e9e8e3; --line:#8e8d87; --muted:#676762; --white:#f7f6f1; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:'DM Mono',monospace; }
+    body:before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.13; background-image:radial-gradient(#000 .55px,transparent .55px); background-size:5px 5px; }
+    main { max-width:1500px; margin:auto; padding:28px clamp(18px,4vw,64px) 64px; }
+    header { display:flex; justify-content:space-between; gap:24px; align-items:end; padding-bottom:28px; border-bottom:1px solid var(--ink); }
+    .eyebrow,.meta { font-size:11px; letter-spacing:.12em; text-transform:uppercase; }
+    h1 { margin:18px 0 8px; font:500 clamp(46px,8vw,118px)/.84 'Playfair Display',serif; letter-spacing:-.06em; }
+    p { max-width:540px; margin:0; color:var(--muted); font-size:12px; line-height:1.6; }
+    .mark { width:84px; height:84px; border:1px solid var(--ink); border-radius:50%; display:grid; place-items:center; font:italic 36px 'Playfair Display',serif; transform:rotate(-9deg); }
+    .toolbar { display:flex; justify-content:space-between; gap:16px; padding:18px 0; }
+    .wall { display:grid; grid-template-columns:repeat(12,1fr); gap:16px; }
+    figure { grid-column:span 4; margin:0; padding:8px; border:1px solid var(--ink); background:var(--white); cursor:zoom-in; transition:transform .2s ease,box-shadow .2s ease; }
+    figure:hover { transform:translateY(-5px) rotate(-.3deg); box-shadow:8px 8px 0 var(--ink); }
+    img { display:block; width:100%; aspect-ratio:1; object-fit:contain; filter:grayscale(1) contrast(1.05); }
+    figcaption { display:flex; justify-content:space-between; gap:10px; padding:11px 3px 3px; font-size:10px; text-transform:uppercase; }
+    dialog { width:min(940px,92vw); border:1px solid var(--ink); padding:12px; background:var(--paper); box-shadow:14px 14px 0 var(--ink); }
+    dialog::backdrop { background:rgba(23,23,23,.72); }
+    dialog img { max-height:78vh; margin:auto; }
+    button { display:block; margin:10px 0 0 auto; background:transparent; border:1px solid var(--ink); padding:9px 12px; font:10px 'DM Mono',monospace; cursor:pointer; }
+    @media (max-width:760px) { .mark { display:none; } figure { grid-column:span 6; } }
+    @media (max-width:480px) { figure { grid-column:1/-1; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div><div class="eyebrow">02 / Monochrome Branding</div><h1>Illustrated<br><em>logo studies.</em></h1><p>Eight rendered studies: six original exploration references plus the two focused new-flow rebuilds for First Crumb and Noodle Signal.</p></div>
+      <div class="mark" aria-hidden="true">M</div>
+    </header>
+    <div class="toolbar"><div class="meta">Explorations + First Crumb + Noodle Signal</div><div class="meta" id="count"></div></div>
+    <section class="wall" id="wall" aria-live="polite"></section>
+  </main>
+  <dialog id="viewer"><img id="viewerImage" alt="" /><button id="close">Close / Esc</button></dialog>
+  <script>
+    const assets = [
+      ['Explorations/fnb-logo-01-bagel-handoff.png','Bagel handoff / food study'],
+      ['Explorations/fnb-logo-01-gimbap-roll.png','Gimbap roll / food study'],
+      ['Explorations/fnb-logo-02-concha-cooling.png','Concha cooling / food study'],
+      ['Explorations/fnb-logo-02-open-for-bagels.png','Open for Bagels / food study'],
+      ['Explorations/logo-vignette-01-opening-the-shop.png','Opening the shop / logo vignette'],
+      ['Explorations/logo-vignette-03-the-recommendation.png','The recommendation / logo vignette'],
+      ['02 Rebuilt Studies/first-crumb-cookie-ritual-v1.png','First Crumb / cookie-breaking ritual'],
+      ['02 Rebuilt Studies/noodle-signal-lift-ritual-v1.png','Noodle Signal / lifted-noodle ritual']
+    ];
+    const wall=document.querySelector('#wall'),viewer=document.querySelector('#viewer'),viewerImage=document.querySelector('#viewerImage');
+    document.querySelector('#count').textContent=`${String(assets.length).padStart(2,'0')} marks`;
+    wall.innerHTML=assets.map(([file,label],index)=>`<figure data-file="${file}" tabindex="0" role="button" aria-label="Open ${label}"><img loading="lazy" src="${file}" alt="${label}" /><figcaption><span>${String(index+1).padStart(2,'0')} - ${label}</span><span>${file.endsWith('.svg')?'SVG':'PNG'}</span></figcaption></figure>`).join('');
+    function open(card){viewerImage.src=card.dataset.file;viewerImage.alt=card.querySelector('img').alt;viewer.showModal();}
+    wall.querySelectorAll('figure').forEach(card=>{card.addEventListener('click',()=>open(card));card.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();open(card);}});});
+    document.querySelector('#close').addEventListener('click',()=>viewer.close());viewer.addEventListener('click',event=>{if(event.target===viewer)viewer.close();});
+  </script>
+</body>
+</html>

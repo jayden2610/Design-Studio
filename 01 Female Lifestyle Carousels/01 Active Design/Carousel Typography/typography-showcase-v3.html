@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Carousel Typography v3 — 3 Styles, Grounded Palette</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=DM+Serif+Display:ital@0;1&family=Marcellus&family=Space+Mono:wght@400;700&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0d0d0d; font-family:'Space Mono',monospace; }
+  .intro { max-width:1200px; margin:0 auto; padding:28px 28px 0; color:#888; font-size:13px; line-height:1.7; }
+  .intro b { color:#ccc; }
+  .grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 28px;
+    padding: 20px 28px 28px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .cardwrap { position:relative; }
+  .label { position:absolute; top:-24px; left:0; color:#999; font-size:11px; letter-spacing:0.5px; }
+  .card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/5;
+    border-radius: 4px;
+    overflow: hidden;
+    background-image: url('Nature-Sunset/valley-beyond-last-light.webp');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 10px 34px rgba(0,0,0,0.5);
+  }
+  .content { position:absolute; inset:0; padding:8%; }
+  .tag { font-family:'Space Mono',monospace; letter-spacing:1.5px; text-transform:uppercase; }
+
+  /* ===================================================================
+     PALETTE — sampled directly from the photo's actual pixels (not guessed):
+       sky        rgb(150,157,187)  cool lavender-blue
+       sky mid    rgb(202,190,208)  pale mauve
+       horizon    rgb(189,171,184) / rgb(234,171,183)  dusty rose / rose-pink sun
+       mountains  rgb(120,158,191)  sage-blue
+       grass      rgb(94,131,57) / rgb(87,124,103)  olive → sage green
+       tree       rgb(13,26,15)  near-black green
+
+     This is a COOL pastel dusk photo (lavender/rose/sage), not a warm
+     orange sunset. Every warm-yellow/coral accent fought the photo.
+     Working palette below stays IN the photo's own cool family, using
+     value + saturation shifts (not hue swaps) for contrast:
+       --ink     #2e2438   deep plum-black, near-black w/ violet undertone
+       --rose    #d9808f   saturated dusty rose, pulled up from the sun disc
+       --sage    #6f8f5c   deepened grass green, pulled down from foreground
+       --lav     #7a6a98   deepened lavender, pulled down from the sky
+       --cream   #f7ede0   warm paper-cream, NOT clinical white
+     =================================================================== */
+  :root {
+    --ink:#2e2438; --rose:#d9808f; --sage:#6f8f5c; --lav:#7a6a98; --cream:#f7ede0;
+  }
+
+  /* ================= MOCKUP 1: ETHEREAL =================
+     Light pastels, gauzy softness, minimal serif, low contrast BUT still legible,
+     feathered/glowing edges, romantic-mystical mood. Headline in clean upper sky. */
+  .c1 .kicker {
+    position:absolute; top:6%; left:8%; right:8%; text-align:center;
+    font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:400;
+    font-size:15px; letter-spacing:4px; color:var(--cream); text-transform:uppercase;
+    text-shadow: 0 0 18px rgba(46,36,56,0.7), 0 1px 3px rgba(0,0,0,0.5);
+  }
+  .c1 .headline {
+    position:absolute; top:15%; left:6%; right:6%; text-align:center;
+    font-family:'Cormorant Garamond',serif; font-weight:600; font-style:italic;
+    font-size:clamp(48px,12vw,72px); line-height:1.02; color:var(--cream);
+    text-shadow: 0 0 30px rgba(122,106,152,0.9), 0 2px 10px rgba(46,36,56,0.6);
+  }
+  .c1 .rule { width:70px; height:1px; background:var(--cream); opacity:0.6; margin:16px auto 0; }
+  .c1 .body {
+    position:absolute; bottom:16%; left:10%; right:10%; text-align:center;
+    font-family:'Cormorant Garamond',serif; font-weight:400; font-size:16px; line-height:1.7;
+    color:var(--cream); text-shadow: 0 1px 10px rgba(46,36,56,0.85);
+  }
+  .c1 .body i { color:var(--rose); font-style:italic; }
+
+  /* ================= MOCKUP 2: WABI SABI =================
+     Earthy, humble, contemplative, minimal sans, asymmetric, imperfect.
+     Deep ink block anchors the type — reads as intentional not floating. */
+  .c2 .kicker {
+    position:absolute; top:7%; left:8%;
+    font-family:'Space Mono',monospace; font-weight:700; font-size:11px;
+    letter-spacing:3px; text-transform:uppercase; color:var(--sage);
+    text-shadow:0 1px 6px rgba(0,0,0,0.4);
+  }
+  .c2 .headline {
+    position:absolute; top:13%; left:8%; right:14%;
+    font-family:'Marcellus',serif; font-weight:400;
+    font-size:clamp(46px,11vw,64px); line-height:0.98; color:var(--cream);
+    text-shadow: 0 2px 16px rgba(46,36,56,0.55);
+  }
+  .c2 .headline .low { color:var(--rose); }
+  .c2 .anchor {
+    position:absolute; bottom:8%; left:8%; right:8%;
+    background:var(--ink); padding:18px 20px;
+  }
+  .c2 .anchor .rule { width:28px; height:2px; background:var(--sage); margin-bottom:10px; }
+  .c2 .anchor p {
+    font-family:'Space Mono',monospace; font-size:12px; line-height:1.7; color:var(--cream);
+  }
+  .c2 .anchor p b { color:var(--sage); }
+
+  /* ================= MOCKUP 3: COQUETTE =================
+     Dainty serif, ribbons/soft romance, delicate but NOT tiny — references
+     use big confident script. Rose accent, feminine, off-center bloom layout. */
+  .c3 .kicker {
+    position:absolute; top:6%; right:8%; text-align:right;
+    font-family:'Caveat',cursive; font-weight:700; font-size:24px; color:var(--cream);
+    text-shadow:0 1px 8px rgba(46,36,56,0.6);
+  }
+  .c3 .headline {
+    position:absolute; top:14%; left:8%; right:20%;
+    font-family:'DM Serif Display',serif; font-style:italic;
+    font-size:clamp(50px,13vw,80px); line-height:0.95; color:var(--rose);
+    text-shadow: 0 2px 20px rgba(46,36,56,0.5);
+  }
+  .c3 .headline .plain { font-style:normal; color:var(--cream); display:block; }
+  .c3 .bow { position:absolute; top:38%; left:9%; font-size:28px; color:var(--cream); text-shadow:0 1px 8px rgba(46,36,56,0.6); }
+  .c3 .body {
+    position:absolute; bottom:9%; left:8%; right:24%;
+    font-family:'Cormorant Garamond',serif; font-style:italic; font-size:16px; line-height:1.6;
+    color:var(--cream); text-shadow: 0 1px 10px rgba(46,36,56,0.75);
+  }
+  .c3 .body b { font-style:normal; color:var(--rose); }
+</style>
+</head>
+<body>
+
+<div class="intro">
+  <b>v3 — palette sampled from the actual photo pixels</b> (lavender sky / dusty rose horizon / sage grass), not guessed.
+  Warm yellow-orange accents are gone — this photo is cool pastel dusk, not warm sunset, so every accent below stays in
+  its lavender / rose / sage family, just pushed darker/more saturated for real contrast. Round 1 of 5 styles: <b>Ethereal, Wabi Sabi, Coquette</b>.
+  Japandi + Light Academia next round once you weigh in.
+</div>
+
+<div class="grid">
+
+  <div class="cardwrap">
+    <div class="label">01 — Ethereal: gauzy italic serif, glowing soft-focus, romantic/mystical</div>
+    <div class="card">
+      <div class="content c1">
+        <div class="kicker">a quiet dusk, unhurried</div>
+        <div class="headline">Softly,<br>the light lets go</div>
+        <div class="rule"></div>
+        <div class="body">every evening asks the same thing —<br>just <i>stay</i> a little longer</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cardwrap">
+    <div class="label">02 — Wabi Sabi: earthy Marcellus serif, solid ink anchor block, humble/asymmetric</div>
+    <div class="card">
+      <div class="content c2">
+        <div class="kicker">field notes · dusk</div>
+        <div class="headline">Nothing<br>here needs<br><span class="low">fixing</span></div>
+        <div class="anchor">
+          <div class="rule"></div>
+          <p>the field doesn't perform for you.<br>it just <b>is</b> — and that's the whole lesson.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cardwrap">
+    <div class="label">03 — Coquette: bold italic display serif, rose accent, off-center bloom</div>
+    <div class="card">
+      <div class="content c3">
+        <div class="kicker">dear diary</div>
+        <div class="headline">soft<span class="plain">evenings</span></div>
+        <div class="bow">✿</div>
+        <div class="body">i didn't plan to stop the car —<br>but the sky asked so <b>sweetly</b>.</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

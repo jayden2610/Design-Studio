@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>one good weight — zine poster</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital@0;1&display=swap');
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  html, body {
+    width:100%; height:100%;
+    background:#1c1c1c;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'EB Garamond', serif;
+  }
+
+  .stage { width:100vw; height:100vh; display:flex; align-items:center; justify-content:center; }
+
+  .poster {
+    position:relative;
+    width:min(60vh, 90vw);
+    aspect-ratio: 3 / 5;
+    background:
+      radial-gradient(ellipse at 20% 15%, rgba(0,0,0,0.05), transparent 60%),
+      radial-gradient(ellipse at 80% 85%, rgba(0,0,0,0.06), transparent 55%),
+      #e9e2d3;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+    overflow:hidden;
+  }
+
+  .poster::before {
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      repeating-radial-gradient(circle at 10% 20%, rgba(0,0,0,0.025) 0, transparent 1px, transparent 3px),
+      repeating-radial-gradient(circle at 70% 60%, rgba(0,0,0,0.02) 0, transparent 1px, transparent 4px);
+    mix-blend-mode:multiply;
+    pointer-events:none;
+    z-index:5;
+  }
+
+  .poster::after {
+    content:"";
+    position:absolute; inset:0;
+    background:
+      radial-gradient(circle at 12% 88%, rgba(120,100,60,0.10), transparent 35%),
+      radial-gradient(circle at 92% 8%, rgba(120,100,60,0.08), transparent 30%),
+      radial-gradient(circle at 55% 45%, rgba(0,0,0,0.03), transparent 50%);
+    pointer-events:none;
+    z-index:6;
+  }
+
+  .specimen { position:absolute; inset:0; z-index:2; }
+  .specimen svg { position:absolute; inset:0; width:100%; height:100%; }
+
+  .headline {
+    position:absolute; top:9%; left:9%; z-index:4;
+    font-family:'EB Garamond', serif; font-style:italic; font-weight:400;
+    font-size:clamp(14px, 3.6vh, 22px);
+    color:#2a2a26; line-height:1.25; max-width:52%;
+  }
+  .caption {
+    position:absolute; bottom:6.5%; right:9%; z-index:4;
+    font-family:'Courier Prime', monospace;
+    font-size:clamp(9px, 1.3vh, 11px);
+    letter-spacing:0.06em; color:#5a5648; text-align:right; line-height:1.6; opacity:0.85;
+  }
+  .microtext {
+    position:absolute; top:6%; right:9%; z-index:4;
+    font-family:'Courier Prime', monospace;
+    font-size:clamp(7px, 1vh, 9px);
+    letter-spacing:0.08em; color:#8c8676; text-transform:uppercase;
+  }
+  .signature {
+    position:absolute; bottom:4%; left:9%; z-index:4;
+    font-family:'Courier Prime', monospace;
+    font-size:clamp(7px, 0.9vh, 8px);
+    color:#a39c88; letter-spacing:0.05em;
+  }
+</style>
+</head>
+<body>
+
+<div class="stage">
+  <div class="poster">
+    <div class="microtext">table study · x</div>
+
+    <div class="headline">one good<br>weight in<br>the hand</div>
+
+    <div class="specimen">
+      <svg viewBox="0 0 340 560" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <filter id="paperTooth" x="-20%" y="-20%" width="140%" height="140%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="5" seed="5" result="n"/>
+            <feDiffuseLighting in="n" lighting-color="#ffffff" surfaceScale="1.6" diffuseConstant="1" result="lit">
+              <feDistantLight azimuth="45" elevation="58"/>
+            </feDiffuseLighting>
+            <feColorMatrix in="lit" type="matrix"
+              values="0 0 0 0 0.913  0 0 0 0 0.886  0 0 0 0 0.827  0 0 0 1 0" result="litTone"/>
+            <feBlend in="SourceGraphic" in2="litTone" mode="multiply"/>
+          </filter>
+
+          <!-- torn edge, gentler than the rose: an apple's contour is taut,
+               the tear belongs to the printing not the fruit -->
+          <filter id="tornInk" x="-40%" y="-40%" width="180%" height="180%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.013" numOctaves="2" seed="31" result="macro"/>
+            <feTurbulence type="fractalNoise" baseFrequency="0.60"  numOctaves="2" seed="44" result="micro"/>
+            <feComposite in="macro" in2="micro" operator="arithmetic"
+                         k1="0" k2="0.72" k3="0.28" k4="0" result="combined"/>
+            <feDisplacementMap in="SourceGraphic" in2="combined" scale="6"
+                               xChannelSelector="R" yChannelSelector="G" result="displaced"/>
+            <feMorphology in="displaced" operator="dilate" radius="0.5" result="c1"/>
+            <feMorphology in="c1" operator="erode" radius="0.8"/>
+          </filter>
+
+          <!-- riso tonal separation.
+               A lit noise surface collapsed by feComponentTransfer type="discrete"
+               into 3 hard density plateaus. This is the signature of a riso/newsprint
+               separation: continuous tone becomes a small number of ink densities
+               with no gradient between them. The light is thrown from the lower-left
+               (azimuth 235) so the terminator sits opposite the paper highlight. -->
+          <filter id="posterizeShade" x="-20%" y="-20%" width="140%" height="140%">
+            <!-- Posterise a real directional GRADIENT, not a noise field. Driving
+                 discrete banding from turbulence gives camouflage blotches, because
+                 turbulence has no light direction -- the bands wander instead of
+                 wrapping the form. The SourceGraphic here is a radial gradient
+                 offset toward the light, so the 3 plateaus land as a highlight, a
+                 midtone and a terminator that follow the sphere. A small turbulent
+                 displacement afterwards keeps the band edges from looking machined. -->
+            <feComponentTransfer in="SourceGraphic" result="posterized">
+              <feFuncR type="discrete" tableValues="0.30 0.62 0.88 1"/>
+              <feFuncG type="discrete" tableValues="0.30 0.62 0.88 1"/>
+              <feFuncB type="discrete" tableValues="0.30 0.62 0.88 1"/>
+            </feComponentTransfer>
+            <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="8" result="bandNoise"/>
+            <feDisplacementMap in="posterized" in2="bandNoise" scale="5"
+                               xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+
+          <!-- light from upper-left, so the terminator falls lower-right -->
+          <radialGradient id="appleLight" cx="34%" cy="28%" r="78%">
+            <stop offset="0%"   stop-color="#ffffff"/>
+            <stop offset="42%"  stop-color="#d0d0d0"/>
+            <stop offset="72%"  stop-color="#8a8a8a"/>
+            <stop offset="100%" stop-color="#4a4a4a"/>
+          </radialGradient>
+
+          <filter id="stemWarp" x="-30%" y="-30%" width="160%" height="160%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="77" result="m3"/>
+            <feDisplacementMap in="SourceGraphic" in2="m3" scale="3"
+                               xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+        </defs>
+
+        <g filter="url(#paperTooth)">
+          <rect x="0" y="0" width="340" height="560" fill="#e9e2d3"/>
+        </g>
+
+        <g id="appleGroup" filter="url(#tornInk)"></g>
+        <g id="appleShadeClip"></g>
+        <path id="appleStem" fill="#4a2a10" filter="url(#stemWarp)"/>
+        <path id="appleLeaf" fill="#3a6b2a" opacity="0.85" filter="url(#stemWarp)"/>
+      </svg>
+    </div>
+
+    <div class="caption">102214<br>cold store, late</div>
+    <div class="signature">no. 06</div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  function seededRand(seed){
+    var s = seed >>> 0;
+    return function(){ s = (s * 1664525 + 1013904223) >>> 0; return s / 4294967296; };
+  }
+
+  function superformula(phi, a, b, m, n1, n2, n3){
+    var t1 = Math.abs(Math.cos(m * phi / 4) / a);
+    var t2 = Math.abs(Math.sin(m * phi / 4) / b);
+    return Math.pow(Math.pow(t1, n2) + Math.pow(t2, n3), -1 / n1);
+  }
+
+  function unitMaxRadius(m, n1, n2, n3){
+    var mx = 0;
+    for (var i = 0; i <= 1440; i++){
+      var r = superformula(i / 1440 * Math.PI * 2, 1, 1, m, n1, n2, n3);
+      if (isFinite(r) && r > mx) mx = r;
+    }
+    return mx || 1;
+  }
+
+  // Apple profile: high n-exponents give a near-circular superellipse (a taut,
+  // slightly squared-off round), and we then apply a vertical dimple at top and
+  // bottom so it reads as fruit rather than a ball.
+  function applePath(cx, cy, targetMax, steps, jitter, rand){
+    var m = 2, n1 = 60, n2 = 60, n3 = 60;
+    var k = targetMax / unitMaxRadius(m, n1, n2, n3);
+    var d = '';
+    for (var i = 0; i <= steps; i++){
+      var phi = (i / steps) * Math.PI * 2;
+      var r = superformula(phi, 1, 1, m, n1, n2, n3) * k;
+      if (!isFinite(r)) continue;
+      if (jitter) r *= (1 + (rand() - 0.5) * jitter);
+
+      // Dimple. pow(...,6) is far too sharp to survive rasterisation -- it only
+      // bites within a couple of degrees of the pole and reads as a perfect ball.
+      // pow(...,2.2) spreads the crease across the whole shoulder, and the top
+      // (sin<0) is pulled harder than the base, which is how an apple actually sits.
+      var s = Math.sin(phi);
+      var polar = Math.pow(Math.abs(s), 2.2);
+      var depth = (s < 0) ? 0.30 : 0.14;
+      var dimple = 1 - depth * polar;
+
+      // slight lateral asymmetry so it isn't a solid of revolution
+      var lean = 1 + 0.05 * Math.cos(phi);
+
+      var x = cx + r * Math.cos(phi) * lean;
+      var y = cy + r * s * 1.06 * dimple;
+      d += (d ? 'L' : 'M') + x.toFixed(2) + ',' + y.toFixed(2) + ' ';
+    }
+    return d + 'Z';
+  }
+
+  var rand = seededRand(913);
+  var cx = 170, cy = 258, R = 96;
+
+  var body = applePath(cx, cy, R, 200, 0.03, rand);
+
+  document.getElementById('appleGroup').innerHTML =
+    '<path d="' + body + '" fill="#b71c1c"/>';
+
+  // Posterised shading clipped to the body. A unique clip id keeps this safe if
+  // the poster is ever inlined alongside others on one page.
+  var clipId = 'appleBodyClip';
+  document.getElementById('appleShadeClip').innerHTML =
+    '<clipPath id="' + clipId + '"><path d="' + body + '"/></clipPath>' +
+    '<g clip-path="url(#' + clipId + ')" style="mix-blend-mode:multiply">' +
+      '<g filter="url(#posterizeShade)">' +
+        '<rect x="' + (cx - R - 20) + '" y="' + (cy - R - 20) + '" ' +
+              'width="' + (2 * R + 40) + '" height="' + (2 * R + 40) + '" fill="url(#appleLight)"/>' +
+      '</g>' +
+    '</g>';
+
+  // stem: tapered, leaning slightly, seated in the top dimple
+  // seat the stem INSIDE the dimple: the crease pulls the top surface down by
+  // ~30% of R, so the base must start below the nominal top or it floats.
+  var appleTop = cy - R * 1.06 * (1 - 0.30);
+  var stemTop = appleTop - 30, stemBase = appleTop + 10;
+  document.getElementById('appleStem').setAttribute('d',
+    'M ' + (cx - 3.5) + ',' + stemBase +
+    ' C ' + (cx - 3) + ',' + (stemBase - 14) + ' ' + (cx + 4) + ',' + (stemTop + 10) + ' ' + (cx + 7) + ',' + stemTop +
+    ' L ' + (cx + 10.5) + ',' + (stemTop + 2) +
+    ' C ' + (cx + 7) + ',' + (stemTop + 14) + ' ' + (cx + 1) + ',' + (stemBase - 12) + ' ' + (cx + 1.5) + ',' + stemBase + ' Z');
+
+  document.getElementById('appleLeaf').setAttribute('d',
+    'M ' + (cx + 5) + ',' + (stemTop + 12) +
+    ' C ' + (cx + 34) + ',' + (stemTop - 4) + ' ' + (cx + 48) + ',' + (stemTop + 14) + ' ' + (cx + 32) + ',' + (stemTop + 29) +
+    ' C ' + (cx + 18) + ',' + (stemTop + 25) + ' ' + (cx + 8) + ',' + (stemTop + 20) + ' ' + (cx + 5) + ',' + (stemTop + 12) + ' Z');
+})();
+</script>
+</body>
+</html>

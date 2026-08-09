@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>facing away — zine poster</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital@0;1&display=swap');
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  html, body {
+    width:100%; height:100%;
+    background:#1c1c1c;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'EB Garamond', serif;
+  }
+
+  .stage { width:100vw; height:100vh; display:flex; align-items:center; justify-content:center; }
+
+  .poster {
+    position:relative;
+    width:min(60vh, 90vw);
+    aspect-ratio: 3 / 5;
+    background:
+      radial-gradient(ellipse at 20% 15%, rgba(0,0,0,0.05), transparent 60%),
+      radial-gradient(ellipse at 80% 85%, rgba(0,0,0,0.06), transparent 55%),
+      #e6e4dc;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+    overflow:hidden;
+  }
+
+  .poster::before {
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      repeating-radial-gradient(circle at 10% 20%, rgba(0,0,0,0.025) 0, transparent 1px, transparent 3px),
+      repeating-radial-gradient(circle at 70% 60%, rgba(0,0,0,0.02) 0, transparent 1px, transparent 4px);
+    mix-blend-mode:multiply;
+    pointer-events:none;
+    z-index:5;
+  }
+
+  .poster::after {
+    content:"";
+    position:absolute; inset:0;
+    background:
+      radial-gradient(circle at 12% 88%, rgba(120,100,60,0.09), transparent 35%),
+      radial-gradient(circle at 92% 8%, rgba(120,100,60,0.07), transparent 30%),
+      radial-gradient(circle at 55% 45%, rgba(0,0,0,0.03), transparent 50%);
+    pointer-events:none;
+    z-index:6;
+  }
+
+  .specimen { position:absolute; inset:0; z-index:2; }
+  .specimen svg { position:absolute; inset:0; width:100%; height:100%; }
+
+  .headline {
+    position:absolute; top:9%; left:9%; z-index:4;
+    font-family:'EB Garamond', serif; font-style:italic; font-weight:400;
+    font-size:clamp(14px, 3.6vh, 22px);
+    color:#2a2a26; line-height:1.25; max-width:52%;
+  }
+  .caption {
+    position:absolute; bottom:6.5%; right:9%; z-index:4;
+    font-family:'Courier Prime', monospace;
+    font-size:clamp(9px, 1.3vh, 11px);
+    letter-spacing:0.06em; color:#5a5648; text-align:right; line-height:1.6; opacity:0.85;
+  }
+  .microtext {
+    position:absolute; top:6%; right:9%; z-index:4;
+    font-family:'Courier Prime', monospace;
+    font-size:clamp(7px, 1vh, 9px);
+    letter-spacing:0.08em; color:#8c8676; text-transform:uppercase;
+  }
+  .signature {
+    position:absolute; bottom:4%; left:9%; z-index:4;
+    font-family:'Courier Prime', monospace;
+    font-size:clamp(7px, 0.9vh, 8px);
+    color:#a39c88; letter-spacing:0.05em;
+  }
+</style>
+</head>
+<body>
+
+<div class="stage">
+  <div class="poster">
+    <div class="microtext">portrait · unposed</div>
+
+    <div class="headline">she never<br>turned<br>around</div>
+
+    <div class="specimen">
+      <svg viewBox="0 0 340 560" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <filter id="paperTooth" x="-20%" y="-20%" width="140%" height="140%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="5" seed="17" result="n"/>
+            <feDiffuseLighting in="n" lighting-color="#ffffff" surfaceScale="1.6" diffuseConstant="1" result="lit">
+              <feDistantLight azimuth="45" elevation="58"/>
+            </feDiffuseLighting>
+            <feColorMatrix in="lit" type="matrix"
+              values="0 0 0 0 0.902  0 0 0 0 0.894  0 0 0 0 0.863  0 0 0 1 0" result="litTone"/>
+            <feBlend in="SourceGraphic" in2="litTone" mode="multiply"/>
+          </filter>
+
+          <!-- NOT a tear. A head silhouette's interest is proportion and the
+               hairline, not edge roughness -- fraying it reads as damage, not
+               as printing. Single low-frequency field at small scale only:
+               enough to kill the dead-vector perfection, nothing more. -->
+          <filter id="nearlySmooth" x="-25%" y="-25%" width="150%" height="150%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.009" numOctaves="2" seed="55" result="n3"/>
+            <feDisplacementMap in="SourceGraphic" in2="n3" scale="2.5"
+                               xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+
+          <!-- hairline: the one place fine-scale break-up is correct -->
+          <filter id="hairEdge" x="-40%" y="-40%" width="180%" height="180%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.02"  numOctaves="2" seed="83" result="hMacro"/>
+            <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" seed="97" result="hMicro"/>
+            <feComposite in="hMacro" in2="hMicro" operator="arithmetic"
+                         k1="0" k2="0.45" k3="0.55" k4="0" result="hComb"/>
+            <feDisplacementMap in="SourceGraphic" in2="hComb" scale="7"
+                               xChannelSelector="R" yChannelSelector="G" result="hDisp"/>
+            <feMorphology in="hDisp" operator="dilate" radius="0.4" result="hc1"/>
+            <feMorphology in="hc1" operator="erode" radius="0.6"/>
+          </filter>
+        </defs>
+
+        <g filter="url(#paperTooth)">
+          <rect x="0" y="0" width="340" height="560" fill="#e6e4dc"/>
+        </g>
+
+        <g id="napeGroup" filter="url(#nearlySmooth)"></g>
+        <g id="napeHair" filter="url(#hairEdge)"></g>
+        <rect id="napeCobalt" fill="#0047ab"/>
+      </svg>
+    </div>
+
+    <div class="caption">043019<br>north light</div>
+    <div class="signature">no. 07</div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  function seededRand(seed){
+    var s = seed >>> 0;
+    return function(){ s = (s * 1664525 + 1013904223) >>> 0; return s / 4294967296; };
+  }
+
+  // Catmull-Rom through a closed point loop, converted to cubic beziers.
+  // Gives C1 continuity and closes back on the first point cleanly, which is
+  // what makes a noise-perturbed contour read as an organic form rather than
+  // a polygon. Tension 1/6 is the standard uniform Catmull-Rom conversion.
+  function catmullRomPath(p){
+    var n = p.length;
+    if (n < 3) return '';
+    var d = 'M ' + p[0][0].toFixed(2) + ',' + p[0][1].toFixed(2) + ' ';
+    for (var i = 0; i < n; i++){
+      var p0 = p[(i - 1 + n) % n], p1 = p[i], p2 = p[(i + 1) % n], p3 = p[(i + 2) % n];
+      var c1x = p1[0] + (p2[0] - p0[0]) / 6, c1y = p1[1] + (p2[1] - p0[1]) / 6;
+      var c2x = p2[0] - (p3[0] - p1[0]) / 6, c2y = p2[1] - (p3[1] - p1[1]) / 6;
+      d += 'C ' + c1x.toFixed(2) + ',' + c1y.toFixed(2) + ' ' +
+                  c2x.toFixed(2) + ',' + c2y.toFixed(2) + ' ' +
+                  p2[0].toFixed(2) + ',' + p2[1].toFixed(2) + ' ';
+    }
+    return d + 'Z';
+  }
+
+  // Low point count + low amplitude: a skull is smooth. High-frequency
+  // perturbation here would read as a bad mask, not as a head.
+  function perturbedEllipse(cx, cy, rx, ry, seed, count, amp){
+    var rand = seededRand(seed), pts = [];
+    for (var i = 0; i < count; i++){
+      var a = (i / count) * Math.PI * 2;
+      var k = 1 + (rand() - 0.5) * amp;
+      pts.push([cx + Math.cos(a) * rx * k, cy + Math.sin(a) * ry * k]);
+    }
+    return pts;
+  }
+
+  var cx = 170;
+  var headCy = 214, headRx = 78, headRy = 92;
+
+  var INK = '#3a3a38';
+
+  // ---- head ----
+  var headPts = perturbedEllipse(cx, headCy, headRx, headRy, 302, 20, 0.035);
+  var headPath = catmullRomPath(headPts);
+
+  // ---- neck + shoulders ----
+  // Drawn as one continuous silhouette so the neck reads as attached mass
+  // rather than a separate stacked shape.
+  var shoulderTop = headCy + headRy - 6;
+  var neckHalf = 30;
+  var bodyPath =
+    'M ' + (cx - neckHalf) + ',' + shoulderTop +
+    ' C ' + (cx - neckHalf - 2) + ',' + (shoulderTop + 40) + ' ' + (cx - 74) + ',' + (shoulderTop + 54) + ' ' + (cx - 106) + ',' + (shoulderTop + 76) +
+    ' C ' + (cx - 140) + ',' + (shoulderTop + 100) + ' ' + (cx - 152) + ',' + (shoulderTop + 140) + ' ' + (cx - 156) + ',' + 560 +
+    ' L ' + (cx + 156) + ',' + 560 +
+    ' C ' + (cx + 152) + ',' + (shoulderTop + 140) + ' ' + (cx + 140) + ',' + (shoulderTop + 100) + ' ' + (cx + 106) + ',' + (shoulderTop + 76) +
+    ' C ' + (cx + 74) + ',' + (shoulderTop + 54) + ' ' + (cx + neckHalf + 2) + ',' + (shoulderTop + 40) + ' ' + (cx + neckHalf) + ',' + shoulderTop +
+    ' Z';
+
+  document.getElementById('napeGroup').innerHTML =
+    '<path d="' + bodyPath + '" fill="' + INK + '"/>' +
+    '<path d="' + headPath + '" fill="' + INK + '"/>';
+
+  // ---- hairline ----
+  // A lobed lower edge sitting over the nape: this is the detail that says
+  // "back of a head" rather than "oval". Gets the fine-fray filter.
+  var hairPts = [];
+  var hRand = seededRand(414);
+  for (var i = 0; i <= 26; i++){
+    var t = i / 26;
+    var x = cx - headRx - 4 + t * (headRx * 2 + 8);
+    // scalloped nape line, deepest at centre, lifting at the sides
+    var centreBias = Math.cos((t - 0.5) * Math.PI);
+    var y = headCy + 30 + centreBias * 40 + (hRand() - 0.5) * 8;
+    hairPts.push([x, y]);
+  }
+  // Close the hair mass DOWNWARD (below the scalloped line), not up to the crown --
+  // closing upward produces a full-width rectangle behind the head. Then clip it
+  // to the skull so it can only ever darken hair that exists.
+  var hairD = 'M ' + hairPts[0][0].toFixed(2) + ',' + hairPts[0][1].toFixed(2) + ' ';
+  hairD += 'L ' + hairPts.slice(1).map(function(p){ return p[0].toFixed(2) + ',' + p[1].toFixed(2); }).join(' L ') + ' ';
+  hairD += 'L ' + (cx + headRx + 6) + ',' + (headCy - headRy - 10) + ' ';
+  hairD += 'L ' + (cx - headRx - 6) + ',' + (headCy - headRy - 10) + ' Z';
+
+  // The hair mass must be LIGHTER than the head, not darker. #2c2c2a on #3a3a38
+  // is a 4-value difference -- invisible in print and on screen. Inverting the
+  // relationship (lighter scalp-side mass over dark hair) is what makes the
+  // nape read as hair rather than as a featureless oval.
+  document.getElementById('napeHair').innerHTML =
+    '<clipPath id="skullClip"><path d="' + headPath + '"/></clipPath>' +
+    '<g clip-path="url(#skullClip)">' +
+      '<path d="' + hairD + '" fill="#59564e" opacity="0.85"/>' +
+    '</g>';
+
+  // single high-chroma anchor -- the one saturated mark on the sheet
+  var bar = document.getElementById('napeCobalt');
+  bar.setAttribute('x', cx - 90);
+  bar.setAttribute('y', 476);
+  bar.setAttribute('width', 180);
+  bar.setAttribute('height', 12);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>✦ Font Pairings</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,700;1,14..32,400&family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Open+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;700&family=Caveat:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0b0b0f;
+      color: #e4e4ec;
+      font-size: 16px;
+      line-height: 1.6;
+      padding: 40px 24px 80px;
+      min-height: 100vh;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .container { max-width: 960px; margin: 0 auto; }
+
+    header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    header h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #f0d0a0, #c084fc, #60a5fa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+    header p { color: #8888a0; font-size: 1rem; }
+
+    .card {
+      background: #15151f;
+      border: 1px solid #252535;
+      border-radius: 20px;
+      padding: 36px 40px;
+      margin-bottom: 32px;
+      transition: border-color 0.2s;
+    }
+    .card:hover { border-color: #3b3b55; }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .card-number {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #6b6b8a;
+      font-family: 'Inter', sans-serif;
+    }
+    .font-names { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .font-tag {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 6px;
+      background: #1e1e30;
+      color: #a0a0c8;
+      font-size: 0.82rem;
+      font-weight: 500;
+      border: 1px solid #2a2a40;
+    }
+    .font-tag.heading-tag { border-left: 3px solid #f0d0a0; }
+    .font-tag.body-tag     { border-left: 3px solid #60a5fa; }
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .badge-rating { background: #2d2d1a; color: #e6c84a; }
+
+    .preview-area { display: flex; flex-direction: column; gap: 14px; }
+    .preview-heading {
+      font-size: 2.4rem;
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .preview-body {
+      font-size: 1.05rem;
+      line-height: 1.65;
+      max-width: 65ch;
+    }
+    .preview-body em { font-style: italic; }
+
+    .specimen-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 24px;
+      margin-top: 10px;
+      padding-top: 14px;
+      border-top: 1px solid #1e1e30;
+    }
+    .specimen-item { display: flex; align-items: baseline; gap: 6px; }
+    .specimen-label {
+      font-size: 0.65rem;
+      color: #6b6b8a;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .specimen-text { font-size: 1.25rem; line-height: 1.4; }
+    .specimen-text.reg   { font-weight: 400; }
+    .specimen-text.med   { font-weight: 500; }
+    .specimen-text.sbold { font-weight: 600; }
+    .specimen-text.bold  { font-weight: 700; }
+
+    .vibe {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 14px;
+      font-size: 0.82rem;
+      color: #8888b0;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 24px 16px 60px; }
+      .card { padding: 24px 20px; }
+      .preview-heading { font-size: 1.6rem; }
+      .card-header { flex-direction: column; gap: 8px; }
+    }
+
+    .footer-note {
+      text-align: center;
+      color: #55556a;
+      font-size: 0.82rem;
+      margin-top: 12px;
+    }
+
+    /* Section divider */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 48px 0 32px;
+    }
+    .section-divider::before,
+    .section-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #3b3b55, transparent);
+    }
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #6b6b8a;
+      white-space: nowrap;
+    }
+
+    .cursive-heading {
+      font-size: 2.8rem;
+      line-height: 1.2;
+      font-weight: 400;
+    }
+    .cursive-heading.big {
+      font-size: 3.6rem;
+    }
+    .cursive-body {
+      font-size: 1.6rem;
+      line-height: 1.5;
+      font-weight: 400;
+      max-width: 50ch;
+    }
+    .cursive-tiny {
+      font-size: 1rem;
+      line-height: 1.6;
+      font-weight: 400;
+      max-width: 55ch;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>✦ Font Pairings</h1>
+    <p>6 hand-picked combos from Google Fonts &middot; free for commercial use</p>
+  </header>
+
+  <!-- 1 — Playfair Display + Lora -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-number">01 — Editorial Classic</span>
+      <div class="font-names">
+        <span class="font-tag heading-tag">Playfair Display</span>
+        <span class="font-tag body-tag">Lora</span>
+        <span class="badge badge-rating">★ Timeless</span>
+      </div>
+    </div>
+    <div class="preview-area">
+      <div class="preview-heading" style="font-family:'Playfair Display', serif;">
+        The Art of Thoughtful Design
+      </div>
+      <div class="preview-body" style="font-family:'Lora', serif;">
+        Playfair’s high-contrast serif brings old-world elegance to headlines, while Lora’s warm, calligraphic body text keeps long reads comfortable. Together they evoke <em>Vanity Fair</em> editorial polish — perfect for lifestyle blogs, magazines, and luxury brands.
+      </div>
+      <div class="specimen-row" style="font-family:'Playfair Display', serif;">
+        <div class="specimen-item"><span class="specimen-label">Regular</span><span class="specimen-text reg">Book</span></div>
+        <div class="specimen-item"><span class="specimen-label">Bold</span><span class="specimen-text bold">Bold</span></div>
+        <div class="specimen-item"><span class="specimen-label">Italic</span><span class="specimen-text" style="font-style:italic;">Italic</span></div>
+      </div>
+      <div class="vibe">🎯 Lifestyle &bull; Editorial &bull; Luxury</div>
+    </div>
+  </div>
+
+  <!-- 2 — Fraunces + Open Sans -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-number">02 — Warm &amp; Inviting</span>
+      <div class="font-names">
+        <span class="font-tag heading-tag">Fraunces</span>
+        <span class="font-tag body-tag">Open Sans</span>
+        <span class="badge badge-rating">★ Soft Power</span>
+      </div>
+    </div>
+    <div class="preview-area">
+      <div class="preview-heading" style="font-family:'Fraunces', serif; font-variation-settings:'SOFT' 50;">
+        The Comfortable Serif
+      </div>
+      <div class="preview-body" style="font-family:'Open Sans', sans-serif;">
+        Fraunces is a variable "super-soft" serif that feels warm, approachable, and slightly nostalgic — like a well-worn leather chair. Open Sans, with its neutral, highly legible sans, balances the warmth with clarity. <em>Excellent for health &amp; wellness, food blogs, and personal brands.</em>
+      </div>
+      <div class="specimen-row" style="font-family:'Fraunces', serif;">
+        <div class="specimen-item"><span class="specimen-label">Regular</span><span class="specimen-text reg">Book</span></div>
+        <div class="specimen-item"><span class="specimen-label">SemiBold</span><span class="specimen-text sbold">SemiBold</span></div>
+        <div class="specimen-item"><span class="specimen-label">Italic</span><span class="specimen-text" style="font-style:italic;">Italic</span></div>
+      </div>
+      <div class="vibe">🎯 Wellness &bull; Personal Brand &bull; Food</div>
+    </div>
+  </div>
+
+  <!-- 3 — DM Serif Display + DM Sans -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-number">03 — Designed to Match</span>
+      <div class="font-names">
+        <span class="font-tag heading-tag">DM Serif Display</span>
+        <span class="font-tag body-tag">DM Sans</span>
+        <span class="badge badge-rating">★ Perfect Harmony</span>
+      </div>
+    </div>
+    <div class="preview-area">
+      <div class="preview-heading" style="font-family:'DM Serif Display', serif;">
+        Made for Each Other
+      </div>
+      <div class="preview-body" style="font-family:'DM Sans', sans-serif;">
+        These two were drawn by the same type designer (Colophon Foundry) with matching proportions and metrics. The serif cut brings dignified, slightly calligraphic weight to headings, while the sans cuts a clean, modern body. The result is a <em>flawless native harmony</em> that no cross-foundry pairing can beat.
+      </div>
+      <div class="specimen-row" style="font-family:'DM Serif Display', serif;">
+        <div class="specimen-item"><span class="specimen-label">Regular</span><span class="specimen-text reg">Book</span></div>
+        <div class="specimen-item"><span class="specimen-label">Italic</span><span class="specimen-text" style="font-style:italic;">Italic</span></div>
+      </div>
+      <div class="vibe">🎯 Editorial &bull; Portfolios &bull; Versatile</div>
+    </div>
+  </div>
+
+  <!-- 4 — Playfair Display + Inter -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-number">04 — Old Elegance, Modern Read</span>
+      <div class="font-names">
+        <span class="font-tag heading-tag">Playfair Display</span>
+        <span class="font-tag body-tag">Inter</span>
+        <span class="badge badge-rating">★ Refined Tech</span>
+      </div>
+    </div>
+    <div class="preview-area">
+      <div class="preview-heading" style="font-family:'Playfair Display', serif;">
+        Luxury Meets Utility
+      </div>
+      <div class="preview-body" style="font-family:'Inter', sans-serif;">
+        Playfair Display brings serif elegance and editorial gravitas to headings, while Inter — purpose-built for screen readability with its tall x-height and open apertures — handles body copy with surgical clarity. This contrast works beautifully for <em>premium digital products, high-end SaaS, and brand sites</em> that need personality without sacrificing legibility.
+      </div>
+      <div class="specimen-row" style="font-family:'Playfair Display', serif;">
+        <div class="specimen-item"><span class="specimen-label">Regular</span><span class="specimen-text reg">Book</span></div>
+        <div class="specimen-item"><span class="specimen-label">Bold</span><span class="specimen-text bold">Bold</span></div>
+      </div>
+      <div class="vibe">🎯 Premium SaaS &bull; Brand Sites &bull; Digital Products</div>
+    </div>
+  </div>
+
+  <!-- 5 — Space Grotesk + DM Sans -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-number">05 — Tech-Forward Duo</span>
+      <div class="font-names">
+        <span class="font-tag heading-tag">Space Grotesk</span>
+        <span class="font-tag body-tag">DM Sans</span>
+        <span class="badge badge-rating">★ Modern Sans</span>
+      </div>
+    </div>
+    <div class="preview-area">
+      <div class="preview-heading" style="font-family:'Space Grotesk', sans-serif;">
+        Clean &amp; Future-Facing
+      </div>
+      <div class="preview-body" style="font-family:'DM Sans', sans-serif;">
+        Space Grotesk’s retro-futuristic proportions — inspired by Claude Mono — give headings a distinctive, tech-forward edge. DM Sans keeps the body clean, modern, and effortlessly readable with its low-contrast geometric letterforms. Together they create a <em>cohesive all-sans pairing</em> that feels both distinctive and approachable.
+      </div>
+      <div class="specimen-row" style="font-family:'Space Grotesk', sans-serif;">
+        <div class="specimen-item"><span class="specimen-label">Regular</span><span class="specimen-text reg">Book</span></div>
+        <div class="specimen-item"><span class="specimen-label">Medium</span><span class="specimen-text med">Medium</span></div>
+        <div class="specimen-item"><span class="specimen-label">Bold</span><span class="specimen-text bold">Bold</span></div>
+      </div>
+      <div class="vibe">🎯 Dev Tools &bull; AI Products &bull; Tech Blogs</div>
+    </div>
+  </div>
+
+  <!-- 6 — Cormorant Garamond + DM Sans -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-number">06 — Classic Serif, Modern Sans</span>
+      <div class="font-names">
+        <span class="font-tag heading-tag">Cormorant Garamond</span>
+        <span class="font-tag body-tag">DM Sans</span>
+        <span class="badge badge-rating">★ Literary</span>
+      </div>
+    </div>
+    <div class="preview-area">
+      <div class="preview-heading" style="font-family:'Cormorant Garamond', serif; letter-spacing:-0.005em;">
+        Where Tradition Breathes
+      </div>
+      <div class="preview-body" style="font-family:'DM Sans', sans-serif;">
+        Cormorant Garamond is a revival of Claude Garamond’s iconic 16th-century typeface — elegant, narrow, and deeply literary. Its light, airy strokes make headlines feel refined and sophisticated. DM Sans provides a crisp, no-nonsense counterpoint for body copy, letting the heading breathe while keeping the reading experience <em>fast and clean</em>.
+      </div>
+      <div class="specimen-row" style="font-family:'Cormorant Garamond', serif;">
+        <div class="specimen-item"><span class="specimen-label">Regular</span><span class="specimen-text reg">Book</span></div>
+        <div class="specimen-item"><span class="specimen-label">SemiBold</span><span class="specimen-text sbold">SemiBold</span></div>
+        <div class="specimen-item"><span class="specimen-label">Bold</span><span class="specimen-text bold">Bold</span></div>
+      </div>
+      <div class="vibe">🎯 Literary &bull; Editorial &bull; Luxury Publishing</div>
+    </div>
+  </div>
+
+  <!-- Cursive Section -->
+  <div class="section-divider">
+    <span class="section-label">✧ Cursive / Script</span>
+  </div>
+
+  <!-- Parisienne -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-number">Script 01</span>
+      <div class="font-names">
+        <span class="font-tag heading-tag">Parisienne</span>
+        <span class="badge badge-rating">★ Elegant Script</span>
+      </div>
+    </div>
+    <div class="preview-area" style="gap:10px;">
+      <div class="cursive-heading big" style="font-family:'Parisienne', cursive;">
+        A Touch of Class
+      </div>
+      <div class="cursive-body" style="font-family:'Parisienne', cursive;">
+        Parisienne’s flowing, graceful strokes evoke hand-written invitations and old Hollywood glamour. Perfect for accent headings, pull quotes, and elegant hero titles.
+      </div>
+      <div class="cursive-tiny" style="font-family:'Parisienne', cursive;">
+        Designed by Astigmatic — one weight, maximum elegance. Use sparingly at large sizes for maximum impact.
+      </div>
+      <div class="specimen-row" style="font-family:'Parisienne', cursive;">
+        <div class="specimen-item"><span class="specimen-label">Regular</span><span class="specimen-text reg" style="font-size:1.4rem;">The quick brown fox</span></div>
+      </div>
+      <div class="vibe">🎯 Invitations &bull; Hero Titles &bull; Pull Quotes</div>
+    </div>
+  </div>
+
+  <!-- Caveat -->
+  <div class="card">
+    <div class="card-header">
+      <span class="card-number">Script 02</span>
+      <div class="font-names">
+        <span class="font-tag heading-tag">Caveat</span>
+        <span class="badge badge-rating">★ Casual Hand</span>
+      </div>
+    </div>
+    <div class="preview-area" style="gap:10px;">
+      <div class="cursive-heading" style="font-family:'Caveat', cursive;">
+        Handwritten, But Make It Readable
+      </div>
+      <div class="cursive-body" style="font-family:'Caveat', cursive;">
+        Caveat feels like a friend’s note — warm, casual, and surprisingly legible at small sizes. Its varied stroke widths give it natural hand-lettering texture without sacrificing clarity.
+      </div>
+      <div class="cursive-tiny" style="font-family:'Caveat', cursive;">
+        Designed by Impallari Type. Comes in Regular, Medium, SemiBold & Bold — rare for a script! Use at display sizes for a personal, human touch.
+      </div>
+      <div class="specimen-row" style="font-family:'Caveat', cursive;">
+        <div class="specimen-item"><span class="specimen-label">Regular</span><span class="specimen-text reg" style="font-size:1.4rem;">The quick brown fox</span></div>
+        <div class="specimen-item"><span class="specimen-label">Bold</span><span class="specimen-text bold" style="font-size:1.4rem;">The quick brown fox</span></div>
+      </div>
+      <div class="vibe">🎯 Social Posts &bull; Notes &bull; Casual Branding</div>
+    </div>
+  </div>
+
+  <p class="footer-note">
+    All fonts from <a href="https://fonts.google.com" style="color:#6b6b8a;">Google Fonts</a> &middot; Free for commercial use
+  </p>
+
+</div>
+</body>
+</html>

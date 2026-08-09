@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "source": { "files": ["image-01-novena-style.json", "image-02-bagel-house-style.json", "image-03-woke-style.json", "image-04-market-stall-style.json"], "analyzed_at": "2026-08-04" },
+  "shared_style": {
+    "art_style": "Monochrome hand-drawn food-brand illustration: contemporary indie food identity expressed through black ink linework, simplified silhouettes, playful human or anthropomorphic storytelling, and generous white space.",
+    "closest_labels": ["editorial food illustration", "naive/outsider-inspired line art", "indie restaurant branding", "hand-drawn mascot illustration", "black-and-white screen-print style"],
+    "not_quite": ["not pure vintage engraving", "not polished corporate flat iconography", "not Japanese kawaii as the main influence", "not realistic pen-and-ink rendering"],
+    "shared_traits": ["black and white only", "white background", "hand-drawn imperfection", "bold readable silhouette", "minimal or absent shading", "small-business food context", "custom lettering or no typography", "high recognition at small size"]
+  },
+  "pattern_map": {
+    "linework": { "common": "black contour drawing with occasional interior marks", "range": "fine architectural ink in image 1 to bold rounded outline in image 4" },
+    "forms": { "common": "simplified organic forms", "range": "isometric geometry in image 1, mascot bodies in image 2, emblem curves in image 3, retail objects in image 4" },
+    "composition": { "common": "single compact centered subject with clear space", "range": "logo lockups in images 1-3, horizontal scene in image 4" },
+    "personality": { "common": "friendly, local, handmade, slightly quirky", "range": "eccentric in image 1, social in image 2, energetic in image 3, welcoming in image 4" },
+    "typography": { "common": "custom hand-lettering when text appears", "range": "large roof lettering in image 1, supporting wordmark in image 2, reverse lowercase emblem lettering in image 3" }
+  },
+  "recommended_direction": {
+    "name": "Playful Monochrome Neighborhood Food Illustration",
+    "core_formula": "one bold, memorable food or vendor silhouette + imperfect black ink contour + one custom hand-lettered identifier + generous white space",
+    "choose_for_primary_identity": "Image 2 if you want maximum personality and mascot potential; image 3 if you want a cleaner emblem that scales better; image 4 if you want warmth and a human neighborhood story.",
+    "hybrid_to_explore": "Use image 4's welcoming vendor scene, image 2's expressive character language, image 3's strong dark anchor shape, and image 1's tiny architectural micro-details.",
+    "avoid": ["adding color before the black-and-white silhouette works", "perfect geometric vectors", "generic stock-style food icons", "overly detailed realism", "font-based logo treatment without custom drawing"]
+  },
+  "style_tokens": {
+    "palette": [{ "name": "ink", "value": "#111111", "role": "primary contour and fill", "confidence": 0.98 }, { "name": "paper", "value": "#FFFFFF", "role": "background and negative space", "confidence": 0.99 }],
+    "stroke": [{ "name": "primary-contour", "value": "bold rounded black line", "role": "silhouette", "confidence": 0.96 }, { "name": "secondary-detail", "value": "fine black line", "role": "interior texture and small details", "confidence": 0.9 }],
+    "composition": [{ "name": "clear-space", "value": "30-45% around the subject", "unit": "ratio", "role": "recognition and friendliness", "confidence": 0.85 }, { "name": "silhouette-first", "value": "subject remains legible without interior detail", "unit": "rule", "role": "small-size reproduction", "confidence": 0.94 }],
+    "lettering": [{ "name": "custom-wordmark", "value": "narrow, irregular, hand-drawn lettering", "role": "brand personality", "confidence": 0.94 }],
+    "texture": [{ "name": "ink-imperfection", "value": "subtle stroke irregularity and uneven spacing", "role": "human handmade quality", "confidence": 0.96 }]
+  },
+  "confidence": { "overall": 0.95, "unresolved_questions": ["The original production methods are unknown: these could be vector drawings, scanned ink, or screen-printed artwork.", "The desired balance between mascot, emblem, and scene illustration still needs to be chosen." ] }
+}

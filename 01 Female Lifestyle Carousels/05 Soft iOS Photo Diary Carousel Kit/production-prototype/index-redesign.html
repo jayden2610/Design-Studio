@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weekend Photo Diary — Carousel</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,900;1,9..40,400&display=swap');
+    * { box-sizing:border-box; }
+    body { margin:0; padding:48px; background:#1c1a17; font-family:"DM Sans", sans-serif; }
+    main { display:flex; flex-wrap:wrap; gap:28px; max-width:1600px; margin:0 auto; justify-content:center; }
+
+    /* Slide is authored at native 1080x1350 (Fraunces/DM Sans sized in real px for
+       accurate Canva/PNG export), then scaled down as a unit for the gallery preview
+       so typography never depends on viewport width. */
+    .slide-wrap { width:300px; height:375px; overflow:hidden; border-radius:8px; box-shadow:0 20px 42px rgba(0,0,0,.35); }
+    .slide { position:relative; width:1080px; height:1350px; transform:scale(.2778); transform-origin:top left; overflow:hidden; }
+    .slide img.bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:brightness(.92); }
+    .scrim-full { position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,8,10,.82) 0%, rgba(10,8,10,.55) 30%, rgba(10,8,10,.08) 55%, rgba(10,8,10,.5) 100%); }
+
+    .content { position:relative; z-index:2; height:100%; display:flex; flex-direction:column; justify-content:flex-start; padding:64px 68px; }
+    .eyebrow { margin:0 0 22px; color:rgba(248,242,190,.7); font-size:22px; font-weight:700; letter-spacing:4px; text-transform:uppercase; text-shadow:0 2px 12px rgba(0,0,0,.5); }
+    h2 { margin:0; max-width:900px; color:#F8F2BE; font-family:"Fraunces",serif; font-weight:600; font-style:italic; font-optical-sizing:auto; font-size:70px; line-height:1.16; letter-spacing:-.01em; text-shadow:0 4px 20px rgba(0,0,0,.5); }
+    .caption { max-width:780px; margin:28px 0 0; color:rgba(248,242,190,.85); font-size:32px; line-height:1.42; text-shadow:0 2px 12px rgba(0,0,0,.5); }
+
+    .footer { position:absolute; z-index:2; left:68px; right:68px; bottom:72px; display:flex; align-items:center; justify-content:space-between; }
+    .idx { color:rgba(248,242,190,.75); font-size:22px; font-weight:700; letter-spacing:1px; text-shadow:0 2px 12px rgba(0,0,0,.5); }
+    .dots { display:flex; gap:10px; }
+    .dot { width:9px; height:9px; border-radius:50%; background:rgba(255,255,255,.3); }
+    .dot.active { background:#F8F2BE; }
+
+    .intro { max-width:760px; margin:0 auto 44px; color:#F8F2BE; }
+    .intro h1 { font-family:"Fraunces",serif; font-weight:600; font-style:italic; font-size:clamp(32px,4vw,56px); line-height:1.05; margin:0 0 14px; }
+    .intro p { color:rgba(248,242,190,.65); font-size:17px; line-height:1.5; margin:0; font-family:"DM Sans",sans-serif; }
+
+    @media (max-width:700px) { body { padding:20px; } }
+  </style>
+</head>
+<body>
+  <header class="intro">
+    <h1>weekend photo diary — carousel</h1>
+    <p>Five slides, one swipe sequence. Photo carries the frame, headline sits upper-third, footer tracks the swipe.</p>
+  </header>
+  <main>
+    <div class="slide-wrap"><article class="slide">
+      <img class="bg" src="../../female-lifestyle-ugc/03-pack1-portrait-turned.png" alt="Woman reading with coffee by a window" style="object-position:center 30%;">
+      <div class="scrim-full"></div>
+      <div class="content">
+        <p class="eyebrow">Weekend Notes · 01</p>
+        <h2>the kind of morning i want to keep</h2>
+        <p class="caption">coffee, a few pages, and nowhere urgent to be.</p>
+      </div>
+      <div class="footer">
+        <span class="idx">01 / 05</span>
+        <div class="dots">
+          <span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+      </div>
+    </article></div>
+
+    <div class="slide-wrap"><article class="slide">
+      <img class="bg" src="../../female-lifestyle-ugc/04-pack1-coffee-hands.png" alt="Hands holding coffee in a warm kitchen" style="object-position:center 40%;">
+      <div class="scrim-full"></div>
+      <div class="content">
+        <p class="eyebrow">Little Rituals · 02</p>
+        <h2>small things that made the day softer</h2>
+        <p class="caption">a warm cup, a slow start, ten quiet minutes for myself.</p>
+      </div>
+      <div class="footer">
+        <span class="idx">02 / 05</span>
+        <div class="dots">
+          <span class="dot"></span><span class="dot active"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+      </div>
+    </article></div>
+
+    <div class="slide-wrap"><article class="slide">
+      <img class="bg" src="../../female-lifestyle-ugc/10-pack3-hero-bed.png" alt="Softly lit bed and bedside coffee" style="object-position:center 35%;">
+      <div class="scrim-full"></div>
+      <div class="content">
+        <p class="eyebrow">Soft Reset · 03</p>
+        <h2>rest is part of the plan</h2>
+        <p class="caption">not every weekend needs to be productive to be worth remembering.</p>
+      </div>
+      <div class="footer">
+        <span class="idx">03 / 05</span>
+        <div class="dots">
+          <span class="dot"></span><span class="dot"></span><span class="dot active"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+      </div>
+    </article></div>
+
+    <div class="slide-wrap"><article class="slide">
+      <img class="bg" src="../../female-lifestyle-ugc/06-pack2-hero-flowers.png" alt="Flowers by a bright window" style="object-position:center 45%;">
+      <div class="scrim-full"></div>
+      <div class="content">
+        <p class="eyebrow">Currently Loving · 04</p>
+        <h2>things i keep noticing lately</h2>
+        <p class="caption">soft light, open windows, flowers that make the room feel awake.</p>
+      </div>
+      <div class="footer">
+        <span class="idx">04 / 05</span>
+        <div class="dots">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot active"></span><span class="dot"></span>
+        </div>
+      </div>
+    </article></div>
+
+    <div class="slide-wrap"><article class="slide">
+      <img class="bg" src="../../female-lifestyle-ugc/23-pack6-hero-park.png" alt="Quiet park scene" style="object-position:center 55%;">
+      <div class="scrim-full"></div>
+      <div class="content">
+        <p class="eyebrow">Little Life Update · 05</p>
+        <h2>a little more outside, lately</h2>
+        <p class="caption">a walk, a change of pace, the feeling of coming back to myself.</p>
+      </div>
+      <div class="footer">
+        <span class="idx">save this for a slow sunday</span>
+        <div class="dots">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot active"></span>
+        </div>
+      </div>
+    </article></div>
+  </main>
+</body>
+</html>

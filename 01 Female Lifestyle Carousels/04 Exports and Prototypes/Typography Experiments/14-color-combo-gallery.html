@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Color Combo Poster Gallery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,400&family=Libre+Bodoni:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0a0a0c;
+    color: #e8e8ed;
+    font-family: 'Space Grotesk', sans-serif;
+    padding: 2.5rem 1rem 4rem;
+  }
+
+  header { max-width: 1200px; margin: 0 auto 2.5rem; text-align: center; }
+  header h1 { font-family: 'Libre Bodoni', serif; font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 600; margin-bottom: 0.4rem; }
+  header p { color: #8a8a98; font-size: 0.95rem; }
+
+  .gallery {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  @media (min-width: 720px) { .gallery { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1080px) { .gallery { grid-template-columns: 1fr 1fr 1fr; } }
+
+  .card { background: #141418; border-radius: 12px; overflow: hidden; border: 1px solid #252530; }
+  .card-label { padding: 0.75rem 1.1rem; font-size: 0.72rem; color: #8a8a98; border-bottom: 1px solid #252530; display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; }
+  .card-label span:last-child { text-align: right; }
+
+  .poster { position: relative; width: 100%; aspect-ratio: 9 / 14; overflow: hidden; }
+  .poster__bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
+  .poster__overlay { position: absolute; inset: 0; }
+  .poster__content { position: absolute; inset: 0; display: flex; flex-direction: column; padding: 1.75rem; }
+
+  .label { font-family: 'Inter', sans-serif; font-size: 0.6rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 1.2rem; }
+  .display { font-family: 'EB Garamond', serif; font-weight: 500; font-size: clamp(1.9rem, 6.8vw, 2.5rem); line-height: 1.05; letter-spacing: -0.01em; }
+  .script { font-family: 'Great Vibes', cursive; font-size: clamp(2rem, 7.5vw, 2.6rem); line-height: 1.2; margin-top: -0.15em; }
+  .support { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(0.9rem, 2.9vw, 1.05rem); max-width: 26ch; line-height: 1.5; margin-top: 1.3rem; }
+  .mark { font-size: 0.7rem; margin-top: 1.1rem; }
+  .meta { font-family: 'Inter', sans-serif; font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; position: absolute; bottom: 1.5rem; left: 1.7rem; right: 1.7rem; display: flex; justify-content: space-between; }
+
+  /* ===================================================================
+     01 — WICKED GREEN / MORROW WHITE / ORIENT BLUE (#9ED14B / #FBFBCC / #006887)
+     Combo mood: fresh, botanical, high-energy natural green against deep
+     teal-blue. Background: sunlit meadow/tea-field, matches the combo's
+     own "grass + dusk sky" reference photo. Orient Blue becomes the scrim
+     (a real color scrim, not neutral charcoal, ties type color to bg
+     color per the combo). Morrow White is the display/script ink — warm
+     enough against blue to avoid a cold, clinical read. Wicked Green
+     reserved for the label + mark only: small doses, since a large green
+     headline over a green field would lose contrast.
+  ==================================================================== */
+  .c1 .poster__bg {
+    background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200&auto=format&fit=crop');
+    background-position: center 55%;
+  }
+  .c1 .poster__overlay {
+    background:
+      linear-gradient(to bottom, rgba(0,58,74,0.35) 0%, rgba(0,58,74,0.4) 40%, rgba(0,45,58,0.75) 100%),
+      linear-gradient(0deg, rgba(0,104,135,0.55) 0%, rgba(0,104,135,0.15) 60%);
+  }
+  .c1 .poster__content { justify-content: flex-end; align-items: center; text-align: center; padding-bottom: 2.1rem; }
+  .c1 .label { color: #9ED14B; }
+  .c1 .display, .c1 .script { color: #FBFBCC; text-shadow: 0 2px 18px rgba(0,20,26,0.6); }
+  .c1 .support { color: #d8e8b8; }
+  .c1 .mark { color: #9ED14B; }
+  .c1 .meta { color: #bcd9e2; }
+
+  /* ===================================================================
+     02 — ORANGE PEACH / ODIOUS ORANGE / NATURAL INDIGO (#EFBB91 / #FFE0C0 / #023441)
+     FINAL: Libre Bodoni display + italic script accent, chosen over
+     Playfair Display / Fraunces / Bodoni Moda after a 3-way rebuild
+     bake-off. Playfair Display is retired from this poster system
+     entirely — it's no longer referenced anywhere in this file. Two-line
+     display+script rhythm matches 01/03/05, giving the combo the same
+     weight-contrast the original single bold block lacked. Background:
+     blue-hour open-water horizon — flat indigo sky/sea with no competing
+     hue, so Natural Indigo is the photo's own color rather than a tint
+     fighting an unrelated rock color (see the retired desert-mesa build).
+  ==================================================================== */
+  .c2 .poster__bg { background-image: url('https://images.unsplash.com/photo-1439405326854-014607f694d7?q=80&w=1200&auto=format&fit=crop'); background-position: center 48%; }
+  .c2 .poster__overlay {
+    background:
+      linear-gradient(to bottom, rgba(2,52,65,0.42) 0%, rgba(2,52,65,0.38) 40%, rgba(2,40,50,0.82) 100%),
+      linear-gradient(200deg, rgba(2,52,65,0.35) 0%, rgba(2,52,65,0.1) 55%);
+  }
+  .c2 .poster__content { justify-content: flex-end; align-items: flex-start; text-align: left; padding: 1.9rem 1.9rem 2.2rem; }
+  .c2 .label { color: #FFE0C0; }
+  .c2 .display { font-family: 'Libre Bodoni', serif; font-weight: 500; font-size: clamp(1.9rem, 7vw, 2.5rem); line-height: 1.05; letter-spacing: -0.01em; color: #FFE0C0; text-shadow: 0 2px 16px rgba(0,10,14,0.55); }
+  .c2 .script { font-family: 'Libre Bodoni', serif; font-style: italic; font-weight: 400; font-size: clamp(1.9rem, 7vw, 2.5rem); line-height: 1.15; color: #EFBB91; margin-top: -0.05em; text-shadow: 0 2px 16px rgba(0,10,14,0.55); }
+  .c2 .support { color: #EFBB91; margin-top: 1rem; }
+  .c2 .meta { color: #EFBB91; opacity: 0.85; }
+
+  /* ===================================================================
+     03 — COVERT BLACK / SEA SALT / VINTAGE AQUA (#16171C / #D9E4E8 / #65ABC4)
+     REVISED: the grass-field photo carries a strong green cast the combo
+     has zero green in, so Sea Salt/Vintage Aqua read as pasted-on rather
+     than native to the scene. Swapped to a foggy mountain-ridge shot —
+     genuinely near-monochrome blue-grey (fog, stone, flat sky), so
+     Vintage Aqua reads as the photo's own cool cast and Sea Salt as its
+     own pale fog color, with Covert Black doing the actual work as the
+     scrim instead of a neutral charcoal.
+  ==================================================================== */
+  .c3 .poster__bg {
+    background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop');
+    background-position: center 30%;
+  }
+  .c3 .poster__overlay {
+    background: linear-gradient(to bottom, rgba(22,23,28,0.5) 0%, rgba(22,23,28,0.42) 42%, rgba(16,17,21,0.84) 100%);
+  }
+  .c3 .poster__content { justify-content: center; align-items: center; text-align: center; }
+  .c3 .label { color: #65ABC4; }
+  .c3 .display { color: #D9E4E8; }
+  .c3 .script { color: #65ABC4; text-shadow: 0 2px 18px rgba(0,0,0,0.5); }
+  .c3 .support { color: #D9E4E8; opacity: 0.8; }
+  .c3 .mark { color: #65ABC4; }
+  .c3 .meta { color: #9fb4bb; }
+
+  /* ===================================================================
+     04 — DARKOUT BROWN / PAPAYA WHIP / FIERY CORAL (#331A0C / #FDF1D5 / #E45D26)
+     Combo mood: earthy, campfire-warm, dusk-savanna. Background: dry
+     grass field at dusk, near-identical tonal family to the combo's own
+     reference (dark warm sky over dry grass). Fiery Coral used only for
+     the label + mark (small, bold hits); Papaya Whip is the main ink.
+  ==================================================================== */
+  .c4 .poster__bg {
+    background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1200&auto=format&fit=crop');
+    background-position: center 60%;
+  }
+  .c4 .poster__overlay {
+    background: linear-gradient(to bottom, rgba(51,26,12,0.3) 0%, rgba(51,26,12,0.35) 45%, rgba(38,19,9,0.8) 100%);
+  }
+  .c4 .poster__content { justify-content: flex-end; align-items: center; text-align: center; padding-bottom: 2.1rem; }
+  .c4 .label { color: #E45D26; }
+  .c4 .display, .c4 .script { color: #FDF1D5; text-shadow: 0 2px 18px rgba(20,8,2,0.6); }
+  .c4 .support { color: #f0d9b0; }
+  .c4 .mark { color: #E45D26; }
+  .c4 .meta { color: #e0b98c; }
+
+  /* ===================================================================
+     05 — URANUS BLUE / PINK LACE / PLUM BURGUNDY (#54D5F1 / #FFDFF9 / #621932)
+     REVISED: the still-lake photo carries forest-green banks, a hue this
+     candy/jewel-tone combo has no room for — cyan-on-green read as an
+     accidental clash instead of a deliberate palette. Swapped to a
+     twilight/blue-hour cityscape-adjacent open sky where the ambient
+     light is already cool cyan-blue fading into deep violet-plum at the
+     horizon, so Uranus Blue and Plum Burgundy are literally the photo's
+     gradient, not colors laid over an unrelated scene.
+  ==================================================================== */
+  .c5 .poster__bg {
+    background-image: url('https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?q=80&w=1200&auto=format&fit=crop');
+    background-position: center 55%;
+  }
+  .c5 .poster__overlay {
+    background:
+      linear-gradient(to bottom, rgba(84,213,241,0.15) 0%, rgba(98,25,50,0.32) 45%, rgba(60,12,28,0.85) 100%);
+  }
+  .c5 .poster__content { justify-content: center; align-items: center; text-align: center; }
+  .c5 .label { color: #54D5F1; }
+  .c5 .display { color: #FFDFF9; text-shadow: 0 2px 18px rgba(20,4,10,0.6); }
+  .c5 .script { color: #54D5F1; text-shadow: 0 2px 18px rgba(20,4,10,0.6); }
+  .c5 .support { color: #FFDFF9; opacity: 0.85; }
+  .c5 .mark { color: #54D5F1; }
+  .c5 .meta { color: #e8b8cf; }
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Trending Color Combo — Nature Poster Applications</h1>
+  <p>5 posters, each built on The Digital Designer's "Triple Trendy Color Combo" palettes, applied through the vault's nature-typography-poster system</p>
+</header>
+
+<div class="gallery">
+
+  <div class="card c1">
+    <div class="card-label"><span>01 — Wicked Green / Morrow White / Orient Blue</span><span>#9ED14B · #FBFBCC · #006887</span></div>
+    <div class="poster">
+      <div class="poster__bg"></div>
+      <div class="poster__overlay"></div>
+      <div class="poster__content">
+        <div class="label">Field Notes &middot; No. 01</div>
+        <div class="display">Enjoying</div>
+        <div class="script">the little things</div>
+        <div class="support">Stillness lives between the rows of green.</div>
+        <div class="mark">&#10022;</div>
+        <div class="meta"><span>Vol. 01</span><span>DGTL DSNR</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card c2">
+    <div class="card-label"><span>02 — Orange Peach / Odious Orange / Natural Indigo</span><span>#EFBB91 · #FFE0C0 · #023441</span></div>
+    <div class="poster">
+      <div class="poster__bg"></div>
+      <div class="poster__overlay"></div>
+      <div class="poster__content">
+        <div class="label">Horizon Notes &middot; No. 02</div>
+        <div class="display">Peace is not found.</div>
+        <div class="script">it is remembered</div>
+        <div class="support">Where the sky meets the last warm light.</div>
+        <div class="meta"><span>Vol. 02</span><span>DGTL DSNR</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card c3">
+    <div class="card-label"><span>03 — Covert Black / Sea Salt / Vintage Aqua</span><span>#16171C · #D9E4E8 · #65ABC4</span></div>
+    <div class="poster">
+      <div class="poster__bg"></div>
+      <div class="poster__overlay"></div>
+      <div class="poster__content">
+        <div class="label">Coastal Notes &middot; No. 03</div>
+        <div class="display">In the quiet</div>
+        <div class="script">the world softens</div>
+        <div class="support">A pause, held between grey sky and low grass.</div>
+        <div class="mark">&#10022;</div>
+        <div class="meta"><span>Vol. 03</span><span>DGTL DSNR</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card c4">
+    <div class="card-label"><span>04 — Darkout Brown / Papaya Whip / Fiery Coral</span><span>#331A0C · #FDF1D5 · #E45D26</span></div>
+    <div class="poster">
+      <div class="poster__bg"></div>
+      <div class="poster__overlay"></div>
+      <div class="poster__content">
+        <div class="label">Savanna Notes &middot; No. 04</div>
+        <div class="display">Stillness</div>
+        <div class="script">carried by the wind</div>
+        <div class="support">Warmth held long after the sun has gone.</div>
+        <div class="mark">&#10022;</div>
+        <div class="meta"><span>Vol. 04</span><span>DGTL DSNR</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card c5">
+    <div class="card-label"><span>05 — Uranus Blue / Pink Lace / Plum Burgundy</span><span>#54D5F1 · #FFDFF9 · #621932</span></div>
+    <div class="poster">
+      <div class="poster__bg"></div>
+      <div class="poster__overlay"></div>
+      <div class="poster__content">
+        <div class="label">Night Notes &middot; No. 05</div>
+        <div class="display">Peace</div>
+        <div class="script">found in the water's calm</div>
+        <div class="support">The lake keeps what the sky lets go.</div>
+        <div class="mark">&#10022;</div>
+        <div class="meta"><span>Vol. 05</span><span>DGTL DSNR</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

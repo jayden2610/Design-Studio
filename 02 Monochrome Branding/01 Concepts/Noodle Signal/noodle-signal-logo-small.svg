@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Noodle Signal small-size mark</title>
+  <desc id="desc">A simplified packet with one noodle loop and two signal dots for small-size use.</desc>
+  <rect width="1000" height="1000" fill="#f7f5ef"/>
+  <path d="M190 290c65-88 169-128 300-121 122 7 221 61 285 157 45 67 54 155 27 239-35 109-145 180-292 177-150-3-260-66-297-174-29-83-13-186-23-278Z" fill="#111"/>
+  <g fill="none" stroke="#f7f5ef" stroke-linecap="round" stroke-linejoin="round"><path d="M300 512h400l-47 196H347Z" stroke-width="25"/><path d="M448 512c-28-62-12-112 37-139 47-26 91 4 93 52 2 39-31 62-49 87" stroke-width="24"/></g>
+  <g fill="#f7f5ef"><circle cx="770" cy="410" r="13"/><circle cx="820" cy="450" r="8"/></g>
+</svg>

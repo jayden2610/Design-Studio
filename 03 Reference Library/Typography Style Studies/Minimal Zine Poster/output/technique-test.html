@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>technique test — organic specimen rendering</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital@0;1&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { background:#161615; font-family:'EB Garamond', serif; }
+  .rail { display:flex; gap:32px; padding:48px; align-items:flex-start; }
+  .cell { display:flex; flex-direction:column; align-items:center; gap:14px; }
+  .label { font-family:'Courier Prime', monospace; font-size:12px; letter-spacing:0.08em; color:#8c8676; text-transform:uppercase; max-width:340px; text-align:center; line-height:1.5; }
+  .poster { position:relative; width:340px; height:560px; box-shadow:0 30px 80px rgba(0,0,0,0.55); overflow:hidden; background:#e9e2d3; }
+  .grain { position:absolute; inset:0; pointer-events:none; opacity:0.5; mix-blend-mode:multiply;
+    background-image: repeating-radial-gradient(circle at 20% 30%, rgba(0,0,0,0.04) 0, transparent 1px);
+    background-size: 3px 3px; }
+  .caption { position:absolute; bottom:20px; left:0; right:0; text-align:center; font-family:'Courier Prime', monospace; font-size:10px; letter-spacing:0.1em; color:#8c8676; text-transform:uppercase; }
+
+  /* ===== A: SVG turbulence + displacement ===== */
+  .a-shape { position:absolute; left:26%; top:20%; width:48%; height:52%; }
+
+  /* ===== B: Canvas Perlin-noise silhouette ===== */
+  .b-wrap canvas { position:absolute; inset:0; }
+
+  /* ===== C: Halftone / stipple dot-screen ===== */
+  .c-wrap svg { position:absolute; inset:0; width:100%; height:100%; }
+</style>
+</head>
+<body>
+<div class="rail">
+
+  <!-- A: SVG turbulence + displacement -->
+  <div class="cell">
+    <div class="poster">
+      <div class="grain"></div>
+      <svg class="a-shape" viewBox="0 0 200 220" style="overflow:visible;">
+        <defs>
+          <filter id="roughEdgeA" x="-30%" y="-30%" width="160%" height="160%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.028" numOctaves="3" seed="7" result="noise"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="14" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+          <filter id="roughEdgeAShade" x="-30%" y="-30%" width="160%" height="160%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="12" result="noise2"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise2" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+        </defs>
+        <!-- base rose bloom: layered ellipses approximating petal whorl, then noise-displaced -->
+        <g filter="url(#roughEdgeA)">
+          <path d="M100,40 C140,40 168,70 168,108 C168,150 138,182 100,182 C62,182 32,150 32,108 C32,70 60,40 100,40 Z" fill="#9c1c1c"/>
+        </g>
+        <g filter="url(#roughEdgeAShade)" opacity="0.55">
+          <path d="M100,58 C126,58 146,80 146,106 C146,136 124,158 100,158 C76,158 54,136 54,106 C54,80 74,58 100,58 Z" fill="#6e1010"/>
+        </g>
+        <g filter="url(#roughEdgeAShade)" opacity="0.4">
+          <path d="M100,76 C116,76 128,90 128,106 C128,124 114,140 100,140 C86,140 72,124 72,106 C72,90 84,76 100,76 Z" fill="#4a0a0a"/>
+        </g>
+        <rect x="96" y="178" width="8" height="34" fill="#5a3418" filter="url(#roughEdgeAShade)"/>
+      </svg>
+    </div>
+    <div class="label">A — SVG feTurbulence + feDisplacementMap<br>noise warps the vector edge itself; different seed = different organic outline every render</div>
+  </div>
+
+  <!-- B: Canvas Perlin-noise silhouette -->
+  <div class="cell">
+    <div class="poster b-wrap">
+      <canvas id="canvasB" width="340" height="560"></canvas>
+      <div class="grain"></div>
+    </div>
+    <div class="label">B — Canvas noise-perturbed radial contour<br>silhouette built from a noise function point-by-point, then duotone/grain applied in the same pixel pipeline as poster 01</div>
+  </div>
+
+  <!-- C: Halftone / stipple dot-screen -->
+  <div class="cell">
+    <div class="poster c-wrap">
+      <svg viewBox="0 0 340 560" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="roseTornC">
+            <path d="M170,90 C210,88 248,118 250,158 C252,200 224,232 208,258 C224,268 218,286 202,290 C210,308 190,320 172,312 C160,332 130,330 122,308 C98,312 84,292 96,272 C74,264 76,238 98,228 C82,208 92,178 118,172 C112,142 138,114 170,90 Z"
+                  transform="translate(-15,10) scale(1.02)"/>
+          </clipPath>
+          <pattern id="stipple" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(24)">
+            <circle cx="3" cy="3" r="1.7" fill="#8c1414"/>
+          </pattern>
+          <pattern id="stippleDark" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(24)">
+            <circle cx="2.5" cy="2.5" r="1.9" fill="#5a0e0e"/>
+          </pattern>
+        </defs>
+        <g clip-path="url(#roseTornC)">
+          <rect x="60" y="70" width="220" height="260" fill="url(#stipple)"/>
+          <path d="M170,120 C200,120 224,144 224,172 C224,204 200,228 170,228 C140,228 116,204 116,172 C116,144 140,120 170,120 Z"
+                fill="url(#stippleDark)" opacity="0.85"/>
+        </g>
+        <rect x="164" y="300" width="10" height="40" fill="#5a3418" opacity="0.9"/>
+      </svg>
+      <div class="grain"></div>
+    </div>
+    <div class="label">C — Halftone / stipple dot-screen fill<br>rough torn clip shape filled with a density-mapped dot pattern instead of flat color; mimics actual riso/newsprint reproduction</div>
+  </div>
+
+</div>
+
+<script>
+// ===== B: value-noise generated organic silhouette, rendered via canvas, duotone + grain =====
+(function(){
+  const canvas = document.getElementById('canvasB');
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+  const cx = W*0.5, cy = H*0.42;
+  const baseR = 130;
+
+  // simple deterministic value-noise (no deps)
+  function seededRand(seed){ let s = seed; return function(){ s = (s*9301+49297)%233280; return s/233280; }; }
+  const rand = seededRand(42);
+  const N = 12;
+  const noiseVals = Array.from({length:N}, ()=> rand()*2-1);
+  function noise(angle){
+    const t = (angle/(Math.PI*2))*N;
+    const i0 = Math.floor(t)%N, i1=(i0+1)%N;
+    const f = t-Math.floor(t);
+    const smooth = f*f*(3-2*f);
+    return noiseVals[i0]*(1-smooth)+noiseVals[i1]*smooth;
+  }
+
+  ctx.fillStyle = '#e9e2d3';
+  ctx.fillRect(0,0,W,H);
+
+  function bloomPath(radiusScale, wobble){
+    ctx.beginPath();
+    const steps = 120;
+    for(let i=0;i<=steps;i++){
+      const a = (i/steps)*Math.PI*2;
+      const r = baseR*radiusScale*(1 + noise(a)*wobble + Math.sin(a*5)*0.05);
+      const x = cx + Math.cos(a)*r;
+      const y = cy + Math.sin(a)*r*1.08;
+      if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+    }
+    ctx.closePath();
+  }
+
+  bloomPath(1, 0.14);
+  ctx.fillStyle = '#9c1c1c';
+  ctx.fill();
+
+  bloomPath(0.72, 0.10);
+  ctx.fillStyle = '#6e1010';
+  ctx.globalAlpha = 0.6;
+  ctx.fill();
+  ctx.globalAlpha = 1;
+
+  bloomPath(0.44, 0.08);
+  ctx.fillStyle = '#4a0a0a';
+  ctx.globalAlpha = 0.5;
+  ctx.fill();
+  ctx.globalAlpha = 1;
+
+  // stem
+  ctx.fillStyle = '#5a3418';
+  ctx.fillRect(cx-5, cy+baseR*0.9, 10, 120);
+
+  // grain: pixel jitter pass
+  const imgData = ctx.getImageData(0,0,W,H);
+  const d = imgData.data;
+  for(let i=0;i<d.length;i+=4){
+    const j = (Math.random()-0.5)*14;
+    d[i]+=j; d[i+1]+=j; d[i+2]+=j;
+  }
+  ctx.putImageData(imgData,0,0);
+})();
+</script>
+</body>
+</html>

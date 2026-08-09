@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Carousel Typography Showcase — 10 Styles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;700&family=Bodoni+Moda:ital,wght@0,500..900;1,400..700&family=Cinzel:wght@500;700;900&family=Great+Vibes&family=Marcellus&family=Oswald:wght@400;500;600;700&family=Josefin+Sans:wght@300;500;700&family=Alfa+Slab+One&family=Bebas+Neue&family=Libre+Baskerville:ital@0;1&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#111; font-family: Inter, sans-serif; }
+  .grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+    padding: 24px;
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+  .card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/5;
+    border-radius: 10px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  }
+  .label {
+    position:absolute; top:10px; left:10px;
+    background:#000; color:#fff; font-family:'Space Mono',monospace;
+    font-size:10px; padding:4px 8px; border-radius:4px; z-index:20; opacity:0.85;
+  }
+  .overlay { position:absolute; inset:0; }
+  .content { position:absolute; inset:0; display:flex; flex-direction:column; padding:8%; }
+
+  /* ---------- 1. Light Academia ---------- */
+  .bg1 { background-image: url('Nature-Sunset/pexels_205335_revac_filmsphotography.jpeg'); }
+  .grad1 { background: linear-gradient(180deg, rgba(30,20,10,0.15) 0%, rgba(30,20,10,0) 35%, rgba(20,12,6,0.65) 100%); }
+  .c1 { justify-content:flex-end; }
+  .c1 .kicker { font-family:'Libre Baskerville',serif; font-style:italic; font-size:14px; color:#f2e6d0; letter-spacing:2px; text-transform:uppercase; margin-bottom:10px; }
+  .c1 h1 { font-family:'Playfair Display',serif; font-weight:600; font-size:44px; color:#fdf6ea; line-height:1.1; }
+  .c1 p { font-family:'Cormorant Garamond',serif; font-size:18px; color:#e8dcc4; margin-top:12px; max-width:85%; }
+
+  /* ---------- 2. Wabi Sabi ---------- */
+  .bg2 { background-image: url('Nature-Sunset/pexels_35545959_Rino_Adamo.jpeg'); }
+  .grad2 { background: linear-gradient(0deg, rgba(15,10,8,0.55) 0%, rgba(15,10,8,0) 45%); }
+  .c2 { justify-content:flex-end; }
+  .c2 .kicker { font-family:'DM Sans',sans-serif; font-size:12px; letter-spacing:4px; text-transform:uppercase; color:#d8c9b0; margin-bottom:8px; }
+  .c2 h1 { font-family:'DM Sans',sans-serif; font-weight:500; font-size:34px; color:#fbf3e6; line-height:1.25; }
+  .c2 .rule { width:40px; height:1px; background:#d8c9b0; margin:14px 0; }
+  .c2 p { font-family:'DM Sans',sans-serif; font-weight:400; font-size:15px; color:#e3d7c2; }
+
+  /* ---------- 3. Bohemian ---------- */
+  .bg3 { background-image: url('Nature-Sunset/pexels_38409470_Mysara_Hassan.jpeg'); }
+  .grad3 { background: radial-gradient(ellipse at 50% 65%, rgba(40,15,10,0.55) 0%, rgba(40,15,10,0) 60%); }
+  .c3 { justify-content:center; align-items:center; text-align:center; }
+  .c3 h1 { font-family:'Great Vibes',cursive; font-size:58px; color:#fff3d6; text-shadow:0 2px 20px rgba(0,0,0,0.4); }
+  .c3 .kicker { font-family:'Josefin Sans',sans-serif; font-weight:300; font-size:13px; letter-spacing:6px; text-transform:uppercase; color:#ffd9a0; margin-top:10px; }
+
+  /* ---------- 4. Art Deco ---------- */
+  .bg4 { background-image: url('Nature-Sunset/pexels_35322408_Pato_Mec.jpeg'); }
+  .grad4 { background: linear-gradient(180deg, rgba(10,8,5,0.5) 0%, rgba(10,8,5,0.1) 30%, rgba(10,8,5,0.1) 70%, rgba(10,8,5,0.6) 100%); }
+  .c4 { justify-content:space-between; align-items:center; text-align:center; }
+  .c4 .top { font-family:'Cinzel',serif; font-weight:500; font-size:12px; letter-spacing:6px; color:#f0d78c; text-transform:uppercase; }
+  .c4 h1 { font-family:'Cinzel',serif; font-weight:900; font-size:42px; color:#fff8e2; letter-spacing:2px; line-height:1.15; }
+  .c4 .frame { border-top:1px solid #f0d78c; border-bottom:1px solid #f0d78c; padding:14px 0; }
+
+  /* ---------- 5. Luxury Typography ---------- */
+  .bg5 { background-image: url('Nature-Sunset/pexels_38672000_Pexels_User.jpeg'); }
+  .grad5 { background: linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 40%); }
+  .c5 { justify-content:flex-end; align-items:flex-start; }
+  .c5 .kicker { font-family:'Bodoni Moda',serif; font-size:12px; letter-spacing:5px; text-transform:uppercase; color:#e7e1d4; margin-bottom:10px; }
+  .c5 h1 { font-family:'Bodoni Moda',serif; font-weight:600; font-size:40px; color:#ffffff; line-height:1.1; }
+  .c5 p { font-family:'Bodoni Moda',serif; font-style:italic; font-size:15px; color:#cfc8b8; margin-top:10px; }
+
+  /* ---------- 6. Mystical Western ---------- */
+  .bg6 { background-image: url('Nature-Sunset/pexels_34638990_Cara_Denison.jpeg'); }
+  .grad6 { background: linear-gradient(180deg, rgba(20,8,4,0.35) 0%, rgba(20,8,4,0) 30%, rgba(20,8,4,0.55) 100%); }
+  .c6 { justify-content:flex-end; align-items:center; text-align:center; }
+  .c6 h1 { font-family:'Alfa Slab One',serif; font-size:36px; color:#fff2da; text-shadow:0 3px 0 rgba(90,30,10,0.5); letter-spacing:1px; }
+  .c6 .kicker { font-family:'Space Mono',monospace; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:#f4c98a; margin-top:12px; }
+
+  /* ---------- 7. Coquette ---------- */
+  .bg7 { background-image: url('Nature-Sunset/pexels_29020252_Mohit__Khare.jpeg'); }
+  .grad7 { background: linear-gradient(0deg, rgba(50,20,20,0.45) 0%, rgba(50,20,20,0) 50%); }
+  .c7 { justify-content:flex-end; align-items:center; text-align:center; }
+  .c7 h1 { font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:600; font-size:38px; color:#ffe9ec; }
+  .c7 .kicker { font-family:'Cormorant Garamond',serif; font-size:14px; letter-spacing:3px; text-transform:uppercase; color:#ffd2d9; margin-top:8px; }
+
+  /* ---------- 8. Mid-Century ---------- */
+  .bg8 { background-image: url('Nature-Sunset/pexels_210288_Pixabay.jpeg'); }
+  .grad8 { background: linear-gradient(180deg, rgba(10,10,10,0.1) 0%, rgba(10,10,10,0.55) 100%); }
+  .c8 { justify-content:flex-end; }
+  .c8 .kicker { font-family:'Oswald',sans-serif; font-weight:600; font-size:13px; letter-spacing:4px; text-transform:uppercase; color:#ffdca8; }
+  .c8 h1 { font-family:'Oswald',sans-serif; font-weight:700; font-size:46px; color:#fff8ef; line-height:1.05; margin-top:8px; }
+
+  /* ---------- 9. Nautical ---------- */
+  .bg9 { background-image: url('Nature-Sunset/pexels_17345550_Matthias_Groeneveld.jpeg'); }
+  .grad9 { background: linear-gradient(0deg, rgba(6,12,20,0.6) 0%, rgba(6,12,20,0) 45%); }
+  .c9 { justify-content:flex-end; }
+  .c9 .kicker { font-family:'Space Mono',monospace; font-weight:700; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:#c9dcea; }
+  .c9 h1 { font-family:'Marcellus',serif; font-size:34px; color:#ffffff; margin-top:10px; line-height:1.2; }
+  .c9 .rule { width:100%; height:1px; background:rgba(255,255,255,0.4); margin:12px 0; }
+
+  /* ---------- 10. Neoclassical ---------- */
+  .bg10 { background-image: url('Nature-Sunset/pexels_168838_Digital_Buggu.jpeg'); }
+  .grad10 { background: linear-gradient(180deg, rgba(15,10,5,0.45) 0%, rgba(15,10,5,0) 25%, rgba(15,10,5,0) 70%, rgba(15,10,5,0.55) 100%); }
+  .c10 { justify-content:space-between; align-items:center; text-align:center; }
+  .c10 .top { font-family:'Cinzel',serif; font-size:11px; letter-spacing:5px; color:#f5e6c8; text-transform:uppercase; }
+  .c10 h1 { font-family:'Marcellus',serif; font-size:38px; color:#fdf6e8; line-height:1.2; }
+</style>
+</head>
+<body>
+
+<div class="grid">
+
+  <div class="card bg1"><div class="overlay grad1"></div><span class="label">01 · Light Academia</span>
+    <div class="content c1">
+      <div class="kicker">Morning Pages</div>
+      <h1>Write it down<br>before it fades</h1>
+      <p>A quiet ritual, five sentences, every sunrise.</p>
+    </div>
+  </div>
+
+  <div class="card bg2"><div class="overlay grad2"></div><span class="label">02 · Wabi Sabi</span>
+    <div class="content c2">
+      <div class="kicker">Imperfect · Present</div>
+      <h1>Nothing here<br>needs fixing</h1>
+      <div class="rule"></div>
+      <p>The crack is where the light gets in.</p>
+    </div>
+  </div>
+
+  <div class="card bg3"><div class="overlay grad3"></div><span class="label">03 · Bohemian</span>
+    <div class="content c3">
+      <h1>wander&nbsp;free</h1>
+      <div class="kicker">Chapter One</div>
+    </div>
+  </div>
+
+  <div class="card bg4"><div class="overlay grad4"></div><span class="label">04 · Art Deco</span>
+    <div class="content c4">
+      <div class="top">Est. 2026</div>
+      <div class="frame"><h1>THE GOLDEN<br>HOUR</h1></div>
+      <div class="top">No. 07</div>
+    </div>
+  </div>
+
+  <div class="card bg5"><div class="overlay grad5"></div><span class="label">05 · Luxury Typography</span>
+    <div class="content c5">
+      <div class="kicker">Editor's Letter</div>
+      <h1>Stillness<br>is a skill</h1>
+      <p>Three minutes of nothing, on purpose.</p>
+    </div>
+  </div>
+
+  <div class="card bg6"><div class="overlay grad6"></div><span class="label">06 · Mystical Western</span>
+    <div class="content c6">
+      <h1>RIDE TOWARD<br>THE SUN</h1>
+      <div class="kicker">— A Field Note —</div>
+    </div>
+  </div>
+
+  <div class="card bg7"><div class="overlay grad7"></div><span class="label">07 · Coquette</span>
+    <div class="content c7">
+      <h1>soft days,<br>slower hours</h1>
+      <div class="kicker">notes to self</div>
+    </div>
+  </div>
+
+  <div class="card bg8"><div class="overlay grad8"></div><span class="label">08 · Mid-Century</span>
+    <div class="content c8">
+      <div class="kicker">Issue 12 — Habits</div>
+      <h1>SLOW<br>MORNINGS</h1>
+    </div>
+  </div>
+
+  <div class="card bg9"><div class="overlay grad9"></div><span class="label">09 · Nautical</span>
+    <div class="content c9">
+      <div class="kicker">Log Entry — Dusk</div>
+      <div class="rule"></div>
+      <h1>Anchored, finally</h1>
+    </div>
+  </div>
+
+  <div class="card bg10"><div class="overlay grad10"></div><span class="label">10 · Neoclassical</span>
+    <div class="content c10">
+      <div class="top">Reflections</div>
+      <h1>On Patience<br>&amp; Light</h1>
+      <div class="top">Vol. III</div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

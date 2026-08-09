@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Restaurant Branding Swipe File</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;1,500&display=swap');
+    :root { --ink:#171717; --paper:#e9e8e3; --line:#8e8d87; --white:#f7f6f1; --muted:#676762; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:'DM Mono',monospace; }
+    body:before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.13; background-image:radial-gradient(#000 .55px,transparent .55px); background-size:5px 5px; }
+    main { max-width:1500px; margin:auto; padding:28px clamp(18px,4vw,64px) 64px; }
+    header { display:flex; justify-content:space-between; gap:24px; align-items:end; padding-bottom:28px; border-bottom:1px solid var(--ink); }
+    .eyebrow,.meta { font-size:11px; letter-spacing:.12em; text-transform:uppercase; }
+    h1 { margin:18px 0 8px; font:500 clamp(45px,8vw,112px)/.84 'Playfair Display',serif; letter-spacing:-.06em; }
+    p { max-width:620px; margin:0; color:var(--muted); font-size:12px; line-height:1.65; }
+    .mark { width:84px; height:84px; border:1px solid var(--ink); border-radius:50%; display:grid; place-items:center; font:italic 36px 'Playfair Display',serif; transform:rotate(-9deg); }
+    .toolbar { display:flex; justify-content:space-between; gap:16px; padding:18px 0; }
+    .wall { display:grid; grid-template-columns:repeat(12,1fr); gap:16px; }
+    a.card { grid-column:span 3; display:block; color:inherit; padding:8px; border:1px solid var(--ink); background:var(--white); text-decoration:none; transition:transform .2s ease,box-shadow .2s ease; }
+    a.card:hover { transform:translateY(-5px) rotate(-.3deg); box-shadow:8px 8px 0 var(--ink); }
+    img { display:block; width:100%; aspect-ratio:1; object-fit:cover; background:#d5d3cb; }
+    .copy { padding:10px 3px 3px; }
+    .name { display:block; font-size:10px; text-transform:uppercase; }
+    .note { display:block; margin-top:6px; color:var(--muted); font-size:10px; line-height:1.5; }
+    footer { border-top:1px solid var(--ink); margin-top:30px; padding-top:14px; color:var(--muted); font-size:10px; line-height:1.6; }
+    @media (max-width:900px) { a.card { grid-column:span 4; } }
+    @media (max-width:620px) { .mark { display:none; } a.card { grid-column:span 6; } }
+    @media (max-width:420px) { a.card { grid-column:1/-1; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <div class="eyebrow">02 / Monochrome Branding / Market Research</div>
+        <h1>Restaurant<br><em>brand swipe file.</em></h1>
+        <p>Eight real project images to study for system thinking: the mark is only the entry point; packaging, menus, environments, and recurring illustrations make the identity feel bought and lived in.</p>
+      </div>
+      <div class="mark" aria-hidden="true">S</div>
+    </header>
+    <div class="toolbar"><div class="meta">Real client work / click an image for its full case study</div><div class="meta">08 references</div></div>
+    <section class="wall">
+      <a class="card" href="https://yellowfishes.com/case-studies/poetry" target="_blank" rel="noreferrer"><img src="https://images.squarespace-cdn.com/content/v1/573993561bbee069b5ee48e4/1472735743504-771V1EAYNP0V9B2OF5AE/Yellow-Fishes-Best-Branding-Agency-Mumbai-India-Singapore-Restaurant-Branding-Cafe-Branding-Poetry-Branding-Mumbai-Logo-Design-company" alt="Poetry restaurant logo identity" /><span class="copy"><span class="name">01 / Poetry</span><span class="note">A distinctive mark with a clear emotional tone.</span></span></a>
+      <a class="card" href="https://yellowfishes.com/case-studies/poetry" target="_blank" rel="noreferrer"><img src="https://images.squarespace-cdn.com/content/v1/573993561bbee069b5ee48e4/1472735848917-YWLNMIB40LCSLBYT6I93/Yellow-Fishes-Best-Branding-Agency-Mumbai-India-Singapore-Restaurant-Branding-Cafe-Branding-Poetry-Branding-Mumbai-Illustration-design" alt="Poetry restaurant illustrations" /><span class="copy"><span class="name">02 / Poetry</span><span class="note">An illustration vocabulary, not a one-off hero drawing.</span></span></a>
+      <a class="card" href="https://yellowfishes.com/case-studies/poetry" target="_blank" rel="noreferrer"><img src="https://images.squarespace-cdn.com/content/v1/573993561bbee069b5ee48e4/1472736125802-CK49V4EQDHMP3GUOCTHS/Yellow-Fishes-Best-Branding-Agency-Mumbai-India-Singapore-Restaurant-Branding-Cafe-Branding-Poetry-Branding-Mumbai-packaging-design" alt="Poetry restaurant packaging" /><span class="copy"><span class="name">03 / Poetry</span><span class="note">The mark earns value when it reaches takeaway packaging.</span></span></a>
+      <a class="card" href="https://www.senkastudio.com/baker-street-bakery" target="_blank" rel="noreferrer"><img src="https://images.squarespace-cdn.com/content/v1/6035fe2b49f5591cd33a9b2c/1616746020521-RDXU7YX1EZWPQMU2LV0K/6b568eceec2d8890f23b09e1ef19e265.JPG" alt="Baker Street Bakery branding" /><span class="copy"><span class="name">04 / Baker Street Bakery</span><span class="note">A tightly limited palette turns many touchpoints into one world.</span></span></a>
+      <a class="card" href="https://www.behance.net/gallery/19050415/Louis-Charden-bakery" target="_blank" rel="noreferrer"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_632_webp/1c9aa919050415.562d452682a68.jpg" alt="Louis Charden bakery branding" /><span class="copy"><span class="name">05 / Louis Charden</span><span class="note">A brand character creates a repeatable narrative asset.</span></span></a>
+      <a class="card" href="https://www.behance.net/gallery/19050415/Louis-Charden-bakery" target="_blank" rel="noreferrer"><img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200_webp/4b413f19050415.562d435bd9812.jpg" alt="Louis Charden bakery packaging" /><span class="copy"><span class="name">06 / Louis Charden</span><span class="note">The illustration carries across print and retail materials.</span></span></a>
+      <a class="card" href="https://www.fivestarlogo.com/post/playful-bakery-branding-packaging-design-artisan-bakery" target="_blank" rel="noreferrer"><img src="https://static.wixstatic.com/media/db0d3f_4b78ffcb4f2c42fe8bff98fc509e8355~mv2.webp" alt="Rollin artisan bakery branding" /><span class="copy"><span class="name">07 / Rollin'</span><span class="note">A playful illustrated system still needs typography to hold it together.</span></span></a>
+      <a class="card" href="https://www.fivestarlogo.com/post/playful-bakery-branding-packaging-design-artisan-bakery" target="_blank" rel="noreferrer"><img src="https://static.wixstatic.com/media/db0d3f_f288ff69c7cc402385e2a71fbf3a666a~mv2.webp" alt="Rollin artisan bakery packaging" /><span class="copy"><span class="name">08 / Rollin'</span><span class="note">One visual rule can produce a flexible family of applications.</span></span></a>
+    </section>
+    <footer>Images remain the property of their respective owners and are embedded here solely as external, linked visual references. Each card opens the original case study.</footer>
+  </main>
+</body>
+</html>

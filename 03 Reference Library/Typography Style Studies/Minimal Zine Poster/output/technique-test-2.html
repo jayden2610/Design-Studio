@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>technique test 2 — refined procedural rendering</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital@0;1&display=swap');
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body { background:#161615; font-family:'EB Garamond', serif; }
+  .rail { display:flex; gap:32px; padding:48px; align-items:flex-start; flex-wrap:wrap; }
+  .cell { display:flex; flex-direction:column; align-items:center; gap:14px; }
+  .label { font-family:'Courier Prime', monospace; font-size:12px; letter-spacing:0.08em; color:#8c8676; text-transform:uppercase; max-width:340px; text-align:center; line-height:1.5; }
+  .poster { position:relative; width:340px; height:560px; box-shadow:0 30px 80px rgba(0,0,0,0.55); overflow:hidden; background:#e9e2d3; }
+  .shape-wrap { position:absolute; inset:0; }
+  .shape-wrap svg { position:absolute; inset:0; width:100%; height:100%; }
+</style>
+</head>
+<body>
+<div class="rail">
+
+  <!-- ROSE: superformula geometry + two-freq displacement + morphology close + paper lighting -->
+  <div class="cell">
+    <div class="poster">
+      <div class="shape-wrap">
+        <svg viewBox="0 0 340 560" xmlns="http://www.w3.org/2000/svg" style="overflow:visible;">
+          <defs>
+            <!-- paper tooth: turbulence -> diffuse lighting -> multiply onto background -->
+            <filter id="paperTooth" x="-20%" y="-20%" width="140%" height="140%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="5" seed="3" result="n"/>
+              <feDiffuseLighting in="n" lighting-color="#fff" surfaceScale="2" diffuseConstant="1" result="lit">
+                <feDistantLight azimuth="45" elevation="55"/>
+              </feDiffuseLighting>
+              <feColorMatrix in="lit" type="matrix" values="0 0 0 0 0.91  0 0 0 0 0.89  0 0 0 0 0.82  0 0 0 1 0" result="litTone"/>
+              <feBlend in="SourceGraphic" in2="litTone" mode="multiply"/>
+            </filter>
+
+            <!-- torn ink edge: two-frequency displacement, expanded region, morphology close -->
+            <filter id="tornInk" x="-40%" y="-40%" width="180%" height="180%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="9" result="macro"/>
+              <feTurbulence type="fractalNoise" baseFrequency="0.55" numOctaves="2" seed="21" result="micro"/>
+              <feComposite in="macro" in2="micro" operator="arithmetic" k1="0" k2="0.65" k3="0.35" k4="0" result="combinedNoise"/>
+              <feDisplacementMap in="SourceGraphic" in2="combinedNoise" scale="9" xChannelSelector="R" yChannelSelector="G" result="displaced"/>
+              <feMorphology in="displaced" operator="dilate" radius="0.6" result="closed1"/>
+              <feMorphology in="closed1" operator="erode" radius="0.9" result="closed2"/>
+            </filter>
+
+            <!-- inner shading, milder version -->
+            <filter id="tornInkSoft" x="-40%" y="-40%" width="180%" height="180%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="14" result="macro2"/>
+              <feDisplacementMap in="SourceGraphic" in2="macro2" scale="5" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+          </defs>
+
+          <g id="roseGroup" filter="url(#tornInk)"></g>
+          <g id="roseShadeGroup" filter="url(#tornInkSoft)" opacity="0.55"></g>
+          <rect id="roseStem" fill="#5a3418"/>
+          <g filter="url(#paperTooth)">
+            <rect x="0" y="0" width="340" height="560" fill="#e9e2d3"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="label">rose — superformula petal geometry (m=5) + two-freq tear + morphology close + paper-tooth lighting overlay</div>
+  </div>
+
+  <!-- APPLE: superformula (round, m=0 circle-ish) + discrete posterize shading -->
+  <div class="cell">
+    <div class="poster">
+      <div class="shape-wrap">
+        <svg viewBox="0 0 340 560" xmlns="http://www.w3.org/2000/svg" style="overflow:visible;">
+          <defs>
+            <filter id="paperToothB" x="-20%" y="-20%" width="140%" height="140%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="5" seed="5" result="n"/>
+              <feDiffuseLighting in="n" lighting-color="#fff" surfaceScale="2" diffuseConstant="1" result="lit">
+                <feDistantLight azimuth="45" elevation="55"/>
+              </feDiffuseLighting>
+              <feColorMatrix in="lit" type="matrix" values="0 0 0 0 0.91  0 0 0 0 0.89  0 0 0 0 0.82  0 0 0 1 0" result="litTone"/>
+              <feBlend in="SourceGraphic" in2="litTone" mode="multiply"/>
+            </filter>
+
+            <filter id="tornInkB" x="-40%" y="-40%" width="180%" height="180%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.014" numOctaves="2" seed="31" result="macro"/>
+              <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="2" seed="44" result="micro"/>
+              <feComposite in="macro" in2="micro" operator="arithmetic" k1="0" k2="0.6" k3="0.4" k4="0" result="combinedNoise"/>
+              <feDisplacementMap in="SourceGraphic" in2="combinedNoise" scale="7" xChannelSelector="R" yChannelSelector="G" result="displaced"/>
+              <feMorphology in="displaced" operator="dilate" radius="0.5" result="closed1"/>
+              <feMorphology in="closed1" operator="erode" radius="0.8"/>
+            </filter>
+
+            <!-- discrete posterize: turbulence-lit sphere shading collapsed to 3 bands -->
+            <filter id="posterizeShade" x="-20%" y="-20%" width="140%" height="140%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" seed="8" result="n2"/>
+              <feDiffuseLighting in="n2" lighting-color="#fff" surfaceScale="6" diffuseConstant="1.1" result="lit2">
+                <feDistantLight azimuth="235" elevation="35"/>
+              </feDiffuseLighting>
+              <feComponentTransfer in="lit2" result="posterized">
+                <feFuncR type="discrete" tableValues="0.15 0.5 0.9"/>
+                <feFuncG type="discrete" tableValues="0.15 0.5 0.9"/>
+                <feFuncB type="discrete" tableValues="0.15 0.5 0.9"/>
+              </feComponentTransfer>
+              <feBlend in="SourceGraphic" in2="posterized" mode="multiply"/>
+            </filter>
+          </defs>
+
+          <g filter="url(#paperToothB)">
+            <rect x="0" y="0" width="340" height="560" fill="#e9e2d3"/>
+          </g>
+          <g id="appleGroup" filter="url(#tornInkB)"></g>
+          <g id="appleShadeClip"></g>
+          <rect id="appleStem" fill="#4a2a10"/>
+          <path id="appleLeaf" fill="#3a6b2a" opacity="0.85"/>
+        </svg>
+      </div>
+    </div>
+    <div class="label">apple — superformula round body + two-freq tear edge + feComponentTransfer discrete posterize shading (riso tonal bands)</div>
+  </div>
+
+  <!-- NAPE: Catmull-Rom smooth contour, NOT torn (per research: should stay smooth) + paper tooth -->
+  <div class="cell">
+    <div class="poster">
+      <div class="shape-wrap">
+        <svg viewBox="0 0 340 560" xmlns="http://www.w3.org/2000/svg" style="overflow:visible;">
+          <defs>
+            <filter id="paperToothC" x="-20%" y="-20%" width="140%" height="140%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="5" seed="17" result="n"/>
+              <feDiffuseLighting in="n" lighting-color="#fff" surfaceScale="2" diffuseConstant="1" result="lit">
+                <feDistantLight azimuth="45" elevation="55"/>
+              </feDiffuseLighting>
+              <feColorMatrix in="lit" type="matrix" values="0 0 0 0 0.90  0 0 0 0 0.88  0 0 0 0 0.86  0 0 0 1 0" result="litTone"/>
+              <feBlend in="SourceGraphic" in2="litTone" mode="multiply"/>
+            </filter>
+            <!-- very mild displacement: just enough to avoid a dead-vector look, no tear -->
+            <filter id="nearlySmooth" x="-20%" y="-20%" width="140%" height="140%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="2" seed="55" result="n3"/>
+              <feDisplacementMap in="SourceGraphic" in2="n3" scale="2.5" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+          </defs>
+
+          <g filter="url(#paperToothC)">
+            <rect x="0" y="0" width="340" height="560" fill="#e6e4dc"/>
+          </g>
+          <g id="napeGroup" filter="url(#nearlySmooth)"></g>
+          <rect id="napeCobalt" fill="#0047ab"/>
+        </svg>
+      </div>
+    </div>
+    <div class="label">nape — Catmull-Rom noise-perturbed contour (smooth, low-freq only — no tear per research) + paper-tooth lighting</div>
+  </div>
+
+</div>
+
+<script>
+// ---------- shared: seeded PRNG ----------
+function seededRand(seed){ let s = seed>>>0; return function(){ s = (s*1664525+1013904223)>>>0; return s/4294967296; }; }
+
+// ---------- superformula ----------
+function superformula(phi, a,b,m,n1,n2,n3){
+  const t1 = Math.abs(Math.cos(m*phi/4)/a);
+  const t2 = Math.abs(Math.sin(m*phi/4)/b);
+  return Math.pow(Math.pow(t1,n2)+Math.pow(t2,n3), -1/n1);
+}
+function superformulaPath(cx,cy,scale,a,b,m,n1,n2,n3,steps,jitter,rand){
+  let d='';
+  const pts=[];
+  for(let i=0;i<=steps;i++){
+    const phi = (i/steps)*Math.PI*2;
+    let r = superformula(phi,a,b,m,n1,n2,n3)*scale;
+    if(jitter) r *= (1 + (rand()-0.5)*jitter);
+    const x = cx + r*Math.cos(phi);
+    const y = cy + r*Math.sin(phi)*1.02;
+    pts.push([x,y]);
+  }
+  pts.forEach((p,i)=>{ d += (i===0?'M':'L') + p[0].toFixed(2)+','+p[1].toFixed(2)+' '; });
+  d += 'Z';
+  return d;
+}
+
+// ---------- Catmull-Rom closed path through points ----------
+function catmullRomPath(points){
+  const p = points;
+  const n = p.length;
+  let d = `M ${p[0][0].toFixed(2)},${p[0][1].toFixed(2)} `;
+  for(let i=0;i<n;i++){
+    const p0 = p[(i-1+n)%n], p1 = p[i], p2 = p[(i+1)%n], p3 = p[(i+2)%n];
+    const c1x = p1[0] + (p2[0]-p0[0])/6;
+    const c1y = p1[1] + (p2[1]-p0[1])/6;
+    const c2x = p2[0] - (p3[0]-p1[0])/6;
+    const c2y = p2[1] - (p3[1]-p1[1])/6;
+    d += `C ${c1x.toFixed(2)},${c1y.toFixed(2)} ${c2x.toFixed(2)},${c2y.toFixed(2)} ${p2[0].toFixed(2)},${p2[1].toFixed(2)} `;
+  }
+  d += 'Z';
+  return d;
+}
+function noisePerturbedContour(cx,cy,baseR,seed,pointCount,ampFrac,squashY){
+  const rand = seededRand(seed);
+  const pts=[];
+  for(let i=0;i<pointCount;i++){
+    const a = (i/pointCount)*Math.PI*2;
+    const r = baseR*(1+(rand()-0.5)*ampFrac);
+    pts.push([cx+Math.cos(a)*r, cy+Math.sin(a)*r*squashY]);
+  }
+  return pts;
+}
+
+// ===== ROSE =====
+(function(){
+  const rand = seededRand(701);
+  const cx=170, cy=210;
+  const g = document.getElementById('roseGroup');
+  const shadeG = document.getElementById('roseShadeGroup');
+  // outer petal whorl: superformula m=5 (5-fold), soft lobes
+  const outer = superformulaPath(cx,cy,118,1,1,5,6,10,10,180,0.05,rand);
+  const mid   = superformulaPath(cx,cy,84,1,1,5,4,8,8,180,0.06,rand);
+  const inner = superformulaPath(cx,cy,52,1,1,5,3,6,6,180,0.07,rand);
+  const core  = superformulaPath(cx,cy,26,1,1,7,4,7,7,140,0.08,rand);
+  g.innerHTML = `<path d="${outer}" fill="#9c1c1c"/>`;
+  shadeG.innerHTML = `
+    <path d="${mid}" fill="#6e1010" opacity="0.7"/>
+    <path d="${inner}" fill="#4a0a0a" opacity="0.6"/>
+    <path d="${core}" fill="#2f0606" opacity="0.55"/>`;
+  document.getElementById('roseStem').setAttribute('x', cx-4);
+  document.getElementById('roseStem').setAttribute('y', cy+110);
+  document.getElementById('roseStem').setAttribute('width', 8);
+  document.getElementById('roseStem').setAttribute('height', 150);
+})();
+
+// ===== APPLE =====
+(function(){
+  const rand = seededRand(913);
+  const cx=170, cy=230;
+  const g = document.getElementById('appleGroup');
+  // apple body: superformula near-circular with slight top dimple (m=2 subtle)
+  const body = superformulaPath(cx,cy,105,1,1,2,60,60,60,160,0.035,rand);
+  g.innerHTML = `<path d="${body}" fill="#b71c1c"/>`;
+  // posterized shading clipped to the same body shape
+  const shadeClip = document.getElementById('appleShadeClip');
+  const clipId = 'appleBodyClip';
+  shadeClip.innerHTML = `
+    <clipPath id="${clipId}"><path d="${body}"/></clipPath>
+    <g clip-path="url(#${clipId})" filter="url(#posterizeShade)">
+      <rect x="${cx-115}" y="${cy-115}" width="230" height="230" fill="#b71c1c"/>
+    </g>`;
+  document.getElementById('appleStem').setAttribute('x', cx-4);
+  document.getElementById('appleStem').setAttribute('y', cy-128);
+  document.getElementById('appleStem').setAttribute('width', 8);
+  document.getElementById('appleStem').setAttribute('height', 30);
+  document.getElementById('appleLeaf').setAttribute('d', `M ${cx+2},${cy-120} C ${cx+30},${cy-135} ${cx+42},${cy-118} ${cx+28},${cy-104} C ${cx+14},${cy-108} ${cx+4},${cy-112} ${cx+2},${cy-120} Z`);
+})();
+
+// ===== NAPE =====
+(function(){
+  const cx=170, cy=260;
+  const g = document.getElementById('napeGroup');
+  // head + shoulders: smooth low-frequency perturbed contour, squashed
+  const headPts = noisePerturbedContour(cx, cy-40, 72, 302, 24, 0.05, 1.0);
+  const shoulderPts = [
+    [cx-140, cy+220],[cx-150,cy+140],[cx-120,cy+40],[cx-90,cy-10],
+    [cx-60,cy-30],[cx,cy-38],[cx+60,cy-30],[cx+90,cy-10],
+    [cx+120,cy+40],[cx+150,cy+140],[cx+140,cy+220]
+  ];
+  const headPath = catmullRomPath(headPts);
+  g.innerHTML = `
+    <path d="${headPath}" fill="#3a3a38"/>
+    <path d="M ${shoulderPts.map(p=>p.join(',')).join(' L ')} Z" fill="#3a3a38"/>
+    <path d="${headPath}" fill="#2c2c2a" opacity="0.35" transform="translate(0,-6) scale(0.94)" transform-origin="${cx}px ${cy-40}px"/>`;
+  document.getElementById('napeCobalt').setAttribute('x', cx-90);
+  document.getElementById('napeCobalt').setAttribute('y', cy+250);
+  document.getElementById('napeCobalt').setAttribute('width', 180);
+  document.getElementById('napeCobalt').setAttribute('height', 14);
+})();
+</script>
+</body>
+</html>
