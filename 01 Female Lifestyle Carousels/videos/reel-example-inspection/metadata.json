@@ -1,0 +1,54 @@
+[
+  {
+    "file": "reel_02_DZaAvDhNIjA.mp4",
+    "duration": 15.600952,
+    "width": 720,
+    "height": 1280,
+    "sampledAt": [
+      0,
+      3.900238,
+      7.800476,
+      11.700714,
+      15.520952
+    ]
+  },
+  {
+    "file": "reel_03_DZNGJ6uOZjw.mp4",
+    "duration": 24.958594,
+    "width": 720,
+    "height": 1280,
+    "sampledAt": [
+      0,
+      6.2396485,
+      12.479297,
+      18.7189455,
+      24.878594000000003
+    ]
+  },
+  {
+    "file": "reel_04_DYzaJ90NYd9.mp4",
+    "duration": 84.169478,
+    "width": 720,
+    "height": 1280,
+    "sampledAt": [
+      0,
+      21.0423695,
+      42.084739,
+      63.1271085,
+      84.089478
+    ]
+  },
+  {
+    "file": "reel_05_DanXdd1NP8r.mp4",
+    "duration": 14.950794,
+    "width": 720,
+    "height": 1280,
+    "sampledAt": [
+      0,
+      3.7376985,
+      7.475397,
+      11.2130955,
+      14.870794
+    ]
+  }
+]

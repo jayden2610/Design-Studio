@@ -1,0 +1,18 @@
+{
+  "project": "02 - gimbap roll",
+  "delivery": "keyframe-preview",
+  "keyColor": "#00FF00",
+  "keyframes": ["K0", "K1", "K2", "K3"],
+  "checks": {
+    "allKeyframesPresent": true,
+    "uniformCanvasSize": true,
+    "flatChromaBackgroundReviewed": true,
+    "k3HandSpillCleanupReviewed": true,
+    "ffmpegConfigured": true,
+    "runtimeUsesPrekeyedAlpha": true,
+    "reducedMotionPosterPath": "final/keyframes-alpha/K3.png"
+  },
+  "blocked": [
+    "No video-generation provider has been selected or configured"
+  ]
+}

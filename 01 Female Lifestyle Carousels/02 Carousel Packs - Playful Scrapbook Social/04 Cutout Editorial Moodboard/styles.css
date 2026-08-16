@@ -1,0 +1,143 @@
+* { box-sizing: border-box; }
+
+html, body { margin: 0; min-height: 100%; }
+
+body {
+  background: #e9e4da;
+  display: grid;
+  place-items: center;
+}
+
+.page {
+  --paper: #90a7d8;
+  --cream: #fffaf0;
+  --ink: #2e2837;
+  position: relative;
+  width: 1080px;
+  height: 1350px;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--paper);
+}
+
+.grain {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: .14;
+  pointer-events: none;
+  background-image:
+    repeating-radial-gradient(circle at 17% 25%, rgba(255,255,255,.52) 0 1px, transparent 1px 4px),
+    repeating-radial-gradient(circle at 72% 74%, rgba(48,58,94,.42) 0 1px, transparent 1px 5px);
+  background-size: 9px 9px, 11px 11px;
+  mix-blend-mode: soft-light;
+}
+
+.sticker, .memory-photo, .headline, .paper-note, .sparkle, .page-number { position: absolute; z-index: 1; }
+
+.sticker { object-fit: contain; filter: drop-shadow(0 10px 9px rgba(38, 42, 65, .13)); }
+.flowers { width: 300px; left: -30px; top: 15px; transform: rotate(-13deg); }
+.flats { width: 270px; left: 438px; top: 54px; transform: rotate(12deg); }
+.sunglasses { width: 126px; right: 55px; top: 90px; transform: rotate(-20deg); }
+.mirror { width: 206px; left: 475px; top: 871px; transform: rotate(-11deg); }
+.bag { width: 244px; right: 48px; bottom: 45px; transform: rotate(4deg); }
+.coffee { width: 118px; right: 353px; bottom: 296px; transform: rotate(8deg); }
+.lipstick { width: 105px; right: 78px; top: 486px; transform: rotate(28deg); }
+.book { width: 172px; left: 65px; bottom: 130px; transform: rotate(-13deg); }
+.clip { width: 122px; right: 194px; top: 331px; transform: rotate(16deg); }
+.tape { width: 152px; left: 55px; bottom: 366px; transform: rotate(-13deg); opacity: .9; }
+.underline { width: 190px; left: 103px; top: 772px; transform: rotate(-5deg); filter: none; opacity: .9; }
+
+.headline {
+  left: 105px;
+  top: 370px;
+  z-index: 3;
+  width: 520px;
+  color: var(--cream);
+  text-shadow: 0 2px 0 rgba(44, 50, 85, .08);
+}
+
+.eyebrow {
+  margin: 0 0 27px;
+  font: 700 18px/1 Arial, sans-serif;
+  letter-spacing: .17em;
+}
+
+h1 { margin: 0; font: 400 87px/.79 Georgia, 'Times New Roman', serif; letter-spacing: -.065em; }
+h1 span, h1 em { display: block; }
+h1 em { margin: 4px 0 8px -7px; font-style: italic; font-size: 1.2em; }
+.subhead { width: 280px; margin: 28px 0 0 5px; font: 500 22px/1.25 Arial, sans-serif; letter-spacing: -.015em; }
+
+.memory-photo {
+  left: 40px;
+  bottom: 58px;
+  width: 255px;
+  margin: 0;
+  padding: 12px 12px 40px;
+  overflow: hidden;
+  background: #f9eee2;
+  box-shadow: 10px 13px 0 rgba(76, 86, 125, .17), 0 12px 19px rgba(36, 41, 68, .18);
+  transform: rotate(-5deg);
+}
+
+.memory-photo img { display: block; width: 100%; height: 242px; object-fit: cover; object-position: 50% 30%; filter: saturate(.82) contrast(.95) sepia(.08); }
+.memory-photo figcaption { position: absolute; right: 15px; bottom: 13px; color: #3e3a42; font: italic 18px/1 Georgia, serif; }
+
+.paper-note {
+  top: 561px;
+  right: 66px;
+  z-index: 4;
+  width: 169px;
+  height: 188px;
+  padding: 27px 19px;
+  color: #29252c;
+  text-align: center;
+  background: #f2e6cf;
+  clip-path: polygon(3% 0, 100% 4%, 95% 100%, 5% 95%, 0 38%);
+  box-shadow: 5px 8px 0 rgba(48, 54, 89, .16);
+  transform: rotate(7deg);
+}
+
+.paper-note span { display: block; margin-bottom: 8px; font: 700 13px/1 Arial, sans-serif; letter-spacing: .16em; }
+.paper-note strong { font: 800 27px/.92 Arial, sans-serif; letter-spacing: -.08em; }
+
+.sparkle { z-index: 4; color: var(--cream); font-family: Georgia, serif; text-shadow: 0 1px 0 rgba(39, 46, 82, .15); }
+.sparkle-one { top: 247px; right: 286px; font-size: 72px; transform: rotate(11deg); }
+.sparkle-two { top: 816px; right: 145px; font-size: 45px; }
+.page-number { right: 72px; bottom: 31px; z-index: 5; color: var(--cream); font: 700 16px/1 Arial, sans-serif; letter-spacing: .12em; }
+
+.prompt-page { color: var(--cream); }
+.prompt-page .sticker { z-index: 2; }
+.prompt-meta { position: absolute; top: 83px; left: 83px; z-index: 3; margin: 0; font: 600 17px/1 Arial, sans-serif; letter-spacing: .12em; }
+.tiny-intro { position: absolute; top: 213px; left: 86px; z-index: 3; margin: 0; font: italic 36px/1 Georgia, serif; }
+.wordmark { position: absolute; top: 270px; left: 78px; z-index: 3; width: 770px; margin: 0; font: italic 150px/.73 Georgia, 'Times New Roman', serif; letter-spacing: -.075em; color: var(--cream); }
+.question { position: absolute; left: 90px; top: 610px; z-index: 3; margin: 0; font: 400 48px/1.02 Georgia, 'Times New Roman', serif; letter-spacing: -.045em; }
+.instruction { position: absolute; left: 94px; top: 810px; z-index: 3; margin: 0; font: 500 23px/1.34 Arial, sans-serif; }
+.prompt-number { position: absolute; right: 78px; bottom: 60px; z-index: 4; font: italic 96px/.8 Georgia, serif; letter-spacing: -.09em; }
+.prompt-note { position: absolute; z-index: 4; margin: 0; padding: 27px 24px; color: #302b33; font: italic 28px/1.02 Georgia, serif; background: #f4e8cf; clip-path: polygon(3% 0, 100% 5%, 94% 100%, 1% 93%); box-shadow: 6px 8px 0 rgba(45,54,87,.16); transform: rotate(6deg); }
+
+.p1-flowers { width: 308px; right: -25px; top: 65px; transform: rotate(10deg); }
+.p1-mirror { width: 275px; right: 115px; bottom: 82px; transform: rotate(-13deg); }
+.p1-lipstick { width: 112px; right: 98px; top: 450px; transform: rotate(25deg); }
+.p1-paperclip { width: 126px; left: 107px; bottom: 165px; transform: rotate(-19deg); }
+.prompt-one .prompt-note { right: 76px; top: 614px; }
+
+.prompt-two .wordmark { top: 252px; }
+.prompt-two .question { top: 642px; }
+.prompt-two .instruction { top: 852px; }
+.p2-flats { width: 308px; right: 34px; top: 83px; transform: rotate(14deg); }
+.p2-clip { width: 150px; right: 86px; top: 505px; transform: rotate(-13deg); }
+.p2-book { width: 280px; right: 33px; bottom: 83px; transform: rotate(12deg); }
+.p2-sparkle { width: 130px; left: 78px; bottom: 178px; opacity: .9; }
+.mini-polaroid { position: absolute; right: 89px; top: 683px; z-index: 4; width: 203px; margin: 0; padding: 10px 10px 33px; background: #f9eee2; box-shadow: 7px 9px 0 rgba(44,54,88,.17); transform: rotate(6deg); }
+.mini-polaroid img { display: block; width: 100%; height: 184px; object-fit: cover; }
+.mini-polaroid figcaption { position: absolute; left: 13px; bottom: 10px; color: #3b3541; font: italic 16px/1 Georgia, serif; }
+
+.prompt-three .wordmark { top: 278px; }
+.prompt-three .question { top: 650px; }
+.prompt-three .instruction { top: 860px; }
+.p3-coffee { width: 148px; right: 123px; top: 163px; transform: rotate(9deg); }
+.p3-tote { width: 284px; right: 64px; bottom: 72px; transform: rotate(3deg); }
+.p3-notebook { width: 270px; left: 52px; bottom: 97px; transform: rotate(-11deg); }
+.p3-bouquet { width: 190px; right: 77px; top: 491px; transform: rotate(9deg); }
+.p3-note { right: 102px; top: 688px; }

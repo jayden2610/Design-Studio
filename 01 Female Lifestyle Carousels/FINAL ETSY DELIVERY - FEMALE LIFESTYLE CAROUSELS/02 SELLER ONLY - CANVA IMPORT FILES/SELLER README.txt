@@ -1,0 +1,1 @@
+These are seller-only editable import decks. Upload them privately to Canva, check editability and font rendering, then create a MASTER and an EDIT THIS FIRST buyer copy. Buyers should receive only a Canva Template link through the PDF in 01 BUYER DOWNLOAD - UPLOAD TO ETSY. Do not upload these PPTX files to Etsy.

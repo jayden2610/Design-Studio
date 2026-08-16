@@ -1,0 +1,61 @@
+{"kind":"deck","id":"pr/bmv337","name":"Deck"}
+{"kind":"layout","layoutId":"a74f4232-94e6-48a5-80da-3dab931dc6fe","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"90ad5fd5-cdcf-449b-bbfd-554560322d82","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/fpbtgj","slide":1,"title":"WEEKEND PHOTO DIARY","textShapes":5}
+{"kind":"textbox","id":"sh/9w3mdk7y","slide":1,"text":"WEEKEND PHOTO DIARY","textPreview":"WEEKEND PHOTO DIARY","textChars":19,"textLines":1,"bbox":[78,78,700,30]}
+{"kind":"textbox","id":"sh/mtsnip87","slide":1,"text":"a weekend\nthat felt like\na deep breath","textPreview":"a weekend | that felt like | a deep breath","textChars":38,"textLines":3,"bbox":[78,146,410,300]}
+{"kind":"shape","id":"sh/nul4ba9s","slide":1,"bbox":[78,475,88,4]}
+{"kind":"textbox","id":"sh/wju5ozq9","slide":1,"text":"sunlight, slow pages, and nowhere urgent to be.","textPreview":"sunlight, slow pages, and nowhere urgent to be.","textChars":47,"textLines":1,"bbox":[78,512,350,130]}
+{"kind":"textbox","id":"sh/xk36h47u","slide":1,"text":"swipe for the little moments →","textPreview":"swipe for the little moments →","textChars":30,"textLines":1,"bbox":[78,720,370,46]}
+{"kind":"textbox","id":"sh/axcnmp83","slide":1,"text":"[CITY] · [MONTH] · [YEAR]","textPreview":"[CITY] · [MONTH] · [YEAR]","textChars":25,"textLines":1,"bbox":[78,1204,500,34]}
+{"kind":"shape","id":"sh/byl4fupo","slide":1,"bbox":[737,338,184,48]}
+{"kind":"shape","id":"sh/dojm50rq","slide":1,"bbox":[875,1145,120,82]}
+{"kind":"image","id":"im/t4f6lkj6","slide":1,"name":"","geometry":"roundRect","alt":"User-provided sunlit reading lifestyle image","bbox":[507,370,495,655]}
+{"kind":"notes","id":"nt/fpbtgj","slide":1,"text":""}
+{"kind":"slide","id":"sl/458d8r","slide":2,"title":"01 · LITTLE MOMENTS","textShapes":5}
+{"kind":"textbox","id":"sh/po3mlcna","slide":2,"text":"01 · LITTLE MOMENTS","textPreview":"01 · LITTLE MOMENTS","textChars":19,"textLines":1,"bbox":[78,78,700,30]}
+{"kind":"textbox","id":"sh/2lc3axoj","slide":2,"text":"a few things\ni want to remember","textPreview":"a few things | i want to remember","textChars":31,"textLines":2,"bbox":[78,142,640,200]}
+{"kind":"textbox","id":"sh/nml4j254","slide":2,"text":"the kind of moments that make a weekend feel longer in the best way.","textPreview":"the kind of moments that make a weekend feel longer in the best way.","textChars":68,"textLines":1,"bbox":[78,382,425,120]}
+{"kind":"shape","id":"sh/apc3ehov","slide":2,"bbox":[635,985,320,185]}
+{"kind":"textbox","id":"sh/bql4n250","slide":2,"text":"A LITTLE NOTE","textPreview":"A LITTLE NOTE","textChars":13,"textLines":1,"bbox":[675,1024,230,28]}
+{"kind":"textbox","id":"sh/kfe5kr6x","slide":2,"text":"“more slow mornings, please.”","textPreview":"“more slow mornings, please.”","textChars":29,"textLines":1,"bbox":[676,1070,235,70]}
+{"kind":"shape","id":"sh/lgnmtwni","slide":2,"bbox":[115,667,170,46]}
+{"kind":"image","id":"im/54f65cnu","slide":2,"name":"","geometry":"roundRect","alt":"Woman reading with coffee by a window","bbox":[78,700,405,510]}
+{"kind":"image","id":"im/436pw7m9","slide":2,"name":"","geometry":"roundRect","alt":"Hands holding coffee in a warm kitchen","bbox":[597,350,405,575]}
+{"kind":"notes","id":"nt/458d8r","slide":2,"text":""}
+{"kind":"slide","id":"sl/anhcrc","slide":3,"title":"02 · THE LITTLE THINGS","textShapes":8}
+{"kind":"textbox","id":"sh/5gzexgb2","slide":3,"text":"02 · THE LITTLE THINGS","textPreview":"02 · THE LITTLE THINGS","textChars":22,"textLines":1,"bbox":[78,78,700,30]}
+{"kind":"textbox","id":"sh/id8v21sr","slide":3,"text":"small favourites\nfrom lately","textPreview":"small favourites | from lately","textChars":28,"textLines":2,"bbox":[78,142,700,190]}
+{"kind":"shape","id":"sh/3ehwv6tc","slide":3,"bbox":[78,422,555,610]}
+{"kind":"textbox","id":"sh/gbqd0ral","slide":3,"text":"THIS WEEKEND:","textPreview":"THIS WEEKEND:","textChars":13,"textLines":1,"bbox":[123,469,250,28]}
+{"kind":"textbox","id":"sh/hczetwb6","slide":3,"text":"01  [a book / a place / a tiny ritual]","textPreview":"01  [a book / a place / a tiny ritual]","textChars":38,"textLines":1,"bbox":[123,535,440,45]}
+{"kind":"shape","id":"sh/u9ovy1sf","slide":3,"bbox":[123,592,420,1]}
+{"kind":"textbox","id":"sh/vaxwr6t0","slide":3,"text":"02  [a meal / a moment / a thought]","textPreview":"02  [a meal / a moment / a thought]","textChars":35,"textLines":1,"bbox":[123,647,440,45]}
+{"kind":"shape","id":"sh/8n6dwrup","slide":3,"bbox":[123,704,420,1]}
+{"kind":"textbox","id":"sh/tofepwba","slide":3,"text":"03  [something i want to do again]","textPreview":"03  [something i want to do again]","textChars":34,"textLines":1,"bbox":[123,759,440,45]}
+{"kind":"shape","id":"sh/pkn2t47y","slide":3,"bbox":[123,816,420,1]}
+{"kind":"textbox","id":"sh/oje10zqd","slide":3,"text":"04  [a song on repeat]","textPreview":"04  [a song on repeat]","textChars":22,"textLines":1,"bbox":[123,871,440,45]}
+{"kind":"shape","id":"sh/2hwjyp87","slide":3,"bbox":[720,865,250,54]}
+{"kind":"textbox","id":"sh/1g32pk72","slide":3,"text":"SAVE THIS FEELING","textPreview":"SAVE THIS FEELING","textChars":17,"textLines":1,"bbox":[734,881,222,22]}
+{"kind":"image","id":"im/0b2x0vq5","slide":3,"name":"","geometry":"roundRect","alt":"Open journal in warm window light","bbox":[695,490,307,307]}
+{"kind":"notes","id":"nt/anhcrc","slide":3,"text":""}
+{"kind":"slide","id":"sl/ipkoq2","slide":4,"title":"03 · CAMERA ROLL","textShapes":3}
+{"kind":"textbox","id":"sh/mps7a5sb","slide":4,"text":"03 · CAMERA ROLL","textPreview":"03 · CAMERA ROLL","textChars":16,"textLines":1,"bbox":[78,78,700,30]}
+{"kind":"textbox","id":"sh/9sjq50bm","slide":4,"text":"four frames\nfrom the weekend","textPreview":"four frames | from the weekend","textChars":28,"textLines":2,"bbox":[78,142,720,190]}
+{"kind":"shape","id":"sh/0nap8va5","slide":4,"bbox":[405,367,230,46]}
+{"kind":"textbox","id":"sh/jil8buto","slide":4,"text":"[ADD DATE STAMP]","textPreview":"[ADD DATE STAMP]","textChars":16,"textLines":1,"bbox":[756,1240,246,26]}
+{"kind":"image","id":"im/50n6twj6","slide":4,"name":"","alt":"Flowers by a bright window","bbox":[78,390,432,380]}
+{"kind":"image","id":"im/u9cnehkj","slide":4,"name":"","alt":"Flowers arranged in a quiet room","bbox":[570,390,432,380]}
+{"kind":"image","id":"im/valon214","slide":4,"name":"","alt":"Hands holding flowers","bbox":[78,835,432,380]}
+{"kind":"image","id":"im/wbupg72p","slide":4,"name":"","alt":"Soft flower petals","bbox":[570,835,432,380]}
+{"kind":"notes","id":"nt/ipkoq2","slide":4,"text":""}
+{"kind":"slide","id":"sl/vb4xgm","slide":5,"title":"04 · UNTIL NEXT TIME","textShapes":5}
+{"kind":"textbox","id":"sh/2h0vyhgn","slide":5,"text":"04 · UNTIL NEXT TIME","textPreview":"04 · UNTIL NEXT TIME","textChars":20,"textLines":1,"bbox":[78,78,700,30]}
+{"kind":"textbox","id":"sh/p4bu9wze","slide":5,"text":"until the next\nlittle weekend","textPreview":"until the next | little weekend","textChars":29,"textLines":2,"bbox":[78,142,670,190]}
+{"kind":"textbox","id":"sh/o32d0ryt","slide":5,"text":"[one closing thought that feels true to you.]","textPreview":"[one closing thought that feels true to you.]","textChars":45,"textLines":1,"bbox":[78,375,530,82]}
+{"kind":"shape","id":"sh/fe9c3mhw","slide":5,"bbox":[778,144,224,54]}
+{"kind":"textbox","id":"sh/ed0buhgr","slide":5,"text":"SAVE FOR LATER","textPreview":"SAVE FOR LATER","textChars":14,"textLines":1,"bbox":[792,160,196,22]}
+{"kind":"textbox","id":"sh/0fitwryh","slide":5,"text":"WEEKEND PHOTO DIARY · [YOUR HANDLE]","textPreview":"WEEKEND PHOTO DIARY · [YOUR HANDLE]","textChars":35,"textLines":1,"bbox":[78,1215,600,28]}
+{"kind":"shape","id":"sh/zadcf6hg","slide":5,"bbox":[848,276,130,82]}
+{"kind":"image","id":"im/472hozex","slide":5,"name":"","geometry":"roundRect","alt":"Sunlit window detail","bbox":[78,690,924,410]}
+{"kind":"notes","id":"nt/vb4xgm","slide":5,"text":""}

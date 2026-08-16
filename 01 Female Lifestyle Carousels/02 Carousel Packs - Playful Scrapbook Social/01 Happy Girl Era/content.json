@@ -1,0 +1,45 @@
+{
+  "width": 1080,
+  "height": 1350,
+  "slides": [
+    {
+      "kind": "hero",
+      "eyebrow": "LITTLE LIFE UPDATE · 01",
+      "title": "in my\nhappy girl era",
+      "body": "small joys, soft plans, and the little things I want to remember",
+      "meta": "camera roll notes · lately",
+      "hero": "../../01 Source Assets/lifestyle-ugc/25-pack6-portrait-icecream.png",
+      "accent": "a little more of this"
+    },
+    {
+      "kind": "labels",
+      "eyebrow": "THE LITTLE THINGS · 02",
+      "title": "a slow\ncoffee morning",
+      "hero": "../../01 Source Assets/lifestyle-ugc/19-pack5-hero-breakfast.png",
+      "labels": ["iced latte", "sunny table", "no rush"]
+    },
+    {
+      "kind": "polaroids",
+      "eyebrow": "CAMERA ROLL · 03",
+      "title": "flowers for\nno reason",
+      "hero": "../../01 Source Assets/lifestyle-ugc/06-pack2-hero-flowers.png",
+      "photos": ["../../01 Source Assets/lifestyle-ugc/07-pack2-establishing-flowers.png", "../../01 Source Assets/lifestyle-ugc/08-pack2-flower-hands.png"]
+    },
+    {
+      "kind": "currently",
+      "eyebrow": "CURRENTLY LOVING · 04",
+      "title": "tiny rituals,\nbig mood",
+      "hero": "../../01 Source Assets/lifestyle-ugc/15-pack4-hero-bedside.png",
+      "items": ["fresh sheets", "a few pages", "gold earrings", "lights off early"]
+    },
+    {
+      "kind": "hero",
+      "eyebrow": "A SOFT REMINDER · 05",
+      "title": "make room\nfor the good stuff",
+      "body": "a walk, a little colour, and someone to tell about it later",
+      "meta": "save for a slower day",
+      "hero": "../../01 Source Assets/lifestyle-ugc/23-pack6-hero-park.png",
+      "accent": "more days like this"
+    }
+  ]
+}

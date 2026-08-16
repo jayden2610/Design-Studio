@@ -1,0 +1,773 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/wfex98",
+    "id": "wfex98",
+    "slide": 2,
+    "layoutId": "61119514-2805-4ae8-8c48-a422d0b9e0f7",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "b67d0523-0f39-4392-8676-afcaf7797fea",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#90A7D8",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1080,
+      "height": 1350
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "DM Sans",
+      "Georgia"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "61119514-2805-4ae8-8c48-a422d0b9e0f7",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "b67d0523-0f39-4392-8676-afcaf7797fea",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "b67d0523-0f39-4392-8676-afcaf7797fea",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d8jip8ru",
+      "id": "1",
+      "name": "meta",
+      "bbox": [
+        82,
+        83,
+        330,
+        30
+      ],
+      "geometry": "rect",
+      "text": "journal notes · 01 / 03",
+      "textPreview": "journal notes · 01 / 03",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 17,
+        "typeface": "DM Sans",
+        "color": "#FFFAF0",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "journal notes · 01 / 03"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "journal notes · 01 / 03",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "typeface": "DM Sans",
+            "color": "#FFFAF0",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "journal notes · 01 / 03",
+              "fontSize": 17,
+              "typeface": "DM Sans",
+              "color": "#FFFAF0",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qlszetsj",
+      "id": "2",
+      "name": "lead-in",
+      "bbox": [
+        86,
+        214,
+        260,
+        54
+      ],
+      "geometry": "rect",
+      "text": "start here",
+      "textPreview": "start here",
+      "resolvedFontSize": 36,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 36,
+        "typeface": "Georgia",
+        "color": "#FFFAF0",
+        "italic": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "start here"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "start here",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 36,
+            "typeface": "Georgia",
+            "color": "#FFFAF0",
+            "italic": true,
+            "alignment": "left",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "start here",
+              "fontSize": 36,
+              "typeface": "Georgia",
+              "color": "#FFFAF0",
+              "italic": true,
+              "alignment": "left",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bm10ny9o",
+      "id": "3",
+      "name": "wordmark",
+      "bbox": [
+        78,
+        278,
+        615,
+        145
+      ],
+      "geometry": "rect",
+      "text": "name it",
+      "textPreview": "name it",
+      "resolvedFontSize": 150,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 150,
+        "typeface": "Georgia",
+        "color": "#FFFAF0",
+        "italic": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "name it"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "name it",
+          "lineSpacingPercent": 74000,
+          "resolvedTextStyle": {
+            "fontSize": 150,
+            "typeface": "Georgia",
+            "color": "#FFFAF0",
+            "italic": true,
+            "alignment": "left",
+            "lineSpacing": 0.74
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "name it",
+              "fontSize": 150,
+              "typeface": "Georgia",
+              "color": "#FFFAF0",
+              "italic": true,
+              "alignment": "left",
+              "lineSpacing": 0.74
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0bu1k3al",
+      "id": "4",
+      "name": "journal-prompt",
+      "bbox": [
+        90,
+        613,
+        650,
+        125
+      ],
+      "geometry": "rect",
+      "text": "what feels heavy because\ni haven’t named it yet?",
+      "textPreview": "what feels heavy because | i haven’t named it yet?",
+      "resolvedFontSize": 47,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 47,
+        "typeface": "Georgia",
+        "color": "#FFFAF0",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "what feels heavy because"
+          },
+          {
+            "index": 2,
+            "text": "i haven’t named it yet?"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "what feels heavy because",
+          "lineSpacingPercent": 95000,
+          "resolvedTextStyle": {
+            "fontSize": 47,
+            "typeface": "Georgia",
+            "color": "#FFFAF0",
+            "alignment": "left",
+            "lineSpacing": 0.95
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "what feels heavy because",
+              "fontSize": 47,
+              "typeface": "Georgia",
+              "color": "#FFFAF0",
+              "alignment": "left",
+              "lineSpacing": 0.95
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "i haven’t named it yet?",
+          "lineSpacingPercent": 95000,
+          "resolvedTextStyle": {
+            "fontSize": 47,
+            "typeface": "Georgia",
+            "color": "#FFFAF0",
+            "alignment": "left",
+            "lineSpacing": 0.95
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "i haven’t named it yet?",
+              "fontSize": 47,
+              "typeface": "Georgia",
+              "color": "#FFFAF0",
+              "alignment": "left",
+              "lineSpacing": 0.95
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lc3it8r6",
+      "id": "5",
+      "name": "guidance",
+      "bbox": [
+        94,
+        815,
+        380,
+        74
+      ],
+      "geometry": "rect",
+      "text": "write the truest answer first.\nyou can make sense of it later.",
+      "textPreview": "write the truest answer first. | you can make sense of it later.",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 22,
+        "typeface": "DM Sans",
+        "color": "#FFFAF0",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "write the truest answer first."
+          },
+          {
+            "index": 2,
+            "text": "you can make sense of it later."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "write the truest answer first.",
+          "lineSpacingPercent": 125000,
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "DM Sans",
+            "color": "#FFFAF0",
+            "alignment": "left",
+            "lineSpacing": 1.25
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "write the truest answer first.",
+              "fontSize": 22,
+              "typeface": "DM Sans",
+              "color": "#FFFAF0",
+              "alignment": "left",
+              "lineSpacing": 1.25
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "you can make sense of it later.",
+          "lineSpacingPercent": 125000,
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "DM Sans",
+            "color": "#FFFAF0",
+            "alignment": "left",
+            "lineSpacing": 1.25
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "you can make sense of it later.",
+              "fontSize": 22,
+              "typeface": "DM Sans",
+              "color": "#FFFAF0",
+              "alignment": "left",
+              "lineSpacing": 1.25
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/zet0byp0",
+      "id": "6",
+      "bbox": [
+        786,
+        60,
+        307,
+        326
+      ],
+      "alt": "dried-flower-bouquet",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "7d130788-4ed9-4131-b048-0dd1c92f7926",
+        "contentType": "image/png",
+        "byteLength": 948947
+      }
+    },
+    {
+      "order": 7,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/ydkz2tof",
+      "id": "7",
+      "bbox": [
+        870,
+        445,
+        102,
+        136
+      ],
+      "alt": "lipstick",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "ddcd0379-a187-4016-94f6-d6e444a31fb6",
+        "contentType": "image/png",
+        "byteLength": 413983
+      }
+    },
+    {
+      "order": 8,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/9kvih872",
+      "id": "8",
+      "bbox": [
+        690,
+        885,
+        264,
+        340
+      ],
+      "alt": "mirror",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "5c5ef5c3-cc75-4086-8f55-efd4e038c11a",
+        "contentType": "image/png",
+        "byteLength": 603795
+      }
+    },
+    {
+      "order": 9,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/8jm1836h",
+      "id": "9",
+      "bbox": [
+        83,
+        1042,
+        130,
+        130
+      ],
+      "alt": "paperclip",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "1cb8d1b8-807b-4d05-a079-188d752f3ac8",
+        "contentType": "image/png",
+        "byteLength": 60251
+      }
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/psrmxojy",
+      "id": "10",
+      "name": "prompt-note-paper",
+      "bbox": [
+        772,
+        616,
+        230,
+        110
+      ],
+      "geometry": "rect",
+      "fillColor": "#F4E8CF",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ori5432d",
+      "id": "11",
+      "name": "prompt-note-text",
+      "bbox": [
+        792,
+        644,
+        190,
+        60
+      ],
+      "geometry": "rect",
+      "text": "give the feeling\na name.",
+      "textPreview": "give the feeling | a name.",
+      "resolvedFontSize": 28,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 28,
+        "typeface": "Georgia",
+        "color": "#302B33",
+        "italic": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "give the feeling"
+          },
+          {
+            "index": 2,
+            "text": "a name."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "give the feeling",
+          "lineSpacingPercent": 95000,
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "typeface": "Georgia",
+            "color": "#302B33",
+            "italic": true,
+            "alignment": "left",
+            "lineSpacing": 0.95
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "give the feeling",
+              "fontSize": 28,
+              "typeface": "Georgia",
+              "color": "#302B33",
+              "italic": true,
+              "alignment": "left",
+              "lineSpacing": 0.95
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "a name.",
+          "lineSpacingPercent": 95000,
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "typeface": "Georgia",
+            "color": "#302B33",
+            "italic": true,
+            "alignment": "left",
+            "lineSpacing": 0.95
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "a name.",
+              "fontSize": 28,
+              "typeface": "Georgia",
+              "color": "#302B33",
+              "italic": true,
+              "alignment": "left",
+              "lineSpacing": 0.95
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3q94vy1s",
+      "id": "12",
+      "name": "page-number",
+      "bbox": [
+        905,
+        1190,
+        100,
+        105
+      ],
+      "geometry": "rect",
+      "text": "01",
+      "textPreview": "01",
+      "resolvedFontSize": 94,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 94,
+        "typeface": "Georgia",
+        "color": "#FFFAF0",
+        "italic": true,
+        "alignment": "right",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "01"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "01",
+          "lineSpacingPercent": 80000,
+          "resolvedTextStyle": {
+            "fontSize": 94,
+            "typeface": "Georgia",
+            "color": "#FFFAF0",
+            "italic": true,
+            "alignment": "right",
+            "lineSpacing": 0.8
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "01",
+              "fontSize": 94,
+              "typeface": "Georgia",
+              "color": "#FFFAF0",
+              "italic": true,
+              "alignment": "right",
+              "lineSpacing": 0.8
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

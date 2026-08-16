@@ -1,0 +1,56 @@
+{"kind":"deck","id":"pr/ysjf7m","name":"Deck"}
+{"kind":"layout","layoutId":"551b1b28-adbe-4f65-8abe-8528abeaad62","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"97b40b6d-c4f5-4a6b-8589-0428728524d8","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/dg1g0g","slide":1,"title":"LITTLE LIFE UPDATE · 01","textShapes":5}
+{"kind":"shape","id":"sh/98z2xoji","slide":1,"bbox":[0,0,1080,1350]}
+{"kind":"shape","id":"sh/o7ql4j2x","slide":1,"name":"eyebrow-pill","bbox":[72,68,307,38]}
+{"kind":"textbox","id":"sh/bahkzy18","slide":1,"name":"eyebrow","text":"LITTLE LIFE UPDATE · 01","textPreview":"LITTLE LIFE UPDATE · 01","textChars":23,"textLines":1,"bbox":[84,76,283,24]}
+{"kind":"textbox","id":"sh/a9836tk3","slide":1,"name":"title","text":"weekend\nnotes","textPreview":"weekend | notes","textChars":13,"textLines":2,"bbox":[68,122,700,210]}
+{"kind":"shape","id":"sh/xczm1oje","slide":1,"name":"editable-caption-card","bbox":[72,1105,760,158]}
+{"kind":"textbox","id":"sh/wbql832t","slide":1,"name":"body-copy","text":"coffee before the world wakes up and nowhere urgent to be","textPreview":"coffee before the world wakes up and nowhere urgent to be","textChars":57,"textLines":1,"bbox":[102,1134,600,68]}
+{"kind":"textbox","id":"sh/je143y1k","slide":1,"name":"meta-copy","text":"a slow weekend → august","textPreview":"a slow weekend → august","textChars":23,"textLines":1,"bbox":[102,1214,560,26]}
+{"kind":"shape","id":"sh/yds3atkz","slide":1,"name":"counter-01","bbox":[948,1230,60,60]}
+{"kind":"textbox","id":"sh/kbyp4j6x","slide":1,"name":"counter-01-text","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[948,1247,60,22]}
+{"kind":"image","id":"im/ryh0vypo","slide":1,"name":"","alt":"Replaceable lifestyle hero photo","bbox":[0,0,1080,1350]}
+{"kind":"notes","id":"nt/dg1g0g","slide":1,"text":""}
+{"kind":"slide","id":"sl/j9t4j7","slide":2,"title":"A SMALL FAVOURITE · 02","textShapes":5}
+{"kind":"shape","id":"sh/jmtw3ito","slide":2,"bbox":[0,0,1080,1350]}
+{"kind":"shape","id":"sh/ilkfads3","slide":2,"name":"eyebrow-pill","bbox":[72,68,296,38]}
+{"kind":"textbox","id":"sh/tcvy9sbq","slide":2,"name":"eyebrow","text":"A SMALL FAVOURITE · 02","textPreview":"A SMALL FAVOURITE · 02","textChars":22,"textLines":1,"bbox":[84,76,272,24]}
+{"kind":"textbox","id":"sh/sbmxg7al","slide":2,"name":"title","text":"the part i\nwant to keep","textPreview":"the part i | want to keep","textChars":23,"textLines":2,"bbox":[68,122,700,210]}
+{"kind":"shape","id":"sh/7atg72t0","slide":2,"name":"editable-caption-card","bbox":[72,1105,760,158]}
+{"kind":"textbox","id":"sh/6pkfexsf","slide":2,"name":"body-copy","text":"a book, a warm mug, and enough time to finish a chapter","textPreview":"a book, a warm mug, and enough time to finish a chapter","textChars":55,"textLines":1,"bbox":[102,1134,600,68]}
+{"kind":"textbox","id":"sh/9grex8bm","slide":2,"name":"meta-copy","text":"soft morning ritual ♡","textPreview":"soft morning ritual ♡","textChars":21,"textLines":1,"bbox":[102,1214,560,26]}
+{"kind":"shape","id":"sh/8fix43u1","slide":2,"name":"counter-02","bbox":[948,1230,60,60]}
+{"kind":"textbox","id":"sh/e54j6hk3","slide":2,"name":"counter-02-text","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[948,1247,60,22]}
+{"kind":"image","id":"im/9cjm5cri","slide":2,"name":"","alt":"Replaceable lifestyle hero photo","bbox":[0,0,1080,1350]}
+{"kind":"notes","id":"nt/j9t4j7","slide":2,"text":""}
+{"kind":"slide","id":"sl/o2q6d0","slide":3,"title":"CURRENTLY · 03","textShapes":10}
+{"kind":"shape","id":"sh/3654zy5c","slide":3,"bbox":[0,0,1080,1350]}
+{"kind":"shape","id":"sh/i5wn6tor","slide":3,"name":"eyebrow-pill","bbox":[72,68,202,38]}
+{"kind":"textbox","id":"sh/h4nmxon6","slide":3,"name":"eyebrow","text":"CURRENTLY · 03","textPreview":"CURRENTLY · 03","textChars":14,"textLines":1,"bbox":[84,76,178,24]}
+{"kind":"textbox","id":"sh/g3e5436l","slide":3,"name":"title","text":"a few things\nkeeping me here","textPreview":"a few things | keeping me here","textChars":28,"textLines":2,"bbox":[68,102,700,210]}
+{"kind":"shape","id":"sh/v254vy5g","slide":3,"name":"editable-list-card","bbox":[72,475,470,201]}
+{"kind":"textbox","id":"sh/u1wn2tov","slide":3,"name":"list-arrow-1","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[102,507,32,36]}
+{"kind":"textbox","id":"sh/10r69snq","slide":3,"name":"list-item-1","text":"one more chapter","textPreview":"one more chapter","textChars":16,"textLines":1,"bbox":[138,507,374,36]}
+{"kind":"textbox","id":"sh/0zi50nm5","slide":3,"name":"list-arrow-2","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[102,551,32,36]}
+{"kind":"textbox","id":"sh/qxsrep4r","slide":3,"name":"list-item-2","text":"fresh coffee","textPreview":"fresh coffee","textChars":12,"textLines":1,"bbox":[138,551,374,36]}
+{"kind":"textbox","id":"sh/by187u5w","slide":3,"name":"list-arrow-3","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[102,595,32,36]}
+{"kind":"textbox","id":"sh/cza9gzmh","slide":3,"name":"list-item-3","text":"no plans before noon","textPreview":"no plans before noon","textChars":20,"textLines":1,"bbox":[138,595,374,36]}
+{"kind":"textbox","id":"sh/d0jq94n2","slide":3,"name":"meta-copy","text":"the little things ✦","textPreview":"the little things ✦","textChars":19,"textLines":1,"bbox":[72,1250,560,26]}
+{"kind":"shape","id":"sh/2t8rap4f","slide":3,"name":"counter-03","bbox":[948,1230,60,60]}
+{"kind":"textbox","id":"sh/3uh83u50","slide":3,"name":"counter-03-text","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[948,1247,60,22]}
+{"kind":"image","id":"im/d8jetcny","slide":3,"name":"","alt":"Replaceable lifestyle hero photo","bbox":[0,0,1080,1350]}
+{"kind":"notes","id":"nt/o2q6d0","slide":3,"text":""}
+{"kind":"slide","id":"sl/3qoo7f","slide":4,"title":"A SOFT REMINDER · 04","textShapes":5}
+{"kind":"shape","id":"sh/gr6hw32x","slide":4,"bbox":[0,0,1080,1350]}
+{"kind":"shape","id":"sh/hsfyp83i","slide":4,"name":"eyebrow-pill","bbox":[72,68,274,38]}
+{"kind":"textbox","id":"sh/itozydk3","slide":4,"name":"eyebrow","text":"A SOFT REMINDER · 04","textPreview":"A SOFT REMINDER · 04","textChars":20,"textLines":1,"bbox":[84,76,250,24]}
+{"kind":"textbox","id":"sh/3uhgrilo","slide":4,"name":"title","text":"no rush\ntoday","textPreview":"no rush | today","textChars":13,"textLines":2,"bbox":[68,122,700,210]}
+{"kind":"shape","id":"sh/4vqh0n2t","slide":4,"name":"editable-caption-card","bbox":[72,1105,860,168]}
+{"kind":"textbox","id":"sh/5wzits3e","slide":4,"name":"body-copy","text":"i’m letting a quiet morning be enough","textPreview":"i’m letting a quiet morning be enough","textChars":37,"textLines":1,"bbox":[102,1134,600,70]}
+{"kind":"textbox","id":"sh/yx4zm9kj","slide":4,"name":"meta-copy","text":"save for your next slow day","textPreview":"save for your next slow day","textChars":27,"textLines":1,"bbox":[102,1224,560,26]}
+{"kind":"shape","id":"sh/zydgfel4","slide":4,"name":"counter-04","bbox":[948,1230,60,60]}
+{"kind":"textbox","id":"sh/3y9czy94","slide":4,"name":"counter-04-text","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[948,1247,60,22]}
+{"kind":"image","id":"im/id4fitcn","slide":4,"name":"","alt":"Replaceable lifestyle hero photo","bbox":[0,0,1080,1350]}
+{"kind":"notes","id":"nt/3qoo7f","slide":4,"text":""}

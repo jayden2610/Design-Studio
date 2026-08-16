@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Create original F&B identities with the focused, editorial ink quality visible in the four rendered studies in `Explorations/`:
+Create original F&B identities with the focused, editorial ink quality visible in the four approved studies in `Assets/01_Approved_Illustrations/`:
 
 1. `fnb-logo-01-bagel-handoff.png`
 2. `fnb-logo-01-gimbap-roll.png`
@@ -24,6 +24,32 @@ An illustrated logo starts with a frozen service or food ritual. It has only thr
 Texture is not a fourth role. Hatching, dots, crumbs, and labels only support a form that is already clear without them.
 
 If two elements compete to be the hero, remove or subordinate one. If the idea needs more than one action or more than one context cue, split it into separate directions.
+
+## Two levels of identity
+
+The primary illustration tells the brand's ritual. The compact lockup makes the brand usable.
+
+### Level 1 — Primary ritual illustration
+
+This is the expressive identity asset used for the core-logo slide, packaging fronts, campaign work, editorial layouts, and motion. It follows the one-moment rule above: one hero object, one human action, one business cue, and enough contour and material detail to feel authored.
+
+### Level 2 — Compact brand lockup
+
+This is the small, repeatable identity used for storefront signage, profile images, stickers, receipts, menu headers, small packaging, and motion end cards. It should be derived from the primary ritual, but it must not contain the entire scene.
+
+A compact lockup may combine the wordmark, one signature glyph or visual token, a simplified hero or context cue, and an optional short descriptor. Reduce the hand, secondary objects, fine hatching, and explanatory detail first. The lockup should remain recognizable at small size and should feel like the same brand as the primary illustration, not a second logo idea.
+
+The wordmark and illustration should share a line personality. Loose lettering belongs with loose contours; narrow, quirky lettering belongs with playful irregularity; bold commercial lettering needs a stronger, simpler mark. Choose the type direction before final illustration refinement, then hand-adjust the most distinctive spacing or glyph detail where appropriate.
+
+### Early application test
+
+Before polishing a direction, test it in three forms:
+
+1. the isolated primary illustration;
+2. the compact brand lockup;
+3. one believable physical application such as a sign, window, menu, sleeve, or package.
+
+The application is a design test, not only a final mockup. Use it to check distance legibility, quiet space, hierarchy, material scale, and whether the identity feels like a real operating business.
 
 ## What the four studies teach
 
@@ -90,7 +116,7 @@ For each render, ask for:
 
 Then make one reduction pass. The instruction is always subtractive: remove one prop, one texture cluster, or one secondary motion mark. Do not solve uncertainty by adding more objects.
 
-### 5. Build the logo system after the illustration works
+### 5. Build the identity pair after the illustration works
 
 The illustration is the primary expression. It still needs a reduced companion for small formats.
 
@@ -102,6 +128,20 @@ The illustration is the primary expression. It still needs a reduced companion f
 | One-colour reverse | Labels and dark fields | Test figure-ground; preserve only forms that remain clear |
 
 The small mark is derived from the primary moment. It should not introduce a second brand idea.
+
+Build the compact lockup as a companion to the primary illustration, not as a miniature copy of it. Test the wordmark and simplified symbol together before choosing the final placement and proportions.
+
+### 6. Test a physical application before final refinement
+
+Place the first viable lockup on one realistic operating asset: a signboard, storefront, menu, sleeve, package, window decal, or receipt. Keep final logo artwork and readable copy as controlled assets; use generated imagery only for the surrounding environment when needed.
+
+Check:
+
+- Does the wordmark remain legible at the intended viewing distance?
+- Does the simplified symbol still connect to the primary ritual?
+- Is there enough quiet space around the lockup?
+- Do scale, perspective, lighting, and material make the business feel believable?
+- Does the application reveal a hierarchy problem that is invisible on a blank canvas?
 
 ## Detail and craft controls
 
@@ -126,6 +166,9 @@ Before refinement, answer all seven questions yes:
 5. Is there a clear visual hierarchy: hero, action, then context?
 6. Is at least one-third of the canvas deliberately empty?
 7. Can the mark be reduced by removing detail rather than inventing a new symbol?
+8. Does the compact lockup work without the full hand, scene, or hatching?
+9. Does the wordmark feel drawn from the same visual world as the illustration?
+10. Has the direction been tested on a believable physical application?
 
 If any answer is no, return to the one-sentence moment. Do not start polishing.
 
@@ -138,8 +181,9 @@ Use this loop for every new direction:
 3. **Select:** keep the variation with the fastest three-second read.
 4. **Subtract:** remove one nonessential detail cluster before adding anything.
 5. **Reduce:** test at 48 px and 25 mm; produce the small mark from the surviving silhouette.
-6. **Lock up:** add the wordmark only once the illustration and reduced mark pass.
-7. **Systemize:** use the chosen ritual as the source for packaging, signage, social, and secondary scenes.
+6. **Pair:** develop the wordmark and compact lockup beside the approved illustration; make small, deliberate glyph or spacing adjustments where needed.
+7. **Apply:** test the identity pair on one believable physical application before final refinement.
+8. **Systemize:** use the chosen ritual as the source for packaging, signage, social, and motion, while using the compact lockup wherever the full illustration cannot survive.
 
 This is the practical difference from the earlier crowded directions: do not try to prove the entire brand in a single mark. Prove one memorable moment, then let the wider system carry the rest of the world.
 
@@ -158,9 +202,9 @@ Do not reuse an exact food pose, hand position, bag silhouette, awning geometry,
 
 ## Source material
 
-- `Explorations/image-01-novena-style.json` - storefront scale, hand lettering, and clear space.
-- `Explorations/image-02-bagel-house-style.json` - expressive silhouette, interaction, and black-white cutouts.
-- `Explorations/image-03-woke-style.json` - a single dark anchor, reverse lettering, and upward energy.
-- `Explorations/image-04-market-stall-style.json` - human warmth, a stable baseline, and simplified retail context.
-- `Explorations/fnb-logo-experiments.json` - the Bagel Handoff and Open for Bagels story briefs.
-- `Explorations/comparison-synthesis.json` - shared visual tokens across the four source references.
+- `Assets/02_Logo_Explorations/01_Food_and_Book_Studies/image-01-novena-style.json` - storefront scale, hand lettering, and clear space.
+- `Assets/02_Logo_Explorations/01_Food_and_Book_Studies/image-02-bagel-house-style.json` - expressive silhouette, interaction, and black-white cutouts.
+- `Assets/02_Logo_Explorations/01_Food_and_Book_Studies/image-03-woke-style.json` - a single dark anchor, reverse lettering, and upward energy.
+- `Assets/02_Logo_Explorations/01_Food_and_Book_Studies/image-04-market-stall-style.json` - human warmth, a stable baseline, and simplified retail context.
+- `Assets/02_Logo_Explorations/01_Food_and_Book_Studies/fnb-logo-experiments.json` - the Bagel Handoff and Open for Bagels story briefs.
+- `Assets/02_Logo_Explorations/01_Food_and_Book_Studies/comparison-synthesis.json` - shared visual tokens across the four source references.

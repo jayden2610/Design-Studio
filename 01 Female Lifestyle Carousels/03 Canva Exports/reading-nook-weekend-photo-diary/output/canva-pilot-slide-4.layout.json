@@ -1,0 +1,563 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/d6an73",
+    "id": "d6an73",
+    "slide": 4,
+    "layoutId": "e4c9a0c4-4be8-40f3-b69a-206b340134d9",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "02a63e07-d32e-4fa6-bbcb-f5036ae6a2ed",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FBF3E6",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1080,
+      "height": 1350
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Fraunces",
+      "Manrope"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "e4c9a0c4-4be8-40f3-b69a-206b340134d9",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "02a63e07-d32e-4fa6-bbcb-f5036ae6a2ed",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "02a63e07-d32e-4fa6-bbcb-f5036ae6a2ed",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/qdknm5ov",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1080,
+        1350
+      ],
+      "alt": "Soft sunset lifestyle photo",
+      "contentType": "image/png",
+      "imageFit": "cover",
+      "asset": {
+        "assetId": "5216072f-701d-4bf8-b36c-95c06e6cd0b7",
+        "contentType": "image/png",
+        "byteLength": 1776920
+      }
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8vm5knex",
+      "id": "2",
+      "bbox": [
+        0,
+        0,
+        1080,
+        1350
+      ],
+      "geometry": "rect",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9wvmtsvi",
+      "id": "3",
+      "name": "eyebrow-pill",
+      "bbox": [
+        72,
+        68,
+        282,
+        38
+      ],
+      "geometry": "roundRect",
+      "fillColor": "rgba(251, 243, 230, 0.78)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/y5k3edwv",
+      "id": "4",
+      "name": "eyebrow",
+      "bbox": [
+        84,
+        76,
+        258,
+        24
+      ],
+      "geometry": "rect",
+      "text": "UNTIL NEXT TIME · 04",
+      "textPreview": "UNTIL NEXT TIME · 04",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 17,
+        "typeface": "Manrope",
+        "color": "#65703D",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "UNTIL NEXT TIME · 04"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "UNTIL NEXT TIME · 04",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "typeface": "Manrope",
+            "color": "#65703D",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "UNTIL NEXT TIME · 04",
+              "fontSize": 17,
+              "typeface": "Manrope",
+              "color": "#65703D",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/z6t4nydg",
+      "id": "5",
+      "name": "title",
+      "bbox": [
+        68,
+        122,
+        700,
+        210
+      ],
+      "geometry": "rect",
+      "text": "save the\nfeeling",
+      "textPreview": "save the | feeling",
+      "resolvedFontSize": 88,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 88,
+        "typeface": "Fraunces",
+        "color": "#342E3F",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "save the"
+          },
+          {
+            "index": 2,
+            "text": "feeling"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "save the",
+          "lineSpacingPercent": 91000,
+          "resolvedTextStyle": {
+            "fontSize": 88,
+            "typeface": "Fraunces",
+            "color": "#342E3F",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 0.91
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "save the",
+              "fontSize": 88,
+              "typeface": "Fraunces",
+              "color": "#342E3F",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 0.91
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "feeling",
+          "lineSpacingPercent": 91000,
+          "resolvedTextStyle": {
+            "fontSize": 88,
+            "typeface": "Fraunces",
+            "color": "#342E3F",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 0.91
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "feeling",
+              "fontSize": 88,
+              "typeface": "Fraunces",
+              "color": "#342E3F",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 0.91
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/k725g3e1",
+      "id": "6",
+      "name": "counter-04",
+      "bbox": [
+        948,
+        1230,
+        60,
+        60
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#FBF3E6",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/l8vmp8vm",
+      "id": "7",
+      "name": "counter-04-text",
+      "bbox": [
+        948,
+        1247,
+        60,
+        22
+      ],
+      "geometry": "rect",
+      "text": "04",
+      "textPreview": "04",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "Manrope",
+        "color": "#342E3F",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "04"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "04",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Manrope",
+            "color": "#342E3F",
+            "bold": true,
+            "alignment": "center",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "04",
+              "fontSize": 16,
+              "typeface": "Manrope",
+              "color": "#342E3F",
+              "bold": true,
+              "alignment": "center",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/i1onqxcf",
+      "id": "8",
+      "name": "editable-caption-card",
+      "bbox": [
+        72,
+        1105,
+        860,
+        168
+      ],
+      "geometry": "roundRect",
+      "fillColor": "rgba(251, 243, 230, 0.93)",
+      "lineColor": "rgba(52, 46, 63, 0.12)",
+      "lineWidth": 1
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/32x4z2dk",
+      "id": "9",
+      "name": "body-copy",
+      "bbox": [
+        102,
+        1134,
+        600,
+        70
+      ],
+      "geometry": "rect",
+      "text": "i want more weekends that make the week feel a little lighter",
+      "textPreview": "i want more weekends that make the week feel a little lighter",
+      "resolvedFontSize": 27,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 27,
+        "typeface": "Fraunces",
+        "color": "#342E3F",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "i want more weekends that make the week feel a little"
+          },
+          {
+            "index": 2,
+            "text": "lighter"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "i want more weekends that make the week feel a little lighter",
+          "lineSpacingPercent": 125000,
+          "resolvedTextStyle": {
+            "fontSize": 27,
+            "typeface": "Fraunces",
+            "color": "#342E3F",
+            "alignment": "left",
+            "lineSpacing": 1.25
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "i want more weekends that make the week feel a little lighter",
+              "fontSize": 27,
+              "typeface": "Fraunces",
+              "color": "#342E3F",
+              "alignment": "left",
+              "lineSpacing": 1.25
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/j6p8nelc",
+      "id": "10",
+      "name": "meta-copy",
+      "bbox": [
+        102,
+        1224,
+        560,
+        26
+      ],
+      "geometry": "rect",
+      "text": "for a slower day ♡",
+      "textPreview": "for a slower day ♡",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 16,
+        "typeface": "Manrope",
+        "color": "#342E3F",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "for a slower day ♡"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "for a slower day ♡",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Manrope",
+            "color": "#342E3F",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "for a slower day ♡",
+              "fontSize": 16,
+              "typeface": "Manrope",
+              "color": "#342E3F",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

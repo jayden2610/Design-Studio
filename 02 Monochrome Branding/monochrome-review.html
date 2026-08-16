@@ -36,20 +36,20 @@
       <div><div class="eyebrow">02 / Monochrome Branding</div><h1>Illustrated<br><em>logo studies.</em></h1><p>Eight rendered studies: six original exploration references plus the two focused new-flow rebuilds for First Crumb and Noodle Signal.</p></div>
       <div class="mark" aria-hidden="true">M</div>
     </header>
-    <div class="toolbar"><div class="meta">Explorations + First Crumb + Noodle Signal</div><div class="meta" id="count"></div></div>
+    <div class="toolbar"><div class="meta">Approved monochrome illustrations</div><div class="meta" id="count"></div></div>
     <section class="wall" id="wall" aria-live="polite"></section>
   </main>
   <dialog id="viewer"><img id="viewerImage" alt="" /><button id="close">Close / Esc</button></dialog>
   <script>
     const assets = [
-      ['Explorations/fnb-logo-01-bagel-handoff.png','Bagel handoff / food study'],
-      ['Explorations/fnb-logo-01-gimbap-roll.png','Gimbap roll / food study'],
-      ['Explorations/fnb-logo-02-concha-cooling.png','Concha cooling / food study'],
-      ['Explorations/fnb-logo-02-open-for-bagels.png','Open for Bagels / food study'],
-      ['Explorations/logo-vignette-01-opening-the-shop.png','Opening the shop / logo vignette'],
-      ['Explorations/logo-vignette-03-the-recommendation.png','The recommendation / logo vignette'],
-      ['02 Rebuilt Studies/first-crumb-cookie-ritual-v1.png','First Crumb / cookie-breaking ritual'],
-      ['02 Rebuilt Studies/noodle-signal-lift-ritual-v1.png','Noodle Signal / lifted-noodle ritual']
+      ['Assets/01_Approved_Illustrations/fnb-logo-01-bagel-handoff.png','Bagel handoff / food study'],
+      ['Assets/01_Approved_Illustrations/fnb-logo-01-gimbap-roll.png','Gimbap roll / food study'],
+      ['Assets/01_Approved_Illustrations/fnb-logo-02-concha-cooling.png','Concha cooling / food study'],
+      ['Assets/01_Approved_Illustrations/fnb-logo-02-open-for-bagels.png','Open for Bagels / food study'],
+      ['Assets/01_Approved_Illustrations/logo-vignette-01-opening-the-shop.png','Opening the shop / logo vignette'],
+      ['Assets/01_Approved_Illustrations/logo-vignette-03-the-recommendation.png','The recommendation / logo vignette'],
+      ['Assets/02_Logo_Explorations/02_Rebuilt_Studies/first-crumb-cookie-ritual-v1.png','First Crumb / cookie-breaking ritual'],
+      ['Assets/02_Logo_Explorations/02_Rebuilt_Studies/noodle-signal-lift-ritual-v1.png','Noodle Signal / lifted-noodle ritual']
     ];
     const wall=document.querySelector('#wall'),viewer=document.querySelector('#viewer'),viewerImage=document.querySelector('#viewerImage');
     document.querySelector('#count').textContent=`${String(assets.length).padStart(2,'0')} marks`;

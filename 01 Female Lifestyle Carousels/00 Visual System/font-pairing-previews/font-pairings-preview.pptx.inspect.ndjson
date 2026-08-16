@@ -1,0 +1,53 @@
+{"kind":"deck","id":"pr/1373d3","name":"Deck"}
+{"kind":"layout","layoutId":"14dd97f1-7f44-4357-9aae-eb8b115a36b0","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"ff4c2abb-241d-4543-84dd-c630115e9853","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/m07xad","slide":1,"title":"WEEKEND PHOTO DIARY","textShapes":5}
+{"kind":"textbox","id":"sh/nihc761g","slide":1,"text":"WEEKEND PHOTO DIARY","textPreview":"WEEKEND PHOTO DIARY","textChars":19,"textLines":1,"bbox":[78,80,500,28]}
+{"kind":"textbox","id":"sh/ojqtgbi1","slide":1,"text":"weekend notes","textPreview":"weekend notes","textChars":13,"textLines":1,"bbox":[78,190,520,220]}
+{"kind":"shape","id":"sh/pkzu9gz6","slide":1,"bbox":[78,595,95,4]}
+{"kind":"textbox","id":"sh/a58bi10r","slide":1,"text":"coffee, a few pages, and nowhere urgent to be.","textPreview":"coffee, a few pages, and nowhere urgent to be.","textChars":46,"textLines":1,"bbox":[78,640,430,125]}
+{"kind":"textbox","id":"sh/b6hcb6hc","slide":1,"text":"01  /  Cormorant Garamond + DM Sans","textPreview":"01  /  Cormorant Garamond + DM Sans","textChars":35,"textLines":1,"bbox":[78,1190,700,28]}
+{"kind":"shape","id":"sh/x8zudgzi","slide":1,"bbox":[660,1015,270,70]}
+{"kind":"textbox","id":"sh/q94b6h0n","slide":1,"text":"SAVE THIS FEELING","textPreview":"SAVE THIS FEELING","textChars":17,"textLines":1,"bbox":[680,1038,230,24]}
+{"kind":"image","id":"im/9cfu18rq","slide":1,"name":"","geometry":"roundRect","alt":"Woman reading with coffee by a window","bbox":[590,230,412,690]}
+{"kind":"notes","id":"nt/m07xad","slide":1,"text":""}
+{"kind":"slide","id":"sl/95cfc1","slide":2,"title":"WEEKEND PHOTO DIARY","textShapes":5}
+{"kind":"textbox","id":"sh/va50ned8","slide":2,"text":"WEEKEND PHOTO DIARY","textPreview":"WEEKEND PHOTO DIARY","textChars":19,"textLines":1,"bbox":[78,80,500,28]}
+{"kind":"textbox","id":"sh/wbe1wjet","slide":2,"text":"little rituals","textPreview":"little rituals","textChars":14,"textLines":1,"bbox":[78,190,520,220]}
+{"kind":"shape","id":"sh/hcnipove","slide":2,"bbox":[78,595,95,4]}
+{"kind":"textbox","id":"sh/ixwjytwj","slide":2,"text":"small things that made the day softer.","textPreview":"small things that made the day softer.","textChars":38,"textLines":1,"bbox":[78,640,430,125]}
+{"kind":"textbox","id":"sh/jyp0ryd4","slide":2,"text":"02  /  DM Serif Display + DM Sans","textPreview":"02  /  DM Serif Display + DM Sans","textChars":33,"textLines":1,"bbox":[78,1190,700,28]}
+{"kind":"shape","id":"sh/507it8va","slide":2,"bbox":[660,1015,270,70]}
+{"kind":"textbox","id":"sh/yhczmpwf","slide":2,"text":"SAVE THIS FEELING","textPreview":"SAVE THIS FEELING","textChars":17,"textLines":1,"bbox":[680,1038,230,24]}
+{"kind":"image","id":"im/10b29svq","slide":2,"name":"","geometry":"roundRect","alt":"Woman reading with coffee by a window","bbox":[590,230,412,690]}
+{"kind":"notes","id":"nt/95cfc1","slide":2,"text":""}
+{"kind":"slide","id":"sl/xuj2jx","slide":3,"title":"WEEKEND PHOTO DIARY","textShapes":5}
+{"kind":"textbox","id":"sh/xg3yhwnq","slide":3,"text":"WEEKEND PHOTO DIARY","textPreview":"WEEKEND PHOTO DIARY","textChars":19,"textLines":1,"bbox":[78,80,500,28]}
+{"kind":"textbox","id":"sh/adszm14z","slide":3,"text":"currently loving","textPreview":"currently loving","textChars":16,"textLines":1,"bbox":[78,190,520,220]}
+{"kind":"shape","id":"sh/ve1gf65k","slide":3,"bbox":[78,595,95,4]}
+{"kind":"textbox","id":"sh/k3uhsbmh","slide":3,"text":"soft light, open windows, and flowers that make the room feel awake.","textPreview":"soft light, open windows, and flowers that make the room feel awake.","textChars":68,"textLines":1,"bbox":[78,640,430,125]}
+{"kind":"textbox","id":"sh/543ylgnm","slide":3,"text":"03  /  Fraunces + Manrope","textPreview":"03  /  Fraunces + Manrope","textChars":25,"textLines":1,"bbox":[78,1190,700,28]}
+{"kind":"shape","id":"sh/jilgj65w","slide":3,"bbox":[660,1015,270,70]}
+{"kind":"textbox","id":"sh/07qxg7mx","slide":3,"text":"SAVE THIS FEELING","textPreview":"SAVE THIS FEELING","textChars":17,"textLines":1,"bbox":[680,1038,230,24]}
+{"kind":"image","id":"im/fq9sb2ts","slide":3,"name":"","geometry":"roundRect","alt":"Woman reading with coffee by a window","bbox":[590,230,412,690]}
+{"kind":"notes","id":"nt/xuj2jx","slide":3,"text":""}
+{"kind":"slide","id":"sl/q22qu6","slide":4,"title":"WEEKEND PHOTO DIARY","textShapes":5}
+{"kind":"textbox","id":"sh/dkvups7q","slide":4,"text":"WEEKEND PHOTO DIARY","textPreview":"WEEKEND PHOTO DIARY","textChars":19,"textLines":1,"bbox":[78,80,500,28]}
+{"kind":"textbox","id":"sh/qh4vux8f","slide":4,"text":"a soft reset","textPreview":"a soft reset","textChars":12,"textLines":1,"bbox":[78,190,520,220]}
+{"kind":"shape","id":"sh/bidcnip0","slide":4,"bbox":[78,595,95,4]}
+{"kind":"textbox","id":"sh/076d07qh","slide":4,"text":"rest is part of the plan.","textPreview":"rest is part of the plan.","textChars":25,"textLines":1,"bbox":[78,640,430,125]}
+{"kind":"textbox","id":"sh/l8futc72","slide":4,"text":"04  /  Libre Baskerville + Plus Jakarta Sans","textPreview":"04  /  Libre Baskerville + Plus Jakarta Sans","textChars":44,"textLines":1,"bbox":[78,1190,700,28]}
+{"kind":"shape","id":"sh/z6dcr2pw","slide":4,"bbox":[660,1015,270,70]}
+{"kind":"textbox","id":"sh/gb2to3qd","slide":4,"text":"SAVE THIS FEELING","textPreview":"SAVE THIS FEELING","textChars":17,"textLines":1,"bbox":[680,1038,230,24]}
+{"kind":"image","id":"im/76tkzid8","slide":4,"name":"","geometry":"roundRect","alt":"Woman reading with coffee by a window","bbox":[590,230,412,690]}
+{"kind":"notes","id":"nt/q22qu6","slide":4,"text":""}
+{"kind":"slide","id":"sl/m5eg38","slide":5,"title":"WEEKEND PHOTO DIARY","textShapes":5}
+{"kind":"textbox","id":"sh/x07e9sn6","slide":5,"text":"WEEKEND PHOTO DIARY","textPreview":"WEEKEND PHOTO DIARY","textChars":19,"textLines":1,"bbox":[78,80,500,28]}
+{"kind":"textbox","id":"sh/axgfydov","slide":5,"text":"a little life update","textPreview":"a little life update","textChars":20,"textLines":1,"bbox":[78,190,520,220]}
+{"kind":"shape","id":"sh/bypw7i5g","slide":5,"bbox":[78,595,95,4]}
+{"kind":"textbox","id":"sh/ovyxw36p","slide":5,"text":"a walk, a change of pace, and the feeling of coming back to myself.","textPreview":"a walk, a change of pace, and the feeling of coming back to myself.","textChars":67,"textLines":1,"bbox":[78,640,430,125]}
+{"kind":"textbox","id":"sh/9w7e58na","slide":5,"text":"05  /  Bodoni Moda + DM Sans","textPreview":"05  /  Bodoni Moda + DM Sans","textChars":28,"textLines":1,"bbox":[78,1190,700,28]}
+{"kind":"shape","id":"sh/nu5w3y54","slide":5,"bbox":[660,1015,270,70]}
+{"kind":"textbox","id":"sh/0rexs36t","slide":5,"text":"SAVE THIS FEELING","textPreview":"SAVE THIS FEELING","textChars":17,"textLines":1,"bbox":[680,1038,230,24]}
+{"kind":"image","id":"im/naxsvih8","slide":5,"name":"","geometry":"roundRect","alt":"Woman reading with coffee by a window","bbox":[590,230,412,690]}
+{"kind":"notes","id":"nt/m5eg38","slide":5,"text":""}

@@ -1,0 +1,8 @@
+{
+  "slides": [
+    {"kind":"hero","eyebrow":"NIGHTSTAND EDIT · 01","title":"my nightstand\nright now","body":"the little corner that makes staying in feel extra special","hero":"../../01 Source Assets/lifestyle-ugc/15-pack4-hero-bedside.png"},
+    {"kind":"hero","eyebrow":"SLOW MORNING CLUB · 02","title":"coffee and\na few pages","body":"one chapter before anything else gets a say","hero":"../../01 Source Assets/lifestyle-ugc/16-pack4-establishing-shelf.png"},
+    {"kind":"polaroids","eyebrow":"CURRENTLY · 03","title":"stacked by\nthe bed","hero":"../../01 Source Assets/lifestyle-ugc/16-pack4-establishing-shelf.png","photos":["../../01 Source Assets/lifestyle-ugc/17-pack4-books-earrings.png","../../01 Source Assets/lifestyle-ugc/18-pack4-filler-tulip-lamp.png"],"captions":["one chapter at a time","little things i love"]},
+    {"kind":"list","eyebrow":"NIGHTSTAND FAVES · 04","title":"homebody\nessentials","items":["slow pages","a warm drink","lights off early"],"hero":"../../01 Source Assets/lifestyle-ugc/10-pack3-hero-bed.png"}
+  ]
+}

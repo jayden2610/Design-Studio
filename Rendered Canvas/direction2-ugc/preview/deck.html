@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Weekend Notes Carousel — Full Deck Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,900;1,9..144,500&family=Baloo+2:wght@500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,900;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background:#e9e5df;
+    display:flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    padding: 40px;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .slide-wrap { display:flex; flex-direction:column; align-items:center; gap:12px; }
+  .slide-label { font-size:14px; font-weight:700; color:#4a4038; letter-spacing:.05em; text-transform:uppercase; }
+
+  .slide {
+    position: relative;
+    width: 405px;
+    height: 540px;
+    overflow: hidden;
+    border-radius: 8px;
+    background:#000;
+    box-shadow: 0 8px 30px rgba(0,0,0,.18);
+  }
+  .bg {
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit: cover;
+    filter: brightness(1.02) saturate(1.03);
+  }
+  .scrim-top {
+    position:absolute; inset:0;
+    background: linear-gradient(180deg, rgba(24,17,12,.6) 0%, rgba(24,17,12,.22) 30%, rgba(24,17,12,0) 50%, rgba(24,17,12,0) 100%);
+  }
+  .scrim-bottom {
+    position:absolute; inset:0;
+    background: linear-gradient(0deg, rgba(24,17,12,.62) 0%, rgba(24,17,12,.28) 24%, rgba(24,17,12,0) 46%, rgba(24,17,12,0) 100%);
+  }
+  .scrim-full {
+    position:absolute; inset:0;
+    background: linear-gradient(180deg, rgba(24,17,12,.55) 0%, rgba(24,17,12,.2) 26%, rgba(24,17,12,.02) 46%, rgba(24,17,12,.5) 100%);
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 27px 24px;
+  }
+  .content.top { justify-content: flex-start; }
+  .content.bottom { justify-content: flex-end; }
+
+  .eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 8px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.92);
+    text-shadow: 0 1px 4px rgba(0,0,0,.35);
+    margin-bottom: 5px;
+  }
+
+  h1 {
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 1.0;
+    color: #FCF3E1;
+    text-shadow: 0 1px 6px rgba(0,0,0,.28);
+    letter-spacing: -0.01em;
+  }
+  h1.small { font-size: 26px; }
+
+  .sub {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 14px;
+    color: #E7B49A;
+    margin-top: 5px;
+    text-shadow: 0 1px 5px rgba(0,0,0,.3);
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 20px;
+    left: 24px;
+    z-index: 2;
+  }
+  .dots { display: flex; gap: 4px; }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(255,255,255,.32); }
+  .dot.active { background: #FCF3E1; }
+
+  .badge {
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: rgba(231,180,154,.92);
+    border: 1.5px solid rgba(255,255,255,.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    color: #3B2A20;
+    z-index: 3;
+    box-shadow: 0 2px 6px rgba(0,0,0,.2);
+  }
+</style>
+</head>
+<body>
+
+  <!-- SLIDE 1 — HOOK -->
+  <div class="slide-wrap">
+    <div class="slide-label">Slide 1 — Hook</div>
+    <div class="slide">
+      <img class="bg" src="../../../01 Female Lifestyle Carousels/female-lifestyle-ugc/01-pack1-hero.png" alt="" style="object-position:center 20%;">
+      <div class="scrim-top"></div>
+      <div class="content top">
+        <div class="eyebrow">Slow weekend · August</div>
+        <h1>weekend<br>notes</h1>
+        <div class="sub">in my little life ♡</div>
+      </div>
+      <div class="footer"><div class="dots">
+        <div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      </div></div>
+      <div class="badge">01</div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2 — ESTABLISHING -->
+  <div class="slide-wrap">
+    <div class="slide-label">Slide 2 — Establishing</div>
+    <div class="slide">
+      <img class="bg" src="../../../01 Female Lifestyle Carousels/female-lifestyle-ugc/02-pack1-establishing.png" alt="" style="object-position:center 30%;">
+      <div class="scrim-top"></div>
+      <div class="content top">
+        <div class="eyebrow">Slow weekend · August</div>
+        <h1 class="small">my favorite<br>part of the<br>day</h1>
+        <div class="sub">coffee before the world wakes up ♡</div>
+      </div>
+      <div class="footer"><div class="dots">
+        <div class="dot"></div><div class="dot active"></div><div class="dot"></div><div class="dot"></div>
+      </div></div>
+      <div class="badge">02</div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3 — PORTRAIT / DETAIL -->
+  <div class="slide-wrap">
+    <div class="slide-label">Slide 3 — Detail</div>
+    <div class="slide">
+      <img class="bg" src="../../../01 Female Lifestyle Carousels/female-lifestyle-ugc/03-pack1-portrait-turned.png" alt="" style="object-position:center 25%;">
+      <div class="scrim-bottom"></div>
+      <div class="content bottom">
+        <div class="eyebrow">Slow weekend · August</div>
+        <h1 class="small">a book, a<br>coffee, no<br>plans</h1>
+        <div class="sub">this is enough for me ♡</div>
+      </div>
+      <div class="footer"><div class="dots">
+        <div class="dot"></div><div class="dot"></div><div class="dot active"></div><div class="dot"></div>
+      </div></div>
+      <div class="badge">03</div>
+    </div>
+  </div>
+
+  <!-- SLIDE 4 — OUTRO -->
+  <div class="slide-wrap">
+    <div class="slide-label">Slide 4 — Outro</div>
+    <div class="slide">
+      <img class="bg" src="../../../01 Female Lifestyle Carousels/female-lifestyle-ugc/05-pack1-filler-journal.png" alt="" style="object-position:center 40%;">
+      <div class="scrim-full"></div>
+      <div class="content top">
+        <div class="eyebrow">Slow weekend · August</div>
+        <h1 class="small">no rush<br>today</h1>
+        <div class="sub">save this for your next slow morning ♡</div>
+      </div>
+      <div class="footer"><div class="dots">
+        <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot active"></div>
+      </div></div>
+      <div class="badge">04</div>
+    </div>
+  </div>
+
+</body>
+</html>

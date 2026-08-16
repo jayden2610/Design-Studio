@@ -1,0 +1,35 @@
+{
+  "width": 1080,
+  "height": 1920,
+  "durationMs": 11000,
+  "frames": [
+    {
+      "image": "../../01 Source Assets/lifestyle-ugc/01-pack1-hero.png",
+      "eyebrow": "currently building my week",
+      "title": "the weekly\ncontent dump\ni actually use ->",
+      "body": "one soft place for every idea\nthat would otherwise get lost ✦",
+      "tag": "save this for your next reset"
+    },
+    {
+      "image": "../../01 Source Assets/lifestyle-ugc/04-pack1-coffee-hands.png",
+      "eyebrow": "01  collect",
+      "title": "everything\ngoes in one place",
+      "body": "hooks → half ideas → screenshots\n→ things i want to try",
+      "tag": "no sorting required yet"
+    },
+    {
+      "image": "../../01 Source Assets/lifestyle-ugc/05-pack1-filler-journal.png",
+      "eyebrow": "02  choose",
+      "title": "pick the ideas\nthat still feel light",
+      "body": "three useful posts\none small lifestyle moment\none thing i am curious about",
+      "tag": "keep it doable →"
+    },
+    {
+      "image": "../../01 Source Assets/lifestyle-ugc/11-pack3-establishing-bed.png",
+      "eyebrow": "03  make it visible",
+      "title": "turn the list\ninto a tiny week",
+      "body": "tuesday → useful\nthursday → visual\nsunday → currently",
+      "tag": "a system that leaves room for life ♡"
+    }
+  ]
+}

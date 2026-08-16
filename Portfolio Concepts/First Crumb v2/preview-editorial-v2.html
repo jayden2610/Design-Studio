@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>First Crumb — Editorial Gallery Preview v2</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=Caveat:wght@500;600&display=swap');
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#faf9f6;color:#181614;font-family:'Inter',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+
+.wrap{max-width:1180px;margin:0 auto;padding:0 56px}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:50;background:rgba(250,249,246,.92);backdrop-filter:blur(8px);border-bottom:1px solid #e7e4dd}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;padding-left:56px;padding-right:56px}
+.nav .mark{font:600 13px/1 'Inter';letter-spacing:.02em}
+.nav .links{display:flex;gap:32px;font:500 12px/1 'Inter';letter-spacing:.04em;text-transform:uppercase;color:#8a8579}
+.nav .links a{color:inherit;text-decoration:none}
+.nav .links a:hover{color:#181614}
+.nav .index{font:500 12px/1 'Inter';letter-spacing:.04em;color:#8a8579}
+
+/* ---------- hero (brand-voice rewrite) ---------- */
+.hero{padding:120px 0 0}
+.hero .eyebrow{font:600 11px/1 'Inter';letter-spacing:.16em;text-transform:uppercase;color:#a06a2e;margin-bottom:22px}
+.hero .eyebrow:before{content:"";display:inline-block;width:22px;height:1px;background:#a06a2e;margin-right:10px;vertical-align:middle}
+.hero h1{font:500 clamp(56px,8vw,132px)/.92 'Fraunces';letter-spacing:-.02em;margin:0 0 34px;color:#181614}
+.hero .sub{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;padding-bottom:64px;border-bottom:1px solid #e7e4dd}
+.hero .sub .lede{font:400 22px/1.5 'Fraunces';font-style:italic;color:#3a352d;max-width:520px}
+.hero .sub .meta{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-self:end}
+.hero .sub .meta dt{font:600 10px/1 'Inter';letter-spacing:.12em;text-transform:uppercase;color:#a39d8f;margin-bottom:8px}
+.hero .sub .meta dd{font:500 14px/1.4 'Inter';margin:0;color:#181614}
+
+/* ---------- gallery hero image ---------- */
+.gallery-hero{padding:96px 0;display:flex;align-items:center;justify-content:center;position:relative}
+.gallery-hero .frame{position:relative;width:100%;max-width:760px;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center}
+.gallery-hero .frame img{width:88%;height:88%;object-fit:contain;filter:drop-shadow(0 40px 60px rgba(24,22,20,.08))}
+.gallery-hero .frame-num{position:absolute;top:0;left:0;font:600 11px/1 'Inter';letter-spacing:.12em;color:#c4bfb2}
+.gallery-hero .frame-cap{position:absolute;bottom:0;right:0;font:600 11px/1 'Inter';letter-spacing:.08em;color:#c4bfb2;text-align:right;max-width:220px}
+.gallery-hero .brief{position:absolute;bottom:8%;left:-2%;max-width:260px;transform:rotate(-3deg)}
+.gallery-hero .brief .label{font:600 10px/1 'Inter';letter-spacing:.1em;text-transform:uppercase;color:#a06a2e;margin-bottom:6px;display:block}
+.gallery-hero .brief .text{font:600 22px/1.25 'Caveat';color:#3a352d}
+.gallery-hero .brief svg{position:absolute;top:-18px;left:-30px;width:60px;height:50px;opacity:.55}
+
+/* ---------- section label ---------- */
+.section-label{display:flex;align-items:baseline;gap:18px;padding:0 0 40px;margin-top:8px}
+.section-label .n{font:500 13px/1 'Fraunces';font-style:italic;color:#a06a2e}
+.section-label h2{font:500 30px/1 'Fraunces';letter-spacing:-.01em;margin:0}
+.section-label .rule{flex:1;height:1px;background:#e7e4dd;margin-left:8px}
+.section-label.on-dark .n{color:#d8a862}
+.section-label.on-dark h2{color:#faf9f6}
+.section-label.on-dark .rule{background:rgba(250,249,246,.18)}
+
+/* ---------- story block ---------- */
+.story{padding:100px 0;border-top:1px solid #e7e4dd;display:grid;grid-template-columns:.85fr 1.15fr;gap:80px;align-items:center}
+.story .art{background:#f1ede4;border-radius:2px;display:flex;align-items:center;justify-content:center;aspect-ratio:4/5;overflow:hidden}
+.story .art img{width:60%;object-fit:contain}
+.story .copy p{font:400 17px/1.65 'Inter';color:#48433a;max-width:440px;margin:0 0 20px}
+.story .copy p:last-child{margin-bottom:0}
+.story .copy .drop{font:500 40px/1 'Fraunces';float:left;margin:2px 10px 0 0;color:#181614}
+
+/* ---------- reduction proof ---------- */
+.reduction{padding:0 0 100px}
+.reduction .grid{display:grid;grid-template-columns:1.3fr 1fr .7fr;gap:24px;align-items:stretch}
+.reduction .grid.grid-2{grid-template-columns:1fr 1fr}
+.reduction .cell{background:#f1ede4;border-radius:2px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;position:relative}
+.reduction .cell .scale-tag{font:600 10px/1 'Inter';letter-spacing:.1em;text-transform:uppercase;color:#a39d8f}
+.reduction .cell .imgwrap{flex:1;display:flex;align-items:center;justify-content:center;padding:20px 0}
+.reduction .cell img{object-fit:contain;filter:grayscale(1)}
+.reduction .cell.full img{width:100%;max-width:180px}
+.reduction .cell.small img{width:64px;height:64px}
+.reduction .cell.tiny{align-items:center}
+.reduction .cell.tiny .imgwrap{padding:0}
+.reduction .cell.tiny img{width:26px;height:26px}
+.reduction .cell .use{font:500 13px/1.3 'Inter';color:#48433a}
+.reduction .foot-note{font:400 15px/1.6 'Fraunces';font-style:italic;color:#48433a;max-width:600px;margin-top:28px}
+
+/* ---------- NEW: full-bleed color-break — palette system moment ---------- */
+.color-break{background:#a06a2e;padding:110px 0;margin:0 0 0;position:relative;overflow:hidden}
+.color-break:before{content:"";position:absolute;inset:0;background:
+  repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 2px,transparent 2px 64px);
+  pointer-events:none}
+.color-break .wrap{position:relative}
+.color-break .section-label .n{color:rgba(24,22,20,.55)}
+.color-break .section-label h2{color:#181614}
+.color-break .section-label .rule{background:rgba(24,22,20,.18)}
+.color-break .lede{font:400 22px/1.5 'Fraunces';font-style:italic;color:#181614;max-width:640px;margin:0 0 56px}
+.swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+.swatch{background:rgba(250,249,246,.14);border:1px solid rgba(24,22,20,.14);border-radius:2px;padding:22px 18px;display:flex;flex-direction:column;gap:34px}
+.swatch .chip{width:100%;aspect-ratio:1/1;border-radius:50%;border:1px solid rgba(24,22,20,.25)}
+.swatch .name{font:600 11px/1.3 'Inter';letter-spacing:.04em;color:#181614}
+.swatch .hex{font:500 11px/1 'Inter';letter-spacing:.06em;color:rgba(24,22,20,.55);margin-top:4px}
+.sw-1{background:#181614}
+.sw-2{background:#a06a2e}
+.sw-3{background:#c99a5b}
+.sw-4{background:#f1ede4}
+.sw-5{background:#faf9f6}
+
+/* ---------- applications intro ---------- */
+.apps-intro{padding:120px 0 60px;border-top:1px solid #e7e4dd}
+.apps-intro p{font:400 19px/1.6 'Fraunces';font-style:italic;color:#48433a;max-width:640px;margin:26px 0 0}
+
+/* ---------- application shots — real rendered mockups, editorial framing ---------- */
+.packaging,.menu-section,.signage-section{padding:0 0 140px}
+.app-shot{border-radius:4px;overflow:hidden;box-shadow:0 40px 70px -30px rgba(24,22,20,.35)}
+.app-shot img{width:100%;display:block}
+.app-note{max-width:640px;margin:36px auto 0;text-align:center}
+.app-note .tag{font:600 10px/1 'Inter';letter-spacing:.12em;text-transform:uppercase;color:#a06a2e;margin-bottom:14px}
+.app-note h3{font:500 26px/1.2 'Fraunces';margin:0 0 14px;letter-spacing:-.01em}
+.app-note p{font:400 15px/1.6 'Inter';color:#48433a;margin:0}
+
+/* ---------- closing ---------- */
+.close{padding:80px 0 140px;border-top:1px solid #e7e4dd;display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
+.close h3{font:500 clamp(32px,4vw,52px)/1 'Fraunces';margin:0;letter-spacing:-.01em;max-width:520px}
+.close a{font:600 12px/1 'Inter';letter-spacing:.08em;text-transform:uppercase;color:#181614;text-decoration:none;border-bottom:1px solid #181614;padding-bottom:4px;white-space:nowrap}
+
+footer.site{padding:32px 0;border-top:1px solid #e7e4dd;display:flex;justify-content:space-between;font:600 10px/1 'Inter';letter-spacing:.1em;color:#a39d8f;text-transform:uppercase}
+
+@media(max-width:860px){
+  .wrap{padding:0 24px}
+  .nav .wrap{padding-left:24px;padding-right:24px}
+  .nav .links{display:none}
+  .hero{padding-top:80px}
+  .hero .sub{grid-template-columns:1fr;gap:28px}
+  .story{grid-template-columns:1fr;gap:36px;padding:64px 0}
+  .reduction .grid{grid-template-columns:1fr;gap:16px}
+  .gallery-hero .brief{display:none}
+  .pack-stage,.menu-stage{grid-template-columns:1fr;padding:48px 28px}
+  .sign-stage{padding:80px 28px}
+  .close{flex-direction:column;align-items:flex-start;gap:20px}
+  .color-break{padding:70px 0}
+  .swatches{grid-template-columns:repeat(2,1fr)}
+  .mood-stage{padding:56px 24px;min-height:320px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <div class="mark">FIRST CRUMB — PREVIEW v2</div>
+    <div class="links">
+      <a href="#logo">Logo</a>
+      <a href="#system">System</a>
+      <a href="#packaging">Packaging</a>
+      <a href="#menu">Menu</a>
+      <a href="#signage">Signage</a>
+    </div>
+    <div class="index">01 / 03 — DIRECTION TEST v2</div>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">Monochrome Food Identity — Case Study 01</div>
+    <h1>First Crumb</h1>
+    <div class="sub">
+      <p class="lede">First Crumb is what happens when a bakery stops explaining itself. One warm cookie, one clean break — that's the whole introduction, and it's enough.</p>
+      <dl class="meta">
+        <div><dt>Category</dt><dd>Bakery &amp; Café</dd></div>
+        <div><dt>Concept</dt><dd>The Break</dd></div>
+        <div><dt>Palette</dt><dd>Kraft, Ink, Cream</dd></div>
+        <div><dt>Typeface</dt><dd>Fraunces / Inter</dd></div>
+      </dl>
+    </div>
+  </header>
+
+  <section class="gallery-hero" id="logo">
+    <div class="frame">
+      <span class="frame-num">FIG. 01</span>
+      <img src="01-logo-illustration.png" alt="Hand breaking a chocolate chip cookie over a folded bakery sleeve">
+      <span class="frame-cap">Primary mark, hand-inked<br>single line weight throughout</span>
+      <div class="brief">
+        <svg viewBox="0 0 60 50" fill="none"><path d="M8 42C20 20 35 8 52 6" stroke="#a06a2e" stroke-width="2" stroke-linecap="round"/><path d="M44 4L53 6L48 14" stroke="#a06a2e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="label">The brief</span>
+        <span class="text">"A hand breaks a thick cookie over a folded bakery sleeve." One sentence, one verb — that's the whole moment.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="story">
+    <div class="art"><img src="02-logo-small.png" alt="First Crumb compact mark"></div>
+    <div class="copy">
+      <span class="drop">O</span>
+      <p>ne warm cookie, one clear break, and a folded sleeve underneath. That's the whole brief. Everything else — the shop, the packaging, the sign above the door — lives downstream of this single illustrated moment.</p>
+      <p>The mark scales from a napkin-sized stamp to a full window sign without ever needing simplification. It was drawn once, at full detail, and trusted to hold up small.</p>
+    </div>
+  </section>
+
+  <section class="reduction">
+    <div class="section-label"><span class="n">02</span><h2>One illustration, two settings</h2><span class="rule"></span></div>
+    <div class="grid grid-2">
+      <div class="cell full">
+        <span class="scale-tag">Full bleed — hero, packaging, campaign</span>
+        <div class="imgwrap"><img src="01-logo-illustration.png" alt="First Crumb full illustration, tight crop"></div>
+        <span class="use">FIG. 02A — Primary placement</span>
+      </div>
+      <div class="cell full">
+        <span class="scale-tag">Open frame — badge, menu, quiet moments</span>
+        <div class="imgwrap"><img src="02-logo-small.png" alt="First Crumb illustration with open whitespace framing"></div>
+        <span class="use">FIG. 02B — Secondary placement</span>
+      </div>
+    </div>
+    <p class="foot-note">Same hand-inked artwork, two crops — tight for hero moments, open-framed wherever the mark needs room to breathe.</p>
+  </section>
+
+  <!-- NEW: full-bleed color-break, explicit palette system moment -->
+  <section class="color-break" id="system">
+    <div class="wrap">
+      <div class="section-label"><span class="n">—</span><h2>The system</h2><span class="rule"></span></div>
+      <p class="lede">Five values, carried everywhere. Nothing in this identity uses a colour outside this set — that discipline is what keeps the break feeling like one gesture instead of five different applications.</p>
+      <div class="swatches">
+        <div class="swatch"><div class="chip sw-1"></div><div><div class="name">Ink</div><div class="hex">#181614</div></div></div>
+        <div class="swatch"><div class="chip sw-2"></div><div><div class="name">Kraft</div><div class="hex">#A06A2E</div></div></div>
+        <div class="swatch"><div class="chip sw-3"></div><div><div class="name">Toast</div><div class="hex">#C99A5B</div></div></div>
+        <div class="swatch"><div class="chip sw-4"></div><div><div class="name">Sleeve</div><div class="hex">#F1EDE4</div></div></div>
+        <div class="swatch"><div class="chip sw-5"></div><div><div class="name">Paper</div><div class="hex">#FAF9F6</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="apps-intro">
+    <div class="section-label"><span class="n">03</span><h2>In the world</h2><span class="rule"></span></div>
+    <p>Three touchpoints, one gesture — the break travels from packaging to counter card to signage without losing its hand.</p>
+  </section>
+
+  <section class="packaging" id="packaging">
+    <div class="app-shot">
+      <img src="03-packaging-application.png" alt="First Crumb takeaway sleeve mockup, kraft paper on wood counter">
+    </div>
+    <div class="app-note">
+      <div class="tag">Application — Packaging</div>
+      <h3>The takeaway sleeve</h3>
+      <p>A single fold, uncoated cream stock, one-colour print. The illustration sits dead centre — no border, no clutter — so the line work does the talking.</p>
+    </div>
+  </section>
+
+  <section class="menu-section" id="menu">
+    <div class="app-shot">
+      <img src="04-menu-application.png" alt="First Crumb menu cover mockup, torn-edge card beside the primary illustration">
+    </div>
+    <div class="app-note">
+      <div class="tag">Application — Menu</div>
+      <h3>The menu cover</h3>
+      <p>A torn-edge card stamped with the wordmark and a short list — same kraft-and-ink discipline as the packaging, so the counter and the sleeve feel like one object.</p>
+    </div>
+  </section>
+
+  <section class="signage-section" id="signage">
+    <div class="app-shot">
+      <img src="05-signage-application.png" alt="First Crumb hanging window sign mockup on a wood-panelled wall">
+    </div>
+    <div class="app-note">
+      <div class="tag">Application — Signage</div>
+      <h3>The window sign</h3>
+      <p>Same mark, inverted to hold on dark wood — the small illustration sits above the wordmark exactly the way it does on the sleeve.</p>
+    </div>
+  </section>
+
+  <section class="close">
+    <h3>Next: Noodle Signal, applying the same editorial system to a neon night-market world.</h3>
+    <a href="#logo">Back to top ↑</a>
+  </section>
+
+  <footer class="site">
+    <span>First Crumb / Editorial Gallery Direction — v2</span>
+    <span>Preview — Not Final</span>
+  </footer>
+
+</main>
+</body>
+</html>

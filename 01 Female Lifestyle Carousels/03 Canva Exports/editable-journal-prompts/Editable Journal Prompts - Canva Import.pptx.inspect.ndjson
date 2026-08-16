@@ -1,0 +1,71 @@
+{"kind":"deck","id":"pr/eiidwy","name":"Deck"}
+{"kind":"layout","layoutId":"b67d0523-0f39-4392-8676-afcaf7797fea","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"61119514-2805-4ae8-8c48-a422d0b9e0f7","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/onw93r","slide":1,"title":"journal notes · vol. 01","textShapes":9}
+{"kind":"textbox","id":"sh/6dsjexk3","slide":1,"name":"meta","text":"journal notes · vol. 01","textPreview":"journal notes · vol. 01","textChars":23,"textLines":1,"bbox":[105,372,300,25]}
+{"kind":"textbox","id":"sh/7y1k72lo","slide":1,"name":"cover-line-one","text":"3 journal","textPreview":"3 journal","textChars":9,"textLines":1,"bbox":[105,415,520,80]}
+{"kind":"textbox","id":"sh/kba1cn2d","slide":1,"name":"cover-wordmark","text":"prompts","textPreview":"prompts","textChars":7,"textLines":1,"bbox":[98,496,530,94]}
+{"kind":"textbox","id":"sh/lcj25s3y","slide":1,"name":"cover-line-three","text":"for when you\nfeel stuck","textPreview":"for when you | feel stuck","textChars":23,"textLines":2,"bbox":[105,577,520,150]}
+{"kind":"textbox","id":"sh/y9sjaxk7","slide":1,"name":"cover-subhead","text":"swipe for a softer way back to yourself","textPreview":"swipe for a softer way back to yourself","textChars":39,"textLines":1,"bbox":[110,760,330,62]}
+{"kind":"shape","id":"sh/ja1k3ils","slide":1,"name":"cover-note-paper","bbox":[845,561,169,188]}
+{"kind":"textbox","id":"sh/47elor2h","slide":1,"name":"cover-note-make","text":"make","textPreview":"make","textChars":4,"textLines":1,"bbox":[871,587,112,20]}
+{"kind":"textbox","id":"sh/58n2hwj2","slide":1,"name":"cover-note-copy","text":"time\nfor\nyou","textPreview":"time | for | you","textChars":12,"textLines":3,"bbox":[866,611,122,99]}
+{"kind":"shape","id":"sh/dczals7u","slide":1,"name":"polaroid-paper","bbox":[40,986,255,306]}
+{"kind":"textbox","id":"sh/rahsjip4","slide":1,"name":"polaroid-caption","text":"a slow morning, saved","textPreview":"a slow morning, saved","textChars":21,"textLines":1,"bbox":[71,1256,204,25]}
+{"kind":"textbox","id":"sh/q98bad8j","slide":1,"name":"cover-counter","text":"01 / 04","textPreview":"01 / 04","textChars":7,"textLines":1,"bbox":[924,1285,95,24]}
+{"kind":"image","id":"im/7ilgjqxg","slide":1,"name":"","alt":"dried-flower-bouquet","bbox":[-30,15,300,308]}
+{"kind":"image","id":"im/sjuxcvy1","slide":1,"name":"","alt":"ballet-flats","bbox":[438,54,270,265]}
+{"kind":"image","id":"im/tk3yl0fm","slide":1,"name":"","alt":"sunglasses","bbox":[899,90,126,90]}
+{"kind":"image","id":"im/idsf6lgz","slide":1,"name":"","alt":"hand-mirror","bbox":[475,871,206,278]}
+{"kind":"image","id":"im/je1gfqxk","slide":1,"name":"","alt":"tote-bag","bbox":[788,1024,244,281]}
+{"kind":"image","id":"im/kfax8vy5","slide":1,"name":"","alt":"iced-coffee","bbox":[609,886,118,168]}
+{"kind":"image","id":"im/5gjyhgfq","slide":1,"name":"","alt":"lipstick","bbox":[897,486,105,140]}
+{"kind":"image","id":"im/29wfi5w3","slide":1,"name":"","alt":"open-book","bbox":[65,1084,172,136]}
+{"kind":"image","id":"im/3a5graxo","slide":1,"name":"","alt":"hair-clip","bbox":[764,331,122,89]}
+{"kind":"image","id":"im/fyhgjahc","slide":1,"name":"","alt":"transparent-tape","bbox":[55,842,152,142]}
+{"kind":"image","id":"im/ux8fq50r","slide":1,"name":"","alt":"hand-drawn-underline","bbox":[103,772,190,44]}
+{"kind":"image","id":"im/7ypsfi5o","slide":1,"name":"","alt":"reading-photo","bbox":[52,998,231,242]}
+{"kind":"notes","id":"nt/onw93r","slide":1,"text":""}
+{"kind":"slide","id":"sl/wfex98","slide":2,"title":"journal notes · 01 / 03","textShapes":7}
+{"kind":"textbox","id":"sh/d8jip8ru","slide":2,"name":"meta","text":"journal notes · 01 / 03","textPreview":"journal notes · 01 / 03","textChars":23,"textLines":1,"bbox":[82,83,330,30]}
+{"kind":"textbox","id":"sh/qlszetsj","slide":2,"name":"lead-in","text":"start here","textPreview":"start here","textChars":10,"textLines":1,"bbox":[86,214,260,54]}
+{"kind":"textbox","id":"sh/bm10ny9o","slide":2,"name":"wordmark","text":"name it","textPreview":"name it","textChars":7,"textLines":1,"bbox":[78,278,615,145]}
+{"kind":"textbox","id":"sh/0bu1k3al","slide":2,"name":"journal-prompt","text":"what feels heavy because\ni haven’t named it yet?","textPreview":"what feels heavy because | i haven’t named it yet?","textChars":48,"textLines":2,"bbox":[90,613,650,125]}
+{"kind":"textbox","id":"sh/lc3it8r6","slide":2,"name":"guidance","text":"write the truest answer first.\nyou can make sense of it later.","textPreview":"write the truest answer first. | you can make sense of it later.","textChars":62,"textLines":2,"bbox":[94,815,380,74]}
+{"kind":"shape","id":"sh/psrmxojy","slide":2,"name":"prompt-note-paper","bbox":[772,616,230,110]}
+{"kind":"textbox","id":"sh/ori5432d","slide":2,"name":"prompt-note-text","text":"give the feeling\na name.","textPreview":"give the feeling | a name.","textChars":24,"textLines":2,"bbox":[792,644,190,60]}
+{"kind":"textbox","id":"sh/3q94vy1s","slide":2,"name":"page-number","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[905,1190,100,105]}
+{"kind":"image","id":"im/zet0byp0","slide":2,"name":"","alt":"dried-flower-bouquet","bbox":[786,60,307,326]}
+{"kind":"image","id":"im/ydkz2tof","slide":2,"name":"","alt":"lipstick","bbox":[870,445,102,136]}
+{"kind":"image","id":"im/9kvih872","slide":2,"name":"","alt":"mirror","bbox":[690,885,264,340]}
+{"kind":"image","id":"im/8jm1836h","slide":2,"name":"","alt":"paperclip","bbox":[83,1042,130,130]}
+{"kind":"notes","id":"nt/wfex98","slide":2,"text":""}
+{"kind":"slide","id":"sl/nyocr6","slide":3,"title":"journal notes · 02 / 03","textShapes":7}
+{"kind":"textbox","id":"sh/7idcb61k","slide":3,"name":"meta","text":"journal notes · 02 / 03","textPreview":"journal notes · 02 / 03","textChars":23,"textLines":1,"bbox":[82,83,330,30]}
+{"kind":"textbox","id":"sh/8jmd4b2p","slide":3,"name":"lead-in","text":"then ask","textPreview":"then ask","textChars":8,"textLines":1,"bbox":[86,210,260,52]}
+{"kind":"textbox","id":"sh/9kvedgja","slide":3,"name":"wordmark","text":"loosen\nthe grip","textPreview":"loosen | the grip","textChars":15,"textLines":2,"bbox":[78,252,690,245]}
+{"kind":"textbox","id":"sh/u54v61kv","slide":3,"name":"journal-prompt","text":"where am i demanding certainty\nbefore i let myself begin?","textPreview":"where am i demanding certainty | before i let myself begin?","textChars":57,"textLines":2,"bbox":[90,635,680,125]}
+{"kind":"textbox","id":"sh/v6xwf61g","slide":3,"name":"guidance","text":"let the answer be unfinished.\nthat is still an answer.","textPreview":"let the answer be unfinished. | that is still an answer.","textChars":54,"textLines":2,"bbox":[94,837,360,72]}
+{"kind":"shape","id":"sh/buh4nq58","slide":3,"name":"polaroid-paper","bbox":[764,704,208,260]}
+{"kind":"textbox","id":"sh/xwzmpgny","slide":3,"name":"polaroid-caption","text":"one page at a time","textPreview":"one page at a time","textChars":18,"textLines":1,"bbox":[785,913,168,24]}
+{"kind":"textbox","id":"sh/cvqlwv6t","slide":3,"name":"page-number","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[905,1190,100,105]}
+{"kind":"image","id":"im/ts72d0zu","slide":3,"name":"","alt":"ballet-flats","bbox":[765,65,307,280]}
+{"kind":"image","id":"im/sry14vy9","slide":3,"name":"","alt":"hair-clip","bbox":[840,480,165,108]}
+{"kind":"image","id":"im/nul0zmhk","slide":3,"name":"","alt":"open-book","bbox":[760,1042,265,210]}
+{"kind":"image","id":"im/mtcjq10z","slide":3,"name":"","alt":"circle","bbox":[78,1053,120,120]}
+{"kind":"image","id":"im/tczm1ozm","slide":3,"name":"","alt":"journal-photo","bbox":[777,719,180,177]}
+{"kind":"notes","id":"nt/nyocr6","slide":3,"text":""}
+{"kind":"slide","id":"sl/mnil45","slide":4,"title":"journal notes · 03 / 03","textShapes":7}
+{"kind":"textbox","id":"sh/d0nq1w3i","slide":4,"name":"meta","text":"journal notes · 03 / 03","textPreview":"journal notes · 03 / 03","textChars":23,"textLines":1,"bbox":[82,83,330,30]}
+{"kind":"textbox","id":"sh/qxc7q1kr","slide":4,"name":"lead-in","text":"come back to this","textPreview":"come back to this","textChars":17,"textLines":1,"bbox":[86,214,360,52]}
+{"kind":"textbox","id":"sh/ryl8z6lc","slide":4,"name":"wordmark","text":"begin\nsmall","textPreview":"begin | small","textChars":11,"textLines":2,"bbox":[78,278,590,245]}
+{"kind":"textbox","id":"sh/4vupor2l","slide":4,"name":"journal-prompt","text":"what is one kind thing\ni can do in the next ten minutes?","textPreview":"what is one kind thing | i can do in the next ten minutes?","textChars":56,"textLines":2,"bbox":[90,650,680,128]}
+{"kind":"textbox","id":"sh/pw3qxw36","slide":4,"name":"guidance","text":"make it small enough that\nyou can begin before you overthink it.","textPreview":"make it small enough that | you can begin before you overthink it.","textChars":64,"textLines":2,"bbox":[94,860,420,75]}
+{"kind":"shape","id":"sh/pszydsb2","slide":4,"name":"prompt-note-paper","bbox":[818,698,155,116]}
+{"kind":"textbox","id":"sh/orqh4nux","slide":4,"name":"prompt-note-text","text":"a little\ncounts.","textPreview":"a little | counts.","textChars":16,"textLines":2,"bbox":[838,726,115,66]}
+{"kind":"textbox","id":"sh/3qhgbitc","slide":4,"name":"page-number","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[905,1190,100,105]}
+{"kind":"image","id":"im/za5obi5c","slide":4,"name":"","alt":"iced-coffee","bbox":[821,166,140,164]}
+{"kind":"image","id":"im/e9w7id4r","slide":4,"name":"","alt":"flower-bouquet","bbox":[818,506,152,152]}
+{"kind":"image","id":"im/l8rqpw3m","slide":4,"name":"","alt":"open-notebook","bbox":[62,1034,252,217]}
+{"kind":"image","id":"im/k7ipwrm1","slide":4,"name":"","alt":"tote-bag","bbox":[780,1030,232,260]}
+{"kind":"notes","id":"nt/mnil45","slide":4,"text":""}

@@ -1,0 +1,563 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/j9t4j7",
+    "id": "j9t4j7",
+    "slide": 2,
+    "layoutId": "97b40b6d-c4f5-4a6b-8589-0428728524d8",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "551b1b28-adbe-4f65-8abe-8528abeaad62",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FBF3E6",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1080,
+      "height": 1350
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Fraunces",
+      "Manrope"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "97b40b6d-c4f5-4a6b-8589-0428728524d8",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "551b1b28-adbe-4f65-8abe-8528abeaad62",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "551b1b28-adbe-4f65-8abe-8528abeaad62",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/9cjm5cri",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1080,
+        1350
+      ],
+      "alt": "Replaceable lifestyle hero photo",
+      "contentType": "image/png",
+      "imageFit": "cover",
+      "asset": {
+        "assetId": "f1732d0e-ab88-470b-9ea4-490edb6ea63f",
+        "contentType": "image/png",
+        "byteLength": 2027105
+      }
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jmtw3ito",
+      "id": "2",
+      "bbox": [
+        0,
+        0,
+        1080,
+        1350
+      ],
+      "geometry": "rect",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ilkfads3",
+      "id": "3",
+      "name": "eyebrow-pill",
+      "bbox": [
+        72,
+        68,
+        296,
+        38
+      ],
+      "geometry": "roundRect",
+      "fillColor": "rgba(251, 243, 230, 0.78)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tcvy9sbq",
+      "id": "4",
+      "name": "eyebrow",
+      "bbox": [
+        84,
+        76,
+        272,
+        24
+      ],
+      "geometry": "rect",
+      "text": "A SMALL FAVOURITE · 02",
+      "textPreview": "A SMALL FAVOURITE · 02",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 17,
+        "typeface": "Manrope",
+        "color": "#65703D",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "A SMALL FAVOURITE · 02"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "A SMALL FAVOURITE · 02",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "typeface": "Manrope",
+            "color": "#65703D",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "A SMALL FAVOURITE · 02",
+              "fontSize": 17,
+              "typeface": "Manrope",
+              "color": "#65703D",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sbmxg7al",
+      "id": "5",
+      "name": "title",
+      "bbox": [
+        68,
+        122,
+        700,
+        210
+      ],
+      "geometry": "rect",
+      "text": "the part i\nwant to keep",
+      "textPreview": "the part i | want to keep",
+      "resolvedFontSize": 88,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 88,
+        "typeface": "Fraunces",
+        "color": "#342E3F",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "the part i"
+          },
+          {
+            "index": 2,
+            "text": "want to keep"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "the part i",
+          "lineSpacingPercent": 91000,
+          "resolvedTextStyle": {
+            "fontSize": 88,
+            "typeface": "Fraunces",
+            "color": "#342E3F",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 0.91
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "the part i",
+              "fontSize": 88,
+              "typeface": "Fraunces",
+              "color": "#342E3F",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 0.91
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "want to keep",
+          "lineSpacingPercent": 91000,
+          "resolvedTextStyle": {
+            "fontSize": 88,
+            "typeface": "Fraunces",
+            "color": "#342E3F",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 0.91
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "want to keep",
+              "fontSize": 88,
+              "typeface": "Fraunces",
+              "color": "#342E3F",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 0.91
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7atg72t0",
+      "id": "6",
+      "name": "editable-caption-card",
+      "bbox": [
+        72,
+        1105,
+        760,
+        158
+      ],
+      "geometry": "roundRect",
+      "fillColor": "rgba(251, 243, 230, 0.93)",
+      "lineColor": "rgba(52, 46, 63, 0.12)",
+      "lineWidth": 1
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6pkfexsf",
+      "id": "7",
+      "name": "body-copy",
+      "bbox": [
+        102,
+        1134,
+        600,
+        68
+      ],
+      "geometry": "rect",
+      "text": "a book, a warm mug, and enough time to finish a chapter",
+      "textPreview": "a book, a warm mug, and enough time to finish a chapter",
+      "resolvedFontSize": 27,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 27,
+        "typeface": "Fraunces",
+        "color": "#342E3F",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "a book, a warm mug, and enough time to finish a"
+          },
+          {
+            "index": 2,
+            "text": "chapter"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "a book, a warm mug, and enough time to finish a chapter",
+          "lineSpacingPercent": 125000,
+          "resolvedTextStyle": {
+            "fontSize": 27,
+            "typeface": "Fraunces",
+            "color": "#342E3F",
+            "alignment": "left",
+            "lineSpacing": 1.25
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "a book, a warm mug, and enough time to finish a chapter",
+              "fontSize": 27,
+              "typeface": "Fraunces",
+              "color": "#342E3F",
+              "alignment": "left",
+              "lineSpacing": 1.25
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9grex8bm",
+      "id": "8",
+      "name": "meta-copy",
+      "bbox": [
+        102,
+        1214,
+        560,
+        26
+      ],
+      "geometry": "rect",
+      "text": "soft morning ritual ♡",
+      "textPreview": "soft morning ritual ♡",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 16,
+        "typeface": "Manrope",
+        "color": "#342E3F",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "soft morning ritual ♡"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "soft morning ritual ♡",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Manrope",
+            "color": "#342E3F",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "soft morning ritual ♡",
+              "fontSize": 16,
+              "typeface": "Manrope",
+              "color": "#342E3F",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8fix43u1",
+      "id": "9",
+      "name": "counter-02",
+      "bbox": [
+        948,
+        1230,
+        60,
+        60
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#FBF3E6",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/e54j6hk3",
+      "id": "10",
+      "name": "counter-02-text",
+      "bbox": [
+        948,
+        1247,
+        60,
+        22
+      ],
+      "geometry": "rect",
+      "text": "02",
+      "textPreview": "02",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "Manrope",
+        "color": "#342E3F",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "02"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "02",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Manrope",
+            "color": "#342E3F",
+            "bold": true,
+            "alignment": "center",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "02",
+              "fontSize": 16,
+              "typeface": "Manrope",
+              "color": "#342E3F",
+              "bold": true,
+              "alignment": "center",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

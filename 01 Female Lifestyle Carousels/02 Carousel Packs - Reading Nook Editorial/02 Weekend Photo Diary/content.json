@@ -1,0 +1,8 @@
+{
+  "slides": [
+    {"kind":"cover","eyebrow":"WEEKEND PHOTO DIARY · 01","title":"a weekend\nin soft focus","body":"a few small things i want to remember from lately","meta":"camera roll notes → august","hero":"../../01 Source Assets/lifestyle-ugc/01-pack1-hero.png"},
+    {"kind":"collage","eyebrow":"THE LITTLE THINGS · 02","title":"more of this\nplease","photos":["../../01 Source Assets/lifestyle-ugc/03-pack1-portrait-turned.png","../../01 Source Assets/lifestyle-ugc/04-pack1-coffee-hands.png","../../01 Source Assets/lifestyle-ugc/05-pack1-filler-journal.png","../../01 Source Assets/lifestyle-ugc/02-pack1-establishing.png"]},
+    {"kind":"list","eyebrow":"CURRENTLY · 03","title":"weekend\nfavourites","items":["slow pages","coffee walks","fresh flowers","the long way home"],"meta":"tiny wins from this week ✦","hero":"../../01 Source Assets/lifestyle-ugc/06-pack2-hero-flowers.png"},
+    {"kind":"cover","eyebrow":"UNTIL NEXT TIME · 04","title":"save the\nfeeling","body":"i want more weekends that make the week feel a little lighter","meta":"for a slower day ♡","hero":"../../01 Source Assets/lifestyle-ugc/27-pack6-filler-sunset.png"}
+  ]
+}

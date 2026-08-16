@@ -1,0 +1,52 @@
+{
+  "sceneId": "scene-01",
+  "canvas": { "width": 1717, "height": 916 },
+  "storyBasis": "一只手托着牛皮纸袋完成取餐交接：手先出现，纸袋随后展开，百吉饼从袋口探出，最后露出袋上的小票，收尾完成整个仪式。",
+  "sceneDurationMs": 13000,
+  "elements": [
+    {
+      "id": "hand",
+      "label": "手与手臂",
+      "sequence": 1,
+      "narrativeRole": "故事的开场动作：手臂从画面左侧伸入，托住纸袋",
+      "subtitle": "一只手从柜台边缘伸出，稳稳地托住一只牛皮纸袋。",
+      "type": "character",
+      "region": { "x": 120, "y": 195, "width": 660, "height": 300 },
+      "reveal": { "direction": "left_to_right", "startMs": 200, "durationMs": 2800, "maskPaddingPx": 18, "protectedRegions": [] },
+      "handPath": { "start": [140, 235], "end": [740, 420], "easing": "easeInOut" }
+    },
+    {
+      "id": "bag",
+      "label": "牛皮纸袋",
+      "sequence": 2,
+      "narrativeRole": "承接手部动作的核心容器，交接仪式的主体",
+      "subtitle": "一只手从柜台边缘伸出，稳稳地托住一只牛皮纸袋。",
+      "type": "structure",
+      "region": { "x": 690, "y": 195, "width": 480, "height": 350 },
+      "reveal": { "direction": "top_to_bottom", "startMs": 3100, "durationMs": 3100, "maskPaddingPx": 18, "protectedRegions": [] },
+      "handPath": { "start": [700, 220], "end": [900, 520], "easing": "easeInOut" }
+    },
+    {
+      "id": "bagel",
+      "label": "百吉饼",
+      "sequence": 3,
+      "narrativeRole": "揭晓核心产品：新鲜出炉的百吉饼从袋口探出",
+      "subtitle": "纸袋顶端露出一只新鲜出炉的百吉饼，表面撒满芝麻。",
+      "type": "object",
+      "region": { "x": 740, "y": 80, "width": 385, "height": 145 },
+      "reveal": { "direction": "top_to_bottom", "startMs": 6300, "durationMs": 2600, "maskPaddingPx": 14, "protectedRegions": [] },
+      "handPath": { "start": [930, 90], "end": [930, 215], "easing": "easeInOut" }
+    },
+    {
+      "id": "receipt",
+      "label": "小票",
+      "sequence": 4,
+      "narrativeRole": "反应/结果：小票证明交接已完成，收尾整个仪式",
+      "subtitle": "袋身贴着一张小票，证明这是一次刚完成的交接。",
+      "type": "detail",
+      "region": { "x": 995, "y": 215, "width": 150, "height": 190 },
+      "reveal": { "direction": "top_to_bottom", "startMs": 9000, "durationMs": 3500, "maskPaddingPx": 10, "protectedRegions": [] },
+      "handPath": { "start": [1060, 225], "end": [1060, 390], "easing": "easeInOut" }
+    }
+  ]
+}

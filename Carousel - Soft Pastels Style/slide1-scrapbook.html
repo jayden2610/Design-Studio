@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide 1 — Scrapbook Collage Variations</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Montserrat:wght@300;400;600;700&family=Dancing+Script:wght@400&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #1a1a1a; display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; padding: 40px 20px; }
+
+.card { flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.label { color: #888; font-family: Montserrat; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; }
+
+.slide { width: 400px; height: 500px; position: relative; overflow: hidden; border-radius: 8px; background: #FFF9F0; }
+
+.photo { position: absolute; object-fit: cover; border-radius: 4px; }
+.photo-frame { position: absolute; object-fit: cover; border-radius: 4px; border: 3px solid white; box-shadow: 2px 4px 12px rgba(0,0,0,0.08); }
+
+.pill { position: absolute; border-radius: 6px; padding: 4px 10px; font-family: Montserrat; font-weight: 600; font-size: 7px; letter-spacing: 1px; }
+.tag { position: absolute; font-family: Montserrat; font-weight: 600; font-size: 5.5px; letter-spacing: 1.5px; padding: 3px 7px; border-radius: 3px; }
+.note { position: absolute; background: #FFFDE7; border-radius: 3px; padding: 6px 8px; font-family: 'Dancing Script'; box-shadow: 1px 2px 6px rgba(0,0,0,0.06); }
+.sticky { position: absolute; border-radius: 2px; padding: 6px 8px; box-shadow: 1px 2px 8px rgba(0,0,0,0.08); }
+.star { position: absolute; }
+.star svg { width: 100%; height: 100%; }
+.heart { position: absolute; }
+
+/* V1: 4-PHOTO GRID — classic scrapbook, big center headline */
+.v1 .p1 { top: 15px; left: 15px; width: 175px; height: 130px; transform: rotate(-2deg); }
+.v1 .p2 { top: 20px; right: 15px; width: 175px; height: 130px; transform: rotate(2.5deg); }
+.v1 .p3 { bottom: 20px; left: 20px; width: 150px; height: 195px; transform: rotate(1deg); }
+.v1 .p4 { bottom: 25px; right: 15px; width: 175px; height: 120px; transform: rotate(-1.5deg); }
+.v1 .pill { bottom: 125px; left: 50%; transform: translateX(-50%); background: rgba(248,200,220,0.85); color: #FFF9F0; font-size: 6px; padding: 4px 12px; }
+.v1 .h { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-55%); font-family: Poppins; font-weight: 800; font-size: 28px; color: #FFF9F0; line-height: 0.95; text-align: center; text-shadow: 0 2px 16px rgba(58,46,42,0.5); z-index: 2; width: 280px; }
+.v1 .tag1 { top: 10px; left: 25px; background: rgba(216,200,232,0.85); color: #FFF9F0; }
+.v1 .tag2 { bottom: 190px; right: 22px; background: rgba(184,196,168,0.85); color: #FFF9F0; }
+.v1 .s1 { top: 155px; left: 110px; width: 12px; height: 12px; z-index: 3; }
+.v1 .s2 { top: 160px; right: 100px; width: 10px; height: 10px; z-index: 3; }
+.v1 .s3 { top: 310px; left: 180px; width: 8px; height: 8px; z-index: 3; }
+.v1 .heart { bottom: 115px; left: 55%; color: rgba(255,249,240,0.7); font-size: 14px; z-index: 3; }
+
+/* V2: DIAGONAL COLLAGE — 3 photos + 1 polaroid frame, big script accent */
+.v2 .p1 { top: 10px; left: 5px; width: 200px; height: 150px; transform: rotate(-3deg); }
+.v2 .p2 { top: 130px; right: 10px; width: 170px; height: 220px; transform: rotate(2deg); }
+.v2 .p3 { bottom: 15px; left: 15px; width: 185px; height: 135px; transform: rotate(-1deg); }
+.v2 .frame { position: absolute; top: 300px; left: 215px; width: 160px; height: 170px; background: white; border-radius: 3px; box-shadow: 2px 3px 14px rgba(0,0,0,0.1); transform: rotate(1.5deg); padding: 8px; }
+.v2 .frame img { width: 100%; height: 78%; object-fit: cover; border-radius: 1px; }
+.v2 .frame-text { font-family: 'Dancing Script'; font-size: 7px; color: #999; text-align: center; margin-top: 3px; }
+.v2 .pill { top: 12px; right: 18px; background: rgba(216,200,232,0.88); color: #FFF9F0; font-size: 6px; padding: 4px 10px; }
+.v2 .h { position: absolute; top: 165px; left: 20px; font-family: Poppins; font-weight: 700; font-size: 18px; color: #FFF9F0; line-height: 1.1; text-shadow: 0 2px 10px rgba(58,46,42,0.4); z-index: 2; width: 140px; }
+.v2 .a { position: absolute; top: 210px; left: 20px; font-family: 'Dancing Script'; font-size: 11px; color: #F8C8DC; text-shadow: 0 1px 6px rgba(58,46,42,0.3); z-index: 2; }
+.v2 .sticky1 { bottom: 80px; left: 210px; background: #F8C8DC; font-family: Montserrat; font-weight: 600; font-size: 5.5px; color: #FFF9F0; letter-spacing: 1px; padding: 3px 8px; transform: rotate(2deg); }
+.v2 .s1 { top: 163px; left: 178px; width: 11px; height: 11px; }
+.v2 .s2 { top: 118px; right: 55px; width: 10px; height: 10px; }
+.v2 .s3 { bottom: 55px; left: 100px; width: 9px; height: 9px; }
+.v2 .heart { top: 158px; left: 195px; color: rgba(248,200,220,0.6); font-size: 12px; }
+
+/* V3: FULL BLEED + FLOATING THUMBNAILS — 1 big hero + 3 small tilted photos + text block center */
+.v3 .hero { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+.v3 .dim { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(58,46,42,0.15) 0%, rgba(58,46,42,0.45) 100%); }
+.v3 .thumb1 { top: 30px; left: 20px; width: 100px; height: 75px; object-fit: cover; border-radius: 4px; border: 2.5px solid white; box-shadow: 2px 3px 10px rgba(0,0,0,0.15); transform: rotate(-3deg); }
+.v3 .thumb2 { top: 25px; right: 20px; width: 90px; height: 90px; object-fit: cover; border-radius: 4px; border: 2.5px solid white; box-shadow: 2px 3px 10px rgba(0,0,0,0.15); transform: rotate(2deg); }
+.v3 .thumb3 { bottom: 55px; right: 40px; width: 85px; height: 65px; object-fit: cover; border-radius: 4px; border: 2.5px solid white; box-shadow: 2px 3px 10px rgba(0,0,0,0.15); transform: rotate(-2deg); }
+.v3 .block { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 260px; height: 100px; background: rgba(248,200,220,0.55); border-radius: 12px; }
+.v3 .tag1 { top: 38px; left: 30px; background: rgba(255,249,240,0.85); color: #F8C8DC; }
+.v3 .h { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-58%); font-family: Poppins; font-weight: 800; font-size: 24px; color: #FFF9F0; line-height: 0.95; text-align: center; z-index: 2; width: 260px; }
+.v3 .a { position: absolute; top: 50%; left: 50%; transform: translate(-50%, 220%); font-family: 'Dancing Script'; font-size: 11px; color: #F8C8DC; z-index: 2; }
+.v3 .s1 { top: 125px; left: 130px; width: 12px; height: 12px; z-index: 3; }
+.v3 .s2 { top: 220px; left: 220px; width: 10px; height: 10px; z-index: 3; }
+.v3 .s3 { top: 135px; left: 255px; width: 9px; height: 9px; z-index: 3; }
+.v3 .heart { bottom: 145px; left: 165px; color: rgba(255,249,240,0.6); font-size: 13px; z-index: 3; }
+
+.desc { color: #777; font-size: 10px; font-family: Montserrat; text-align: center; max-width: 370px; line-height: 1.4; }
+.desc strong { color: #bbb; }
+</style>
+</head>
+<body>
+
+<!-- V1: 4-PHOTO GRID -->
+<div class="card">
+  <div class="label">V1 — 4-PHOTO GRID COVER</div>
+  <div class="slide v1">
+    <img class="photo p1" src="female-lifestyle-ugc/with user/20-pack5-establishing-coffee.png" alt="">
+    <img class="photo p2" src="female-lifestyle-ugc/with user/25-pack6-portrait-icecream.png" alt="">
+    <img class="photo p3" src="female-lifestyle-ugc/with user/10-pack3-hero-bed.png" alt="">
+    <img class="photo p4" src="female-lifestyle-ugc/with user/24-pack6-establishing-park.png" alt="">
+    <div class="tag tag1">LIFESTYLE</div>
+    <div class="tag tag2">JOURNAL</div>
+    <div class="h">one day in my life</div>
+    <div class="pill">A PHOTO DIARY</div>
+    <div class="star s1"><svg viewBox="0 0 100 100"><polygon points="50,5 58,35 90,35 63,55 72,88 50,65 28,88 37,55 10,35 42,35" fill="rgba(245,230,200,0.85)"/></svg></div>
+    <div class="star s2"><svg viewBox="0 0 100 100"><polygon points="50,5 58,35 90,35 63,55 72,88 50,65 28,88 37,55 10,35 42,35" fill="rgba(248,200,220,0.7)"/></svg></div>
+    <div class="star s3"><svg viewBox="0 0 100 100"><polygon points="50,5 58,35 90,35 63,55 72,88 50,65 28,88 37,55 10,35 42,35" fill="rgba(248,200,220,0.65)"/></svg></div>
+    <div class="heart">♥</div>
+  </div>
+  <div class="desc"><strong>4 photos in a loose grid with slight tilts</strong> (2°–3° each), cream background peeks through gaps, bold headline floats centered over the middle, tags in corners, pill at bottom. Most literal scrapbook reference.</div>
+</div>
+
+<!-- V2: DIAGONAL COLLAGE + POLAROID -->
+<div class="card">
+  <div class="label">V2 — DIAGONAL COLLAGE</div>
+  <div class="slide v2">
+    <img class="photo p1" src="female-lifestyle-ugc/with user/19-pack5-hero-breakfast.png" alt="">
+    <img class="photo p2" src="female-lifestyle-ugc/with user/anchor-user-identity.png" alt="">
+    <img class="photo p3" src="female-lifestyle-ugc/with user/24-pack6-establishing-park.png" alt="">
+    <div class="frame">
+      <img src="female-lifestyle-ugc/with user/25-pack6-portrait-icecream.png" alt="">
+      <div class="frame-text">golden hour</div>
+    </div>
+    <div class="pill">A PHOTO JOURNAL</div>
+    <div class="h">slow<br>mornings<br>& coffee</div>
+    <div class="a">with me</div>
+    <div class="sticky sticky1">morning rituals ☕</div>
+    <div class="star s1"><svg viewBox="0 0 100 100"><polygon points="50,5 58,35 90,35 63,55 72,88 50,65 28,88 37,55 10,35 42,35" fill="rgba(245,230,200,0.8)"/></svg></div>
+    <div class="star s2"><svg viewBox="0 0 100 100"><polygon points="50,5 58,35 90,35 63,55 72,88 50,65 28,88 37,55 10,35 42,35" fill="rgba(248,200,220,0.7)"/></svg></div>
+    <div class="star s3"><svg viewBox="0 0 100 100"><polygon points="50,5 58,35 90,35 63,55 72,88 50,65 28,88 37,55 10,35 42,35" fill="rgba(245,230,200,0.75)"/></svg></div>
+    <div class="heart">♥</div>
+  </div>
+  <div class="desc"><strong>3 photos + 1 polaroid frame</strong> arranged diagonally, headline in the top-left gap over the photo void, sticky-note label, lavendar pill at top-right. A "physical journal" feel with the polaroid.</div>
+</div>
+
+<!-- V3: FULL BLEED HERO + FLOATING THUMBNAILS -->
+<div class="card">
+  <div class="label">V3 — HERO + FLOATING THUMBNAILS</div>
+  <div class="slide v3">
+    <img class="hero" src="female-lifestyle-ugc/with user/anchor-user-identity.png" alt="">
+    <div class="dim"></div>
+    <img class="thumb thumb1" src="female-lifestyle-ugc/with user/20-pack5-establishing-coffee.png" alt="">
+    <img class="thumb thumb2" src="female-lifestyle-ugc/with user/10-pack3-hero-bed.png" alt="">
+    <img class="thumb thumb3" src="female-lifestyle-ugc/with user/25-pack6-portrait-icecream.png" alt="">
+    <div class="block"></div>
+    <div class="tag tag1">A PHOTO DIARY</div>
+    <div class="h">one day<br>in my life</div>
+    <div class="a">with me</div>
+    <div class="star s1"><svg viewBox="0 0 100 100"><polygon points="50,5 58,35 90,35 63,55 72,88 50,65 28,88 37,55 10,35 42,35" fill="rgba(245,230,200,0.85)"/></svg></div>
+    <div class="star s2"><svg viewBox="0 0 100 100"><polygon points="50,5 58,35 90,35 63,55 72,88 50,65 28,88 37,55 10,35 42,35" fill="rgba(245,230,200,0.7)"/></svg></div>
+    <div class="star s3"><svg viewBox="0 0 100 100"><polygon points="50,5 58,35 90,35 63,55 72,88 50,65 28,88 37,55 10,35 42,35" fill="rgba(248,200,220,0.7)"/></svg></div>
+    <div class="heart">♥</div>
+  </div>
+  <div class="desc"><strong>1 full-bleed hero photo</strong> with gradient dim, + 3 small tilted "floating" thumbnails pinned at edges (white borders), blush block + headline centered. Best of both worlds — hero impact + collage density.</div>
+</div>
+
+</body>
+</html>
