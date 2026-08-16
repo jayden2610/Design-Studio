@@ -1,0 +1,8 @@
+{
+  "slides": [
+    {"kind":"cover","eyebrow":"CAMERA ROLL DUMP · 01","title":"little treats\nbig feelings","body":"the small moments that made the whole week feel softer","meta":"a few things from lately ♡","hero":"../../01 Source Assets/lifestyle-ugc/25-pack6-portrait-icecream.png"},
+    {"kind":"collage","eyebrow":"A FEW FRAMES · 02","title":"the good\nparts","photos":["../../01 Source Assets/lifestyle-ugc/19-pack5-hero-breakfast.png","../../01 Source Assets/lifestyle-ugc/20-pack5-establishing-coffee.png","../../01 Source Assets/lifestyle-ugc/23-pack6-hero-park.png","../../01 Source Assets/lifestyle-ugc/24-pack6-establishing-park.png"]},
+    {"kind":"list","eyebrow":"MICRO CELEBRATIONS · 03","title":"tiny wins\nthis week","items":["fresh sheets","an iced coffee outside","a walk after dinner"],"meta":"nothing huge just good ✦","hero":"../../01 Source Assets/lifestyle-ugc/15-pack4-hero-bedside.png"},
+    {"kind":"cover","eyebrow":"FOR NOW · 04","title":"that’s the\nroll","body":"i’ll be back with more little things worth keeping","meta":"same time next week →","hero":"../../01 Source Assets/lifestyle-ugc/26-pack6-wildflower-hands.png"}
+  ]
+}

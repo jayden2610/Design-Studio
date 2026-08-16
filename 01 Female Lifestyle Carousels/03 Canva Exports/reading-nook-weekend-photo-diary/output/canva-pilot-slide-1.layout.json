@@ -1,0 +1,559 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/nj0d2v",
+    "id": "nj0d2v",
+    "slide": 1,
+    "layoutId": "e4c9a0c4-4be8-40f3-b69a-206b340134d9",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "02a63e07-d32e-4fa6-bbcb-f5036ae6a2ed",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FBF3E6",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1080,
+      "height": 1350
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Fraunces",
+      "Manrope"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "e4c9a0c4-4be8-40f3-b69a-206b340134d9",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "02a63e07-d32e-4fa6-bbcb-f5036ae6a2ed",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "02a63e07-d32e-4fa6-bbcb-f5036ae6a2ed",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/vmto32l0",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1080,
+        1350
+      ],
+      "alt": "Warm reading nook lifestyle photo",
+      "contentType": "image/png",
+      "imageFit": "cover",
+      "asset": {
+        "assetId": "907ec4a5-2ff9-4056-9bc3-6e76a57679e6",
+        "contentType": "image/png",
+        "byteLength": 2150208
+      }
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/dwjix8za",
+      "id": "2",
+      "bbox": [
+        0,
+        0,
+        1080,
+        1350
+      ],
+      "geometry": "rect",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cvqhonyp",
+      "id": "3",
+      "name": "eyebrow-pill",
+      "bbox": [
+        72,
+        68,
+        330,
+        38
+      ],
+      "geometry": "roundRect",
+      "fillColor": "rgba(251, 243, 230, 0.78)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3qh0ryh8",
+      "id": "4",
+      "name": "eyebrow",
+      "bbox": [
+        84,
+        76,
+        306,
+        24
+      ],
+      "geometry": "rect",
+      "text": "WEEKEND PHOTO DIARY · 01",
+      "textPreview": "WEEKEND PHOTO DIARY · 01",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 17,
+        "typeface": "Manrope",
+        "color": "#65703D",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "WEEKEND PHOTO DIARY · 01"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "WEEKEND PHOTO DIARY · 01",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "typeface": "Manrope",
+            "color": "#65703D",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "WEEKEND PHOTO DIARY · 01",
+              "fontSize": 17,
+              "typeface": "Manrope",
+              "color": "#65703D",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2p8zitgn",
+      "id": "5",
+      "name": "title",
+      "bbox": [
+        68,
+        122,
+        700,
+        210
+      ],
+      "geometry": "rect",
+      "text": "a weekend\nin soft focus",
+      "textPreview": "a weekend | in soft focus",
+      "resolvedFontSize": 88,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 88,
+        "typeface": "Fraunces",
+        "color": "#342E3F",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "a weekend"
+          },
+          {
+            "index": 2,
+            "text": "in soft focus"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "a weekend",
+          "lineSpacingPercent": 91000,
+          "resolvedTextStyle": {
+            "fontSize": 88,
+            "typeface": "Fraunces",
+            "color": "#342E3F",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 0.91
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "a weekend",
+              "fontSize": 88,
+              "typeface": "Fraunces",
+              "color": "#342E3F",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 0.91
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "in soft focus",
+          "lineSpacingPercent": 91000,
+          "resolvedTextStyle": {
+            "fontSize": 88,
+            "typeface": "Fraunces",
+            "color": "#342E3F",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 0.91
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "in soft focus",
+              "fontSize": 88,
+              "typeface": "Fraunces",
+              "color": "#342E3F",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 0.91
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pszit8zy",
+      "id": "6",
+      "name": "counter-01",
+      "bbox": [
+        948,
+        1230,
+        60,
+        60
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#FBF3E6",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4rqhk3yt",
+      "id": "7",
+      "name": "counter-01-text",
+      "bbox": [
+        948,
+        1247,
+        60,
+        22
+      ],
+      "geometry": "rect",
+      "text": "01",
+      "textPreview": "01",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 16,
+        "typeface": "Manrope",
+        "color": "#342E3F",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "01"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "01",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Manrope",
+            "color": "#342E3F",
+            "bold": true,
+            "alignment": "center",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "01",
+              "fontSize": 16,
+              "typeface": "Manrope",
+              "color": "#342E3F",
+              "bold": true,
+              "alignment": "center",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/f2x0nyhw",
+      "id": "8",
+      "name": "editable-caption-card",
+      "bbox": [
+        72,
+        1141,
+        760,
+        132
+      ],
+      "geometry": "roundRect",
+      "fillColor": "rgba(251, 243, 230, 0.93)",
+      "lineColor": "rgba(52, 46, 63, 0.12)",
+      "lineWidth": 1
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u1ozet0b",
+      "id": "9",
+      "name": "body-copy",
+      "bbox": [
+        102,
+        1170,
+        600,
+        38
+      ],
+      "geometry": "rect",
+      "text": "a few small things i want to remember from lately",
+      "textPreview": "a few small things i want to remember from lately",
+      "resolvedFontSize": 27,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 27,
+        "typeface": "Fraunces",
+        "color": "#342E3F",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "a few small things i want to remember from lately"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "a few small things i want to remember from lately",
+          "lineSpacingPercent": 125000,
+          "resolvedTextStyle": {
+            "fontSize": 27,
+            "typeface": "Fraunces",
+            "color": "#342E3F",
+            "alignment": "left",
+            "lineSpacing": 1.25
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "a few small things i want to remember from lately",
+              "fontSize": 27,
+              "typeface": "Fraunces",
+              "color": "#342E3F",
+              "alignment": "left",
+              "lineSpacing": 1.25
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wni5k3i9",
+      "id": "10",
+      "name": "meta-copy",
+      "bbox": [
+        102,
+        1224,
+        560,
+        26
+      ],
+      "geometry": "rect",
+      "text": "camera roll notes → august",
+      "textPreview": "camera roll notes → august",
+      "resolvedFontSize": 16,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 16,
+        "typeface": "Manrope",
+        "color": "#342E3F",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "camera roll notes → august"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "camera roll notes → august",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 16,
+            "typeface": "Manrope",
+            "color": "#342E3F",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "camera roll notes → august",
+              "fontSize": 16,
+              "typeface": "Manrope",
+              "color": "#342E3F",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

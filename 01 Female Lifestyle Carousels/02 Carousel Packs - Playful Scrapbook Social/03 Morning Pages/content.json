@@ -1,0 +1,8 @@
+{
+  "slides": [
+    {"kind":"hero","eyebrow":"MORNING PAGES · 01","title":"little morning\nrituals","body":"the first cup before the day asks anything of me","hero":"../../01 Source Assets/lifestyle-ugc/19-pack5-hero-breakfast.png"},
+    {"kind":"hero","eyebrow":"A SMALL ROUTINE · 02","title":"toast, tea,\nten quiet minutes","body":"before the emails and before the noise","hero":"../../01 Source Assets/lifestyle-ugc/21-pack5-latte-hands.png"},
+    {"kind":"polaroids","eyebrow":"CURRENTLY · 03","title":"the little\nkitchen things","hero":"../../01 Source Assets/lifestyle-ugc/22-pack5-filler-breakfast.png","photos":["../../01 Source Assets/lifestyle-ugc/19-pack5-hero-breakfast.png","../../01 Source Assets/lifestyle-ugc/20-pack5-establishing-coffee.png"],"captions":["still warm","worth keeping"]},
+    {"kind":"list","eyebrow":"MICRO CELEBRATIONS · 04","title":"first-hour\nfavourites","items":["a full mug","fresh fruit","no rushing"],"hero":"../../01 Source Assets/lifestyle-ugc/05-pack1-filler-journal.png"}
+  ]
+}

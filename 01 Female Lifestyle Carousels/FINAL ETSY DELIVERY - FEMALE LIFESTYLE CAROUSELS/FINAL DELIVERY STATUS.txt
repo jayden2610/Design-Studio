@@ -1,0 +1,1 @@
+PACKAGE CREATED: buyer PDFs and seller import decks are in one folder. BLOCKER BEFORE ETSY PUBLISHING: buyer-safe Canva Template links must be generated and tested, then inserted into the Template Links PDF.

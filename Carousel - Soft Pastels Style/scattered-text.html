@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scattered Text Carousel</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #2a2a2a; display: flex; flex-direction: column; align-items: center; gap: 40px; padding: 40px 0; }
+
+.slide { width: 1080px; height: 1350px; position: relative; overflow: hidden; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+
+/* Polaroid frame — white border around photo, slightly tilted */
+.frame { position: relative; width: 900px; height: 1150px; transform: rotate(-4deg); }
+.frame-inner { position: absolute; top: 20px; left: 20px; right: 20px; bottom: 80px; overflow: hidden; border-radius: 2px; }
+.frame-inner img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.85) brightness(0.95) contrast(0.95); }
+.frame-border { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: #FAFAF0; box-shadow: 4px 6px 30px rgba(0,0,0,0.18); }
+
+/* Text styles — two colors: white + cream */
+.t { position: absolute; font-family: Poppins; z-index: 5; }
+.tw { color: #FFFFFF; }
+.tc { color: #F5F0D0; }
+.huge { font-size: 130px; font-weight: 800; line-height: 0.85; letter-spacing: -2px; }
+.xl { font-size: 90px; font-weight: 800; line-height: 0.88; letter-spacing: -1px; }
+.lg { font-size: 64px; font-weight: 800; line-height: 0.9; }
+.md { font-size: 48px; font-weight: 700; line-height: 0.92; }
+.sm { font-size: 36px; font-weight: 700; }
+.caps { text-transform: uppercase; letter-spacing: 4px; }
+
+/* Hand-drawn star stickers */
+.dstar { position: absolute; z-index: 6; }
+.dstar svg { filter: drop-shadow(1px 2px 4px rgba(0,0,0,0.15)); }
+
+/* Slide-label */
+.slide-label { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.75); color: #FFF9F0; padding: 8px 24px; border-radius: 20px; font-family: Montserrat, sans-serif; font-size: 13px; z-index: 20; letter-spacing: 2px; }
+</style>
+<script>
+let cs = 0; const ts = 5;
+function scrollToSlide() {
+  const slides = document.querySelectorAll('.slide');
+  const label = document.getElementById('slideLabel');
+  slides[cs].scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const names = ['SLIDE 1 — COVER','SLIDE 2 — MORNING','SLIDE 3 — COZY','SLIDE 4 — GOLDEN HOUR','SLIDE 5 — CTA'];
+  label.textContent = names[cs] + '  (' + (cs+1) + '/' + ts + ')';
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowDown' || e.key === 'ArrowRight') { e.preventDefault(); cs = Math.min(cs+1, ts-1); scrollToSlide(); }
+  if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') { e.preventDefault(); cs = Math.max(cs-1, 0); scrollToSlide(); }
+});
+</script>
+</head>
+<body>
+<div class="slide-label" id="slideLabel">SLIDE 1 — COVER  (1/5)</div>
+
+<!-- ====== SLIDE 1: COVER — scattered "one day in my life" ====== -->
+<div class="slide">
+  <div class="frame">
+    <div class="frame-border"></div>
+    <div class="frame-inner">
+      <img src="female-lifestyle-ugc/with user/anchor-user-identity.png" alt="">
+      <!-- scattered text -->
+      <div class="t tw caps huge" style="top:50px;left:50px;">one day</div>
+      <div class="t tc xl" style="top:220px;right:60px;">in my</div>
+      <div class="t tw caps lg" style="top:360px;left:120px;">life</div>
+      <div class="t tc md" style="bottom:180px;right:80px;">with me</div>
+      <!-- stars -->
+      <div class="dstar" style="top:30px;right:40px;width:42px;height:42px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#FAFAF0" stroke="#e8e8d8" stroke-width="2"/></svg>
+      </div>
+      <div class="dstar" style="bottom:120px;left:30px;width:36px;height:36px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#FAFAF0" stroke="#e8e8d8" stroke-width="2"/></svg>
+      </div>
+      <div class="dstar" style="top:380px;left:280px;width:24px;height:24px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#F5F0D0" stroke="#e8e0c0" stroke-width="2"/></svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== SLIDE 2: MORNING — scattered "morning rituals" ====== -->
+<div class="slide">
+  <div class="frame">
+    <div class="frame-border"></div>
+    <div class="frame-inner">
+      <img src="female-lifestyle-ugc/with user/20-pack5-establishing-coffee.png" alt="">
+      <div class="t tw caps huge" style="top:40px;left:40px;">morning</div>
+      <div class="t tc lg" style="bottom:200px;right:50px;">rituals</div>
+      <div class="t tw caps sm" style="top:220px;right:70px;">coffee</div>
+      <div class="t tc sm" style="bottom:140px;left:60px;">&amp; calm</div>
+      <div class="dstar" style="top:25px;right:50px;width:38px;height:38px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#FAFAF0" stroke="#e8e8d8" stroke-width="2"/></svg>
+      </div>
+      <div class="dstar" style="bottom:180px;right:40px;width:30px;height:30px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#F5F0D0" stroke="#e8e0c0" stroke-width="2"/></svg>
+      </div>
+      <div class="dstar" style="top:240px;left:250px;width:22px;height:22px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#FAFAF0" stroke="#e8e8d8" stroke-width="2"/></svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== SLIDE 3: COZY — scattered "slow mornings" ====== -->
+<div class="slide">
+  <div class="frame">
+    <div class="frame-border"></div>
+    <div class="frame-inner">
+      <img src="female-lifestyle-ugc/with user/10-pack3-hero-bed.png" alt="">
+      <div class="t tw caps xl" style="top:30px;right:40px;">slow</div>
+      <div class="t tc huge" style="top:150px;left:40px;">mornings</div>
+      <div class="t tw md" style="bottom:180px;right:50px;">stay a</div>
+      <div class="t tc lg" style="bottom:100px;left:50px;">little longer</div>
+      <div class="dstar" style="top:15px;left:200px;width:36px;height:36px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#FAFAF0" stroke="#e8e8d8" stroke-width="2"/></svg>
+      </div>
+      <div class="dstar" style="bottom:160px;right:40px;width:28px;height:28px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#F5F0D0" stroke="#e8e0c0" stroke-width="2"/></svg>
+      </div>
+      <div class="dstar" style="top:340px;left:300px;width:22px;height:22px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#FAFAF0" stroke="#e8e8d8" stroke-width="2"/></svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== SLIDE 4: GOLDEN HOUR — scattered "golden hour" ====== -->
+<div class="slide">
+  <div class="frame">
+    <div class="frame-border"></div>
+    <div class="frame-inner">
+      <img src="female-lifestyle-ugc/with user/25-pack6-portrait-icecream.png" alt="">
+      <div class="t tw caps huge" style="top:40px;left:50px;">golden</div>
+      <div class="t tc xl" style="top:200px;right:50px;">hour</div>
+      <div class="t tw md" style="bottom:200px;left:50px;">chasing</div>
+      <div class="t tc lg" style="bottom:120px;right:50px;">the light</div>
+      <div class="dstar" style="top:20px;right:40px;width:40px;height:40px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#F5F0D0" stroke="#e8e0c0" stroke-width="2"/></svg>
+      </div>
+      <div class="dstar" style="bottom:180px;left:30px;width:32px;height:32px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#FAFAF0" stroke="#e8e8d8" stroke-width="2"/></svg>
+      </div>
+      <div class="dstar" style="top:300px;left:320px;width:24px;height:24px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#FAFAF0" stroke="#e8e8d8" stroke-width="2"/></svg>
+      </div>
+      <div class="dstar" style="bottom:100px;right:180px;width:20px;height:20px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#F5F0D0" stroke="#e8e0c0" stroke-width="2"/></svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== SLIDE 5: CTA — scattered "save & follow" ====== -->
+<div class="slide">
+  <div class="frame">
+    <div class="frame-border"></div>
+    <div class="frame-inner">
+      <img src="female-lifestyle-ugc/with user/24-pack6-establishing-park.png" alt="">
+      <div class="t tw caps huge" style="top:50px;left:60px;">save</div>
+      <div class="t tc xl" style="top:180px;right:60px;">&amp; follow</div>
+      <div class="t tw md" style="bottom:180px;left:60px;">for more</div>
+      <div class="t tc lg" style="bottom:100px;right:50px;">photo diaries</div>
+      <div class="dstar" style="top:30px;right:50px;width:38px;height:38px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#FAFAF0" stroke="#e8e8d8" stroke-width="2"/></svg>
+      </div>
+      <div class="dstar" style="bottom:160px;left:40px;width:30px;height:30px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#F5F0D0" stroke="#e8e0c0" stroke-width="2"/></svg>
+      </div>
+      <div class="dstar" style="top:320px;left:300px;width:22px;height:22px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#FAFAF0" stroke="#e8e8d8" stroke-width="2"/></svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

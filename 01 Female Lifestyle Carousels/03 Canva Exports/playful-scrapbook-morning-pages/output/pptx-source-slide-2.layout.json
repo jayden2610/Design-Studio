@@ -1,0 +1,843 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/0ny4to",
+    "id": "0ny4to",
+    "slide": 2,
+    "layoutId": "6676f9f6-136c-41df-a121-108953ebb8a3",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "32e1b302-7153-45a2-b13f-9a0842139d3b",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#FFF8F0",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1080,
+      "height": 1350
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Arial",
+      "DM Sans",
+      "Poppins"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "6676f9f6-136c-41df-a121-108953ebb8a3",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "32e1b302-7153-45a2-b13f-9a0842139d3b",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "32e1b302-7153-45a2-b13f-9a0842139d3b",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/hsvulk7m",
+      "id": "1",
+      "bbox": [
+        0,
+        0,
+        1080,
+        1350
+      ],
+      "alt": "Replaceable hero lifestyle photo",
+      "contentType": "image/png",
+      "imageFit": "cover",
+      "asset": {
+        "assetId": "788b5d36-9f95-4124-9ab4-ff9199ef4e79",
+        "contentType": "image/png",
+        "byteLength": 2016404
+      }
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3e1o76ds",
+      "id": "2",
+      "name": "blush-title-surface",
+      "bbox": [
+        0,
+        0,
+        1080,
+        365
+      ],
+      "geometry": "rect",
+      "fillColor": "#F3C9D8",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2dsny1c7",
+      "id": "3",
+      "name": "top-tape-blush",
+      "bbox": [
+        858,
+        43,
+        118,
+        34
+      ],
+      "rotation": -10,
+      "geometry": "rect",
+      "fillColor": "#F3C9D8",
+      "lineColor": "rgba(113, 56, 73, 0.24)",
+      "lineWidth": 2
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1cj65wv2",
+      "id": "4",
+      "name": "top-tape-butter",
+      "bbox": [
+        924,
+        79,
+        105,
+        31
+      ],
+      "rotation": 8,
+      "geometry": "rect",
+      "fillColor": "#F7E6A7",
+      "lineColor": "rgba(113, 56, 73, 0.24)",
+      "lineWidth": 2
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gbq5wruh",
+      "id": "5",
+      "name": "heart-sticker",
+      "bbox": [
+        964,
+        125,
+        44,
+        48
+      ],
+      "geometry": "rect",
+      "text": "♡",
+      "textPreview": "♡",
+      "resolvedFontSize": 46,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 46,
+        "typeface": "Arial",
+        "color": "#DF557A",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "♡"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "♡",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 46,
+            "typeface": "Arial",
+            "color": "#DF557A",
+            "bold": true,
+            "alignment": "center",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "♡",
+              "fontSize": 46,
+              "typeface": "Arial",
+              "color": "#DF557A",
+              "bold": true,
+              "alignment": "center",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/faho3mdw",
+      "id": "6",
+      "name": "top-flower-sticker",
+      "bbox": [
+        875,
+        119,
+        42,
+        44
+      ],
+      "geometry": "rect",
+      "text": "✿",
+      "textPreview": "✿",
+      "resolvedFontSize": 35,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 35,
+        "typeface": "Arial",
+        "color": "#E88978",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "✿"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "✿",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 35,
+            "typeface": "Arial",
+            "color": "#E88978",
+            "bold": true,
+            "alignment": "center",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "✿",
+              "fontSize": 35,
+              "typeface": "Arial",
+              "color": "#E88978",
+              "bold": true,
+              "alignment": "center",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/e98nuhcb",
+      "id": "7",
+      "name": "star-sticker",
+      "bbox": [
+        784,
+        1082,
+        58,
+        62
+      ],
+      "geometry": "rect",
+      "text": "✦",
+      "textPreview": "✦",
+      "resolvedFontSize": 56,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 56,
+        "typeface": "Arial",
+        "color": "#F7E6A7",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "✦"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "✦",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 56,
+            "typeface": "Arial",
+            "color": "#F7E6A7",
+            "bold": true,
+            "alignment": "center",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "✦",
+              "fontSize": 56,
+              "typeface": "Arial",
+              "color": "#F7E6A7",
+              "bold": true,
+              "alignment": "center",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/t8z61wvq",
+      "id": "8",
+      "name": "flower-sticker",
+      "bbox": [
+        916,
+        1112,
+        66,
+        66
+      ],
+      "geometry": "rect",
+      "text": "✿",
+      "textPreview": "✿",
+      "resolvedFontSize": 55,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 55,
+        "typeface": "Arial",
+        "color": "#E88978",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "✿"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "✿",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 55,
+            "typeface": "Arial",
+            "color": "#E88978",
+            "bold": true,
+            "alignment": "center",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "✿",
+              "fontSize": 55,
+              "typeface": "Arial",
+              "color": "#E88978",
+              "bold": true,
+              "alignment": "center",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/snq5sru5",
+      "id": "9",
+      "name": "eyebrow-pill",
+      "bbox": [
+        72,
+        70,
+        420,
+        48
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFF8F0",
+      "lineColor": "#8D3651",
+      "lineWidth": 3
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/a1sbqxk3",
+      "id": "10",
+      "name": "eyebrow",
+      "bbox": [
+        88,
+        84,
+        388,
+        24
+      ],
+      "geometry": "rect",
+      "text": "A SMALL ROUTINE · 02",
+      "textPreview": "A SMALL ROUTINE · 02",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 17,
+        "typeface": "Poppins",
+        "color": "#8D3651",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "A SMALL ROUTINE · 02"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "A SMALL ROUTINE · 02",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "typeface": "Poppins",
+            "color": "#8D3651",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "A SMALL ROUTINE · 02",
+              "fontSize": 17,
+              "typeface": "Poppins",
+              "color": "#8D3651",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bm1sz218",
+      "id": "11",
+      "name": "title",
+      "bbox": [
+        70,
+        155,
+        650,
+        188
+      ],
+      "geometry": "rect",
+      "text": "toast, tea,\nten quiet minutes",
+      "textPreview": "toast, tea, | ten quiet minutes",
+      "resolvedFontSize": 72,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 72,
+        "typeface": "DM Sans",
+        "color": "#8D3651",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "toast, tea,"
+          },
+          {
+            "index": 2,
+            "text": "ten quiet minutes"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "toast, tea,",
+          "lineSpacingPercent": 90000,
+          "resolvedTextStyle": {
+            "fontSize": 72,
+            "typeface": "DM Sans",
+            "color": "#8D3651",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 0.9
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "toast, tea,",
+              "fontSize": 72,
+              "typeface": "DM Sans",
+              "color": "#8D3651",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 0.9
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "ten quiet minutes",
+          "lineSpacingPercent": 90000,
+          "resolvedTextStyle": {
+            "fontSize": 72,
+            "typeface": "DM Sans",
+            "color": "#8D3651",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 0.9
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "ten quiet minutes",
+              "fontSize": 72,
+              "typeface": "DM Sans",
+              "color": "#8D3651",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 0.9
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cnats72t",
+      "id": "12",
+      "name": "caption-card-shadow",
+      "bbox": [
+        80,
+        1144,
+        477,
+        104
+      ],
+      "geometry": "roundRect",
+      "fillColor": "rgba(177, 94, 121, 0.66)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xoja1sje",
+      "id": "13",
+      "name": "caption-card",
+      "bbox": [
+        70,
+        1132,
+        477,
+        104
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFF8F0",
+      "lineColor": "#713849",
+      "lineWidth": 4
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2x8bmdkr",
+      "id": "14",
+      "name": "body-copy",
+      "bbox": [
+        96,
+        1160,
+        420,
+        61
+      ],
+      "geometry": "rect",
+      "text": "before the emails and before the noise",
+      "textPreview": "before the emails and before the noise",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 22,
+        "typeface": "Poppins",
+        "color": "#713849",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "before the emails and before the noise"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "before the emails and before the noise",
+          "lineSpacingPercent": 122000,
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Poppins",
+            "color": "#713849",
+            "alignment": "left",
+            "lineSpacing": 1.22
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "before the emails and before the noise",
+              "fontSize": 22,
+              "typeface": "Poppins",
+              "color": "#713849",
+              "alignment": "left",
+              "lineSpacing": 1.22
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nyhsvilc",
+      "id": "15",
+      "name": "counter-pill",
+      "bbox": [
+        896,
+        1232,
+        114,
+        51
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F7E6A7",
+      "lineColor": "#713849",
+      "lineWidth": 3
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ozqton2x",
+      "id": "16",
+      "name": "counter",
+      "bbox": [
+        905,
+        1247,
+        96,
+        18
+      ],
+      "geometry": "rect",
+      "text": "02 · lately",
+      "textPreview": "02 · lately",
+      "resolvedFontSize": 14,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 14,
+        "typeface": "Poppins",
+        "color": "#713849",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "02 · lately"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "02 · lately",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 14,
+            "typeface": "Poppins",
+            "color": "#713849",
+            "bold": true,
+            "alignment": "center",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "02 · lately",
+              "fontSize": 14,
+              "typeface": "Poppins",
+              "color": "#713849",
+              "bold": true,
+              "alignment": "center",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

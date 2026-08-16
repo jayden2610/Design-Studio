@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Slide 4 Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,900;1,9..144,500&family=Baloo+2:wght@500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;0,9..40,900;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#e9e5df; display:flex; align-items:center; justify-content:center; min-height:100vh; }
+
+  .slide {
+    position: relative;
+    width: 1080px;
+    height: 1440px;
+    overflow: hidden;
+    border-radius: 8px;
+    background:#000;
+  }
+  .bg {
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit: cover;
+    object-position: center 40%;
+    filter: brightness(1.02) saturate(1.03);
+  }
+  .scrim-full {
+    position:absolute; inset:0;
+    background: linear-gradient(180deg, rgba(24,17,12,.55) 0%, rgba(24,17,12,.2) 26%, rgba(24,17,12,.02) 46%, rgba(24,17,12,.5) 100%);
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 72px 64px;
+  }
+
+  .eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 21px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.92);
+    text-shadow: 0 2px 10px rgba(0,0,0,.35);
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 800;
+    font-size: 80px;
+    line-height: 1.0;
+    color: #FCF3E1;
+    text-shadow: 0 3px 16px rgba(0,0,0,.28);
+    letter-spacing: -0.01em;
+  }
+
+  .sub {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 38px;
+    color: #E7B49A;
+    margin-top: 14px;
+    text-shadow: 0 3px 14px rgba(0,0,0,.3);
+    max-width: 720px;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 92px;
+    left: 64px;
+    z-index: 2;
+  }
+  .dots { display: flex; gap: 10px; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,.32); }
+  .dot.active { background: #FCF3E1; }
+
+  .badge {
+    position: absolute;
+    bottom: 56px;
+    right: 56px;
+    width: 84px; height: 84px;
+    border-radius: 50%;
+    background: rgba(231,180,154,.92);
+    border: 2px solid rgba(255,255,255,.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #3B2A20;
+    z-index: 3;
+    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+  }
+</style>
+</head>
+<body>
+
+  <div class="slide">
+    <img class="bg" src="../../../01 Female Lifestyle Carousels/female-lifestyle-ugc/05-pack1-filler-journal.png" alt="">
+    <div class="scrim-full"></div>
+
+    <div class="content">
+      <div class="eyebrow">Slow weekend · August</div>
+      <h1>no rush<br>today</h1>
+      <div class="sub">save this for your next slow morning ♡</div>
+    </div>
+
+    <div class="footer">
+      <div class="dots">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot active"></div>
+      </div>
+    </div>
+    <div class="badge">04</div>
+  </div>
+
+</body>
+</html>

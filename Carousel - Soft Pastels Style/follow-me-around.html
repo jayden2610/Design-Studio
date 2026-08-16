@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>follow me around — a day in my life</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&family=Dancing+Script:wght@500;600&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #1a1a1a; display: flex; align-items: center; justify-content: center; height: 100vh; overflow: hidden; }
+.carousel { width: 1080px; height: 1350px; position: relative; overflow: hidden; }
+.slide { width: 100%; height: 100%; position: absolute; top: 0; left: 0; transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94), opacity 0.5s ease; opacity: 0; transform: translateY(60px); pointer-events: none; display: flex; align-items: center; justify-content: center; }
+.slide.active { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.slide.exit-up { transform: translateY(-80px); opacity: 0; }
+
+/* === SLIDE 1: Cover === */
+.s1-inner { position: relative; width: 900px; height: 1150px; transform: rotate(-4deg); }
+.s1-border { position: absolute; inset: 0; background: #FAFAF0; box-shadow: 4px 6px 30px rgba(0,0,0,0.18); }
+.s1-photo { position: absolute; inset: 20px 20px 80px 20px; overflow: hidden; }
+.s1-photo img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.85) brightness(0.95) contrast(0.95); }
+.s1-vig { position: absolute; inset: 20px 20px 80px 20px; background: radial-gradient(ellipse at center, rgba(0,0,0,0) 40%, rgba(0,0,0,0.35) 85%); z-index: 3; pointer-events: none; }
+.s1-t { position: absolute; font-family: Poppins; z-index: 5; text-shadow: 0 2px 16px rgba(0,0,0,0.35); user-select: none; }
+
+/* === SLIDE 2-5: Full-bleed === */
+.s-inner { width: 1080px; height: 1350px; position: relative; overflow: hidden; }
+.s-inner img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; }
+
+/* Shared */
+.t-cream { color: #F5F0D0; }
+.t-white { color: #FFFFFF; }
+.ts { text-shadow: 0 2px 16px rgba(0,0,0,0.35); }
+.ts-light { text-shadow: 0 2px 12px rgba(0,0,0,0.28); }
+.dstar { position: absolute; z-index: 6; }
+.dstar svg { filter: drop-shadow(1px 2px 4px rgba(0,0,0,0.15)); }
+
+/* Slide-specific */
+.s2-label { font-family: Montserrat; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; }
+.s3-label { font-family: Montserrat; font-weight: 600; letter-spacing: 3px; }
+.s4-script { font-family: 'Dancing Script'; font-weight: 600; color: #F5E6C8; }
+.s5-label { font-family: Montserrat; font-weight: 600; letter-spacing: 3px; }
+
+/* Time pill */
+.time-pill { position: absolute; z-index: 5; background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; padding: 10px 22px; font-family: Montserrat; font-weight: 600; font-size: 15px; color: #FFF; letter-spacing: 2px; }
+
+/* Nav */
+.nav { position: fixed; right: 30px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 16px; z-index: 100; }
+.dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,249,240,0.25); transition: all 0.3s; cursor: pointer; }
+.dot.active { background: #F5F0D0; box-shadow: 0 0 12px rgba(245,240,208,0.4); }
+.arrow { position: fixed; z-index: 100; color: rgba(255,249,240,0.5); cursor: pointer; user-select: none; transition: color 0.3s; }
+.arrow:hover { color: rgba(245,240,208,0.9); }
+.arrow-down { right: 50%; transform: translateX(50%); bottom: 30px; font-size: 28px; }
+.arrow-up { right: 50%; transform: translateX(50%); top: 30px; font-size: 28px; }
+.progress { position: fixed; top: 0; left: 0; height: 3px; background: #F5F0D0; z-index: 100; transition: width 0.7s cubic-bezier(0.25,0.46,0.45,0.94); }
+.counter { position: fixed; bottom: 50px; left: 50%; transform: translateX(-50%); color: rgba(255,249,240,0.4); font-family: Poppins; font-size: 13px; letter-spacing: 4px; z-index: 100; }
+
+@media (max-width: 1200px) {
+  .carousel { width: 90vw; height: calc(90vw * 1.25); }
+  .s-inner { width: 90vw; height: calc(90vw * 1.25); }
+  .s1-inner { width: 78vw; height: calc(78vw * 1.28); }
+}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<div class="carousel" id="carousel">
+
+  <!-- ================================================================
+       SLIDE 1 — 9:00 AM COVER
+       anchor-user-identity | Poppins, scattered, polaroid frame
+       ================================================================ -->
+  <div class="slide active" data-index="0">
+    <div class="s1-inner">
+      <div class="s1-border"></div>
+      <div class="s1-photo"><img src="female-lifestyle-ugc/with user/anchor-user-identity.png" alt=""></div>
+      <div class="s1-vig"></div>
+      <div class="s1-t t-cream" style="top:22px;left:28px;font-size:110px;font-weight:800;line-height:0.86;letter-spacing:-2px;">follow</div>
+      <div class="s1-t t-white" style="top:168px;left:36px;font-size:24px;font-weight:700;letter-spacing:5px;text-transform:uppercase;">me around</div>
+      <div class="s1-t t-cream" style="top:295px;right:28px;font-size:85px;font-weight:800;line-height:0.9;letter-spacing:-1px;">a day in</div>
+      <div class="s1-t t-white" style="top:415px;left:46px;font-size:85px;font-weight:800;line-height:0.9;letter-spacing:-1px;">my life</div>
+      <div style="position:absolute;bottom:145px;left:50%;transform:translateX(-50%);z-index:5;display:flex;gap:30px;font-size:24px;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,0.3);">☕  🌳  🍦  📚</div>
+      <!-- Tiny connecting label -->
+      <div style="position:absolute;bottom:92px;left:50%;transform:translateX(-50%);z-index:5;font-family:Poppins;font-weight:400;font-size:14px;color:rgba(255,255,255,0.5);letter-spacing:3px;">swipe to follow along</div>
+      <div class="dstar" style="top:18px;right:48px;width:38px;height:38px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#FAFAF0" stroke="#e8e8d8" stroke-width="2"/></svg>
+      </div>
+      <div class="dstar" style="top:325px;left:260px;width:24px;height:24px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#F5F0D0" stroke="#e8e0c0" stroke-width="2"/></svg>
+      </div>
+      <div class="dstar" style="bottom:200px;right:55px;width:20px;height:20px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#FAFAF0" stroke="#e8e8d8" stroke-width="2"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================
+       SLIDE 2 — 7:30 AM
+       20-pack5-coffee | Playfair Display serif, editorial left
+       Subject on left → text left-anchored in dark zones
+       ================================================================ -->
+  <div class="slide" data-index="1">
+    <div class="s-inner">
+      <img src="female-lifestyle-ugc/with user/20-pack5-establishing-coffee.png" alt="">
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 25% 50%, rgba(0,0,0,0) 30%, rgba(0,0,0,0.22) 100%);z-index:2;pointer-events:none;"></div>
+      <div class="time-pill" style="top:80px;left:80px;">7:30 AM</div>
+      <div style="position:absolute;z-index:5;top:170px;left:80px;width:50px;height:2px;background:rgba(245,240,208,0.55);border-radius:1px;"></div>
+      <div class="s2-label t-cream ts" style="position:absolute;z-index:5;top:150px;left:80px;font-size:13px;">first thing</div>
+      <div style="position:absolute;z-index:5;top:190px;left:80px;font-family:'Playfair Display';font-weight:700;font-style:italic;font-size:130px;color:#FFF;line-height:0.88;text-shadow:0 2px 18px rgba(0,0,0,0.35);">made my</div>
+      <div style="position:absolute;z-index:5;top:340px;left:80px;font-family:'Playfair Display';font-weight:700;font-style:normal;font-size:120px;color:#F5F0D0;line-height:0.88;text-shadow:0 2px 18px rgba(0,0,0,0.35);">coffee</div>
+      <div style="position:absolute;z-index:5;bottom:180px;left:80px;font-family:Poppins;font-weight:400;font-size:34px;color:#FFF;text-shadow:0 2px 14px rgba(0,0,0,0.4);">my favorite part of the morning</div>
+      <div style="position:absolute;z-index:5;bottom:172px;left:578px;font-size:24px;color:#F5F0D0;text-shadow:0 2px 12px rgba(0,0,0,0.35);">♡</div>
+      <div class="dstar" style="top:50px;right:100px;width:30px;height:30px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#FAFAF0" stroke="#e8e8d8" stroke-width="2"/></svg>
+      </div>
+      <div class="dstar" style="bottom:140px;right:140px;width:20px;height:20px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#F5F0D0" stroke="#e8e0c0" stroke-width="2"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================
+       SLIDE 3 — 1:00 PM
+       24-pack6-park | Poppins bold left + speech bubble
+       Person walking away, dark trees left → text on left
+       ================================================================ -->
+  <div class="slide" data-index="2">
+    <div class="s-inner">
+      <img src="female-lifestyle-ugc/with user/24-pack6-establishing-park.png" alt="">
+      <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.03) 0%, rgba(0,0,0,0.28) 65%);z-index:2;pointer-events:none;"></div>
+      <div class="time-pill" style="top:80px;left:80px;">1:00 PM</div>
+      <div style="position:absolute;z-index:5;top:170px;left:80px;width:50px;height:2px;background:rgba(184,196,168,0.7);border-radius:1px;"></div>
+      <div class="s3-label t-cream ts" style="position:absolute;z-index:5;top:150px;left:80px;font-size:13px;">heading out</div>
+      <div style="position:absolute;z-index:5;top:200px;left:80px;font-family:Poppins;font-weight:800;font-size:150px;color:#FFF;line-height:0.84;letter-spacing:-2px;text-shadow:0 2px 20px rgba(0,0,0,0.4);">heading</div>
+      <div style="position:absolute;z-index:5;top:370px;left:80px;font-family:Poppins;font-weight:800;font-size:140px;color:#F5F0D0;line-height:0.84;letter-spacing:-2px;text-shadow:0 2px 20px rgba(0,0,0,0.4);">out</div>
+      <!-- Speech bubble -->
+      <div style="position:absolute;z-index:5;bottom:210px;left:80px;background:rgba(255,255,255,0.9);border-radius:18px;padding:18px 30px;font-family:Poppins;font-weight:600;font-size:30px;color:#3A2E2A;">needed a change of scenery</div>
+      <div style="position:absolute;z-index:5;bottom:188px;left:100px;width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:16px solid rgba(255,255,255,0.9);"></div>
+      <div class="dstar" style="top:50px;right:100px;width:30px;height:30px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#FAFAF0" stroke="#e8e8d8" stroke-width="2"/></svg>
+      </div>
+      <div class="dstar" style="bottom:130px;right:120px;width:20px;height:20px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#F5F0D0" stroke="#e8e0c0" stroke-width="2"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================
+       SLIDE 4 — 5:30 PM
+       25-pack6-icecream | Poppins + Dancing Script, warm golden overlay
+       Subject left two-thirds → text on right
+       ================================================================ -->
+  <div class="slide" data-index="3">
+    <div class="s-inner">
+      <img src="female-lifestyle-ugc/with user/25-pack6-portrait-icecream.png" alt="">
+      <div style="position:absolute;inset:0;background:linear-gradient(120deg, rgba(255,170,70,0.15) 0%, transparent 55%, rgba(255,130,50,0.10) 100%);z-index:2;pointer-events:none;"></div>
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 35% 40%, rgba(0,0,0,0) 25%, rgba(0,0,0,0.32) 90%);z-index:3;pointer-events:none;"></div>
+      <div class="time-pill" style="top:80px;right:80px;background:rgba(255,255,255,0.12);">5:30 PM</div>
+      <div style="position:absolute;z-index:5;top:170px;right:80px;width:50px;height:2px;background:rgba(245,230,200,0.7);border-radius:1px;margin-left:auto;"></div>
+      <div class="s4-label ts-light" style="position:absolute;z-index:5;top:150px;right:80px;font-size:13px;font-family:Montserrat;font-weight:600;letter-spacing:3px;color:#F5E6C8;">treat yourself</div>
+      <div style="position:absolute;z-index:5;top:195px;right:80px;font-family:Poppins;font-weight:800;font-size:115px;color:#FFF;line-height:0.86;letter-spacing:-2px;text-shadow:0 2px 18px rgba(0,0,0,0.35);text-align:right;">little ice</div>
+      <div style="position:absolute;z-index:5;top:330px;right:80px;font-family:Poppins;font-weight:800;font-size:105px;color:#F5F0D0;line-height:0.86;letter-spacing:-2px;text-shadow:0 2px 18px rgba(0,0,0,0.35);text-align:right;">cream break</div>
+      <div class="s4-script ts-light" style="position:absolute;z-index:5;bottom:220px;right:80px;font-size:52px;text-align:right;">golden hour</div>
+      <div class="s4-script ts-light" style="position:absolute;z-index:5;bottom:148px;right:80px;font-size:36px;text-align:right;">hit different today</div>
+      <div class="dstar" style="top:50px;left:80px;width:32px;height:32px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#F5E6C8" stroke="#e8d8b0" stroke-width="2"/></svg>
+      </div>
+      <div class="dstar" style="bottom:200px;left:100px;width:22px;height:22px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#FAFAF0" stroke="#e8e8d8" stroke-width="2"/></svg>
+      </div>
+      <div class="dstar" style="bottom:120px;right:250px;width:18px;height:18px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#F5E6C8" stroke="#e8d8b0" stroke-width="2"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================
+       SLIDE 5 — 7:00 PM / THAT'S A WRAP
+       30-pack7-library | Poppins + Playfair, centered, looking back
+       Subject centered looking back → text on dark bookshelves left + top
+       ================================================================ -->
+  <div class="slide" data-index="4">
+    <div class="s-inner">
+      <img src="female-lifestyle-ugc/with user/30-pack7-establishing-library.png" alt="">
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 55%, rgba(0,0,0,0) 35%, rgba(0,0,0,0.42) 88%);z-index:2;pointer-events:none;"></div>
+      <div class="time-pill" style="top:80px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,0.12);">7:00 PM</div>
+      <div style="position:absolute;z-index:5;top:170px;left:50%;transform:translateX(-50%);width:50px;height:2px;background:rgba(245,240,208,0.6);border-radius:1px;"></div>
+      <div class="s5-label t-cream ts" style="position:absolute;z-index:5;top:150px;left:50%;transform:translateX(-50%);font-size:13px;">wrapping up</div>
+      <!-- Bold headline across top -->
+      <div style="position:absolute;z-index:5;top:200px;left:50%;transform:translateX(-50%);font-family:Poppins;font-weight:800;font-size:120px;color:#FFF;line-height:0.88;letter-spacing:-2px;text-shadow:0 2px 20px rgba(0,0,0,0.4);text-align:center;width:900px;">that's a</div>
+      <div style="position:absolute;z-index:5;top:330px;left:50%;transform:translateX(-50%);font-family:Poppins;font-weight:800;font-size:120px;color:#F5F0D0;line-height:0.88;letter-spacing:-2px;text-shadow:0 2px 20px rgba(0,0,0,0.4);text-align:center;width:900px;">wrap</div>
+      <!-- Serif subtext -->
+      <div style="position:absolute;z-index:5;top:500px;left:50%;transform:translateX(-50%);font-family:'Playfair Display';font-style:italic;font-weight:700;font-size:44px;color:#F5F0D0;text-shadow:0 2px 16px rgba(0,0,0,0.3);text-align:center;">thanks for coming along</div>
+      <!-- Dark area bottom text — bookshelves are dark here -->
+      <div style="position:absolute;z-index:5;bottom:220px;left:50%;transform:translateX(-50%);font-family:Poppins;font-weight:400;font-size:24px;color:rgba(255,255,255,0.55);letter-spacing:5px;text-align:center;text-shadow:0 2px 10px rgba(0,0,0,0.4);">FOLLOW FOR MORE DAYS LIKE THIS</div>
+      <div class="dstar" style="top:50px;left:100px;width:30px;height:30px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#FAFAF0" stroke="#e8e8d8" stroke-width="2"/></svg>
+      </div>
+      <div class="dstar" style="top:50px;right:100px;width:26px;height:26px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#F5F0D0" stroke="#e8e0c0" stroke-width="2"/></svg>
+      </div>
+      <div class="dstar" style="bottom:170px;left:140px;width:22px;height:22px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#FAFAF0" stroke="#e8e8d8" stroke-width="2"/></svg>
+      </div>
+      <div class="dstar" style="bottom:170px;right:140px;width:20px;height:20px;">
+        <svg viewBox="0 0 100 100"><path d="M50,5 Q55,30 80,35 Q55,40 50,65 Q45,40 20,35 Q45,30 50,5Z" fill="#F5F0D0" stroke="#e8e0c0" stroke-width="2"/></svg>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="nav" id="nav"></div>
+<div class="arrow arrow-down" id="arrowDown">▼</div>
+<div class="arrow arrow-up" id="arrowUp" style="display:none;">▲</div>
+<div class="counter" id="counter">1 / 5</div>
+
+<script>
+let current = 0;
+const total = 5;
+const slides = document.querySelectorAll('.slide');
+const progress = document.getElementById('progress');
+const counter = document.getElementById('counter');
+const arrowUp = document.getElementById('arrowUp');
+const arrowDown = document.getElementById('arrowDown');
+const nav = document.getElementById('nav');
+for (let i = 0; i < total; i++) {
+  const dot = document.createElement('div');
+  dot.className = 'dot' + (i === 0 ? ' active' : '');
+  dot.addEventListener('click', () => goTo(i));
+  nav.appendChild(dot);
+}
+const dots = document.querySelectorAll('.dot');
+function goTo(index) {
+  if (index === current) return;
+  slides[current].classList.remove('active');
+  slides[current].classList.add('exit-up');
+  setTimeout(() => { slides[current].classList.remove('exit-up'); }, 700);
+  slides[index].classList.add('active');
+  dots[current].classList.remove('active');
+  dots[index].classList.add('active');
+  current = index;
+  updateUI();
+}
+function updateUI() {
+  counter.textContent = (current + 1) + ' / ' + total;
+  progress.style.width = ((current + 1) / total * 100) + '%';
+  arrowUp.style.display = current === 0 ? 'none' : 'block';
+  arrowDown.style.display = current === total - 1 ? 'none' : 'block';
+}
+arrowDown.addEventListener('click', () => { if (current < total - 1) goTo(current + 1); });
+arrowUp.addEventListener('click', () => { if (current > 0) goTo(current - 1); });
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowDown' || e.key === 'ArrowRight') { e.preventDefault(); if (current < total - 1) goTo(current + 1); }
+  if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') { e.preventDefault(); if (current > 0) goTo(current - 1); }
+});
+let touchStartY = 0;
+document.addEventListener('touchstart', e => { touchStartY = e.touches[0].clientY; });
+document.addEventListener('touchend', e => {
+  const diff = touchStartY - e.changedTouches[0].clientY;
+  if (Math.abs(diff) > 50) {
+    if (diff > 0 && current < total - 1) goTo(current + 1);
+    else if (diff < 0 && current > 0) goTo(current - 1);
+  }
+});
+updateUI();
+</script>
+</body>
+</html>

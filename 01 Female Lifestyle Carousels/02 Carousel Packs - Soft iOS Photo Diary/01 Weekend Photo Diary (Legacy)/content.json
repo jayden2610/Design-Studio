@@ -1,0 +1,61 @@
+{
+  "name": "Weekend Photo Diary",
+  "width": 1080,
+  "height": 1350,
+  "slides": [
+    {
+      "kind": "cover",
+      "eyebrow": "WEEKEND PHOTO DIARY",
+      "title": "a weekend\nthat felt like\na deep breath",
+      "body": "sunlight, slow pages, and nowhere urgent to be.",
+      "prompt": "swipe for the little moments →",
+      "meta": "[CITY] · [MONTH] · [YEAR]",
+      "hero": "../../01 Source Assets/lifestyle-ugc/01-pack1-hero.png"
+    },
+    {
+      "kind": "moments",
+      "eyebrow": "01 · LITTLE MOMENTS",
+      "title": "a few things\ni want to remember",
+      "body": "the kind of moments that make a weekend feel longer in the best way.",
+      "photos": [
+        "../../01 Source Assets/lifestyle-ugc/03-pack1-portrait-turned.png",
+        "../../01 Source Assets/lifestyle-ugc/04-pack1-coffee-hands.png"
+      ],
+      "note": "“more slow mornings, please.”"
+    },
+    {
+      "kind": "notes",
+      "eyebrow": "02 · THE LITTLE THINGS",
+      "title": "small favourites\nfrom lately",
+      "notes": [
+        "01  [a book / a place / a tiny ritual]",
+        "02  [a meal / a moment / a thought]",
+        "03  [something i want to do again]",
+        "04  [a song on repeat]"
+      ],
+      "photo": "../../01 Source Assets/lifestyle-ugc/05-pack1-filler-journal.png",
+      "tag": "SAVE THIS FEELING"
+    },
+    {
+      "kind": "collage",
+      "eyebrow": "03 · CAMERA ROLL",
+      "title": "four frames\nfrom the weekend",
+      "photos": [
+        "../../01 Source Assets/lifestyle-ugc/06-pack2-hero-flowers.png",
+        "../../01 Source Assets/lifestyle-ugc/07-pack2-establishing-flowers.png",
+        "../../01 Source Assets/lifestyle-ugc/08-pack2-flower-hands.png",
+        "../../01 Source Assets/lifestyle-ugc/09-pack2-filler-petals.png"
+      ],
+      "meta": "[ADD DATE STAMP]"
+    },
+    {
+      "kind": "close",
+      "eyebrow": "04 · UNTIL NEXT TIME",
+      "title": "until the next\nlittle weekend",
+      "body": "[one closing thought that feels true to you.]",
+      "tag": "SAVE FOR LATER",
+      "photo": "../../01 Source Assets/lifestyle-ugc/28-pack1-filler-windowlight.png",
+      "meta": "WEEKEND PHOTO DIARY · [YOUR HANDLE]"
+    }
+  ]
+}

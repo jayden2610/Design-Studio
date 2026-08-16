@@ -1,0 +1,62 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 1080px; height: 1350px; overflow: hidden; }
+body { background: #d7d1cb; font-family: "Poppins", Arial, sans-serif; }
+.slide { position: relative; width: 1080px; height: 1350px; overflow: hidden; padding: 78px; color: #343338; }
+.paper { background: #f8f5f2; }
+.blue { background: #dceaf2; }
+.blush { background: #f4d8d5; }
+.lilac { background: #e6dded; }
+.eyebrow, .meta, .tag, .note-label { color: #9d6a62; font-size: 18px; font-weight: 700; letter-spacing: 2px; }
+.eyebrow { position: absolute; top: 78px; left: 78px; }
+.title { position: absolute; white-space: pre-line; margin: 0; color: #343338; font-family: "Baloo 2", Arial, sans-serif; font-size: 80px; font-weight: 600; line-height: .72; letter-spacing: -.5px; }
+.body { position: absolute; font-size: 28px; line-height: 1.2; }
+.meta { position: absolute; font-size: 17px; }
+.rule { position: absolute; height: 4px; background: #9d6a62; }
+.photo { position: absolute; object-fit: cover; display: block; background: #fff9f2; }
+.rounded { border-radius: 24px; }
+.mat { border: 13px solid #fff9f2; box-shadow: 0 16px 35px rgba(80, 55, 50, .12); }
+.tag { position: absolute; padding: 17px 14px; border: 2px solid #9d6a62; border-radius: 22px; text-align: center; line-height: 1; }
+.note-card { position: absolute; background: #fff9f2; border-radius: 24px; padding: 46px 45px; }
+.note-label { letter-spacing: 1px; }
+.note-row { margin-top: 42px; padding-bottom: 23px; border-bottom: 1px solid #d8d1cb; font-size: 23px; line-height: 1.2; }
+.note-row:last-child { border-bottom: 0; }
+.note-photo { position: absolute; object-fit: cover; border-radius: 24px; }
+.note-quote { position: absolute; font-family: "Playfair Display", Georgia, serif; font-size: 22px; line-height: 1.15; }
+.collage-photo { position: absolute; width: 432px; height: 380px; object-fit: cover; }
+.scribble { position: absolute; border: 3px solid #9d6a62; border-radius: 50%; transform: rotate(-8deg); }
+
+.cover .title { left: 78px; top: 146px; width: 410px; font-size: 72px; }
+.cover .rule { left: 78px; top: 475px; width: 88px; }
+.cover .body { left: 78px; top: 512px; width: 350px; }
+.cover .prompt { position: absolute; left: 78px; top: 720px; color: #9d6a62; font-size: 21px; }
+.cover .meta { left: 78px; bottom: 112px; }
+.cover .hero { left: 507px; top: 370px; width: 495px; height: 655px; border-radius: 24px; }
+.cover .scribble { left: 875px; top: 1145px; width: 120px; height: 82px; }
+
+.moments .title { left: 78px; top: 142px; width: 640px; }
+.moments .body { left: 78px; top: 382px; width: 425px; }
+.moments .photo-one { left: 78px; top: 700px; width: 405px; height: 510px; }
+.moments .photo-two { left: 597px; top: 350px; width: 405px; height: 575px; }
+.moments .note-card { left: 635px; top: 985px; width: 320px; height: 185px; padding: 38px 40px; text-align: center; }
+.moments .note-quote { left: 40px; top: 84px; width: 240px; }
+.moments .accent { position: absolute; left: 115px; top: 667px; width: 170px; height: 46px; background: #f4d8d5; }
+
+.notes .title { left: 78px; top: 142px; width: 700px; }
+.notes .note-card { left: 78px; top: 422px; width: 555px; height: 610px; }
+.notes .note-photo { left: 695px; top: 490px; width: 307px; height: 307px; }
+.notes .tag { left: 720px; top: 865px; width: 250px; }
+
+.collage .title { left: 78px; top: 142px; width: 720px; }
+.collage .photo-one { left: 78px; top: 390px; }
+.collage .photo-two { left: 570px; top: 390px; }
+.collage .photo-three { left: 78px; top: 835px; }
+.collage .photo-four { left: 570px; top: 835px; }
+.collage .accent { position: absolute; left: 405px; top: 367px; width: 230px; height: 46px; background: #f4d8d5; }
+.collage .meta { right: 78px; bottom: 102px; }
+
+.close .title { left: 78px; top: 142px; width: 670px; }
+.close .body { left: 78px; top: 375px; width: 530px; }
+.close .tag { right: 78px; top: 144px; width: 224px; }
+.close .photo { left: 78px; top: 690px; width: 924px; height: 410px; border-radius: 24px; }
+.close .meta { left: 78px; bottom: 107px; }
+.close .scribble { left: 848px; top: 276px; width: 130px; height: 82px; }

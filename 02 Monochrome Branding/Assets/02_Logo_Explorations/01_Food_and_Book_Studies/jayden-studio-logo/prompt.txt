@@ -1,0 +1,30 @@
+JAYDEN.STUDIO — Logo Direction: "The Mark Mid-Build"
+Hand-drawn line illustration, Instagram profile mark (branding & web design studio)
+
+=====================================================
+FINAL PROMPT
+=====================================================
+
+A minimal hand-drawn line-illustration character mark for a branding and web design studio. The figure is a small, relaxed seated or leaning person built from simple confident ink contours — but instead of a realistic head, the head is one clean geometric form (a plain circle or a softly rounded square) rendered in the same hand-inked line as the body, as if the figure's identity IS a piece of design rather than a person holding one. No separate tool, object, or prop in the hands — hands rest simply in the lap or lightly on the knee. The whole figure sits centered inside a circular badge frame, matching the proportions and warmth of a Fiverr/Dribbble seller-profile icon: generous clear space around the figure, fully contained within the circle with roughly 15-20% padding to the frame edge.
+
+Line technique: hand-inked pen linework with irregular, slightly imperfect line weight — visible pen texture, small deliberate wobbles, never a smooth vector-perfect curve. Light cross-hatching or short parallel strokes used sparingly for shading only on the body/clothing folds and the geometric head-form's shadow edge — enough to feel hand-crafted, not enough to clutter. A few small signature warmth details in the same single ink line: light dot-freckle texture on any visible skin, a simple closed-eye or minimal facial mark implied only if it reads clean at small size (otherwise omit facial detail entirely and let the geometric head read as the identity). A short squiggle or two suggesting hair-like texture or a single loose thread/line trailing from the figure is optional and should stay minimal.
+
+Color: single dominant ink color, deep charcoal-black or deep ink-black (#111111), used for 100% of the linework and hatching. Pure black and white only — no secondary accent color, no color fills.
+
+Ground: clean flat white or warm off-white background (#FFFFFF to #FAF8F3), no gradient, no texture noise, no drop shadow, no vignette. Circle badge outline may be a thin single-weight ring in the same ink color, or omitted and left as implied negative space — pick whichever keeps the mark cleanest at small size.
+
+Format: square canvas, 1080x1080px, the full illustration and its circular containment sitting centered with safe margin so nothing critical falls outside the inner 85% (Instagram displays profile photos as a circle crop, corners get masked).
+
+Mood: quiet, confident, self-possessed, editorial — a personal studio mark, not a mascot logo and not a cutesy cartoon.
+
+Avoid: no photo-realism, no smooth flat-vector fills, no gradient or airbrush shading, no 3D render, no drop shadows, no color beyond black ink and white/cream ground, no held tools or props (no pen, no paint roller, no paintbrush, no laptop), no visible text or lettering, no busy or multi-figure scene, no realistic detailed face.
+
+=====================================================
+NOTES
+=====================================================
+- Ink color: deep black (#111111)
+- Accent: none — pure monochrome, single ink family
+- Subject: seated/leaning line-figure with a geometric (circle or rounded-square) head standing in for a realistic face — the figure IS a design object, not a person doing design work
+- Framing: circle badge, Instagram profile-photo convention (matches the reference seller-icon style without copying its tool-in-hand pose)
+- Export target: 1080x1080px PNG, sRGB, critical content inside inner ~85% for circle-crop safety
+- Rationale: avoids the "prop problem" (what is the figure holding, and does it literally say "branding"?) by making the mark itself the deliverable — geometric head = a piece of identity design, not an illustration of someone else's job

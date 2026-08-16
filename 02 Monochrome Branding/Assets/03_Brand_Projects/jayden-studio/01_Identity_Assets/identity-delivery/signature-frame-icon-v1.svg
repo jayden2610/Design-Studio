@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" role="img" aria-labelledby="title desc">
+  <title id="title">Jayden Studio Signature Frame icon</title>
+  <desc id="desc">A hand-drawn J wraps a portrait card, representing personal branding for Instagram.</desc>
+  <!-- Instagram crops profile assets to a circle; this white field protects the mark in dark mode. -->
+  <circle cx="300" cy="300" r="284" fill="#FFFFFF"/>
+  <g fill="none" stroke="#141414" stroke-linecap="round" stroke-linejoin="round">
+    <!-- The J is intentionally a single imperfect signature stroke. -->
+    <path d="M155 122 C238 101 355 105 432 130 C446 199 448 341 429 417 C416 486 353 512 286 485 C255 472 233 450 222 421" stroke-width="18"/>
+    <path d="M166 123 C241 110 342 113 416 134" stroke-width="4" opacity=".72"/>
+    <!-- A vertical 4:5 card: a personal brand made visible through content. -->
+    <path d="M223 170 C221 153 231 143 248 144 L391 155 C407 156 415 168 413 184 L389 382 C387 398 376 407 359 405 L216 395 C200 394 192 383 194 368 Z" stroke-width="12"/>
+    <path d="M238 174 L398 186" stroke-width="3" opacity=".65"/>
+    <!-- The simplified portrait cue keeps the icon human at profile-image size. -->
+    <circle cx="304" cy="252" r="43" stroke-width="11"/>
+    <path d="M234 353 C247 310 271 290 305 290 C340 291 364 315 376 363" stroke-width="12"/>
+    <path d="M280 234 C293 218 315 214 332 229" stroke-width="4" opacity=".65"/>
+    <!-- One sparkle: a quiet cue for the reveal of someone's distinct identity. -->
+    <path d="M462 181 L462 215 M445 198 L479 198" stroke-width="8"/>
+    <path d="M462 187 L462 209 M451 198 L473 198" stroke="#141414" stroke-width="3"/>
+  </g>
+</svg>

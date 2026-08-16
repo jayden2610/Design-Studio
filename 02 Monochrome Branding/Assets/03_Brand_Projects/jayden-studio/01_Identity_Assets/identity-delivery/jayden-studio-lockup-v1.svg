@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 600" role="img" aria-labelledby="title desc">
+  <title id="title">Jayden Studio wordmark with Signature Frame</title>
+  <desc id="desc">An editable horizontal logo lockup for Jayden Studio.</desc>
+  <g transform="translate(36 38) scale(.87)">
+    <g fill="none" stroke="#141414" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M155 122 C238 101 355 105 432 130 C446 199 448 341 429 417 C416 486 353 512 286 485 C255 472 233 450 222 421" stroke-width="18"/>
+      <path d="M166 123 C241 110 342 113 416 134" stroke-width="4" opacity=".72"/>
+      <path d="M223 170 C221 153 231 143 248 144 L391 155 C407 156 415 168 413 184 L389 382 C387 398 376 407 359 405 L216 395 C200 394 192 383 194 368 Z" stroke-width="12"/>
+      <circle cx="304" cy="252" r="43" stroke-width="11"/>
+      <path d="M234 353 C247 310 271 290 305 290 C340 291 364 315 376 363" stroke-width="12"/>
+      <path d="M462 181 L462 215 M445 198 L479 198" stroke-width="8"/>
+    </g>
+  </g>
+  <!-- Keep wordmark text editable; replace the fallback typeface after choosing the final custom lettering. -->
+  <text x="555" y="276" fill="#141414" font-family="Segoe Print, Bradley Hand, cursive" font-size="202" font-weight="700" letter-spacing="-10">jayden</text>
+  <text x="570" y="366" fill="#141414" font-family="Arial, sans-serif" font-size="48" font-weight="700" letter-spacing="16">STUDIO</text>
+  <path d="M574 394 C764 411 1069 407 1248 389" fill="none" stroke="#141414" stroke-linecap="round" stroke-width="8"/>
+</svg>

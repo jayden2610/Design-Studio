@@ -1,0 +1,798 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/nyocr6",
+    "id": "nyocr6",
+    "slide": 3,
+    "layoutId": "61119514-2805-4ae8-8c48-a422d0b9e0f7",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "b67d0523-0f39-4392-8676-afcaf7797fea",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#90A7D8",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1080,
+      "height": 1350
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "DM Sans",
+      "Georgia"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "61119514-2805-4ae8-8c48-a422d0b9e0f7",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "b67d0523-0f39-4392-8676-afcaf7797fea",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "b67d0523-0f39-4392-8676-afcaf7797fea",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7idcb61k",
+      "id": "1",
+      "name": "meta",
+      "bbox": [
+        82,
+        83,
+        330,
+        30
+      ],
+      "geometry": "rect",
+      "text": "journal notes · 02 / 03",
+      "textPreview": "journal notes · 02 / 03",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 17,
+        "typeface": "DM Sans",
+        "color": "#FFFAF0",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "journal notes · 02 / 03"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "journal notes · 02 / 03",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "typeface": "DM Sans",
+            "color": "#FFFAF0",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "journal notes · 02 / 03",
+              "fontSize": 17,
+              "typeface": "DM Sans",
+              "color": "#FFFAF0",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8jmd4b2p",
+      "id": "2",
+      "name": "lead-in",
+      "bbox": [
+        86,
+        210,
+        260,
+        52
+      ],
+      "geometry": "rect",
+      "text": "then ask",
+      "textPreview": "then ask",
+      "resolvedFontSize": 36,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 36,
+        "typeface": "Georgia",
+        "color": "#FFFAF0",
+        "italic": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "then ask"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "then ask",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 36,
+            "typeface": "Georgia",
+            "color": "#FFFAF0",
+            "italic": true,
+            "alignment": "left",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "then ask",
+              "fontSize": 36,
+              "typeface": "Georgia",
+              "color": "#FFFAF0",
+              "italic": true,
+              "alignment": "left",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/9kvedgja",
+      "id": "3",
+      "name": "wordmark",
+      "bbox": [
+        78,
+        252,
+        690,
+        245
+      ],
+      "geometry": "rect",
+      "text": "loosen\nthe grip",
+      "textPreview": "loosen | the grip",
+      "resolvedFontSize": 145,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 145,
+        "typeface": "Georgia",
+        "color": "#FFFAF0",
+        "italic": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "loosen"
+          },
+          {
+            "index": 2,
+            "text": "the grip"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "loosen",
+          "lineSpacingPercent": 72000,
+          "resolvedTextStyle": {
+            "fontSize": 145,
+            "typeface": "Georgia",
+            "color": "#FFFAF0",
+            "italic": true,
+            "alignment": "left",
+            "lineSpacing": 0.72
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "loosen",
+              "fontSize": 145,
+              "typeface": "Georgia",
+              "color": "#FFFAF0",
+              "italic": true,
+              "alignment": "left",
+              "lineSpacing": 0.72
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "the grip",
+          "lineSpacingPercent": 72000,
+          "resolvedTextStyle": {
+            "fontSize": 145,
+            "typeface": "Georgia",
+            "color": "#FFFAF0",
+            "italic": true,
+            "alignment": "left",
+            "lineSpacing": 0.72
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "the grip",
+              "fontSize": 145,
+              "typeface": "Georgia",
+              "color": "#FFFAF0",
+              "italic": true,
+              "alignment": "left",
+              "lineSpacing": 0.72
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u54v61kv",
+      "id": "4",
+      "name": "journal-prompt",
+      "bbox": [
+        90,
+        635,
+        680,
+        125
+      ],
+      "geometry": "rect",
+      "text": "where am i demanding certainty\nbefore i let myself begin?",
+      "textPreview": "where am i demanding certainty | before i let myself begin?",
+      "resolvedFontSize": 45,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 45,
+        "typeface": "Georgia",
+        "color": "#FFFAF0",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "where am i demanding certainty"
+          },
+          {
+            "index": 2,
+            "text": "before i let myself begin?"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "where am i demanding certainty",
+          "lineSpacingPercent": 95000,
+          "resolvedTextStyle": {
+            "fontSize": 45,
+            "typeface": "Georgia",
+            "color": "#FFFAF0",
+            "alignment": "left",
+            "lineSpacing": 0.95
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "where am i demanding certainty",
+              "fontSize": 45,
+              "typeface": "Georgia",
+              "color": "#FFFAF0",
+              "alignment": "left",
+              "lineSpacing": 0.95
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "before i let myself begin?",
+          "lineSpacingPercent": 95000,
+          "resolvedTextStyle": {
+            "fontSize": 45,
+            "typeface": "Georgia",
+            "color": "#FFFAF0",
+            "alignment": "left",
+            "lineSpacing": 0.95
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "before i let myself begin?",
+              "fontSize": 45,
+              "typeface": "Georgia",
+              "color": "#FFFAF0",
+              "alignment": "left",
+              "lineSpacing": 0.95
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/v6xwf61g",
+      "id": "5",
+      "name": "guidance",
+      "bbox": [
+        94,
+        837,
+        360,
+        72
+      ],
+      "geometry": "rect",
+      "text": "let the answer be unfinished.\nthat is still an answer.",
+      "textPreview": "let the answer be unfinished. | that is still an answer.",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 22,
+        "typeface": "DM Sans",
+        "color": "#FFFAF0",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "let the answer be unfinished."
+          },
+          {
+            "index": 2,
+            "text": "that is still an answer."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "let the answer be unfinished.",
+          "lineSpacingPercent": 125000,
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "DM Sans",
+            "color": "#FFFAF0",
+            "alignment": "left",
+            "lineSpacing": 1.25
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "let the answer be unfinished.",
+              "fontSize": 22,
+              "typeface": "DM Sans",
+              "color": "#FFFAF0",
+              "alignment": "left",
+              "lineSpacing": 1.25
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "that is still an answer.",
+          "lineSpacingPercent": 125000,
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "DM Sans",
+            "color": "#FFFAF0",
+            "alignment": "left",
+            "lineSpacing": 1.25
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "that is still an answer.",
+              "fontSize": 22,
+              "typeface": "DM Sans",
+              "color": "#FFFAF0",
+              "alignment": "left",
+              "lineSpacing": 1.25
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/ts72d0zu",
+      "id": "6",
+      "bbox": [
+        765,
+        65,
+        307,
+        280
+      ],
+      "alt": "ballet-flats",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "b3d1e372-6ec8-4d30-bce5-979358a070c8",
+        "contentType": "image/png",
+        "byteLength": 1132304
+      }
+    },
+    {
+      "order": 7,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/sry14vy9",
+      "id": "7",
+      "bbox": [
+        840,
+        480,
+        165,
+        108
+      ],
+      "alt": "hair-clip",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "551e3df0-c4fd-424a-823e-37ac526d3b2c",
+        "contentType": "image/png",
+        "byteLength": 858608
+      }
+    },
+    {
+      "order": 8,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/nul0zmhk",
+      "id": "8",
+      "bbox": [
+        760,
+        1042,
+        265,
+        210
+      ],
+      "alt": "open-book",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "d84f24c7-b2ec-4421-a033-c1ef4318cdda",
+        "contentType": "image/png",
+        "byteLength": 818983
+      }
+    },
+    {
+      "order": 9,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/mtcjq10z",
+      "id": "9",
+      "bbox": [
+        78,
+        1053,
+        120,
+        120
+      ],
+      "alt": "circle",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "55262836-00ff-44ba-af7f-d61be89f4244",
+        "contentType": "image/png",
+        "byteLength": 58510
+      }
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/buh4nq58",
+      "id": "10",
+      "name": "polaroid-paper",
+      "bbox": [
+        764,
+        704,
+        208,
+        260
+      ],
+      "geometry": "rect",
+      "fillColor": "#F9EEE2",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/tczm1ozm",
+      "id": "11",
+      "bbox": [
+        777,
+        719,
+        180,
+        177
+      ],
+      "alt": "journal-photo",
+      "contentType": "image/png",
+      "imageFit": "cover",
+      "asset": {
+        "assetId": "e0b980fb-a2ea-4b6f-aee8-91bd6081463b",
+        "contentType": "image/png",
+        "byteLength": 2009272
+      }
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xwzmpgny",
+      "id": "12",
+      "name": "polaroid-caption",
+      "bbox": [
+        785,
+        913,
+        168,
+        24
+      ],
+      "geometry": "rect",
+      "text": "one page at a time",
+      "textPreview": "one page at a time",
+      "resolvedFontSize": 15,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 15,
+        "typeface": "Georgia",
+        "color": "#302B33",
+        "italic": true,
+        "alignment": "center",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "one page at a time"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "one page at a time",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 15,
+            "typeface": "Georgia",
+            "color": "#302B33",
+            "italic": true,
+            "alignment": "center",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "one page at a time",
+              "fontSize": 15,
+              "typeface": "Georgia",
+              "color": "#302B33",
+              "italic": true,
+              "alignment": "center",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cvqlwv6t",
+      "id": "13",
+      "name": "page-number",
+      "bbox": [
+        905,
+        1190,
+        100,
+        105
+      ],
+      "geometry": "rect",
+      "text": "02",
+      "textPreview": "02",
+      "resolvedFontSize": 94,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 94,
+        "typeface": "Georgia",
+        "color": "#FFFAF0",
+        "italic": true,
+        "alignment": "right",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "0"
+          },
+          {
+            "index": 2,
+            "text": "2"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "02",
+          "lineSpacingPercent": 80000,
+          "resolvedTextStyle": {
+            "fontSize": 94,
+            "typeface": "Georgia",
+            "color": "#FFFAF0",
+            "italic": true,
+            "alignment": "right",
+            "lineSpacing": 0.8
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "02",
+              "fontSize": 94,
+              "typeface": "Georgia",
+              "color": "#FFFAF0",
+              "italic": true,
+              "alignment": "right",
+              "lineSpacing": 0.8
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

@@ -1,0 +1,807 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/mnil45",
+    "id": "mnil45",
+    "slide": 4,
+    "layoutId": "61119514-2805-4ae8-8c48-a422d0b9e0f7",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "b67d0523-0f39-4392-8676-afcaf7797fea",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#90A7D8",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1080,
+      "height": 1350
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "DM Sans",
+      "Georgia"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "61119514-2805-4ae8-8c48-a422d0b9e0f7",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "b67d0523-0f39-4392-8676-afcaf7797fea",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "b67d0523-0f39-4392-8676-afcaf7797fea",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d0nq1w3i",
+      "id": "1",
+      "name": "meta",
+      "bbox": [
+        82,
+        83,
+        330,
+        30
+      ],
+      "geometry": "rect",
+      "text": "journal notes · 03 / 03",
+      "textPreview": "journal notes · 03 / 03",
+      "resolvedFontSize": 17,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 17,
+        "typeface": "DM Sans",
+        "color": "#FFFAF0",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "journal notes · 03 / 03"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "journal notes · 03 / 03",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "typeface": "DM Sans",
+            "color": "#FFFAF0",
+            "bold": true,
+            "alignment": "left",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "journal notes · 03 / 03",
+              "fontSize": 17,
+              "typeface": "DM Sans",
+              "color": "#FFFAF0",
+              "bold": true,
+              "alignment": "left",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qxc7q1kr",
+      "id": "2",
+      "name": "lead-in",
+      "bbox": [
+        86,
+        214,
+        360,
+        52
+      ],
+      "geometry": "rect",
+      "text": "come back to this",
+      "textPreview": "come back to this",
+      "resolvedFontSize": 36,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 36,
+        "typeface": "Georgia",
+        "color": "#FFFAF0",
+        "italic": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "come back to this"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "come back to this",
+          "lineSpacingPercent": 100000,
+          "resolvedTextStyle": {
+            "fontSize": 36,
+            "typeface": "Georgia",
+            "color": "#FFFAF0",
+            "italic": true,
+            "alignment": "left",
+            "lineSpacing": 1
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "come back to this",
+              "fontSize": 36,
+              "typeface": "Georgia",
+              "color": "#FFFAF0",
+              "italic": true,
+              "alignment": "left",
+              "lineSpacing": 1
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ryl8z6lc",
+      "id": "3",
+      "name": "wordmark",
+      "bbox": [
+        78,
+        278,
+        590,
+        245
+      ],
+      "geometry": "rect",
+      "text": "begin\nsmall",
+      "textPreview": "begin | small",
+      "resolvedFontSize": 150,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 150,
+        "typeface": "Georgia",
+        "color": "#FFFAF0",
+        "italic": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "begin"
+          },
+          {
+            "index": 2,
+            "text": "small"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "begin",
+          "lineSpacingPercent": 72000,
+          "resolvedTextStyle": {
+            "fontSize": 150,
+            "typeface": "Georgia",
+            "color": "#FFFAF0",
+            "italic": true,
+            "alignment": "left",
+            "lineSpacing": 0.72
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "begin",
+              "fontSize": 150,
+              "typeface": "Georgia",
+              "color": "#FFFAF0",
+              "italic": true,
+              "alignment": "left",
+              "lineSpacing": 0.72
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "small",
+          "lineSpacingPercent": 72000,
+          "resolvedTextStyle": {
+            "fontSize": 150,
+            "typeface": "Georgia",
+            "color": "#FFFAF0",
+            "italic": true,
+            "alignment": "left",
+            "lineSpacing": 0.72
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "small",
+              "fontSize": 150,
+              "typeface": "Georgia",
+              "color": "#FFFAF0",
+              "italic": true,
+              "alignment": "left",
+              "lineSpacing": 0.72
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4vupor2l",
+      "id": "4",
+      "name": "journal-prompt",
+      "bbox": [
+        90,
+        650,
+        680,
+        128
+      ],
+      "geometry": "rect",
+      "text": "what is one kind thing\ni can do in the next ten minutes?",
+      "textPreview": "what is one kind thing | i can do in the next ten minutes?",
+      "resolvedFontSize": 45,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 45,
+        "typeface": "Georgia",
+        "color": "#FFFAF0",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "what is one kind thing"
+          },
+          {
+            "index": 2,
+            "text": "i can do in the next ten minutes?"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "what is one kind thing",
+          "lineSpacingPercent": 95000,
+          "resolvedTextStyle": {
+            "fontSize": 45,
+            "typeface": "Georgia",
+            "color": "#FFFAF0",
+            "alignment": "left",
+            "lineSpacing": 0.95
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "what is one kind thing",
+              "fontSize": 45,
+              "typeface": "Georgia",
+              "color": "#FFFAF0",
+              "alignment": "left",
+              "lineSpacing": 0.95
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "i can do in the next ten minutes?",
+          "lineSpacingPercent": 95000,
+          "resolvedTextStyle": {
+            "fontSize": 45,
+            "typeface": "Georgia",
+            "color": "#FFFAF0",
+            "alignment": "left",
+            "lineSpacing": 0.95
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "i can do in the next ten minutes?",
+              "fontSize": 45,
+              "typeface": "Georgia",
+              "color": "#FFFAF0",
+              "alignment": "left",
+              "lineSpacing": 0.95
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pw3qxw36",
+      "id": "5",
+      "name": "guidance",
+      "bbox": [
+        94,
+        860,
+        420,
+        75
+      ],
+      "geometry": "rect",
+      "text": "make it small enough that\nyou can begin before you overthink it.",
+      "textPreview": "make it small enough that | you can begin before you overthink it.",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 22,
+        "typeface": "DM Sans",
+        "color": "#FFFAF0",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "make it small enough that"
+          },
+          {
+            "index": 2,
+            "text": "you can begin before you overthink it."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "make it small enough that",
+          "lineSpacingPercent": 125000,
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "DM Sans",
+            "color": "#FFFAF0",
+            "alignment": "left",
+            "lineSpacing": 1.25
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "make it small enough that",
+              "fontSize": 22,
+              "typeface": "DM Sans",
+              "color": "#FFFAF0",
+              "alignment": "left",
+              "lineSpacing": 1.25
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "you can begin before you overthink it.",
+          "lineSpacingPercent": 125000,
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "DM Sans",
+            "color": "#FFFAF0",
+            "alignment": "left",
+            "lineSpacing": 1.25
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "you can begin before you overthink it.",
+              "fontSize": 22,
+              "typeface": "DM Sans",
+              "color": "#FFFAF0",
+              "alignment": "left",
+              "lineSpacing": 1.25
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/za5obi5c",
+      "id": "6",
+      "bbox": [
+        821,
+        166,
+        140,
+        164
+      ],
+      "alt": "iced-coffee",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "de408865-d4bc-4a53-a9a7-5f1851b7d42a",
+        "contentType": "image/png",
+        "byteLength": 957122
+      }
+    },
+    {
+      "order": 7,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/e9w7id4r",
+      "id": "7",
+      "bbox": [
+        818,
+        506,
+        152,
+        152
+      ],
+      "alt": "flower-bouquet",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "54c21cb1-774a-4308-8d43-28ad29a093b1",
+        "contentType": "image/png",
+        "byteLength": 72031
+      }
+    },
+    {
+      "order": 8,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/l8rqpw3m",
+      "id": "8",
+      "bbox": [
+        62,
+        1034,
+        252,
+        217
+      ],
+      "alt": "open-notebook",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "0e233c02-7cd1-44b8-99d5-534e8cb08a19",
+        "contentType": "image/png",
+        "byteLength": 778829
+      }
+    },
+    {
+      "order": 9,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/k7ipwrm1",
+      "id": "9",
+      "bbox": [
+        780,
+        1030,
+        232,
+        260
+      ],
+      "alt": "tote-bag",
+      "contentType": "image/png",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "30d50a3f-7e23-4e67-89cf-8a86653cebea",
+        "contentType": "image/png",
+        "byteLength": 1293605
+      }
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pszydsb2",
+      "id": "10",
+      "name": "prompt-note-paper",
+      "bbox": [
+        818,
+        698,
+        155,
+        116
+      ],
+      "geometry": "rect",
+      "fillColor": "#F4E8CF",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/orqh4nux",
+      "id": "11",
+      "name": "prompt-note-text",
+      "bbox": [
+        838,
+        726,
+        115,
+        66
+      ],
+      "geometry": "rect",
+      "text": "a little\ncounts.",
+      "textPreview": "a little | counts.",
+      "resolvedFontSize": 28,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 28,
+        "typeface": "Georgia",
+        "color": "#302B33",
+        "italic": true,
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "a little"
+          },
+          {
+            "index": 2,
+            "text": "counts."
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "a little",
+          "lineSpacingPercent": 95000,
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "typeface": "Georgia",
+            "color": "#302B33",
+            "italic": true,
+            "alignment": "left",
+            "lineSpacing": 0.95
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "a little",
+              "fontSize": 28,
+              "typeface": "Georgia",
+              "color": "#302B33",
+              "italic": true,
+              "alignment": "left",
+              "lineSpacing": 0.95
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "counts.",
+          "lineSpacingPercent": 95000,
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "typeface": "Georgia",
+            "color": "#302B33",
+            "italic": true,
+            "alignment": "left",
+            "lineSpacing": 0.95
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "counts.",
+              "fontSize": 28,
+              "typeface": "Georgia",
+              "color": "#302B33",
+              "italic": true,
+              "alignment": "left",
+              "lineSpacing": 0.95
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3qhgbitc",
+      "id": "12",
+      "name": "page-number",
+      "bbox": [
+        905,
+        1190,
+        100,
+        105
+      ],
+      "geometry": "rect",
+      "text": "03",
+      "textPreview": "03",
+      "resolvedFontSize": 94,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 94,
+        "typeface": "Georgia",
+        "color": "#FFFAF0",
+        "italic": true,
+        "alignment": "right",
+        "verticalAlignment": "top",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "0"
+          },
+          {
+            "index": 2,
+            "text": "3"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "03",
+          "lineSpacingPercent": 80000,
+          "resolvedTextStyle": {
+            "fontSize": 94,
+            "typeface": "Georgia",
+            "color": "#FFFAF0",
+            "italic": true,
+            "alignment": "right",
+            "lineSpacing": 0.8
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "03",
+              "fontSize": 94,
+              "typeface": "Georgia",
+              "color": "#FFFAF0",
+              "italic": true,
+              "alignment": "right",
+              "lineSpacing": 0.8
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "fillColor": "rgba(0, 0, 0, 0)",
+      "lineColor": "rgba(0, 0, 0, 0)",
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

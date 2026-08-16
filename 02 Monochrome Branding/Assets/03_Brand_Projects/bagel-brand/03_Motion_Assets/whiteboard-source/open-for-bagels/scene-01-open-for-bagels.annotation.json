@@ -1,0 +1,41 @@
+{
+  "sceneId": "scene-01",
+  "canvas": { "width": 1254, "height": 1254 },
+  "storyBasis": "一枚品牌标志的分镜构建：雨篷率先立起店面身份，链条垂下连接，手触碰百吉饼门铃完成\"开店\"仪式，芝麻与热气收尾，定格为营业中的信号。",
+  "sceneDurationMs": 11100,
+  "elements": [
+    {
+      "id": "awning",
+      "label": "条纹雨篷",
+      "sequence": 1,
+      "narrativeRole": "品牌的开场身份：先立起店面的轮廓与调性",
+      "subtitle": "一片条纹雨篷率先展开，像街角小店每天清晨拉起的那道帘子。",
+      "type": "structure",
+      "region": { "x": 282, "y": 162, "width": 703, "height": 257 },
+      "reveal": { "direction": "left_to_right", "startMs": 200, "durationMs": 2800, "maskPaddingPx": 18, "protectedRegions": [] },
+      "handPath": { "start": [300, 200], "end": [960, 380], "easing": "easeInOut" }
+    },
+    {
+      "id": "chains",
+      "label": "垂链",
+      "sequence": 2,
+      "narrativeRole": "连接件：把招牌的重量交给下方的核心符号",
+      "subtitle": "两条细链从篷檐垂下，稳稳地挂住招牌的重量。",
+      "type": "detail",
+      "region": { "x": 286, "y": 400, "width": 692, "height": 79 },
+      "reveal": { "direction": "top_to_bottom", "startMs": 3300, "durationMs": 2400, "maskPaddingPx": 12, "protectedRegions": [] },
+      "handPath": { "start": [400, 410], "end": [850, 470], "easing": "easeInOut" }
+    },
+    {
+      "id": "hand-bell",
+      "label": "手与百吉饼门铃",
+      "sequence": 3,
+      "narrativeRole": "核心揭晓：手触碰的瞬间，品牌的核心符号——百吉饼门铃——完整出现",
+      "subtitle": "一只手伸来轻轻一碰，链条另一端，是一整块百吉饼做成的门铃。",
+      "type": "character",
+      "region": { "x": 401, "y": 440, "width": 383, "height": 481 },
+      "reveal": { "direction": "bottom_to_top", "startMs": 5900, "durationMs": 3700, "maskPaddingPx": 16, "protectedRegions": [] },
+      "handPath": { "start": [420, 900], "end": [700, 500], "easing": "easeInOut" }
+    }
+  ]
+}

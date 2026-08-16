@@ -1,0 +1,54 @@
+{"kind":"slide","id":"sl/fgigfg","slide":1,"title":"WEEKEND PHOTO DIARY · 01","textShapes":5}
+{"kind":"shape","id":"sh/tgna1czm","slide":1,"bbox":[0,0,1080,1350]}
+{"kind":"shape","id":"sh/sfe987y1","slide":1,"name":"eyebrow-pill","bbox":[72,68,330,38]}
+{"kind":"textbox","id":"sh/jal8v2hk","slide":1,"name":"eyebrow","text":"WEEKEND PHOTO DIARY · 01","textPreview":"WEEKEND PHOTO DIARY · 01","textChars":24,"textLines":1,"bbox":[84,76,306,24]}
+{"kind":"textbox","id":"sh/i9cr2xgz","slide":1,"name":"title","text":"a weekend\nin soft focus","textPreview":"a weekend | in soft focus","textChars":23,"textLines":2,"bbox":[68,122,700,210]}
+{"kind":"shape","id":"sh/5c3qxsza","slide":1,"name":"editable-caption-card","bbox":[72,1141,760,132]}
+{"kind":"textbox","id":"sh/kbu94ny5","slide":1,"name":"body-copy","text":"a few small things i want to remember from lately","textPreview":"a few small things i want to remember from lately","textChars":49,"textLines":1,"bbox":[102,1170,600,38]}
+{"kind":"textbox","id":"sh/v6l87ih8","slide":1,"name":"meta-copy","text":"camera roll notes → august","textPreview":"camera roll notes → august","textChars":26,"textLines":1,"bbox":[102,1224,560,26]}
+{"kind":"shape","id":"sh/alsrydgn","slide":1,"name":"counter-01","bbox":[948,1230,60,60]}
+{"kind":"textbox","id":"sh/c7qpojyh","slide":1,"name":"counter-01-text","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[948,1247,60,22]}
+{"kind":"image","id":"im/7y5sr61w","slide":1,"name":"","alt":"Replaceable lifestyle hero photo","bbox":[0,0,1080,1350]}
+{"kind":"notes","id":"nt/fgigfg","slide":1,"text":""}
+{"kind":"slide","id":"sl/ctpm2f","slide":2,"title":"THE LITTLE THINGS · 02","textShapes":3}
+{"kind":"shape","id":"sh/axo3y9kf","slide":2,"name":"eyebrow-pill","bbox":[72,68,292,38]}
+{"kind":"textbox","id":"sh/x0z294jq","slide":2,"name":"eyebrow","text":"THE LITTLE THINGS · 02","textPreview":"THE LITTLE THINGS · 02","textChars":22,"textLines":1,"bbox":[84,76,268,24]}
+{"kind":"textbox","id":"sh/wzql0z25","slide":2,"name":"title","text":"more of this\nplease","textPreview":"more of this | please","textChars":19,"textLines":2,"bbox":[68,114,680,210]}
+{"kind":"shape","id":"sh/z6dkza1c","slide":2,"name":"counter-02","bbox":[948,1230,60,60]}
+{"kind":"textbox","id":"sh/y54jqpk7","slide":2,"name":"counter-02-text","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[948,1247,60,22]}
+{"kind":"image","id":"im/qps7itsr","slide":2,"name":"","geometry":"roundRect","alt":"Replaceable collage photo 1","bbox":[66,400,463,429]}
+{"kind":"image","id":"im/rq18rytc","slide":2,"name":"","geometry":"roundRect","alt":"Replaceable collage photo 2","bbox":[551,400,463,429]}
+{"kind":"image","id":"im/srapk3ah","slide":2,"name":"","geometry":"roundRect","alt":"Replaceable collage photo 3","bbox":[66,851,463,429]}
+{"kind":"image","id":"im/ds3qt8b2","slide":2,"name":"","geometry":"roundRect","alt":"Replaceable collage photo 4","bbox":[551,851,463,429]}
+{"kind":"notes","id":"nt/ctpm2f","slide":2,"text":""}
+{"kind":"slide","id":"sl/fhkp41","slide":3,"title":"CURRENTLY · 03","textShapes":12}
+{"kind":"shape","id":"sh/jihobqx0","slide":3,"bbox":[0,0,1080,1350]}
+{"kind":"shape","id":"sh/yh87ilgf","slide":3,"name":"eyebrow-pill","bbox":[72,68,202,38]}
+{"kind":"textbox","id":"sh/t8j6h0f2","slide":3,"name":"eyebrow","text":"CURRENTLY · 03","textPreview":"CURRENTLY · 03","textChars":14,"textLines":1,"bbox":[84,76,178,24]}
+{"kind":"textbox","id":"sh/87apofeh","slide":3,"name":"title","text":"weekend\nfavourites","textPreview":"weekend | favourites","textChars":18,"textLines":2,"bbox":[68,102,700,210]}
+{"kind":"shape","id":"sh/76hofaxw","slide":3,"name":"editable-list-card","bbox":[72,475,470,245]}
+{"kind":"textbox","id":"sh/6587m5gb","slide":3,"name":"list-arrow-1","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[102,507,32,36]}
+{"kind":"textbox","id":"sh/hcjqlkfy","slide":3,"name":"list-item-1","text":"slow pages","textPreview":"slow pages","textChars":10,"textLines":1,"bbox":[138,507,374,36]}
+{"kind":"textbox","id":"sh/gbapsfed","slide":3,"name":"list-arrow-2","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[102,551,32,36]}
+{"kind":"textbox","id":"sh/i5sjmxcr","slide":3,"name":"list-item-2","text":"coffee walks","textPreview":"coffee walks","textChars":12,"textLines":1,"bbox":[138,551,374,36]}
+{"kind":"textbox","id":"sh/jq1kf2dc","slide":3,"name":"list-arrow-3","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[102,595,32,36]}
+{"kind":"textbox","id":"sh/4ra1o7ux","slide":3,"name":"list-item-3","text":"fresh flowers","textPreview":"fresh flowers","textChars":13,"textLines":1,"bbox":[138,595,374,36]}
+{"kind":"textbox","id":"sh/5sj2hcvi","slide":3,"name":"list-arrow-4","text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[102,639,32,36]}
+{"kind":"textbox","id":"sh/6tsjqhcn","slide":3,"name":"list-item-4","text":"the long way home","textPreview":"the long way home","textChars":17,"textLines":1,"bbox":[138,639,374,36]}
+{"kind":"textbox","id":"sh/rulkjmd8","slide":3,"name":"meta-copy","text":"tiny wins from this week ✦","textPreview":"tiny wins from this week ✦","textChars":26,"textLines":1,"bbox":[72,1250,560,26]}
+{"kind":"shape","id":"sh/svu1s7ut","slide":3,"name":"counter-03","bbox":[948,1230,60,60]}
+{"kind":"textbox","id":"sh/dw32lcve","slide":3,"name":"counter-03-text","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[948,1247,60,22]}
+{"kind":"image","id":"im/5ozulkfu","slide":3,"name":"","alt":"Replaceable lifestyle hero photo","bbox":[0,0,1080,1350]}
+{"kind":"notes","id":"nt/fhkp41","slide":3,"text":""}
+{"kind":"slide","id":"sl/ntw0ty","slide":4,"title":"UNTIL NEXT TIME · 04","textShapes":5}
+{"kind":"shape","id":"sh/jm9wj6lo","slide":4,"bbox":[0,0,1080,1350]}
+{"kind":"shape","id":"sh/ilgvq1k3","slide":4,"name":"eyebrow-pill","bbox":[72,68,282,38]}
+{"kind":"textbox","id":"sh/tcrepg3q","slide":4,"name":"eyebrow","text":"UNTIL NEXT TIME · 04","textPreview":"UNTIL NEXT TIME · 04","textChars":20,"textLines":1,"bbox":[84,76,258,24]}
+{"kind":"textbox","id":"sh/sbidwb2l","slide":4,"name":"title","text":"save the\nfeeling","textPreview":"save the | feeling","textChars":16,"textLines":2,"bbox":[68,122,700,210]}
+{"kind":"shape","id":"sh/ra9wnql0","slide":4,"name":"editable-caption-card","bbox":[72,1105,860,168]}
+{"kind":"textbox","id":"sh/690vulkf","slide":4,"name":"body-copy","text":"i want more weekends that make the week feel a little lighter","textPreview":"i want more weekends that make the week feel a little lighter","textChars":61,"textLines":1,"bbox":[102,1134,600,70]}
+{"kind":"textbox","id":"sh/1gbet032","slide":4,"name":"meta-copy","text":"for a slower day ♡","textPreview":"for a slower day ♡","textChars":18,"textLines":1,"bbox":[102,1224,560,26]}
+{"kind":"shape","id":"sh/gf2x0v2h","slide":4,"name":"counter-04","bbox":[948,1230,60,60]}
+{"kind":"textbox","id":"sh/2twnaxob","slide":4,"name":"counter-04-text","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[948,1247,60,22]}
+{"kind":"image","id":"im/5sbel83u","slide":4,"name":"","alt":"Replaceable lifestyle hero photo","bbox":[0,0,1080,1350]}
+{"kind":"notes","id":"nt/ntw0ty","slide":4,"text":""}
