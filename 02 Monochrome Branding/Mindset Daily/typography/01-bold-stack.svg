@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Mindset Daily — Bold Stack wordmark</title>
+  <desc id="desc">A bold, all-caps text-only Mindset Daily logo on white.</desc>
+  <rect width="1080" height="1080" fill="#FFFFFF"/>
+  <!-- Text block remains inside the profile-safe central area. -->
+  <text x="540" y="488" text-anchor="middle" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="140" font-weight="800" letter-spacing="-7">MINDSET</text>
+  <text x="540" y="665" text-anchor="middle" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="164" font-weight="800" letter-spacing="7">DAILY</text>
+</svg>

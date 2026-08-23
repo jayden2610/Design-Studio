@@ -1,0 +1,63 @@
+{
+  "sceneId": "gimbap-roll",
+  "canvas": { "width": 941, "height": 1672 },
+  "storyBasis": "Gimbap Roll 从竹帘开始，依次呈现海苔卷、手工卷起动作、完成的切面与收尾米粒；最终保留完整画面。",
+  "sceneDurationMs": 12000,
+  "elements": [
+    {
+      "id": "bamboo-mat",
+      "label": "竹帘",
+      "sequence": 1,
+      "narrativeRole": "故事的制作台面铺垫",
+      "subtitle": "Gimbap Roll begins with the bamboo mat.",
+      "type": "structure",
+      "region": { "x": 0, "y": 1015, "width": 941, "height": 245 },
+      "reveal": { "direction": "left_to_right", "startMs": 100, "durationMs": 1900, "maskPaddingPx": 16, "protectedRegions": [] },
+      "handPath": { "start": [38, 1138], "end": [902, 1138], "easing": "easeInOut" }
+    },
+    {
+      "id": "nori-roll",
+      "label": "海苔饭卷",
+      "sequence": 2,
+      "narrativeRole": "展示海苔、米饭与内馅形成的卷体",
+      "subtitle": "Lay down the nori, rice, and filling.",
+      "type": "food",
+      "region": { "x": 168, "y": 910, "width": 505, "height": 235 },
+      "reveal": { "direction": "left_to_right", "startMs": 2100, "durationMs": 2000, "maskPaddingPx": 16, "protectedRegions": [] },
+      "handPath": { "start": [195, 1035], "end": [650, 1035], "easing": "easeInOut" }
+    },
+    {
+      "id": "rolling-hand",
+      "label": "卷起的手",
+      "sequence": 3,
+      "narrativeRole": "关键的手工卷起动作",
+      "subtitle": "Roll it tight with one smooth motion.",
+      "type": "person",
+      "region": { "x": 0, "y": 610, "width": 660, "height": 510 },
+      "reveal": { "direction": "top_to_bottom", "startMs": 4200, "durationMs": 2900, "maskPaddingPx": 18, "protectedRegions": [] },
+      "handPath": { "start": [84, 698], "end": [508, 1050], "easing": "easeInOut" }
+    },
+    {
+      "id": "roll-cross-section",
+      "label": "寿司切面",
+      "sequence": 4,
+      "narrativeRole": "呈现完成卷物的内部结构与结果",
+      "subtitle": "Reveal the finished cross-section.",
+      "type": "food",
+      "region": { "x": 650, "y": 930, "width": 125, "height": 205 },
+      "reveal": { "direction": "center_out", "startMs": 7200, "durationMs": 2300, "maskPaddingPx": 14, "protectedRegions": [] },
+      "handPath": { "start": [712, 1028], "end": [712, 1108], "easing": "easeInOut" }
+    },
+    {
+      "id": "loose-rice",
+      "label": "散落米粒",
+      "sequence": 5,
+      "narrativeRole": "制作完成后的轻巧收尾细节",
+      "subtitle": "A simple roll, made by hand.",
+      "type": "detail",
+      "region": { "x": 780, "y": 1005, "width": 112, "height": 70 },
+      "reveal": { "direction": "left_to_right", "startMs": 9600, "durationMs": 1700, "maskPaddingPx": 12, "protectedRegions": [] },
+      "handPath": { "start": [800, 1040], "end": [871, 1040], "easing": "easeInOut" }
+    }
+  ]
+}

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donut & Co. — The Swing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --paper: #f7f5ef;
+      --ink: #111;
+      --ink-light: rgba(17, 17, 17, 0.5);
+      --ink-faint: rgba(17, 17, 17, 0.15);
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
+
+    body {
+      font-family: 'DM Mono', monospace;
+      background: var(--paper);
+      color: var(--ink);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* Typography */
+    .eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: clamp(10px, 1.2vw, 12px);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: clamp(2.5rem, 8vw, 6rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.2;
+    }
+
+    p {
+      font-family: 'DM Mono', monospace;
+      font-size: clamp(14px, 1.5vw, 16px);
+      color: var(--ink-light);
+      max-width: 480px;
+    }
+
+    /* Layout */
+    .container {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 clamp(24px, 5vw, 80px);
+    }
+
+    /* Sections */
+    .section {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Scroll container */
+    .scroll-container {
+      position: relative;
+    }
+
+    /* Fixed product layer */
+    .product-layer {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      mix-blend-mode: multiply;
+      pointer-events: none;
+    }
+
+    .product-img {
+      width: clamp(280px, 42vw, 440px);
+      height: auto;
+      display: block;
+      filter: grayscale(1) contrast(1.05);
+    }
+
+    /* Section 1: The Hook */
+    .section-hook {
+      z-index: 1;
+    }
+
+    .hook-content {
+      text-align: center;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .hook-eyebrow {
+      margin-bottom: 1rem;
+    }
+
+    .hook-title {
+      margin-bottom: 1.5rem;
+    }
+
+    /* Section 2: The Reveal */
+    .section-reveal {
+      z-index: 2;
+    }
+
+    .reveal-spacer {
+      height: 200vh;
+    }
+
+    .reveal-label {
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+    }
+
+    /* Section 3: The Story */
+    .section-story {
+      z-index: 3;
+    }
+
+    .story-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, 8vw, 120px);
+      width: 100%;
+      align-items: center;
+    }
+
+    .story-text {
+      opacity: 0;
+      transform: translateX(60px);
+    }
+
+    .story-text h2 {
+      margin-bottom: 1.5rem;
+    }
+
+    .story-text p {
+      margin-bottom: 1rem;
+    }
+
+    .story-spacer {
+      min-height: 150vh;
+    }
+
+    .story-empty {
+      /* Placeholder for parallax space */
+    }
+
+    /* Section 4: The Close */
+    .section-close {
+      z-index: 4;
+    }
+
+    .close-content {
+      text-align: center;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .close-title {
+      margin-bottom: 2rem;
+    }
+
+    .close-tagline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1rem, 2vw, 1.5rem);
+      font-style: italic;
+      color: var(--ink-light);
+    }
+
+    .close-spacer {
+      height: 100vh;
+    }
+
+    /* Background grid lines */
+    .grid-line {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--ink-faint);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .grid-line:nth-child(1) { left: 25%; }
+    .grid-line:nth-child(2) { left: 75%; }
+
+    /* Progress indicator */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      background: var(--ink);
+      z-index: 100;
+      width: 0%;
+      transform-origin: left;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .story-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .story-text {
+        transform: translateY(40px);
+      }
+
+      .story-empty {
+        display: none;
+      }
+
+      .product-layer {
+        width: 80vw;
+        left: 10%;
+        transform: translateY(-50%);
+      }
+    }
+
+    /* Responsive product sizing */
+    @media (max-width: 480px) {
+      .product-img {
+        width: 85vw;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Progress bar -->
+  <div class="progress-bar" id="progress"></div>
+
+  <!-- Background grid -->
+  <div class="grid-line"></div>
+  <div class="grid-line"></div>
+
+  <!-- Fixed product image -->
+  <div class="product-layer" id="product">
+    <img class="product-img" id="donut" src="donut-core-logo.png" alt="Donut & Co. core logo — a hand reaching up to a hanging donut beneath a striped awning" />
+  </div>
+
+  <!-- Scroll container -->
+  <div class="scroll-container">
+
+    <!-- Section 1: The Hook -->
+    <section class="section section-hook" id="hook">
+      <div class="hook-content" id="hook-content">
+        <p class="eyebrow hook-eyebrow">02 / Scroll Animation — Method 2</p>
+        <h1 class="hook-title">Donut & Co.<br>— The Swing —</h1>
+        <p>Scroll to discover the story</p>
+      </div>
+    </section>
+
+    <!-- Section 2: The Reveal -->
+    <section class="section section-reveal" id="reveal">
+      <div class="reveal-label" id="reveal-label">
+        <p class="eyebrow">The Hook</p>
+      </div>
+      <div class="reveal-spacer"></div>
+    </section>
+
+    <!-- Section 3: The Story -->
+    <section class="section section-story" id="story">
+      <div class="container">
+        <div class="story-content">
+          <div class="story-text" id="story-text">
+            <p class="eyebrow" style="margin-bottom: 1rem;">03 / Brand Story</p>
+            <h2>A Sweet Tradition Since 1987</h2>
+            <p>Born in Brooklyn, raised on nostalgia. Every donut tells a story of handcrafted care, late-night batches, and the simple joy of something sweet.</p>
+            <p>Our swinging sign isn't just decoration — it's a promise. A reminder that the best things in life are worth reaching for.</p>
+          </div>
+          <div class="story-empty"></div>
+        </div>
+      </div>
+      <div class="story-spacer"></div>
+    </section>
+
+    <!-- Section 4: The Close -->
+    <section class="section section-close" id="close">
+      <div class="close-content" id="close-content">
+        <h2 class="close-title">Donut & Co.</h2>
+        <p class="close-tagline">"Life is what you bake it."</p>
+      </div>
+      <div class="close-spacer"></div>
+    </section>
+
+  </div>
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script>
+    // Register ScrollTrigger
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Master timeline for the whole scroll experience
+    const masterTL = gsap.timeline({
+      defaults: { ease: "none" },
+      scrollTrigger: {
+        trigger: ".scroll-container",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 1.5,
+        onUpdate: (self) => {
+          document.getElementById('progress').style.width = (self.progress * 100) + '%';
+        }
+      }
+    });
+
+    // === SECTION 1: THE HOOK ===
+    // Product fades in from below and swing starts
+    const hookTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#hook",
+        start: "top top",
+        end: "bottom top",
+        scrub: 1,
+      }
+    });
+
+    // Hook content fades in
+    gsap.to("#hook-content", {
+      opacity: 1,
+      y: 0,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: "#hook",
+        start: "top 80%",
+        end: "top 20%",
+        scrub: 1
+      }
+    });
+
+    // Product initial entrance
+    gsap.from("#product", {
+      y: 100,
+      opacity: 0,
+      duration: 0.8,
+      scrollTrigger: {
+        trigger: "#hook",
+        start: "top top",
+        end: "bottom top",
+        scrub: 1.5
+      }
+    });
+
+    // Small rotation to start swing
+    masterTL.to("#donut", {
+      rotation: 3,
+      transformOrigin: "50% 0%",
+      duration: 0.3
+    }, 0);
+
+    // === SECTION 2: THE REVEAL ===
+    // Full swing animation plays via scroll scrub
+    const revealTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#reveal",
+        start: "top top",
+        end: "bottom top",
+        scrub: 2,
+      }
+    });
+
+    // Hook content fades out
+    revealTL.to("#hook-content", {
+      opacity: 0,
+      y: -50,
+      duration: 0.5
+    });
+
+    revealTL.to("#reveal-label", {
+      opacity: 1,
+      duration: 0.3
+    }, "<");
+
+    // Full swing pendulum motion
+    masterTL.to("#donut", {
+      rotation: -4,
+      transformOrigin: "50% 0%",
+      ease: "sine.inOut",
+      duration: 0.4
+    }, 0.3);
+
+    masterTL.to("#donut", {
+      rotation: 4,
+      transformOrigin: "50% 0%",
+      ease: "sine.inOut",
+      duration: 0.5
+    }, 0.7);
+
+    masterTL.to("#donut", {
+      rotation: -3,
+      transformOrigin: "50% 0%",
+      ease: "sine.inOut",
+      duration: 0.4
+    }, 1.2);
+
+    masterTL.to("#donut", {
+      rotation: 2,
+      transformOrigin: "50% 0%",
+      ease: "sine.inOut",
+      duration: 0.3
+    }, 1.6);
+
+    // Product stays centered but scales slightly
+    masterTL.to("#product", {
+      scale: 1.05,
+      transformOrigin: "50% 50%",
+      duration: 0.5
+    }, 0.5);
+
+    // === SECTION 3: THE STORY ===
+    // Parallax: product moves to side, brand story text scrolls in
+    const storyTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#story",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 1.5,
+      }
+    });
+
+    // Product moves to left side
+    storyTL.to("#product", {
+      x: "-30vw",
+      scale: 0.7,
+      transformOrigin: "50% 50%",
+      duration: 1
+    }, 0);
+
+    // Story text animates in from right
+    storyTL.to("#story-text", {
+      opacity: 1,
+      x: 0,
+      duration: 0.8
+    }, 0.3);
+
+    // Slow down swing
+    masterTL.to("#donut", {
+      rotation: 1,
+      transformOrigin: "50% 0%",
+      ease: "power1.inOut",
+      duration: 0.6
+    }, 2);
+
+    // === SECTION 4: THE CLOSE ===
+    // Product returns to center, final clean state
+    const closeTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#close",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 1.5,
+      }
+    });
+
+    // Story text fades out
+    closeTL.to("#story-text", {
+      opacity: 0,
+      y: -30,
+      duration: 0.4
+    }, 0);
+
+    // Product returns to center
+    closeTL.to("#product", {
+      x: 0,
+      scale: 1,
+      transformOrigin: "50% 50%",
+      duration: 0.8
+    }, 0.2);
+
+    // Close content animates in
+    closeTL.to("#close-content", {
+      opacity: 1,
+      y: 0,
+      duration: 0.6
+    }, 0.5);
+
+    // Final resting position for donut - slight tilt
+    masterTL.to("#donut", {
+      rotation: 2,
+      transformOrigin: "50% 0%",
+      ease: "power2.out",
+      duration: 0.4
+    }, 3);
+
+    // Final state - product returns to full opacity and scale
+    masterTL.to("#product", {
+      scale: 1,
+      opacity: 1,
+      duration: 0.3
+    }, 3.2);
+
+    // Refresh ScrollTrigger on load
+    window.addEventListener("load", () => {
+      ScrollTrigger.refresh();
+    });
+
+    // Handle resize
+    let resizeTimeout;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        ScrollTrigger.refresh();
+      }, 250);
+    });
+
+    // Smooth scroll for better 60fps
+    gsap.config({ force3D: true });
+  </script>
+
+</body>
+</html>

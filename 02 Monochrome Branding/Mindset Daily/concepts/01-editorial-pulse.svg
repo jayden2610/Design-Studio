@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Mindset Daily — Editorial Pulse</title>
+  <desc id="desc">A monochrome MD monogram designed for a TikTok profile image on white.</desc>
+  <rect width="1080" height="1080" fill="#FFFFFF"/>
+  <!-- Safe mark diameter: 620 px; stays inside TikTok's circular crop. -->
+  <circle cx="540" cy="540" r="310" fill="#111111"/>
+  <path d="M323 690V390h60l77 145 77-145h60v300h-64V530l-54 105h-38l-54-105v160z" fill="#FFFFFF"/>
+  <path d="M630 390h32c100 0 145 58 145 150s-45 150-145 150h-32zm65 67v166c34-3 61-24 61-83s-27-80-61-83z" fill="#FFFFFF"/>
+  <text x="540" y="902" text-anchor="middle" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" letter-spacing="9">MINDSET DAILY</text>
+</svg>

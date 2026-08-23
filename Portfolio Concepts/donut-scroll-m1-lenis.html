@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donut & Co. — Scroll Animation</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── Reset & Variables ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:       #f7f5ef;
+      --ink:      #111111;
+      --ink-mid:  #3a3a3a;
+      --ink-light:#8a8a8a;
+      --paper:    #efe9de;
+
+      --font-label: 'DM Mono', monospace;
+      --font-display: 'Playfair Display', Georgia, serif;
+
+      /* Scroll-driven state (updated by JS, used by CSS) */
+      --sp: 0;
+    }
+
+    html.smooth { scroll-behavior: auto; }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-label);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection { background: var(--ink); color: var(--bg); }
+
+    /* ─── Scroll driver — fixed viewport spacer ─────────────────── */
+    .scroll-driver {
+      position: relative;
+      height: 400vh;
+    }
+
+    /* ─── Sticky scene ───────────────────────────────────────────── */
+    .scene {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* ─── Hero label ─────────────────────────────────────────────── */
+    .eyebrow {
+      position: absolute;
+      top: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      white-space: nowrap;
+    }
+
+    /* ─── Product SVG ────────────────────────────────────────────── */
+    .product-wrap {
+      position: relative;
+      width: min(480px, 90vw);
+      will-change: transform, filter;
+      filter: drop-shadow(0 8px 32px rgba(17,17,17,0.12));
+    }
+
+    .product-wrap svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      mix-blend-mode: multiply;
+    }
+
+    /* ─── Swing animation (continuous, overridden by scroll) ─────── */
+    @keyframes swing {
+      0%   { transform: rotate(-8deg); }
+      50%  { transform: rotate( 8deg); }
+      100% { transform: rotate(-8deg); }
+    }
+
+    .swing-group {
+      transform-origin: 380px 110px;
+    }
+
+    /* ─── Motion lines pulse ─────────────────────────────────────── */
+    @keyframes pulse-lines {
+      0%, 100% { opacity: 0.6; }
+      50%       { opacity: 1;   }
+    }
+
+    .motion-line {
+      animation: pulse-lines 1.6s ease-in-out infinite;
+    }
+    .motion-line:nth-child(2) { animation-delay: 0.3s; }
+    .motion-line:nth-child(3) { animation-delay: 0.6s; }
+
+    /* ─── Text layers ─────────────────────────────────────────────── */
+    .story-text {
+      position: absolute;
+      bottom: 15vh;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      pointer-events: none;
+      width: 90%;
+    }
+
+    .story-text .brand {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 900;
+      font-style: italic;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: none;
+    }
+
+    .story-text .tagline {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      color: var(--ink-light);
+      margin-top: 0.75rem;
+      opacity: 0;
+      transform: translateY(12px);
+    }
+
+    /* ─── Detail section (appears during 50-80% phase) ───────────── */
+    .detail-section {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      padding: 3rem 2rem 4rem;
+      background: var(--bg);
+      clip-path: inset(100% 0 0 0);
+      transition: none;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 640px;
+      width: 100%;
+    }
+
+    .detail-card {
+      border: 1.5px solid var(--ink);
+      border-radius: 2px;
+      padding: 1.5rem 1rem;
+      background: var(--bg);
+      opacity: 0;
+      transform: translateY(24px);
+    }
+
+    .detail-card .num {
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1;
+      display: block;
+    }
+
+    .detail-card .label {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-top: 0.5rem;
+      display: block;
+    }
+
+    .detail-card .desc {
+      font-size: 0.7rem;
+      color: var(--ink-mid);
+      line-height: 1.6;
+      margin-top: 0.8rem;
+    }
+
+    .detail-cta {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      color: var(--ink);
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 0.2rem;
+      opacity: 0;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    /* ─── Progress indicator ──────────────────────────────────────── */
+    .progress-bar {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 2px;
+      background: rgba(17,17,17,0.15);
+      border-radius: 1px;
+    }
+
+    .progress-bar::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: calc(var(--sp) * 100%);
+      background: var(--ink);
+      border-radius: 1px;
+      transition: width 0.05s linear;
+    }
+
+    /* ─── Mobile adjustments ──────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .detail-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      .detail-card:last-child {
+        grid-column: span 2;
+      }
+      .eyebrow { font-size: 0.5rem; }
+    }
+  </style>
+</head>
+<body class="smooth">
+
+  <!-- Eyebrow label -->
+  <div class="eyebrow">01 / Scroll Animation — Method 1</div>
+
+  <!-- Scroll driver -->
+  <div class="scroll-driver" id="driver">
+
+    <!-- Sticky scene -->
+    <div class="scene">
+
+      <!-- Product SVG -->
+      <div class="product-wrap" id="productWrap">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 560 560"
+          width="560"
+          height="560"
+          aria-label="Donut hanging from a striped awning with a hand reaching up"
+        >
+
+          <!-- ── Striped awning ─────────────────────────────────── -->
+          <g id="awning">
+            <!-- Awning main shape with scalloped bottom -->
+            <path
+              d="M70,95 L490,95 L490,165
+                 Q473,180 455,165
+                 Q437,180 420,165
+                 Q402,180 385,165
+                 Q367,180 350,165
+                 Q332,180 315,165
+                 Q297,180 280,165
+                 Q262,180 245,165
+                 Q227,180 210,165
+                 Q192,180 175,165
+                 Q157,180 140,165
+                 Q122,180 105,165
+                 Q87,180 70,165 Z"
+              fill="none"
+              stroke="#111"
+              stroke-width="2.5"
+              stroke-linejoin="round"
+            />
+            <!-- Stripes via clip-free hatching fill -->
+            <clipPath id="awningClip">
+              <path d="M70,95 L490,95 L490,165
+                       Q473,180 455,165 Q437,180 420,165
+                       Q402,180 385,165 Q367,180 350,165
+                       Q332,180 315,165 Q297,180 280,165
+                       Q262,180 245,165 Q227,180 210,165
+                       Q192,180 175,165 Q157,180 140,165
+                       Q122,180 105,165 Q87,180 70,165 Z"/>
+            </clipPath>
+
+            <!-- Horizontal stripe bands (filled with diagonal hatch lines) -->
+            <g clip-path="url(#awningClip)">
+              <!-- Light stripes -->
+              <path d="M70,105 L490,105 L490,122 L70,122 Z" fill="#f7f5ef"/>
+              <path d="M70,139 L490,139 L490,156 L70,156 Z" fill="#f7f5ef"/>
+              <path d="M70,158 L490,158 L490,165 Q473,180 455,165 Q437,180 420,165 Q402,180 385,165 Q367,180 350,165 Q332,180 315,165 Q297,180 280,165 Q262,180 245,165 Q227,180 210,165 Q192,180 175,165 Q157,180 140,165 Q122,180 105,165 Q87,180 70,165 Z" fill="#f7f5ef"/>
+              <!-- Dark stripes with hatching -->
+              <path d="M70,122 L490,122 L490,139 L70,139 Z" fill="none" stroke="#111" stroke-width="0.8" stroke-dasharray="4,3"/>
+              <path d="M70,138 L490,138 L490,139 L70,139 Z" fill="none"/>
+            </g>
+
+            <!-- Awning shadow hatching (bottom edge) -->
+            <g clip-path="url(#awningClip)">
+              <line x1="70" y1="150" x2="150" y2="150" stroke="#111" stroke-width="0.6"/>
+              <line x1="70" y1="155" x2="160" y2="155" stroke="#111" stroke-width="0.6"/>
+              <line x1="70" y1="160" x2="145" y2="160" stroke="#111" stroke-width="0.6"/>
+            </g>
+
+            <!-- Hanging string/rod from awning bottom -->
+            <line x1="380" y1="165" x2="380" y2="110" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="430" y1="165" x2="430" y2="110" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+          </g>
+
+          <!-- ── Store sign panel (on awning) ───────────────────── -->
+          <g id="sign">
+            <rect x="220" y="118" width="140" height="46" rx="4"
+                  fill="none" stroke="#111" stroke-width="2"/>
+            <!-- Sign chains -->
+            <line x1="235" y1="118" x2="235" y2="95" stroke="#111" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="345" y1="118" x2="345" y2="95" stroke="#111" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- Sign content: small decorative elements (no text per spec) -->
+            <!-- Small star/asterisk left -->
+            <line x1="248" y1="141" x2="248" y2="141" stroke="#111" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="248" cy="141" r="1.5" fill="none" stroke="#111" stroke-width="1.2"/>
+            <!-- Small star/asterisk right -->
+            <circle cx="332" cy="141" r="1.5" fill="none" stroke="#111" stroke-width="1.2"/>
+            <line x1="332" y1="139" x2="332" y2="143" stroke="#111" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- Decorative line in middle of sign -->
+            <line x1="260" y1="141" x2="320" y2="141" stroke="#111" stroke-width="1" stroke-dasharray="2,3"/>
+          </g>
+
+          <!-- ── Swing group: donut + sprinkles + chains ─────────── -->
+          <g class="swing-group" id="donutGroup">
+            <!-- Left chain -->
+            <line x1="200" y1="240" x2="200" y2="175" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Right chain -->
+            <line x1="380" y1="240" x2="380" y2="175" stroke="#111" stroke-width="2.5" stroke-linecap="round"/>
+            <!-- Chain knots (small ellipses at chain-donut junction) -->
+            <ellipse cx="200" cy="240" rx="5" ry="3" fill="none" stroke="#111" stroke-width="1.5"/>
+            <ellipse cx="380" cy="240" rx="5" ry="3" fill="none" stroke="#111" stroke-width="1.5"/>
+
+            <!-- Donut outer circle (hand-drawn feel via slight path deviation) -->
+            <path
+              d="M290,255
+                 C312,255 338,262 358,278
+                 C378,294 390,318 388,342
+                 C386,366 370,386 348,396
+                 C326,406 300,406 278,396
+                 C256,386 240,366 238,342
+                 C236,318 248,294 268,278
+                 C282,267 290,255 290,255 Z"
+              fill="none"
+              stroke="#111"
+              stroke-width="2.8"
+              stroke-linejoin="round"
+            />
+            <!-- Donut inner hole -->
+            <ellipse cx="290" cy="318" rx="40" ry="38"
+                     fill="none" stroke="#111" stroke-width="2.8"/>
+            <!-- Hatching shadow on donut side -->
+            <g opacity="0.3">
+              <line x1="370" y1="290" x2="378" y2="298" stroke="#111" stroke-width="0.8"/>
+              <line x1="375" y1="300" x2="383" y2="308" stroke="#111" stroke-width="0.8"/>
+              <line x1="368" y1="308" x2="376" y2="316" stroke="#111" stroke-width="0.8"/>
+              <line x1="360" y1="318" x2="368" y2="326" stroke="#111" stroke-width="0.8"/>
+              <line x1="350" y1="325" x2="358" y2="333" stroke="#111" stroke-width="0.8"/>
+            </g>
+
+            <!-- Sprinkles (small ellipses tilted at various angles) -->
+            <!-- top sprinkles -->
+            <ellipse cx="274" cy="282" rx="7" ry="2.5" fill="none" stroke="#111" stroke-width="1.5"
+                     transform="rotate(-30,274,282)"/>
+            <ellipse cx="300" cy="272" rx="7" ry="2.5" fill="none" stroke="#111" stroke-width="1.5"
+                     transform="rotate(20,300,272)"/>
+            <ellipse cx="328" cy="274" rx="7" ry="2.5" fill="none" stroke="#111" stroke-width="1.5"
+                     transform="rotate(-10,328,274)"/>
+            <ellipse cx="355" cy="282" rx="7" ry="2.5" fill="none" stroke="#111" stroke-width="1.5"
+                     transform="rotate(40,355,282)"/>
+            <!-- right side sprinkles -->
+            <ellipse cx="368" cy="300" rx="7" ry="2.5" fill="none" stroke="#111" stroke-width="1.5"
+                     transform="rotate(-20,368,300)"/>
+            <ellipse cx="372" cy="326" rx="7" ry="2.5" fill="none" stroke="#111" stroke-width="1.5"
+                     transform="rotate(15,372,326)"/>
+            <ellipse cx="360" cy="348" rx="7" ry="2.5" fill="none" stroke="#111" stroke-width="1.5"
+                     transform="rotate(-40,360,348)"/>
+            <!-- bottom sprinkles -->
+            <ellipse cx="338" cy="372" rx="7" ry="2.5" fill="none" stroke="#111" stroke-width="1.5"
+                     transform="rotate(25,338,372)"/>
+            <ellipse cx="310" cy="385" rx="7" ry="2.5" fill="none" stroke="#111" stroke-width="1.5"
+                     transform="rotate(-15,310,385)"/>
+            <ellipse cx="276" cy="378" rx="7" ry="2.5" fill="none" stroke="#111" stroke-width="1.5"
+                     transform="rotate(35,276,378)"/>
+            <ellipse cx="248" cy="362" rx="7" ry="2.5" fill="none" stroke="#111" stroke-width="1.5"
+                     transform="rotate(-5,248,362)"/>
+            <!-- left side sprinkles -->
+            <ellipse cx="236" cy="338" rx="7" ry="2.5" fill="none" stroke="#111" stroke-width="1.5"
+                     transform="rotate(10,236,338)"/>
+            <ellipse cx="236" cy="312" rx="7" ry="2.5" fill="none" stroke="#111" stroke-width="1.5"
+                     transform="rotate(-25,236,312)"/>
+          </g>
+
+          <!-- ── Motion lines (left side) ────────────────────────── -->
+          <g class="motion-lines-left" opacity="0.7">
+            <path class="motion-line"
+                  d="M155,285 C140,290 130,305 132,320"
+                  fill="none" stroke="#111" stroke-width="1.8"
+                  stroke-linecap="round" stroke-dasharray="6,4"/>
+            <path class="motion-line"
+                  d="M148,318 C133,323 125,338 128,354"
+                  fill="none" stroke="#111" stroke-width="1.8"
+                  stroke-linecap="round" stroke-dasharray="6,4"/>
+            <path class="motion-line"
+                  d="M152,350 C137,355 130,370 134,386"
+                  fill="none" stroke="#111" stroke-width="1.8"
+                  stroke-linecap="round" stroke-dasharray="6,4"/>
+          </g>
+
+          <!-- ── Motion line (right side) ────────────────────────── -->
+          <g class="motion-lines-right" opacity="0.7">
+            <path class="motion-line"
+                  d="M415,280 C432,286 445,300 442,316"
+                  fill="none" stroke="#111" stroke-width="1.8"
+                  stroke-linecap="round" stroke-dasharray="6,4"/>
+          </g>
+
+          <!-- ── Hand with cuffed sleeve reaching up ─────────────── -->
+          <g id="hand">
+            <!-- Cuff/sleeve -->
+            <path
+              d="M148,465 L128,440 L142,422 C148,420 155,420 158,424
+                 L182,415 C190,412 198,415 202,422 L212,418
+                 C218,416 224,418 226,424 L238,418
+                 C244,415 252,418 255,424 L268,440 L255,455
+                 C252,462 248,468 242,468 L170,475 C162,475 155,472 148,465 Z"
+              fill="none"
+              stroke="#111"
+              stroke-width="2.5"
+              stroke-linejoin="round"
+              stroke-linecap="round"
+            />
+            <!-- Cuff detail lines -->
+            <line x1="254" y1="448" x2="268" y2="440" stroke="#111" stroke-width="1.2"/>
+            <line x1="255" y1="453" x2="265" y2="447" stroke="#111" stroke-width="1.2"/>
+            <!-- Finger lines on sleeve cuff -->
+            <line x1="244" y1="461" x2="248" y2="450" stroke="#111" stroke-width="1"/>
+            <line x1="252" y1="462" x2="256" y2="451" stroke="#111" stroke-width="1"/>
+            <line x1="260" y1="462" x2="263" y2="452" stroke="#111" stroke-width="1"/>
+
+            <!-- Hand reaching upward -->
+            <path
+              d="M142,422 C138,408 135,390 137,375
+                 C138,362 142,348 148,338
+                 L155,335 C160,332 168,332 174,338
+                 L184,345 C189,350 192,358 190,365
+                 C188,372 182,376 175,374
+                 L165,370"
+              fill="none"
+              stroke="#111"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+
+            <!-- Fingers gripping the chain/donut -->
+            <path
+              d="M174,338 C178,330 182,326 187,328
+                 C191,330 193,336 190,342
+                 L182,338"
+              fill="none"
+              stroke="#111"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M182,345 C186,337 190,333 195,336
+                 C199,339 200,346 196,350
+                 L187,347"
+              fill="none"
+              stroke="#111"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+
+            <!-- Thumb -->
+            <path
+              d="M148,338 C144,330 144,323 149,320"
+              fill="none" stroke="#111" stroke-width="2"
+              stroke-linecap="round"/>
+          </g>
+
+          <!-- ── Floating sparkles / stars (hand-drawn style) ─────── -->
+          <g opacity="0.5">
+            <!-- Star top left -->
+            <line x1="188" y1="260" x2="200" y2="252" stroke="#111" stroke-width="1.2" stroke-linecap="round"/>
+            <line x1="200" y1="252" x2="212" y2="260" stroke="#111" stroke-width="1.2" stroke-linecap="round"/>
+            <line x1="212" y1="260" x2="202" y2="268" stroke="#111" stroke-width="1.2" stroke-linecap="round"/>
+            <line x1="202" y1="268" x2="188" y2="260" stroke="#111" stroke-width="1.2" stroke-linecap="round"/>
+            <line x1="188" y1="260" x2="212" y2="260" stroke="#111" stroke-width="0.8" stroke-linecap="round"/>
+            <line x1="200" y1="252" x2="202" y2="268" stroke="#111" stroke-width="0.8" stroke-linecap="round"/>
+
+            <!-- Star top right -->
+            <line x1="380" y1="248" x2="390" y2="242" stroke="#111" stroke-width="1.2" stroke-linecap="round"/>
+            <line x1="390" y1="242" x2="400" y2="248" stroke="#111" stroke-width="1.2" stroke-linecap="round"/>
+            <line x1="400" y1="248" x2="392" y2="255" stroke="#111" stroke-width="1.2" stroke-linecap="round"/>
+            <line x1="392" y1="255" x2="380" y2="248" stroke="#111" stroke-width="1.2" stroke-linecap="round"/>
+            <line x1="380" y1="248" x2="400" y2="248" stroke="#111" stroke-width="0.8" stroke-linecap="round"/>
+            <line x1="390" y1="242" x2="392" y2="255" stroke="#111" stroke-width="0.8" stroke-linecap="round"/>
+          </g>
+
+          <!-- ── Small decorative dots ────────────────────────────── -->
+          <circle cx="220" cy="430" r="1.5" fill="#111" opacity="0.3"/>
+          <circle cx="440" cy="420" r="1.5" fill="#111" opacity="0.3"/>
+          <circle cx="470" cy="260" r="1.2" fill="#111" opacity="0.25"/>
+          <circle cx="92"  cy="320" r="1.2" fill="#111" opacity="0.25"/>
+          <circle cx="100" cy="390" r="1.5" fill="#111" opacity="0.2"/>
+          <circle cx="460" cy="380" r="1.5" fill="#111" opacity="0.2"/>
+        </svg>
+      </div>
+
+      <!-- Story text -->
+      <div class="story-text" id="storyText">
+        <p class="brand" id="brandTitle">Donut &amp; Co.</p>
+        <p class="tagline">Small-batch · Hand-drawn · Always fresh</p>
+      </div>
+
+      <!-- Detail section (slides up during 50-80%) -->
+      <div class="detail-section" id="detailSection">
+        <div class="detail-grid">
+          <div class="detail-card" id="card1">
+            <span class="num">100%</span>
+            <span class="label">Hand-crafted</span>
+            <p class="desc">Every illustration and detail drawn by hand, never outsourced.</p>
+          </div>
+          <div class="detail-card" id="card2">
+            <span class="num">∞</span>
+            <span class="label">Daily rotation</span>
+            <p class="desc">New flavors every day. Same cozy feeling every visit.</p>
+          </div>
+          <div class="detail-card" id="card3">
+            <span class="num">1↑</span>
+            <span class="label">Simple joy</span>
+            <p class="desc">A donut, a handshake, a moment. That's the whole recipe.</p>
+          </div>
+        </div>
+        <a href="#" class="detail-cta" id="detailCta">Take a bite &rarr;</a>
+      </div>
+
+    </div><!-- /.scene -->
+  </div><!-- /.scroll-driver -->
+
+  <!-- Progress bar -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      /* ─── Lenis smooth scroll ─────────────────────────────────── */
+      const lenis = new Lenis({
+        duration: 1.4,
+        easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        smoothWheel: true,
+        wheelMultiplier: 1,
+        touchMultiplier: 2,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+
+      /* ─── Get elements ─────────────────────────────────────────── */
+      const driver   = document.getElementById('driver');
+      const wrap     = document.getElementById('productWrap');
+      const storyT   = document.getElementById('storyText');
+      const brandEl  = document.getElementById('brandTitle');
+      const taglineEl= document.querySelector('.tagline');
+      const detailS  = document.getElementById('detailSection');
+      const card1    = document.getElementById('card1');
+      const card2    = document.getElementById('card2');
+      const card3    = document.getElementById('card3');
+      const ctaEl    = document.getElementById('detailCta');
+      const progress = document.getElementById('progressBar');
+
+      /* ─── Stage thresholds (0–1) ───────────────────────────────── */
+      const S1 = 0.20;  // end of hero reveal
+      const S2 = 0.50;  // start of detail zoom
+      const S3 = 0.80;  // end of detail zoom
+
+      /* ─── Helper: lerp ──────────────────────────────────────────── */
+      function lerp(a, b, t) { return a + (b - a) * t; }
+
+      /* ─── Per-stage easing ──────────────────────────────────────── */
+      function easeInOut(t) { return t < 0.5 ? 2*t*t : 1-Math.pow(-2*t+2,2)/2; }
+      function easeOut(t)   { return 1 - Math.pow(1 - t, 3); }
+      function easeIn(t)    { return t * t * t; }
+
+      /* ─── Update loop ───────────────────────────────────────────── */
+      function update() {
+        const rect   = driver.getBoundingClientRect();
+        const total  = driver.offsetHeight - window.innerHeight;
+        const raw    = -rect.top / total;
+        const sp     = Math.max(0, Math.min(1, raw));
+
+        // Update CSS custom property (for progress bar)
+        document.documentElement.style.setProperty('--sp', sp);
+
+        /* ── 0–20%: Hero reveal ─────────────────────────────────── */
+        let xShift   = 0;
+        let yShift   = 0;
+        let rot      = 0;
+        let scale    = 1;
+        let wrapOp   = 1;
+        let brandOp  = 0;
+        let tagOp    = 0;
+
+        if (sp <= S1) {
+          const t = easeOut(sp / S1);
+          xShift   = lerp(120, 0, t);
+          yShift   = lerp(-40, 0, t);
+          rot      = lerp(-12, 0, t);
+          scale    = lerp(0.7, 1, t);
+          brandOp  = easeOut(sp / (S1 * 0.7));
+          tagOp    = easeOut(Math.max(0, (sp - S1 * 0.4) / (S1 * 0.6)));
+          wrapOp   = 1;
+        }
+
+        /* ── 20–50%: Center stage + gentle swing ───────────────── */
+        if (sp > S1 && sp <= S2) {
+          const t = easeInOut((sp - S1) / (S2 - S1));
+          xShift   = 0;
+          yShift   = 0;
+          rot      = Math.sin(sp * Math.PI * 4) * 4;   // gentle swing oscillation
+          scale    = lerp(1, 1.05, t);
+          brandOp  = 1;
+          tagOp    = 1;
+          wrapOp   = 1;
+
+          // scale down the text during transition
+          brandOp  = lerp(1, 0, t * 1.5);
+          tagOp    = lerp(1, 0, t * 1.5);
+        }
+
+        /* ── 50–80%: Detail zoom ────────────────────────────────── */
+        let detailClip = 0;
+        let detailOp   = 0;
+        let card1Op    = 0;
+        let card2Op    = 0;
+        let card3Op    = 0;
+        let ctaOp      = 0;
+
+        if (sp >= S2 && sp <= S3) {
+          const t = easeInOut((sp - S2) / (S3 - S2));
+
+          // Product scales up and moves up
+          scale    = lerp(1.05, 1.35, t);
+          yShift   = lerp(0, -15, t);
+          rot      = 0;
+
+          // Detail section slides up
+          detailClip = lerp(100, 0, t);
+          detailOp   = 1;
+
+          // Cards stagger in
+          const cardStart = 0.3;
+          card1Op = Math.max(0, (t - cardStart * 0) / (1 - cardStart * 0));
+          card2Op = Math.max(0, (t - cardStart * 1) / (1 - cardStart * 1));
+          card3Op = Math.max(0, (t - cardStart * 2) / (1 - cardStart * 2));
+          card1Op = Math.min(1, card1Op * 1.5);
+          card2Op = Math.min(1, card2Op * 1.5);
+          card3Op = Math.min(1, card3Op * 1.5);
+
+          ctaOp    = Math.max(0, (t - 0.6) / 0.4);
+        }
+
+        /* ── 80–100%: Final state ───────────────────────────────── */
+        if (sp > S3) {
+          const t = easeOut((sp - S3) / (1 - S3));
+          scale      = lerp(1.35, 1, t);
+          xShift     = 0;
+          yShift     = lerp(-15, 0, t);
+          rot        = 0;
+          brandOp    = lerp(0, 1, t);
+          tagOp      = lerp(0, 1, t);
+          detailClip = 0;
+          detailOp   = lerp(1, 0.3, t);
+          card1Op    = lerp(1, 0.3, t);
+          card2Op    = lerp(1, 0.3, t);
+          card3Op    = lerp(1, 0.3, t);
+          ctaOp      = lerp(1, 0.3, t);
+        }
+
+        /* ── Apply styles ────────────────────────────────────────── */
+        wrap.style.transform =
+          `translate(${xShift}px, ${yShift}px) rotate(${rot}deg) scale(${scale})`;
+        wrap.style.opacity   = wrapOp;
+        brandEl.style.opacity  = brandOp;
+        brandEl.style.transform= `translateY(${(1-brandOp)*20}px)`;
+        taglineEl.style.opacity  = tagOp;
+        taglineEl.style.transform= `translateY(${(1-tagOp)*12}px)`;
+
+        detailS.style.clipPath = `inset(${detailClip}% 0 0 0)`;
+        detailS.style.opacity  = detailOp;
+        card1.style.opacity = card1Op;
+        card1.style.transform = `translateY(${(1-card1Op)*24}px)`;
+        card2.style.opacity = card2Op;
+        card2.style.transform = `translateY(${(1-card2Op)*24}px)`;
+        card3.style.opacity = card3Op;
+        card3.style.transform = `translateY(${(1-card3Op)*24}px)`;
+        ctaEl.style.opacity = ctaOp;
+
+        requestAnimationFrame(update);
+      }
+
+      requestAnimationFrame(update);
+
+      /* ─── Resize handler ────────────────────────────────────────── */
+      let resizeTimer;
+      window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => lenis.resize(), 200);
+      });
+
+    })();
+  </script>
+</body>
+</html>

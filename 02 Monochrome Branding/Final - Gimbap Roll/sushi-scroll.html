@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gimbap Roll — Scrollable Sushi</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Playfair+Display:ital,wght@1,500&display=swap');
+  :root {
+    --rice:#F0EBDC; --ink:#1C1F1B; --chilli:#C2451F; --muted:#6B6F63; --line:#CFC8B4;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html { scroll-behavior:auto; }
+  body { background:var(--rice); color:var(--ink); font-family:'Archivo',sans-serif; }
+
+  .intro, .outro {
+    min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:24px; text-align:center; padding:48px;
+  }
+  .intro .kicker, .outro .kicker { font-size:13px; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--chilli); }
+  .intro h1 { font-size:clamp(56px,9vw,128px); font-weight:800; letter-spacing:-.03em; line-height:.92; }
+  .intro p, .outro p { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(18px,2.2vw,26px); color:var(--muted); max-width:560px; }
+
+  #scene { height:100vh; position:relative; overflow:hidden; }
+  #scene svg.board { position:absolute; inset:0; width:100%; height:100%; }
+
+  .hud { position:absolute; left:0; right:0; padding:40px 56px; display:flex; justify-content:space-between; font-size:13px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; pointer-events:none; }
+  .hud .brand { color:var(--chilli); }
+  .hud .index { color:var(--muted); }
+  .hint { position:absolute; bottom:36px; left:50%; transform:translateX(-50%); font-size:12px; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); pointer-events:none; }
+  .progress-rail { position:absolute; bottom:0; left:0; right:0; height:4px; background:rgba(28,31,27,.08); }
+  .progress-fill { height:100%; width:100%; background:var(--chilli); transform-origin:left center; transform:scaleX(0); }
+</style>
+</head>
+<body>
+
+  <section class="intro">
+    <div class="kicker">Gimbap Roll — Brand Identity</div>
+    <h1>Roll with<br>the scroll.</h1>
+    <p>One hand. One mat. One perfect roll — drawn out across your scrollbar.</p>
+  </section>
+
+  <section id="scene">
+    <svg class="board" viewBox="0 0 1200 675" preserveAspectRatio="xMidYMid meet" aria-label="Hand rolling gimbap on a bamboo mat">
+      <defs>
+        <clipPath id="rollClip"><rect x="-230" y="-76" width="336" height="152" rx="76" /></clipPath>
+        <clipPath id="matClip"><polygon points="190,512 1010,512 950,592 120,592" /></clipPath>
+      </defs>
+
+      <g id="mat">
+        <g clip-path="url(#matClip)">
+          <rect x="100" y="500" width="940" height="104" fill="#E7E0CC" />
+          <g id="slats" stroke="#1C1F1B" stroke-width="3" stroke-linecap="round" fill="none"></g>
+          <g stroke="#1C1F1B" stroke-width="4" stroke-linecap="round">
+            <line x1="360" y1="498" x2="336" y2="606" />
+            <line x1="600" y1="498" x2="588" y2="606" />
+            <line x1="840" y1="498" x2="832" y2="606" />
+          </g>
+        </g>
+        <polygon points="190,512 1010,512 950,592 120,592" fill="none" stroke="#1C1F1B" stroke-width="4" stroke-linejoin="round" />
+        <polygon points="120,592 950,592 950,606 120,606" fill="#D9D1B8" stroke="#1C1F1B" stroke-width="4" stroke-linejoin="round" />
+        <g fill="none" stroke="#1C1F1B" stroke-width="3.5" stroke-linecap="round">
+          <line x1="336" y1="606" x2="332" y2="618" />
+          <line x1="588" y1="606" x2="586" y2="618" />
+          <line x1="832" y1="606" x2="830" y2="618" />
+        </g>
+      </g>
+
+      <g id="crumbs"></g>
+
+      <g id="roll" transform="translate(340,440)">
+        <g id="rollSquash">
+          <g clip-path="url(#rollClip)">
+            <rect x="-230" y="-76" width="336" height="152" rx="76" fill="#1C1F1B" />
+            <g id="tread"></g>
+          </g>
+          <rect x="-230" y="-76" width="336" height="152" rx="76" fill="none" stroke="#1C1F1B" stroke-width="4" />
+          <g id="cap">
+            <circle cx="100" cy="0" r="73" fill="#F0EBDC" stroke="#1C1F1B" stroke-width="4" />
+            <circle cx="100" cy="0" r="58" fill="none" stroke="#1C1F1B" stroke-width="2.5" />
+            <g id="riceGrains" fill="none" stroke="#1C1F1B" stroke-width="2.6" stroke-linecap="round"></g>
+            <rect x="86" y="-16" width="17" height="17" rx="4" transform="rotate(14 94 -7)" fill="none" stroke="#1C1F1B" stroke-width="3" />
+            <path d="M 108 6 a 9 9 0 1 0 9 9" fill="none" stroke="#1C1F1B" stroke-width="3" stroke-linecap="round" />
+            <path d="M 78 12 q 8 -10 20 -4" fill="none" stroke="#1C1F1B" stroke-width="3" stroke-linecap="round" />
+            <circle cx="112" cy="-26" r="4" fill="#1C1F1B" />
+            <circle cx="84" cy="26" r="3.5" fill="#1C1F1B" />
+          </g>
+        </g>
+      </g>
+
+      <g id="hand">
+        <g id="handBob">
+          <path d="M 40 268
+                   C 140 256 262 266 350 296
+                   C 372 303 388 311 398 323
+                   C 420 317 452 321 463 338
+                   C 470 350 461 361 446 363
+                   C 440 364 434 363 429 361
+                   C 448 366 467 377 465 393
+                   C 463 405 449 411 434 409
+                   C 429 408 425 407 421 405
+                   C 440 413 452 427 445 440
+                   C 438 450 421 451 410 444
+                   C 417 452 421 462 414 470
+                   C 406 477 392 475 385 466
+                   C 362 440 326 419 288 401
+                   C 218 370 128 348 40 340
+                   Z"
+                fill="#F0EBDC" stroke="#1C1F1B" stroke-width="4" stroke-linejoin="round" />
+          <path d="M 96 262 l 3 22 M 132 262 l 3 22" stroke="#1C1F1B" stroke-width="3.5" stroke-linecap="round" />
+          <path d="M 196 288 l 22 -8 M 204 304 l 22 -8 M 214 320 l 20 -7" stroke="#1C1F1B" stroke-width="2.5" stroke-linecap="round" />
+          <path d="M 415 372 q 10 4 20 2 M 402 414 q 10 5 20 3" stroke="#1C1F1B" stroke-width="2.5" stroke-linecap="round" fill="none" />
+        </g>
+      </g>
+
+      <g id="seeds" fill="#1C1F1B"></g>
+    </svg>
+
+    <div class="hud"><span class="brand">Gimbap Roll</span><span class="index">Scroll Study / 01</span></div>
+    <div class="hint" id="hint">Scroll to roll ↓</div>
+    <div class="progress-rail"><div class="progress-fill" id="pfill"></div></div>
+  </section>
+
+  <section class="outro">
+    <div class="kicker">Rolled fresh</div>
+    <p>Rolled fresh. Ready when you are.</p>
+  </section>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+const R = 76;
+const TRAVEL = 480;
+const START_X = 340;
+
+function mulberry(seed){ return function(){ seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+
+const slatsG = document.getElementById('slats');
+{
+  for (let i = 0; i < 10; i++) {
+    const y = 518 + i * 7.8;
+    const shrink = Math.abs(i - 4.5) * 5;
+    const l = document.createElementNS('http://www.w3.org/2000/svg','line');
+    l.setAttribute('x1', 198 + shrink); l.setAttribute('y1', y);
+    l.setAttribute('x2', 1002 - shrink); l.setAttribute('y2', y);
+    slatsG.appendChild(l);
+  }
+}
+
+const treadG = document.getElementById('tread');
+{
+  const rnd = mulberry(42);
+  for (let i = 0; i < 110; i++) {
+    const x = -1000 + rnd() * 1500;
+    const y = -64 + rnd() * 128;
+    const w = 5 + rnd() * 9;
+    const rot = -30 + rnd() * 60;
+    const el = document.createElementNS('http://www.w3.org/2000/svg','ellipse');
+    el.setAttribute('cx', x.toFixed(1)); el.setAttribute('cy', y.toFixed(1));
+    el.setAttribute('rx', w.toFixed(1)); el.setAttribute('ry', (w * 0.38).toFixed(1));
+    el.setAttribute('fill', '#F0EBDC');
+    el.setAttribute('opacity', (0.55 + rnd() * 0.45).toFixed(2));
+    el.setAttribute('transform', `rotate(${rot.toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)})`);
+    treadG.appendChild(el);
+  }
+}
+
+const grainsG = document.getElementById('riceGrains');
+{
+  const n = 14;
+  for (let i = 0; i < n; i++) {
+    const a = (i / n) * Math.PI * 2 + 0.35;
+    const rr = 40 + (i % 2) * 9;
+    const cx = 100 + Math.cos(a) * rr;
+    const cy = Math.sin(a) * rr;
+    const rot = (a * 180 / Math.PI + 90 + (i % 3) * 14 - 14).toFixed(1);
+    const el = document.createElementNS('http://www.w3.org/2000/svg','ellipse');
+    el.setAttribute('cx', cx.toFixed(1)); el.setAttribute('cy', cy.toFixed(1));
+    el.setAttribute('rx', 6.5); el.setAttribute('ry', 2.8);
+    el.setAttribute('transform', `rotate(${rot} ${cx.toFixed(1)} ${cy.toFixed(1)})`);
+    grainsG.appendChild(el);
+  }
+}
+
+const seedsG = document.getElementById('seeds');
+const SEED_DEFS = [
+  { x: 480, y: 330 }, { x: 570, y: 306 }, { x: 660, y: 328 },
+  { x: 750, y: 300 }, { x: 840, y: 322 },
+];
+const seeds = SEED_DEFS.map((d, i) => {
+  const el = document.createElementNS('http://www.w3.org/2000/svg','ellipse');
+  el.setAttribute('cx', d.x); el.setAttribute('cy', d.y);
+  el.setAttribute('rx', 7); el.setAttribute('ry', 4.2);
+  el.style.opacity = '0';
+  seedsG.appendChild(el);
+  return el;
+});
+
+const roll = document.getElementById('roll');
+const squash = document.getElementById('rollSquash');
+const tread = document.getElementById('tread');
+const cap = document.getElementById('cap');
+const hand = document.getElementById('hand');
+const handBob = document.getElementById('handBob');
+const hint = document.getElementById('hint');
+const pfill = document.getElementById('pfill');
+
+const clamp = gsap.utils.clamp(0, 1);
+
+function render(p) {
+  const press = clamp(p / 0.1);
+  const pressEase = Math.sin(press * Math.PI);
+  const t = clamp((p - 0.08) / 0.87);
+  const dist = t * TRAVEL;
+  const deg = (dist / (2 * Math.PI * R)) * 360;
+
+  roll.setAttribute('transform', `translate(${START_X + dist},440)`);
+  squash.setAttribute('transform', `translate(0,${pressEase * 6}) scale(1 ${1 - pressEase * 0.045})`);
+  tread.setAttribute('transform', `translate(${-dist * 0.55},0)`);
+  cap.setAttribute('transform', `rotate(${deg} 100 0)`);
+
+  hand.setAttribute('transform', `translate(${dist * 0.92 - 130},${pressEase * 14 - 6})`);
+
+  seeds.forEach((el, i) => {
+    const start = 0.25 + i * 0.13;
+    const k = clamp((p - start) / 0.09);
+    if (k <= 0) { el.style.opacity = '0'; return; }
+    const fade = clamp((p - start - 0.16) / 0.1);
+    const arc = Math.sin(k * Math.PI) * 46;
+    el.style.opacity = String((1 - fade) * 0.9);
+    el.setAttribute('transform', `translate(${k * 26},${-arc}) rotate(${i * 47 - 60 + k * 120} ${SEED_DEFS[i].x} ${SEED_DEFS[i].y})`);
+  });
+
+  hint.style.opacity = String(clamp(1 - p * 30));
+  pfill.style.transform = `scaleX(${p})`;
+}
+
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const debugP = /^#p=/.test(location.hash) ? parseFloat(location.hash.slice(3)) : null;
+
+if (debugP !== null && !Number.isNaN(debugP)) {
+  document.querySelector('.intro').style.display = 'none';
+  document.querySelector('.outro').style.display = 'none';
+  render(debugP);
+} else if (reduced) {
+  render(1);
+} else {
+  ScrollTrigger.create({
+    trigger: '#scene',
+    start: 'top top',
+    end: '+=2500',
+    pin: true,
+    scrub: 1,
+    anticipatePin: 1,
+    onUpdate: self => render(self.progress)
+  });
+  render(0);
+}
+</script>
+</body>
+</html>

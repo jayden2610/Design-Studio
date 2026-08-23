@@ -1,0 +1,31 @@
+# Scratch / tooling / caches — never commit
+tmp/
+**/tmp/
+.cache/
+.claude/
+.commandcode/
+.cursor/
+**/_working/
+**/__pycache__/
+*.pyc
+*.ndjson
+*.pptx
+*.zip
+*.exe
+
+# Heavy video/film assets (regenerable from source, keep repos lean for VPS clone)
+*.mp4
+*.mov
+**/flipbook-alpha/
+**/keyframes-alpha/
+**/motion-frames/
+**/chroma-video/
+**/story-frames/
+**/containers/
+
+# Inspect-only generated frames
+**/coffee-video-inspection/
+
+# ffmpeg tool bundles
+**/tools/ffmpeg/
+**/tools/ffmpeg*

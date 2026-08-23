@@ -1,0 +1,26 @@
+﻿{
+    "status":  "completed",
+    "model":  "fal-ai/kling-video/v3/pro/image-to-video",
+    "clips":  [
+                  {
+                      "id":  "01-mat-to-placement",
+                      "status":  "completed",
+                      "output":  "01-mat-to-placement.mp4",
+                      "bytes":  4817268
+                  },
+                  {
+                      "id":  "02-placement-to-roll",
+                      "status":  "completed",
+                      "output":  "02-placement-to-roll.mp4",
+                      "bytes":  5497237
+                  },
+                  {
+                      "id":  "03-roll-to-finished",
+                      "status":  "completed",
+                      "output":  "03-roll-to-finished.mp4",
+                      "bytes":  12254525
+                  }
+              ],
+    "startedAt":  "2026-08-21T00:04:28.0073238+08:00",
+    "completedAt":  "2026-08-21T00:11:17.2276161+08:00"
+}

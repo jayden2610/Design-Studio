@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Gimbap Roll — 03 / The Brand World</title>
+<style>
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html,body { width:2160px; height:1350px; }
+  body { display:flex; background:#F0EBDC; }
+  .half { width:1080px; height:1350px; }
+  .half img { width:100%; height:100%; object-fit:cover; display:block; }
+  .left { border-right:1px solid #CFC8B4; }
+  .storefront { position:relative; overflow:hidden; }
+  .storefront .storefront-photo { object-position:center; }
+  .storefront .hero-mark {
+    position:absolute;
+    z-index:1;
+    top:58px;
+    left:290px;
+    width:500px;
+    height:auto;
+    mix-blend-mode:multiply;
+  }
+  body.mono .right img { filter:grayscale(1) contrast(1.04); }
+</style>
+</head>
+<body>
+  <section class="half left storefront">
+    <img class="storefront-photo" src="assets/storefront-gpt-image-v2.png" alt="Gimbap Roll gimbap counter with sliced rolls" />
+    <img class="hero-mark" src="assets/logo-hand-roll.png" alt="The full Gimbap Roll hand-rolling illustration applied to the storefront fascia" />
+  </section>
+  <section class="half right"><img src="assets/panel-stickers.png" alt="Gimbap Roll sticker set and wrapped roll" /></section>
+</body>
+</html>

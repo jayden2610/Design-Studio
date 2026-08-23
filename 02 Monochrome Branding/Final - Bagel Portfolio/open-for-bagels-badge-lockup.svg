@@ -1,0 +1,11 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Open for Bagels badge lockup">
+  <rect width="400" height="400" fill="#F7F5EF"/>
+  <circle cx="200" cy="200" r="170" fill="none" stroke="#111111" stroke-width="10"/>
+  <circle cx="200" cy="200" r="145" fill="none" stroke="#111111" stroke-width="5"/>
+  <circle cx="200" cy="164" r="60" fill="#111111"/>
+  <circle cx="200" cy="164" r="23" fill="#F7F5EF"/>
+  <path d="M210 126 C225 128 236 139 239 153" fill="none" stroke="#F7F5EF" stroke-width="9" stroke-linecap="round"/>
+  <text x="200" y="255" text-anchor="middle" font-family="Arial Rounded MT Bold, Arial, sans-serif" font-size="32" font-weight="800" fill="#111111">OPEN FOR</text>
+  <text x="200" y="294" text-anchor="middle" font-family="Arial Rounded MT Bold, Arial, sans-serif" font-size="34" font-weight="800" fill="#B55339">BAGELS</text>
+  <text x="200" y="324" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" letter-spacing="2" fill="#111111">TURN MORNING ON</text>
+</svg>
