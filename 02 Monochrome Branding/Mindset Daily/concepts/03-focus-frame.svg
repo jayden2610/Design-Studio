@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Mindset Daily — Focus Frame</title>
+  <desc id="desc">An open black frame focuses a clean stacked Mindset Daily wordmark.</desc>
+  <rect width="1080" height="1080" fill="#FFFFFF"/>
+  <!-- A 620 px square reads comfortably inside an approximately 760 px circular profile crop. -->
+  <path d="M300 464V300h164M616 300h164v164M780 616v164H616M464 780H300V616" fill="none" stroke="#111111" stroke-width="44" stroke-linecap="square"/>
+  <text x="540" y="520" text-anchor="middle" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="98" font-weight="800" letter-spacing="-5">MINDSET</text>
+  <rect x="405" y="555" width="270" height="10" fill="#111111"/>
+  <text x="540" y="650" text-anchor="middle" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="45" font-weight="700" letter-spacing="15">DAILY</text>
+  <text x="540" y="910" text-anchor="middle" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" letter-spacing="9">MINDSET DAILY</text>
+</svg>

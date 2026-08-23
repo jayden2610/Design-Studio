@@ -1,0 +1,48 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kopi Kita - Pour Motion Demo</title>
+<style>
+  :root { --paper:#EBE1CF; --ink:#16130F; --kopi:#38241A; }
+  * { box-sizing:border-box; }
+  body { margin:0; min-height:100vh; display:grid; place-items:center; background:var(--paper); color:var(--ink); font-family:Arial, sans-serif; }
+  main { width:min(920px, 92vw); aspect-ratio:1/1; display:grid; place-items:center; position:relative; }
+  .brand { position:absolute; left:0; top:0; font-weight:900; font-size:clamp(42px, 9vw, 96px); line-height:.84; letter-spacing:-.04em; }
+  .stage { width:60%; translate:0 8%; }
+  svg { width:100%; height:auto; overflow:visible; }
+  .pour { transform-origin:164px 28px; animation: pour 4.8s steps(4,end) infinite; }
+  .caption { position:absolute; left:0; right:0; bottom:0; display:flex; justify-content:space-between; border-top:1px solid rgba(22,19,15,.2); padding-top:18px; font-size:12px; letter-spacing:.24em; font-weight:800; text-transform:uppercase; }
+  @keyframes pour {
+    0% { transform:translateY(-30px) scaleY(.15); opacity:.25; }
+    25% { transform:translateY(-14px) scaleY(.45); opacity:.65; }
+    50% { transform:translateY(0) scaleY(1); opacity:1; }
+    75%,100% { transform:translateY(0) scaleY(1); opacity:1; }
+  }
+  @media (prefers-reduced-motion: reduce) { .pour { animation:none; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="brand">Kopi<br>Kita.</div>
+  <div class="stage">
+    <svg viewBox="0 0 320 260" aria-label="Kopi Kita four-state reduced pour motion">
+      <g fill="#EBE1CF" stroke="#16130F" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M74 98 C80 172 100 204 160 206 C220 204 240 172 246 98" stroke-width="9"/>
+        <ellipse cx="160" cy="101" rx="96" ry="17" stroke-width="9"/>
+        <path d="M232 120 C285 107 303 176 246 182" fill="none" stroke-width="9"/>
+        <ellipse cx="160" cy="226" rx="128" ry="21" stroke-width="9"/>
+        <ellipse cx="160" cy="222" rx="82" ry="11.5" fill="none" stroke-width="4"/>
+        <path class="pour" d="M164 28 C178 72 175 96 176 113" fill="none" stroke="#38241A" stroke-width="9"/>
+        <path d="M108 162 C138 174 184 174 214 162" fill="none" stroke-width="4"/>
+        <circle cx="132" cy="156" r="5" fill="#16130F" stroke="none"/>
+        <circle cx="160" cy="162" r="5" fill="#16130F" stroke="none"/>
+        <circle cx="188" cy="156" r="5" fill="#16130F" stroke="none"/>
+      </g>
+    </svg>
+  </div>
+  <div class="caption"><span>Approach / Contact / Pour / Resolved</span><span>Reduced mark source</span></div>
+</main>
+</body>
+</html>

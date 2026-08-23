@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kopi Kita — Brand Identity</title>
+<meta name="description" content="Kopi Kita brand identity. Direct service. Strong coffee. A small moment of care, in the middle of an ordinary day." />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+  :root {
+    --paper: #EBE1CF;
+    --paper-deep: #E2D6BF;
+    --ink: #16130F;
+    --kopi: #38241A;
+    --steel: #978881;
+    --transferware: #2F4131;
+    --hairline: rgba(22,19,15,.18);
+    --muted: rgba(22,19,15,.72);
+    --steel-text: #665A52;
+    --display: 'Archivo', sans-serif;
+    --serif: 'Playfair Display', serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--display);
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--transferware); color: var(--paper); }
+
+  :focus-visible { outline: 2px dashed var(--transferware); outline-offset: 4px; }
+
+  /* ---------- shared board chrome ---------- */
+  .hud {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 34px 48px;
+    font-size: 12px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase;
+  }
+  .hud .index { color: var(--muted); }
+
+  section { position: relative; }
+
+  .eyebrow {
+    font-size: 12px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase;
+    color: var(--steel-text);
+  }
+
+  /* ---------- reveal system ---------- */
+  [data-reveal] {
+    opacity: 0; transform: translateY(26px);
+    transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1);
+    transition-delay: var(--d, 0ms);
+  }
+  [data-reveal].in { opacity: 1; transform: none; }
+
+  /* ---------- 01 opening ---------- */
+  .opening { min-height: 100vh; display: flex; flex-direction: column; }
+  .opening-body {
+    flex: 1; display: flex; flex-direction: column; justify-content: center;
+    padding: 0 48px 8vh;
+  }
+  .opening h1 {
+    font-size: clamp(72px, 13vw, 190px);
+    font-weight: 900; letter-spacing: -.045em; line-height: .88;
+    margin: 18px 0 34px;
+  }
+  .voice-line {
+    font-family: var(--serif); font-style: italic;
+    font-size: clamp(19px, 2.3vw, 27px);
+    color: var(--kopi); max-width: 34ch; line-height: 1.5;
+  }
+  .scroll-hint {
+    padding: 0 48px 40px;
+    font-size: 11px; font-weight: 700; letter-spacing: .3em; text-transform: uppercase;
+    color: var(--muted);
+    display: flex; align-items: center; gap: 14px;
+  }
+  .scroll-hint::after {
+    content: ""; width: 56px; height: 1px; background: var(--ink);
+    transform-origin: left center;
+    animation: hintline 2.4s cubic-bezier(.6,0,.2,1) infinite;
+  }
+  @keyframes hintline { 0% { transform: scaleX(0);} 55% { transform: scaleX(1);} 100% { transform: scaleX(1); opacity: 0;} }
+
+  /* ---------- 02 pour scene ---------- */
+  .pour-track { height: 340vh; }
+  .pour-sticky {
+    position: sticky; top: 0; height: 100vh; overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  .pour-stage { position: relative; flex: 1; display: flex; flex-direction: column; min-height: 0; }
+  .pour-scene { position: relative; flex: 1; min-height: 0; }
+  .pour-scene svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .pour-caption {
+    position: relative;
+    display: flex; justify-content: space-between; align-items: baseline; gap: 24px;
+    background: var(--paper);
+    border-top: 1px solid var(--hairline); padding: 18px 48px 26px;
+  }
+  .pour-caption .line {
+    font-family: var(--serif); font-style: italic;
+    font-size: clamp(17px, 2vw, 23px); color: var(--ink);
+  }
+  .pour-caption .meta {
+    font-size: 11px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase;
+    color: var(--muted); white-space: nowrap;
+  }
+
+  /* ---------- generic content sections ---------- */
+  .board { padding-bottom: 120px; }
+  .board-head { padding: 0 48px 54px; max-width: 900px; }
+  .board-head h2 {
+    font-size: clamp(38px, 5.4vw, 74px);
+    font-weight: 800; letter-spacing: -.03em; line-height: 1.02;
+    margin-top: 16px;
+  }
+
+  /* voice */
+  .voice-block { padding: 0 48px 140px; }
+  .voice-block blockquote {
+    font-family: var(--serif); font-style: italic;
+    font-size: clamp(28px, 4.4vw, 58px);
+    line-height: 1.32; color: var(--ink);
+    max-width: 21ch; margin-top: 40px;
+  }
+  .voice-block blockquote em { color: var(--kopi); font-style: italic; }
+  .voice-attrib {
+    margin-top: 36px; font-size: 12px; font-weight: 700;
+    letter-spacing: .24em; text-transform: uppercase; color: var(--steel-text);
+  }
+
+  /* colour system */
+  .swatch {
+    display: flex; justify-content: space-between; align-items: center; gap: 24px;
+    padding: 34px 48px;
+    border-top: 1px solid var(--hairline);
+    transition: padding .35s cubic-bezier(.2,.7,.2,1);
+  }
+  .swatch:last-of-type { border-bottom: 1px solid var(--hairline); }
+  .swatch:hover { padding-left: 64px; padding-right: 64px; }
+  .swatch .name {
+    font-size: clamp(20px, 2.6vw, 32px); font-weight: 800; letter-spacing: -.01em;
+    text-transform: uppercase;
+  }
+  .swatch .hex {
+    font-size: 13px; font-weight: 600; letter-spacing: .12em;
+    opacity: .75; margin-top: 6px;
+  }
+  .swatch .role {
+    font-size: 12px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+    text-align: right; max-width: 300px; line-height: 1.8;
+  }
+  .swatch.on-paper { color: var(--paper); }
+  .swatch.on-ink { color: var(--ink); }
+
+  /* type direction */
+  .type-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline);
+  }
+  .type-cell { padding: 64px 48px 72px; }
+  .type-cell + .type-cell { border-left: 1px solid var(--hairline); }
+  .type-cell .glyph { font-size: clamp(90px, 12vw, 170px); line-height: 1; font-weight: 800; letter-spacing: -.03em; }
+  .type-cell.serif-cell .glyph { font-family: var(--serif); font-style: italic; font-weight: 500; letter-spacing: 0; }
+  .type-cell .sample { margin-top: 34px; font-size: 17px; line-height: 1.7; max-width: 30ch; }
+  .type-cell.serif-cell .sample { font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--kopi); }
+  .type-cell .label { margin-top: 26px; }
+
+  /* gallery */
+  .gallery { padding: 0 48px; display: flex; flex-direction: column; gap: 110px; }
+  .plate { max-width: 1040px; }
+  .plate:nth-child(even) { align-self: flex-end; }
+  .plate figure { margin: 0; }
+  .plate img, .plate video {
+    display: block; width: 100%; height: auto;
+    border: 1px solid var(--hairline);
+    background: var(--paper-deep);
+  }
+  .plate figcaption {
+    display: flex; justify-content: space-between; gap: 16px;
+    padding-top: 14px;
+    font-size: 11px; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .plate figcaption .no { color: var(--transferware); }
+
+  .asset-grid {
+    padding: 0 48px 120px;
+    display: grid;
+    grid-template-columns: 1.25fr .75fr .75fr;
+    gap: 24px;
+    align-items: stretch;
+  }
+  .asset-card {
+    border: 1px solid var(--hairline);
+    background: var(--paper);
+    min-height: 260px;
+    display: grid;
+    place-items: center;
+    padding: 34px;
+  }
+  .asset-card img { max-width: 100%; max-height: 250px; display: block; }
+  .asset-card.dark { background: var(--kopi); }
+  .asset-card.dark img { filter: none; }
+
+  /* closing */
+  .closing { min-height: 72vh; display: flex; flex-direction: column; }
+  .closing-body {
+    flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;
+    text-align: center; gap: 26px; padding: 0 48px;
+  }
+  .closing .mark { width: 92px; height: auto; }
+  .closing h2 {
+    font-size: clamp(44px, 7vw, 96px); font-weight: 900; letter-spacing: -.04em; line-height: .95;
+  }
+  .closing p { font-family: var(--serif); font-style: italic; font-size: clamp(17px, 2vw, 22px); color: var(--kopi); max-width: 40ch; }
+  footer {
+    display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+    padding: 30px 48px; border-top: 1px solid var(--hairline);
+    font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* progress rail */
+  .rail { position: fixed; left: 0; right: 0; bottom: 0; height: 3px; z-index: 50; background: rgba(22,19,15,.08); pointer-events: none; }
+  .rail-fill { height: 100%; background: var(--transferware); transform-origin: left center; transform: scaleX(0); }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 720px) {
+    .hud { padding: 22px 20px; font-size: 10px; }
+    .opening-body, .scroll-hint, .board-head, .voice-block, .gallery, .type-cell, .swatch { padding-left: 20px; padding-right: 20px; }
+    .pour-caption { padding-left: 20px; padding-right: 20px; flex-direction: column; gap: 8px; }
+    .swatch { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .swatch .role { text-align: left; }
+    .swatch:hover { padding-left: 20px; padding-right: 20px; }
+    .type-grid { grid-template-columns: 1fr; }
+    .type-cell + .type-cell { border-left: 0; border-top: 1px solid var(--hairline); }
+    .gallery { gap: 70px; }
+    .asset-grid { grid-template-columns: 1fr; padding-left: 20px; padding-right: 20px; }
+    footer { padding: 24px 20px; }
+  }
+
+  /* ---------- reduced motion: static finished pour ---------- */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .pour-track { height: auto; }
+    .pour-sticky { position: relative; height: auto; min-height: 100vh; }
+    [data-reveal] { opacity: 1; transform: none; transition: none; }
+    .scroll-hint::after { animation: none; }
+    #pourGroup { transform: rotate(26deg) !important; transform-box: view-box; }
+    #stream { stroke-dashoffset: 0 !important; }
+    #cupFill { transform: translateY(0) !important; }
+    #steam { opacity: 1 !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="rail" aria-hidden="true"><div class="rail-fill" id="railFill"></div></div>
+
+<main>
+
+<!-- ============ 01 · OPENING ============ -->
+<section class="opening">
+  <div class="hud"><span>Kopi Kita</span><span class="index">Brand Identity / 01</span></div>
+  <div class="opening-body">
+    <div class="eyebrow" data-reveal>Monochrome Branding — 02</div>
+    <h1 data-reveal style="--d:80ms">Kopi<br>Kita.</h1>
+    <p class="voice-line" data-reveal style="--d:180ms">Direct service. Strong coffee. A small moment of care, in the middle of an ordinary day.</p>
+  </div>
+  <div class="scroll-hint" aria-hidden="true">Scroll to pour</div>
+</section>
+
+<!-- ============ 02 · THE POUR ============ -->
+<div class="pour-track" id="pourTrack">
+  <section class="pour-sticky" aria-label="The pour — core illustration">
+    <div class="hud"><span>Kopi Kita</span><span class="index">Core Illustration / 04</span></div>
+    <div class="pour-stage">
+      <div class="pour-scene">
+      <svg viewBox="0 0 1200 675" preserveAspectRatio="xMidYMid meet" role="img"
+           aria-label="Line illustration: a hand tilts a stainless steel kopi kettle, pouring dark kopi into a floral porcelain cup on a tiled counter">
+        <defs>
+          <pattern id="tiles" width="76" height="38" patternUnits="userSpaceOnUse" patternTransform="skewX(-14)">
+            <rect width="76" height="38" fill="#E0D4BC"/>
+            <rect width="38" height="19" fill="#16130F"/>
+            <rect x="38" y="19" width="38" height="19" fill="#16130F"/>
+          </pattern>
+          <clipPath id="rimClip">
+            <ellipse cx="620" cy="442" rx="63" ry="10"/>
+          </clipPath>
+        </defs>
+
+        <!-- counter -->
+        <g>
+          <polygon points="170,568 1030,568 1096,634 104,634" fill="url(#tiles)" stroke="#16130F" stroke-width="4" stroke-linejoin="round"/>
+          <polygon points="104,634 1096,634 1096,652 104,652" fill="#D8CBb1" stroke="#16130F" stroke-width="4" stroke-linejoin="round"/>
+        </g>
+
+        <!-- saucer shadow + saucer -->
+        <ellipse cx="620" cy="560" rx="152" ry="12" fill="rgba(22,19,15,.10)"/>
+        <ellipse cx="620" cy="552" rx="126" ry="16" fill="#EBE1CF" stroke="#16130F" stroke-width="5"/>
+        <ellipse cx="620" cy="549" rx="86" ry="9" fill="none" stroke="#16130F" stroke-width="3"/>
+
+        <!-- cup -->
+        <g>
+          <path d="M 548,444 C 551,508 563,550 620,552 C 677,550 689,508 692,444"
+                fill="#EBE1CF" stroke="#16130F" stroke-width="6" stroke-linecap="round"/>
+          <!-- kopi level, revealed through the rim opening -->
+          <g clip-path="url(#rimClip)">
+            <rect id="cupFill" x="552" y="431" width="136" height="24" fill="#38241A" style="transform: translateY(24px);"/>
+          </g>
+          <ellipse cx="620" cy="442" rx="72" ry="12" fill="none" stroke="#16130F" stroke-width="6"/>
+          <!-- handle -->
+          <path d="M 692,464 C 734,458 742,502 700,518" fill="none" stroke="#16130F" stroke-width="9" stroke-linecap="round"/>
+          <!-- transferware floral band -->
+          <g stroke="#16130F" stroke-width="3" fill="none" stroke-linecap="round">
+            <path d="M 566,498 C 600,506 640,506 674,498"/>
+            <g fill="#16130F" stroke="none">
+              <circle cx="590" cy="501" r="4"/><circle cx="620" cy="504" r="4"/><circle cx="650" cy="501" r="4"/>
+              <circle cx="583" cy="494" r="2"/><circle cx="597" cy="494" r="2"/>
+              <circle cx="613" cy="497" r="2"/><circle cx="627" cy="497" r="2"/>
+              <circle cx="643" cy="494" r="2"/><circle cx="657" cy="494" r="2"/>
+            </g>
+          </g>
+        </g>
+
+        <!-- steam -->
+        <g id="steam" opacity="0" stroke="#16130F" stroke-width="4" fill="none" stroke-linecap="round">
+          <path d="M 598,412 C 590,392 604,378 596,358"/>
+          <path d="M 636,414 C 628,394 642,380 634,360"/>
+        </g>
+
+        <!-- pour group: kettle + hand, rotates around spout tip -->
+        <g id="pourGroup" style="transform-origin: 505px 295px;">
+          <!-- spout (outlined tube) -->
+          <path d="M 452,262 C 486,256 502,270 505,293" fill="none" stroke="#16130F" stroke-width="14" stroke-linecap="round"/>
+          <path d="M 452,262 C 486,256 502,270 505,293" fill="none" stroke="#EBE1CF" stroke-width="5" stroke-linecap="round"/>
+
+          <!-- kettle body -->
+          <path d="M 352,214 L 462,214 C 470,246 468,278 448,296 L 366,296 C 346,278 344,246 352,214 Z"
+                fill="#EBE1CF" stroke="#16130F" stroke-width="6" stroke-linejoin="round"/>
+          <!-- brushed steel hints -->
+          <path d="M 372,232 C 370,252 372,272 380,286" fill="none" stroke="#16130F" stroke-width="2.5" opacity=".45"/>
+          <path d="M 444,230 C 446,252 444,270 438,284" fill="none" stroke="#16130F" stroke-width="2.5" opacity=".45"/>
+          <!-- lid + knob -->
+          <ellipse cx="407" cy="213" rx="57" ry="11" fill="#EBE1CF" stroke="#16130F" stroke-width="5"/>
+          <circle cx="407" cy="196" r="8" fill="#16130F"/>
+
+          <!-- handle -->
+          <path d="M 366,208 C 372,166 442,166 448,208" fill="none" stroke="#16130F" stroke-width="9" stroke-linecap="round"/>
+
+          <!-- hand -->
+          <g stroke-linejoin="round" stroke-linecap="round">
+            <path d="M 128,84 L 292,140 L 286,190 L 122,140 Z" fill="#EBE1CF" stroke="#16130F" stroke-width="6"/>
+            <path d="M 280,134 L 274,194" fill="none" stroke="#16130F" stroke-width="4"/>
+            <path d="M 292,140 C 332,128 368,138 390,160 C 400,171 404,183 400,193 C 396,203 385,207 374,203 L 290,186 Z"
+                  fill="#EBE1CF" stroke="#16130F" stroke-width="6"/>
+            <!-- fingers wrapping the handle (paper underlay creates occlusion) -->
+            <g fill="none">
+              <path d="M 366,163 C 369,175 369,186 364,195" stroke="#EBE1CF" stroke-width="11"/>
+              <path d="M 366,163 C 369,175 369,186 364,195" stroke="#16130F" stroke-width="5"/>
+              <path d="M 382,160 C 386,173 386,185 381,194" stroke="#EBE1CF" stroke-width="11"/>
+              <path d="M 382,160 C 386,173 386,185 381,194" stroke="#16130F" stroke-width="5"/>
+              <path d="M 398,161 C 402,174 402,186 397,195" stroke="#EBE1CF" stroke-width="11"/>
+              <path d="M 398,161 C 402,174 402,186 397,195" stroke="#16130F" stroke-width="5"/>
+              <path d="M 413,166 C 417,178 417,189 412,197" stroke="#EBE1CF" stroke-width="11"/>
+              <path d="M 413,166 C 417,178 417,189 412,197" stroke="#16130F" stroke-width="5"/>
+            </g>
+            <!-- thumb -->
+            <path d="M 336,194 C 354,206 376,208 394,201" fill="none" stroke="#16130F" stroke-width="5"/>
+          </g>
+        </g>
+
+        <!-- stream (drawn last, on top) -->
+        <path id="stream" d="M 505,295 C 512,330 560,412 613,438"
+              fill="none" stroke="#38241A" stroke-width="7" stroke-linecap="round"/>
+      </svg>
+      </div>
+
+      <div class="pour-caption">
+        <span class="line" id="pourLine">The pour is the whole story.</span>
+        <span class="meta">Ink on bone paper</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============ 03 · BRAND VOICE ============ -->
+<section class="board">
+  <div class="hud"><span>Kopi Kita</span><span class="index">Brand Voice / 02</span></div>
+  <div class="voice-block">
+    <div class="eyebrow" data-reveal>Brand Voice</div>
+    <blockquote data-reveal style="--d:100ms">Direct service. Strong coffee. <em>A small moment of care,</em> in the middle of an ordinary day.</blockquote>
+    <div class="voice-attrib" data-reveal style="--d:200ms">Voice — quiet, direct, unhurried</div>
+  </div>
+</section>
+
+<!-- ============ 04 · COLOUR SYSTEM ============ -->
+<section class="board">
+  <div class="hud"><span>Kopi Kita</span><span class="index">Colour System / 02</span></div>
+  <div class="board-head">
+    <div class="eyebrow" data-reveal>Colour System</div>
+    <h2 data-reveal style="--d:80ms">Four colours,<br>one paper.</h2>
+  </div>
+  <div>
+    <div class="swatch on-paper" style="background:#16130F" data-reveal>
+      <div><div class="name">Ink</div><div class="hex">#16130F</div></div>
+      <div class="role">Type and illustration — every line on the page</div>
+    </div>
+    <div class="swatch on-paper" style="background:#38241A" data-reveal style="--d:60ms">
+      <div><div class="name">Kopi</div><div class="hex">#38241A</div></div>
+      <div class="role">The coffee itself — fills, quiet fields, emphasis</div>
+    </div>
+    <div class="swatch on-ink" style="background:#978881" data-reveal>
+      <div><div class="name">Aged Steel</div><div class="hex">#978881</div></div>
+      <div class="role">The kettle — metadata, eyebrows, dividers</div>
+    </div>
+    <div class="swatch on-paper" style="background:#2F4131" data-reveal>
+      <div><div class="name">Transferware</div><div class="hex">#2F4131</div></div>
+      <div class="role">The china pattern — rare accent, progress, focus</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 · TYPE DIRECTION ============ -->
+<section class="board">
+  <div class="hud"><span>Kopi Kita</span><span class="index">Type Direction / 02</span></div>
+  <div class="board-head">
+    <div class="eyebrow" data-reveal>Type Direction</div>
+    <h2 data-reveal style="--d:80ms">Two voices,<br>one hand.</h2>
+  </div>
+  <div class="type-grid">
+    <div class="type-cell" data-reveal>
+      <div class="glyph">Aa</div>
+      <p class="sample">Kopi O — $1.20 · Kosong · Gah Dai · Ready in 4 minutes.</p>
+      <div class="eyebrow label">Condensed utility — menu and service language</div>
+    </div>
+    <div class="type-cell serif-cell" data-reveal style="--d:120ms">
+      <div class="glyph">Aa</div>
+      <p class="sample">A small moment of care, in the middle of an ordinary day.</p>
+      <div class="eyebrow label">Editorial serif — quiet voice lines</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 · BOARDS ============ -->
+<section class="board">
+  <div class="hud"><span>Kopi Kita</span><span class="index">Lockups / 02</span></div>
+  <div class="board-head">
+    <div class="eyebrow" data-reveal>Reduced Identity Assets</div>
+    <h2 data-reveal style="--d:80ms">One pour,<br>three working forms.</h2>
+  </div>
+  <div class="asset-grid">
+    <div class="asset-card" data-reveal>
+      <img src="assets/kopi-kita-lockup-horizontal.svg" alt="Kopi Kita horizontal lockup with small mark" />
+    </div>
+    <div class="asset-card" data-reveal style="--d:80ms">
+      <img src="assets/kopi-kita-lockup-stacked.svg" alt="Kopi Kita stacked lockup" />
+    </div>
+    <div class="asset-card" data-reveal style="--d:160ms">
+      <img src="assets/kopi-kita-small-mark.svg" alt="Kopi Kita reduced small mark" />
+    </div>
+  </div>
+</section>
+
+<section class="board">
+  <div class="hud"><span>Kopi Kita</span><span class="index">Boards / 03</span></div>
+  <div class="board-head">
+    <div class="eyebrow" data-reveal>The Boards</div>
+    <h2 data-reveal style="--d:80ms">The identity,<br>board by board.</h2>
+  </div>
+  <div class="gallery">
+    <div class="plate" data-reveal>
+      <figure>
+        <img src="01-opening.png" alt="Kopi Kita opening board: wordmark and brand introduction on bone paper" loading="lazy" />
+        <figcaption><span><span class="no">01</span>&nbsp; Opening</span><span>1080 × 1350 / square variant included</span></figcaption>
+      </figure>
+    </div>
+    <div class="plate" data-reveal>
+      <figure>
+        <img src="02-brand-identity.png" alt="Kopi Kita brand identity board: brand voice, colour system, and type direction beside the pour illustration" loading="lazy" />
+        <figcaption><span><span class="no">02</span>&nbsp; Brand Identity</span><span>1080 × 1350 / square variant included</span></figcaption>
+      </figure>
+    </div>
+    <div class="plate" data-reveal>
+      <figure>
+        <img src="03-brand-world.png" alt="Kopi Kita brand world board: applications and environment" loading="lazy" />
+        <figcaption><span><span class="no">03</span>&nbsp; Brand World</span><span>1080 × 1350 / square variant included</span></figcaption>
+      </figure>
+    </div>
+    <div class="plate" data-reveal>
+      <figure>
+        <img src="04-core-illustration.png" alt="Kopi Kita core illustration: hand pouring kopi from a steel kettle into a floral porcelain cup" loading="lazy" />
+        <figcaption><span><span class="no">04</span>&nbsp; Core Illustration + 48/24px proof</span><span>1080 × 1350 / square variant included</span></figcaption>
+      </figure>
+    </div>
+    <div class="plate" data-reveal>
+      <figure>
+        <video src="05-kopi-kita-pour-study.mp4" controls preload="metadata">
+          <track kind="captions" label="English captions" srclang="en"
+                 src="data:text/vtt;charset=utf-8,WEBVTT%0A%0A00:00.000--%3E02:00.000%0AThe%20pour%20study%20%E2%80%94%20a%20hand%20tilts%20the%20kettle%20and%20pours%20kopi%20into%20the%20cup.%20No%20dialogue%20in%20this%20clip.">
+        </video>
+        <figcaption><span><span class="no">05</span>&nbsp; Pour Study — Motion</span><span>MP4 + reduced demo in source folder</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 · CLOSING ============ -->
+<section class="closing">
+  <div class="hud"><span>Kopi Kita</span><span class="index">Closing / 05</span></div>
+  <div class="closing-body">
+    <svg class="mark" viewBox="0 0 120 80" aria-hidden="true">
+      <g fill="none" stroke="#16130F" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M 14,30 L 52,30 C 55,42 54,52 47,58 L 21,58 C 13,52 12,42 14,30 Z" fill="#EBE1CF"/>
+        <ellipse cx="33" cy="29" rx="20" ry="4" fill="#EBE1CF"/>
+        <path d="M 50,44 C 60,42 64,48 62,54" />
+        <path d="M 74,52 C 74,60 80,64 88,64 C 96,64 102,60 102,52 C 102,46 98,42 92,41" fill="#EBE1CF"/>
+        <path d="M 70,64 L 108,64" />
+      </g>
+    </svg>
+    <h2 data-reveal>Kopi Kita.</h2>
+    <p data-reveal style="--d:100ms">One kettle. One cup. One small moment of care.</p>
+  </div>
+  <footer>
+    <span>Kopi Kita — Brand Identity</span>
+    <span>Monochrome Branding / 02 — Carousel Design Studio</span>
+    <span>2026</span>
+  </footer>
+</section>
+
+</main>
+
+<script>
+(function () {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- reveal on scroll ---- */
+  var revealEls = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window && !reduced) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ---- progress rail (document-wide) ---- */
+  var railFill = document.getElementById('railFill');
+  function updateRail() {
+    var doc = document.documentElement;
+    var max = doc.scrollHeight - window.innerHeight;
+    var p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+    railFill.style.transform = 'scaleX(' + p + ')';
+  }
+
+  /* ---- scroll-poured scene ---- */
+  var track = document.getElementById('pourTrack');
+  var group = document.getElementById('pourGroup');
+  var stream = document.getElementById('stream');
+  var cupFill = document.getElementById('cupFill');
+  var steam = document.getElementById('steam');
+  var pourLine = document.getElementById('pourLine');
+
+  var STREAM_LEN = stream.getTotalLength();
+  stream.style.strokeDasharray = STREAM_LEN;
+  stream.style.strokeDashoffset = STREAM_LEN;
+
+  function ease(t) { return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; }
+  function seg(p, a, b) { return Math.min(1, Math.max(0, (p - a) / (b - a))); }
+
+  function updatePour() {
+    var rect = track.getBoundingClientRect();
+    var total = track.offsetHeight - window.innerHeight;
+    var p = total > 0 ? Math.min(1, Math.max(0, -rect.top / total)) : 0;
+
+    // kettle tilt: 0 -> 26deg over 0.08-0.5
+    var tilt = ease(seg(p, 0.08, 0.5)) * 26;
+    group.style.transform = 'rotate(' + tilt + 'deg)';
+
+    // stream draws 0.3 -> 0.58
+    var s = seg(p, 0.3, 0.58);
+    stream.style.strokeDashoffset = STREAM_LEN * (1 - ease(s));
+
+    // cup fills 0.52 -> 0.85
+    var f = ease(seg(p, 0.52, 0.85));
+    cupFill.style.transform = 'translateY(' + (24 * (1 - f)) + 'px)';
+
+    // steam 0.82 -> 0.94
+    steam.setAttribute('opacity', String(seg(p, 0.82, 0.94)));
+
+    // caption swap at completion
+    pourLine.textContent = p > 0.9 ? 'Served. One small moment of care.' : 'The pour is the whole story.';
+  }
+
+  if (!reduced) {
+    var ticking = false;
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        updateRail();
+        updatePour();
+        ticking = false;
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    onScroll();
+  } else {
+    updateRail();
+  }
+})();
+</script>
+</body>
+</html>

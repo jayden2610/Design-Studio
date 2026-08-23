@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Mindset Daily — Editorial Contrast wordmark</title>
+  <desc id="desc">A high-contrast serif and sans-serif text-only Mindset Daily logo on white.</desc>
+  <rect width="1080" height="1080" fill="#FFFFFF"/>
+  <!-- One quiet editorial thought, then the recurring daily beat. -->
+  <text x="540" y="480" text-anchor="middle" fill="#111111" font-family="Georgia, 'Times New Roman', serif" font-size="176" font-weight="700" letter-spacing="-12">Mindset</text>
+  <text x="540" y="635" text-anchor="middle" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="53" font-weight="700" letter-spacing="24">DAILY</text>
+</svg>

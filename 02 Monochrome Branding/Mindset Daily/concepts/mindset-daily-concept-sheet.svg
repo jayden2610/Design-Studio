@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1200" viewBox="0 0 1800 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Mindset Daily minimal TikTok logo concepts</title>
+  <desc id="desc">Three monochrome logo directions on white: Editorial Pulse, Daily Reset, and Focus Frame.</desc>
+  <rect width="1800" height="1200" fill="#F7F7F5"/>
+  <text x="100" y="115" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700" letter-spacing="8">MINDSET DAILY</text>
+  <text x="100" y="165" fill="#111111" font-family="Georgia, serif" font-size="37">TikTok profile-logo directions</text>
+  <g transform="translate(100 270)">
+    <rect width="480" height="750" rx="18" fill="#FFFFFF"/>
+    <text x="42" y="62" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="4">01 / EDITORIAL PULSE</text>
+    <circle cx="240" cy="342" r="190" fill="#111111"/>
+    <path d="M111 435V249h36l46 87 46-87h36v186h-40V336l-32 62h-23l-32-62v99z" fill="#FFFFFF"/>
+    <path d="M295 249h19c62 0 90 36 90 93s-28 93-90 93h-19zm40 42v102c21-2 38-15 38-51s-17-49-38-51z" fill="#FFFFFF"/>
+    <text x="240" y="595" text-anchor="middle" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="6">MINDSET DAILY</text>
+    <text x="42" y="660" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="20">A confident social-first</text>
+    <text x="42" y="692" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="20">monogram with authority.</text>
+  </g>
+  <g transform="translate(660 270)">
+    <rect width="480" height="750" rx="18" fill="#FFFFFF"/>
+    <text x="42" y="62" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="4">02 / DAILY RESET</text>
+    <path d="M394 286A190 190 0 1 0 410 394" fill="none" stroke="#111111" stroke-width="32" stroke-linecap="round"/>
+    <path d="M392 203v110H282" fill="none" stroke="#111111" stroke-width="32" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="240" y="355" text-anchor="middle" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="94" font-weight="800" letter-spacing="-6">MD</text>
+    <text x="240" y="595" text-anchor="middle" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="6">MINDSET DAILY</text>
+    <text x="42" y="660" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="20">A ritual cue for showing</text>
+    <text x="42" y="692" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="20">up, resetting, repeating.</text>
+  </g>
+  <g transform="translate(1220 270)">
+    <rect width="480" height="750" rx="18" fill="#FFFFFF"/>
+    <text x="42" y="62" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" letter-spacing="4">03 / FOCUS FRAME</text>
+    <path d="M90 280V160h120M270 160h120v120M390 400v120H270M210 520H90V400" fill="none" stroke="#111111" stroke-width="32"/>
+    <text x="240" y="333" text-anchor="middle" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="800" letter-spacing="-3">MINDSET</text>
+    <rect x="170" y="357" width="140" height="7" fill="#111111"/>
+    <text x="240" y="421" text-anchor="middle" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" letter-spacing="8">DAILY</text>
+    <text x="240" y="595" text-anchor="middle" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="6">MINDSET DAILY</text>
+    <text x="42" y="660" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="20">An editorial lens for</text>
+    <text x="42" y="692" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="20">practical, clear thinking.</text>
+  </g>
+</svg>

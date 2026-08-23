@@ -6,6 +6,14 @@ Before starting or revising a portfolio project, read [BRAND_IDENTITY_WORKFLOW.m
 
 `Assets/01_Approved_Illustrations/` contains the approved illustration masters. `Assets/02_Logo_Explorations/` contains the studies used to understand their visual logic. `Assets/03_Brand_Projects/` contains working project assets, including motion builds.
 
+## Non-negotiable: use rendered raster illustration for the primary mark
+
+The approved primary illustrations in `Assets/01_Approved_Illustrations/` are OpenAI `gpt-image` v2 raster renders. Their embedded C2PA Content Credentials identify the OpenAI Media Service API as the source. They are the quality and production reference for future primary marks.
+
+**Do not build, trace, or substitute the primary illustration with hand-coded SVG paths.** A primary mark must begin as an original rendered or manually drawn ink illustration, then be selected and refined as a high-resolution PNG. SVG is allowed only after that stage for a deliberately reduced utility asset (for example, a small icon, stamp, or reverse mark); it is never a substitute for the expressive primary illustration.
+
+`Assets/02_Logo_Explorations/02_Rebuilt_Studies/` contains only exploratory rendered PNG studies. It is not a source for coded primary marks.
+
 ## Start here: rendered logo library
 
 These are the actual approved raster illustrations, not placeholders. Use them as the source artwork whenever a logo is shown in a case-study page, a mockup, or motion. Do not ask an image model to redraw the logo, wordmark, or readable copy.
@@ -30,8 +38,8 @@ This is the repeatable production path behind the rendered work above.
 2. **Lock the three things that must read instantly:** one hero object, one action, and one business cue. If a viewer needs a second sentence to understand the mark, reduce the idea.
 3. **Make two or three monochrome studies.** Change only crop, angle, or pose. Keep the same ritual so the comparison tests clarity rather than inventing new concepts.
 4. **Choose the fastest three-second read, then simplify it.** Build the silhouette in black first. Remove background detail, extra props, and texture before adding selective interior ink detail.
-5. **Create the approved master.** Export the full illustration as a high-resolution PNG in `Assets/01_Approved_Illustrations/`; record exploratory variants in `Assets/02_Logo_Explorations/`. Make a reduced mark only if the silhouette still works at small size.
-6. **Apply, don’t regenerate.** Use the approved master in the hero environment, packaging, and logo page. Image generation may create food, locations, materials, and lighting; it must not be trusted to reproduce the actual mark, wordmark, or legible brand copy.
+5. **Create the approved master.** Generate or draw the full ink illustration as a high-resolution PNG in `Assets/01_Approved_Illustrations/`; record exploratory raster variants in `Assets/02_Logo_Explorations/`. Do not replace this step with SVG paths. Make a reduced mark only if the silhouette still works at small size.
+6. **Apply, don’t regenerate.** Once a primary illustration is approved, use that exact PNG in the hero environment, packaging, and logo page. `gpt-image` may be used to create and compare new primary-illustration candidates during Steps 3–5, but never ask it to reproduce an already approved mark, wordmark, or legible brand copy.
 7. **Prove continuity.** Deliverable 04 isolates this exact mark. Deliverable 05 animates the same hero, action, composition, and visual world—never a second logo concept.
 
 For the detailed gates, prompts, portfolio order, and motion handoff, follow [BRAND_IDENTITY_WORKFLOW.md](./BRAND_IDENTITY_WORKFLOW.md).
@@ -53,7 +61,8 @@ For the detailed gates, prompts, portfolio order, and motion handoff, follow [BR
 - The final folder contains only flattened deliverables. There are no editable source files, layout files, prompts, or build scripts for slides 01–03, so their exact authoring tool and whether any individual visual came from GPT Image cannot be proven from this workspace.
 - Slide 01 visibly combines direct typography with a photorealistic storefront image. Slide 03 visibly combines a drawn storefront with isolated product imagery. Treat these as controlled composites, not as evidence that generated text or logos should be trusted.
 - The motion build *is* traceable in `Assets/03_Brand_Projects/bagel-brand/03_Motion_Assets/`, with keyframes, layers, render scripts, prototypes, and exports.
-- Bagel has one legacy continuity break: slide 04 presents **Open for Bagels**, while slide 05 animates the separate **Bagel Handoff** illustration. This is useful evidence of the prior build, but it is not the rule for future projects.
+- `05-bagel-storyboard.mp4` is the exported whiteboard animation for **Open for Bagels**. Its source scene, annotation, preview, and SRT live in `Assets/03_Brand_Projects/bagel-brand/03_Motion_Assets/whiteboard-source/open-for-bagels/`. The originating workflow is [geeklee/srt-whiteboard-animation](https://github.com/geeklee/srt-whiteboard-animation): an SRT-driven, region-annotated whiteboard renderer. Treat this repository as the canonical reference if the motion needs to be recreated or extended.
+- Bagel's final 04 and 05 are continuous: both use **Open for Bagels**. The separate `bagel-handoff-motion` working renders are useful experiments, but they are not the video in the final portfolio folder.
 
 ## Required pattern for all future projects
 

@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gimbap Roll — Procedural Sushi Generator</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Playfair+Display:ital,wght@1,500&display=swap');
+  :root {
+    --rice:#F0EBDC; --ink:#1C1F1B; --chilli:#C2451F; --muted:#6B6F63; --line:#CFC8B4;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--rice); color:var(--ink); font-family:'Archivo',sans-serif; min-height:100vh; display:flex; flex-direction:column; }
+
+  .hud { display:flex; justify-content:space-between; align-items:center; padding:28px 48px 12px; font-size:13px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; }
+  .hud .brand { color:var(--chilli); }
+  .hud .index { color:var(--muted); }
+  .lede { text-align:center; font-family:'Playfair Display',serif; font-style:italic; color:var(--muted); font-size:clamp(15px,1.6vw,20px); padding:0 48px 10px; }
+
+  #stage { flex:1; display:flex; align-items:center; justify-content:center; padding:0 24px; min-height:0; }
+  #art { width:min(100%, calc((100vh - 210px) * 16 / 9)); max-height:100%; display:block; }
+
+  .controls { display:flex; justify-content:center; align-items:center; gap:14px; flex-wrap:wrap; padding:18px 24px 30px; }
+  button, .chip {
+    font-family:'Archivo',sans-serif; font-size:12px; font-weight:800; letter-spacing:.18em; text-transform:uppercase;
+    background:transparent; color:var(--ink); border:3px solid var(--ink); padding:10px 18px; cursor:pointer;
+    transition:background .15s, color .15s;
+  }
+  button:hover { background:var(--ink); color:var(--rice); }
+  .chip.off { opacity:.35; border-style:dashed; }
+  .chip.on { background:var(--chilli); border-color:var(--chilli); color:var(--rice); }
+  #seedLabel { font-size:12px; font-weight:700; letter-spacing:.18em; color:var(--muted); min-width:110px; text-align:center; }
+</style>
+</head>
+<body>
+
+  <div class="hud"><span class="brand">Gimbap Roll</span><span class="index" id="seedLabel">Seed —</span></div>
+  <p class="lede">One function. Infinite rolls. No image models.</p>
+
+  <div id="stage"><svg id="art" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg"></svg></div>
+
+  <div class="controls">
+    <button id="reroll">Re-roll</button>
+    <span id="seedLabel"></span>
+    <button class="chip" data-filling="tuna">Tuna</button>
+    <button class="chip" data-filling="tamago">Tamago</button>
+    <button class="chip" data-filling="cucumber">Cucumber</button>
+    <button class="chip" data-filling="avocado">Avocado</button>
+    <button id="cutToggle">Cut piece</button>
+    <button id="download">Download SVG</button>
+  </div>
+
+<script>
+const NS = 'http://www.w3.org/2000/svg';
+const INK = '#1C1F1B', RICE = '#F0EBDC', CHILLI = '#C2451F';
+const SLAT = '#EFE9D6', TAMAGO = '#F5E7B8', CUCUMBER = '#DCE4C4', AVOCADO = '#E4D9AE';
+
+function mulberry(seed){ return function(){ seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+
+function el(name, attrs, parent){
+  const n = document.createElementNS(NS, name);
+  for (const k in attrs) n.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(n);
+  return n;
+}
+const lerp = (a,b,t) => ({ x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t });
+const P = (p) => `${p.x.toFixed(1)},${p.y.toFixed(1)}`;
+
+const FILLING_STYLE = {
+  tuna:     { fill: CHILLI },
+  tamago:   { fill: TAMAGO, hatch: true },
+  cucumber: { fill: CUCUMBER, seeds: true },
+  avocado:  { fill: AVOCADO, pit: true },
+};
+
+function genSushi(cfg){
+  const rnd = mulberry(cfg.seed);
+  const svg = document.getElementById('art');
+  svg.innerHTML = '';
+
+  const defs = el('defs', {}, svg);
+  const wob = el('filter', { id:'wobble', x:'-6%', y:'-6%', width:'112%', height:'112%' }, defs);
+  el('feTurbulence', { type:'fractalNoise', baseFrequency:'0.013', numOctaves:'2', seed: cfg.seed % 1000, result:'n' }, wob);
+  el('feDisplacementMap', { in:'SourceGraphic', in2:'n', scale:'7' }, wob);
+  const paper = el('filter', { id:'paper', x:'0%', y:'0%', width:'100%', height:'100%' }, defs);
+  el('feTurbulence', { type:'fractalNoise', baseFrequency:'0.75', numOctaves:'2', seed:(cfg.seed*7) % 997 }, paper);
+  el('feColorMatrix', { type:'matrix', values:`0 0 0 0 ${parseFloat(INK.slice(1,3),16)/255} 0 0 0 0 ${parseFloat(INK.slice(3,5),16)/255} 0 0 0 0 ${parseFloat(INK.slice(5,7),16)/255} 0 0 0 0.05 0` }, paper);
+
+  const art = el('g', { filter:'url(#wobble)' }, svg);
+
+  const FL = { x:130, y:655 }, FR = { x:1470, y:715 };
+  const BL = { x:430, y:462 }, BR = { x:1570, y:538 };
+
+  const mat = el('g', {}, art);
+  const slats = 14;
+  for (let i = 0; i < slats; i++){
+    const t = i / (slats - 1);
+    let s = lerp(FL, BL, t), e = lerp(FR, BR, t);
+    const dx = e.x - s.x, dy = e.y - s.y, len = Math.hypot(dx, dy);
+    const ux = dx / len, uy = dy / len;
+    const a = rnd() * 26 - 13, b = rnd() * 26 - 13;
+    s = { x: s.x + ux * a, y: s.y + uy * a };
+    e = { x: e.x - ux * b, y: e.y - uy * b };
+    el('line', { x1:s.x, y1:s.y, x2:e.x, y2:e.y, stroke:INK, 'stroke-width':25, 'stroke-linecap':'round' }, mat);
+    el('line', { x1:s.x, y1:s.y, x2:e.x, y2:e.y, stroke:SLAT, 'stroke-width':19, 'stroke-linecap':'round' }, mat);
+  }
+  const ties = 5;
+  for (let j = 0; j < ties; j++){
+    const t = 0.09 + j * (0.82 / (ties - 1));
+    const s = lerp(FL, FR, t), e = lerp(BL, BR, t);
+    const mx = (s.x + e.x) / 2 - 26, my = (s.y + e.y) / 2 + 6;
+    el('path', { d:`M ${P(s)} Q ${mx.toFixed(1)},${my.toFixed(1)} ${P(e)}`, fill:'none', stroke:INK, 'stroke-width':21, 'stroke-linecap':'round' }, mat);
+    el('path', { d:`M ${P(s)} Q ${mx.toFixed(1)},${my.toFixed(1)} ${P(e)}`, fill:'none', stroke:CHILLI, 'stroke-width':13, 'stroke-linecap':'round' }, mat);
+  }
+
+  const L = { x:500, y:505 }, R = { x:1130, y:548 };
+  const ryL = 106, ryR = 116;
+
+  const shadow = el('g', {}, art);
+  const sc = { x:(L.x + R.x) / 2, y:L.y + ryR + 42 };
+  for (let i = 0; i < 340; i++){
+    const a = rnd() * Math.PI * 2;
+    const rr = Math.sqrt(rnd());
+    const x = sc.x + Math.cos(a) * rr * 430;
+    const y = sc.y + Math.sin(a) * rr * 26;
+    const fall = 1 - rr * rr;
+    el('circle', { cx:x.toFixed(1), cy:y.toFixed(1), r:(0.8 + rnd() * 1.7).toFixed(1), fill:INK, opacity:(fall * 0.55).toFixed(2) }, shadow);
+  }
+
+  const roll = el('g', {}, art);
+  const body = `M ${L.x},${L.y - ryL}
+                A ${(ryL * 0.52).toFixed(0)},${ryL} 0 0 0 ${L.x},${L.y + ryL}
+                L ${R.x},${R.y + ryR}
+                L ${R.x},${R.y - ryR} Z`;
+  el('path', { d:body, fill:INK, stroke:INK, 'stroke-width':5, 'stroke-linejoin':'round' }, roll);
+
+  for (let i = 0; i < 380; i++){
+    const t = rnd();
+    const x = L.x + 14 + t * (R.x - L.x - 60);
+    const ry = ryL + (ryR - ryL) * ((x - L.x) / (R.x - L.x));
+    const band = Math.abs(x - R.x) < 150 ? 0.55 : 1;
+    if (rnd() > band) continue;
+    const y = L.y - ry + 14 + rnd() * (2 * ry - 28);
+    el('ellipse', {
+      cx:x.toFixed(1), cy:y.toFixed(1),
+      rx:(3.4 + rnd() * 4.6).toFixed(1), ry:(2.2 + rnd() * 2.6).toFixed(1),
+      fill:RICE, opacity:(0.7 + rnd() * 0.3).toFixed(2),
+      transform:`rotate(${(-78 + rnd() * 24).toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)})`
+    }, roll);
+  }
+
+  const cap = el('g', {}, art);
+  const C = { x:R.x + 34, y:R.y + 4 };
+  drawCrossSection(cap, C.x, C.y, 1, rnd, cfg.fillings);
+
+  if (cfg.cutPiece){
+    const piece = el('g', { transform:`translate(1330,190) rotate(${(rnd() * 24 - 12).toFixed(1)}) scale(0.42)` }, art);
+    drawCrossSection(piece, 0, 0, 1, rnd, cfg.fillings);
+  }
+
+  el('rect', { x:0, y:0, width:1600, height:900, filter:'url(#paper)' }, svg);
+}
+
+function drawCrossSection(parent, cx, cy, s, rnd, fillings){
+  const cap = el('g', {}, parent);
+  el('circle', { cx, cy, r:101 * s, fill:INK }, cap);
+
+  const phi1 = rnd() * Math.PI * 2, phi2 = rnd() * Math.PI * 2;
+  let d = '';
+  const steps = 120;
+  for (let i = 0; i <= steps; i++){
+    const th = (i / steps) * Math.PI * 2;
+    const r = (97 + 9 * Math.sin(8 * th + phi1) + 1.8 * Math.sin(16 * th + phi2)) * s;
+    const x = cx + Math.cos(th) * r;
+    const y = cy + Math.sin(th) * r * 1.1;
+    d += (i === 0 ? 'M' : 'L') + x.toFixed(1) + ',' + y.toFixed(1);
+  }
+  d += 'Z';
+  el('path', { d, fill:RICE, stroke:INK, 'stroke-width':5 * s }, cap);
+
+  for (let i = 0; i < 22; i++){
+    const th = (i / 22) * Math.PI * 2 + rnd() * 0.2;
+    const r1 = (74 + rnd() * 6) * s, r2 = r1 + (9 + rnd() * 6) * s;
+    el('line', {
+      x1:(cx + Math.cos(th) * r1).toFixed(1), y1:(cy + Math.sin(th) * r1 * 1.08).toFixed(1),
+      x2:(cx + Math.cos(th) * r2).toFixed(1), y2:(cy + Math.sin(th) * r2 * 1.08).toFixed(1),
+      stroke:INK, 'stroke-width':2.4 * s, 'stroke-linecap':'round', opacity:0.55
+    }, cap);
+  }
+
+  el('circle', { cx, cy, r:50 * s, fill:INK }, cap);
+
+  const pieces = fillings.length ? fillings : ['tuna'];
+  const k = pieces.length;
+  const off = rnd() * Math.PI * 2;
+  pieces.forEach((name, i) => {
+    const st = FILLING_STYLE[name] || FILLING_STYLE.tuna;
+    const th = off + (i / k) * Math.PI * 2;
+    const px = cx + Math.cos(th) * 29 * s;
+    const py = cy + Math.sin(th) * 27 * s;
+    const rot = th * 180 / Math.PI + 90 + (rnd() * 14 - 7);
+    const g = el('g', { transform:`translate(${px.toFixed(1)},${py.toFixed(1)}) rotate(${rot.toFixed(1)})` }, cap);
+    el('rect', { x:-30 * s, y:-20 * s, width:60 * s, height:40 * s, rx:11 * s, fill:st.fill, stroke:INK, 'stroke-width':4.5 * s }, g);
+    if (st.hatch) for (let h = -1; h <= 1; h++)
+      el('line', { x1:-17 * s, y1:h * 9 * s, x2:17 * s, y2:h * 9 * s, stroke:INK, 'stroke-width':2.4 * s, opacity:0.5 }, g);
+    if (st.seeds) for (let s2 = -1; s2 <= 1; s2++)
+      el('ellipse', { cx:s2 * 13 * s, cy:0, rx:3 * s, ry:5 * s, fill:INK, opacity:0.75 }, g);
+    if (st.pit) el('circle', { cx:0, cy:0, r:7.5 * s, fill:INK, opacity:0.8 }, g);
+  });
+  el('circle', { cx, cy, r:9 * s, fill:INK }, cap);
+}
+
+const ALL = ['tuna','tamago','cucumber','avocado'];
+let active = new Set(['tuna','tamago','cucumber']);
+let cutPiece = true;
+let seed = (Math.random() * 1e9) | 0;
+
+function regenerate(){
+  document.getElementById('seedLabel').textContent = 'Seed ' + seed;
+  genSushi({ seed, fillings: ALL.filter(f => active.has(f)), cutPiece });
+}
+
+document.getElementById('reroll').addEventListener('click', () => { seed = (Math.random() * 1e9) | 0; regenerate(); });
+document.querySelectorAll('.chip').forEach(ch => {
+  ch.classList.add(active.has(ch.dataset.filling) ? 'on' : 'off');
+  ch.addEventListener('click', () => {
+    const f = ch.dataset.filling;
+    if (active.has(f)) { active.delete(f); ch.classList.replace('on','off'); }
+    else { active.add(f); ch.classList.replace('off','on'); }
+    regenerate();
+  });
+});
+document.getElementById('cutToggle').addEventListener('click', function(){
+  cutPiece = !cutPiece;
+  this.style.background = cutPiece ? '' : 'transparent';
+  this.style.opacity = cutPiece ? '' : '.35';
+  this.style.borderStyle = cutPiece ? '' : 'dashed';
+  regenerate();
+});
+document.getElementById('download').addEventListener('click', () => {
+  const blob = new Blob([new XMLSerializer().serializeToString(document.getElementById('art'))], { type:'image/svg+xml' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `gimbap-${seed}.svg`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+});
+
+regenerate();
+</script>
+</body>
+</html>

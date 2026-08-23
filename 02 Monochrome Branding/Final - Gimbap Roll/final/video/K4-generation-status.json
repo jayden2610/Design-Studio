@@ -1,0 +1,7 @@
+﻿{
+    "status":  "running",
+    "model":  "fal-ai/stable-video",
+    "input":  "K4-gimbap-roll-start.png",
+    "output":  "K4-gimbap-roll.mp4",
+    "startedAt":  "2026-08-20T14:53:34.3912444+08:00"
+}

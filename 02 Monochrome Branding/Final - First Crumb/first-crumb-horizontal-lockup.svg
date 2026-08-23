@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 160" role="img" aria-labelledby="title">
+  <title id="title">First Crumb horizontal lockup</title>
+  <g transform="translate(8 8) scale(.95)">
+    <path d="M36 28 C68 6 126 10 152 44 C172 70 154 116 104 128 C78 134 64 119 70 101 C76 86 67 78 78 65 C66 55 72 41 54 38 C45 36 39 33 36 28Z" fill="#F8F1E4" stroke="#17120E" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M75 38 C66 51 78 57 68 70 C80 81 68 91 73 105" fill="none" stroke="#17120E" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M106 46 C116 40 127 48 124 59 C117 65 103 60 106 46Z" fill="#17120E"/>
+    <path d="M112 90 C123 83 134 92 129 103 C120 109 108 101 112 90Z" fill="#17120E"/>
+    <path d="M18 133 C58 124 111 124 164 132" fill="none" stroke="#17120E" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text x="190" y="86" font-family="Georgia, 'Times New Roman', serif" font-size="58" font-weight="700" letter-spacing="1.5" fill="#17120E">FIRST CRUMB</text>
+  <circle cx="396" cy="34" r="6" fill="#7A4A2E"/>
+  <text x="194" y="124" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="4" fill="#6F5B4B">COOKIES / SLEEVES / AFTERNOON SNAP</text>
+</svg>

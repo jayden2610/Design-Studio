@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080" viewBox="0 0 1080 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Mindset Daily — Daily Reset</title>
+  <desc id="desc">A minimal circular reset mark paired with a small Mindset Daily signature.</desc>
+  <rect width="1080" height="1080" fill="#FFFFFF"/>
+  <!-- The centre stays clear at profile-icon scale; the break makes a daily reset cue. -->
+  <path d="M782 470A248 248 0 1 0 803 611" fill="none" stroke="#111111" stroke-width="42" stroke-linecap="round"/>
+  <path d="M778 362v142H636" fill="none" stroke="#111111" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="540" y="568" text-anchor="middle" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="122" font-weight="800" letter-spacing="-7">MD</text>
+  <text x="540" y="910" text-anchor="middle" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" letter-spacing="9">MINDSET DAILY</text>
+</svg>

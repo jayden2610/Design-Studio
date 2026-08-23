@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Gimbap Roll — 02 / The Identity System</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Playfair+Display:ital,wght@1,500&display=swap');
+  :root {
+    --rice:#F0EBDC; --ink:#1C1F1B; --chilli:#C2451F; --perilla:#5C6452;
+    --muted:#6B6F63; --line:#CFC8B4;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html,body { width:1920px; height:1080px; }
+  body { background:var(--rice); color:var(--ink); font-family:'Archivo',sans-serif; padding:64px 84px 56px; display:flex; flex-direction:column; }
+  .meta { display:flex; justify-content:space-between; font-size:14px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; }
+  .meta .brand { color:var(--chilli); }
+  .meta .index { color:var(--muted); }
+  main { flex:1; display:flex; gap:96px; margin-top:48px; }
+  .left { width:960px; display:flex; flex-direction:column; }
+  h1 { font-size:118px; font-weight:800; line-height:.92; letter-spacing:-.03em; }
+  .mark { margin-top:48px; width:720px; }
+  .mark img { width:100%; display:block; mix-blend-mode:multiply; }
+  .voice-line { margin-top:auto; font-family:'Playfair Display',serif; font-style:italic; font-size:34px; color:var(--chilli); }
+  .right { flex:1; display:flex; flex-direction:column; }
+  .block { padding:34px 0; border-top:1px solid var(--line); }
+  .block:first-child { border-top:none; padding-top:8px; }
+  .label { font-size:13px; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); margin-bottom:20px; }
+  .voice-copy { font-family:'Playfair Display',serif; font-style:italic; font-size:24px; line-height:1.55; color:var(--ink); max-width:560px; }
+  .swatches { display:grid; grid-template-columns:1fr 1fr; gap:14px; max-width:560px; }
+  .swatch { height:96px; padding:12px 14px; display:flex; flex-direction:column; justify-content:flex-end; font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+  .swatch .hex { font-weight:500; letter-spacing:.06em; opacity:.75; margin-top:2px; }
+  .sw-ink { background:var(--ink); color:var(--rice); }
+  .sw-rice { background:var(--rice); color:var(--ink); border:1px solid var(--line); }
+  .sw-perilla { background:var(--perilla); color:var(--rice); }
+  .sw-chilli { background:var(--chilli); color:var(--rice); }
+  .type-row { display:flex; gap:48px; align-items:flex-end; }
+  .specimen { display:flex; align-items:baseline; gap:18px; }
+  .specimen .aa { font-size:64px; line-height:1; }
+  .specimen .aa.grotesque { font-weight:800; letter-spacing:-.02em; }
+  .specimen .aa.serif { font-family:'Playfair Display',serif; font-style:italic; }
+  .specimen .use { font-size:13px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); max-width:150px; line-height:1.5; }
+  .foot { margin-top:24px; font-size:13px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); }
+</style>
+</head>
+<body>
+  <div class="meta"><span class="brand">Gimbap Roll</span><span class="index">Brand Identity / 02</span></div>
+  <main>
+    <section class="left">
+      <h1>Gimbap<br>Roll.</h1>
+      <div class="mark"><img src="assets/logo-hand-roll.png" alt="Full hand-rolling gimbap — primary mark" /></div>
+      <div class="voice-line">Rolled fresh. Ready when you are.</div>
+    </section>
+    <section class="right">
+      <div class="block">
+        <div class="label">Brand Voice</div>
+        <p class="voice-copy">A precise, made-to-order lunch counter. Fast enough for a weekday; considered enough to return for.</p>
+      </div>
+      <div class="block">
+        <div class="label">Colour System</div>
+        <div class="swatches">
+          <div class="swatch sw-ink">Ink<span class="hex">#1C1F1B</span></div>
+          <div class="swatch sw-rice">Rice<span class="hex">#F0EBDC</span></div>
+          <div class="swatch sw-perilla">Perilla<span class="hex">#5C6452</span></div>
+          <div class="swatch sw-chilli">Chilli<span class="hex">#C2451F</span></div>
+        </div>
+      </div>
+      <div class="block">
+        <div class="label">Type System</div>
+        <div class="type-row">
+          <div class="specimen"><span class="aa grotesque">Aa</span><span class="use">Archivo — headlines &amp; utility</span></div>
+          <div class="specimen"><span class="aa serif">Aa</span><span class="use">Playfair Italic — voice lines</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="foot">The logo is the brand world's starting point.</div>
+</body>
+</html>

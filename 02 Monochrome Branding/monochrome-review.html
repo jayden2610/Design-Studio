@@ -3,60 +3,99 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Monochrome Branding - Logo Review</title>
+  <title>Monochrome Branding — Three Flagship Systems</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;1,500&display=swap');
-    :root { --ink:#171717; --paper:#e9e8e3; --line:#8e8d87; --muted:#676762; --white:#f7f6f1; }
+    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,600;1,500&display=swap');
+    :root { --ink:#171310; --paper:#e9e4da; --line:#91897e; --muted:#686159; --white:#f8f5ee; }
     * { box-sizing:border-box; }
-    body { margin:0; background:var(--paper); color:var(--ink); font-family:'DM Mono',monospace; }
-    body:before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.13; background-image:radial-gradient(#000 .55px,transparent .55px); background-size:5px 5px; }
-    main { max-width:1500px; margin:auto; padding:28px clamp(18px,4vw,64px) 64px; }
-    header { display:flex; justify-content:space-between; gap:24px; align-items:end; padding-bottom:28px; border-bottom:1px solid var(--ink); }
-    .eyebrow,.meta { font-size:11px; letter-spacing:.12em; text-transform:uppercase; }
-    h1 { margin:18px 0 8px; font:500 clamp(46px,8vw,118px)/.84 'Playfair Display',serif; letter-spacing:-.06em; }
-    p { max-width:540px; margin:0; color:var(--muted); font-size:12px; line-height:1.6; }
-    .mark { width:84px; height:84px; border:1px solid var(--ink); border-radius:50%; display:grid; place-items:center; font:italic 36px 'Playfair Display',serif; transform:rotate(-9deg); }
-    .toolbar { display:flex; justify-content:space-between; gap:16px; padding:18px 0; }
-    .wall { display:grid; grid-template-columns:repeat(12,1fr); gap:16px; }
-    figure { grid-column:span 4; margin:0; padding:8px; border:1px solid var(--ink); background:var(--white); cursor:zoom-in; transition:transform .2s ease,box-shadow .2s ease; }
-    figure:hover { transform:translateY(-5px) rotate(-.3deg); box-shadow:8px 8px 0 var(--ink); }
-    img { display:block; width:100%; aspect-ratio:1; object-fit:contain; filter:grayscale(1) contrast(1.05); }
-    figcaption { display:flex; justify-content:space-between; gap:10px; padding:11px 3px 3px; font-size:10px; text-transform:uppercase; }
-    dialog { width:min(940px,92vw); border:1px solid var(--ink); padding:12px; background:var(--paper); box-shadow:14px 14px 0 var(--ink); }
-    dialog::backdrop { background:rgba(23,23,23,.72); }
-    dialog img { max-height:78vh; margin:auto; }
-    button { display:block; margin:10px 0 0 auto; background:transparent; border:1px solid var(--ink); padding:9px 12px; font:10px 'DM Mono',monospace; cursor:pointer; }
-    @media (max-width:760px) { .mark { display:none; } figure { grid-column:span 6; } }
-    @media (max-width:480px) { figure { grid-column:1/-1; } }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:'DM Mono',Consolas,monospace; }
+    body::before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.09; background-image:radial-gradient(#000 .55px,transparent .55px); background-size:5px 5px; }
+    a { color:inherit; }
+    main { max-width:1580px; margin:auto; padding:30px clamp(18px,4vw,64px) 72px; }
+    header { display:flex; justify-content:space-between; gap:28px; align-items:end; padding-bottom:30px; border-bottom:1px solid var(--ink); }
+    .eyebrow,.meta,.section-meta { font-size:11px; letter-spacing:.14em; text-transform:uppercase; }
+    h1 { margin:18px 0 12px; max-width:900px; font:600 clamp(46px,7.6vw,112px)/.86 'Playfair Display',Georgia,serif; letter-spacing:-.055em; }
+    header p { max-width:670px; margin:0; color:var(--muted); font-size:12px; line-height:1.65; }
+    .mark { flex:0 0 auto; width:92px; height:92px; border:1px solid var(--ink); border-radius:50%; display:grid; place-items:center; font:italic 38px 'Playfair Display',Georgia,serif; transform:rotate(-8deg); }
+    .summary { display:flex; justify-content:space-between; gap:20px; padding:18px 0 4px; }
+    .project { padding:34px 0 44px; border-bottom:1px solid var(--line); }
+    .project-head { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:24px; align-items:end; margin-bottom:18px; }
+    h2 { margin:8px 0 4px; font:600 clamp(34px,4.4vw,66px)/.95 'Playfair Display',Georgia,serif; letter-spacing:-.035em; }
+    .ritual { margin:0; color:var(--muted); font-size:12px; line-height:1.55; }
+    .links { display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; }
+    .links a { padding:9px 11px; border:1px solid var(--ink); background:var(--white); text-decoration:none; font-size:10px; text-transform:uppercase; letter-spacing:.1em; }
+    .links a:hover { background:var(--ink); color:var(--white); }
+    .wall { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:14px; }
+    figure { min-width:0; margin:0; padding:7px; border:1px solid var(--ink); background:var(--white); cursor:zoom-in; transition:transform .18s ease,box-shadow .18s ease; }
+    figure:hover { transform:translateY(-4px); box-shadow:7px 7px 0 var(--ink); }
+    figure img { display:block; width:100%; aspect-ratio:4/5; object-fit:contain; background:#f7f3eb; }
+    figcaption { display:flex; justify-content:space-between; gap:10px; padding:10px 2px 2px; font-size:9px; line-height:1.35; text-transform:uppercase; }
+    dialog { width:min(960px,94vw); border:1px solid var(--ink); padding:12px; background:var(--paper); box-shadow:14px 14px 0 var(--ink); }
+    dialog::backdrop { background:rgba(23,19,16,.76); }
+    dialog img { display:block; max-width:100%; max-height:82vh; margin:auto; object-fit:contain; }
+    dialog button { display:block; margin:10px 0 0 auto; background:transparent; border:1px solid var(--ink); padding:9px 12px; font:10px 'DM Mono',Consolas,monospace; cursor:pointer; }
+    @media (max-width:1100px) { .wall { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+    @media (max-width:760px) { .mark { display:none; } .project-head { grid-template-columns:1fr; } .links { justify-content:flex-start; } .wall { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media (max-width:480px) { .wall { grid-template-columns:1fr; } }
   </style>
 </head>
 <body>
   <main>
     <header>
-      <div><div class="eyebrow">02 / Monochrome Branding</div><h1>Illustrated<br><em>logo studies.</em></h1><p>Eight rendered studies: six original exploration references plus the two focused new-flow rebuilds for First Crumb and Noodle Signal.</p></div>
+      <div>
+        <div class="eyebrow">02 / Monochrome Branding</div>
+        <h1>Three systems.<br><em>Open tomorrow.</em></h1>
+        <p>Kopi Kita, Open for Bagels, and First Crumb — each shown in the same five-deliverable order, with a derived compact mark, one inevitable lockup, and real operating proof.</p>
+      </div>
       <div class="mark" aria-hidden="true">M</div>
     </header>
-    <div class="toolbar"><div class="meta">Approved monochrome illustrations</div><div class="meta" id="count"></div></div>
-    <section class="wall" id="wall" aria-live="polite"></section>
+    <div class="summary"><div class="meta">Reduction / lockup / brand world</div><div class="meta" id="count"></div></div>
+    <div id="projects"></div>
   </main>
   <dialog id="viewer"><img id="viewerImage" alt="" /><button id="close">Close / Esc</button></dialog>
   <script>
-    const assets = [
-      ['Assets/01_Approved_Illustrations/fnb-logo-01-bagel-handoff.png','Bagel handoff / food study'],
-      ['Assets/01_Approved_Illustrations/fnb-logo-01-gimbap-roll.png','Gimbap roll / food study'],
-      ['Assets/01_Approved_Illustrations/fnb-logo-02-concha-cooling.png','Concha cooling / food study'],
-      ['Assets/01_Approved_Illustrations/fnb-logo-02-open-for-bagels.png','Open for Bagels / food study'],
-      ['Assets/01_Approved_Illustrations/logo-vignette-01-opening-the-shop.png','Opening the shop / logo vignette'],
-      ['Assets/01_Approved_Illustrations/logo-vignette-03-the-recommendation.png','The recommendation / logo vignette'],
-      ['Assets/02_Logo_Explorations/02_Rebuilt_Studies/first-crumb-cookie-ritual-v1.png','First Crumb / cookie-breaking ritual'],
-      ['Assets/02_Logo_Explorations/02_Rebuilt_Studies/noodle-signal-lift-ritual-v1.png','Noodle Signal / lifted-noodle ritual']
+    const projects = [
+      {
+        name:'Kopi Kita',
+        ritual:'A hand pours kopi into a floral cup at a kopitiam counter.',
+        folder:'Final - Kopi Kita',
+        site:'Final - Kopi Kita/kopi-kita-site.html',
+        motion:'Assets/03_Brand_Projects/kopi-kita/03_Motion_Assets/kopi-kita-pour-motion/demo.html',
+        boards:['01-opening.png','02-brand-identity.png','03-brand-world.png','04-core-illustration.png','05-motion-study.png']
+      },
+      {
+        name:'Open for Bagels',
+        ritual:'A hand turns a hanging bagel sign beneath a terracotta awning.',
+        folder:'Final - Bagel Portfolio',
+        site:'Final - Bagel Portfolio/open-for-bagels-site.html',
+        boards:['01-opening-storyboard.png','02-brand-identity-description.png','03-storefront-and-sticker-set.png','04-core-logo-illustration.png','05-motion-study.png']
+      },
+      {
+        name:'First Crumb',
+        ritual:'A hand breaks one chocolate-chip cookie over a folded wax-paper sleeve.',
+        folder:'Final - First Crumb',
+        site:'Final - First Crumb/first-crumb-site.html',
+        motion:'Final - First Crumb/first-crumb-snap-demo.html',
+        boards:['01-opening.png','02-brand-identity.png','03-brand-world.png','04-core-illustration.png','05-snap-motion.png']
+      }
     ];
-    const wall=document.querySelector('#wall'),viewer=document.querySelector('#viewer'),viewerImage=document.querySelector('#viewerImage');
-    document.querySelector('#count').textContent=`${String(assets.length).padStart(2,'0')} marks`;
-    wall.innerHTML=assets.map(([file,label],index)=>`<figure data-file="${file}" tabindex="0" role="button" aria-label="Open ${label}"><img loading="lazy" src="${file}" alt="${label}" /><figcaption><span>${String(index+1).padStart(2,'0')} - ${label}</span><span>${file.endsWith('.svg')?'SVG':'PNG'}</span></figcaption></figure>`).join('');
-    function open(card){viewerImage.src=card.dataset.file;viewerImage.alt=card.querySelector('img').alt;viewer.showModal();}
-    wall.querySelectorAll('figure').forEach(card=>{card.addEventListener('click',()=>open(card));card.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();open(card);}});});
-    document.querySelector('#close').addEventListener('click',()=>viewer.close());viewer.addEventListener('click',event=>{if(event.target===viewer)viewer.close();});
+    const labels=['01 Opening','02 Identity','03 Brand world','04 Reduction','05 Motion'];
+    const root=document.querySelector('#projects');
+    const total=projects.reduce((sum,project)=>sum+project.boards.length,0);
+    document.querySelector('#count').textContent=`${projects.length} systems / ${total} boards`;
+    root.innerHTML=projects.map((project,index)=>`
+      <section class="project" aria-labelledby="project-${index}">
+        <div class="project-head">
+          <div><div class="section-meta">0${index+1} / Flagship system</div><h2 id="project-${index}">${project.name}</h2><p class="ritual">${project.ritual}</p></div>
+          <div class="links"><a href="${project.site}">System site</a>${project.motion?`<a href="${project.motion}">Motion demo</a>`:''}</div>
+        </div>
+        <div class="wall">${project.boards.map((file,boardIndex)=>`<figure data-file="${project.folder}/${file}" tabindex="0" role="button" aria-label="Open ${project.name} ${labels[boardIndex]}"><img loading="lazy" src="${project.folder}/${file}" alt="${project.name} — ${labels[boardIndex]}" /><figcaption><span>${labels[boardIndex]}</span><span>PNG</span></figcaption></figure>`).join('')}</div>
+      </section>`).join('');
+    const viewer=document.querySelector('#viewer'),viewerImage=document.querySelector('#viewerImage');
+    function openCard(card){viewerImage.src=card.dataset.file;viewerImage.alt=card.querySelector('img').alt;viewer.showModal();}
+    root.querySelectorAll('figure').forEach(card=>{card.addEventListener('click',()=>openCard(card));card.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();openCard(card);}});});
+    document.querySelector('#close').addEventListener('click',()=>viewer.close());
+    viewer.addEventListener('click',event=>{if(event.target===viewer)viewer.close();});
   </script>
 </body>
 </html>
