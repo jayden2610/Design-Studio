@@ -9,6 +9,7 @@
 
   const params = new URLSearchParams(location.search);
   const contactMode = params.has("contact") || document.body.dataset.mode === "contact";
+  const exportMode = params.has("export");
   const captureMode = params.has("capture");
   const holdMode = params.has("hold") || contactMode;
   const startBeat = clampBeat(Number.parseInt(params.get("beat") ?? "", 10));
@@ -170,7 +171,7 @@
     stage.remove();
   }
 
-  document.body.classList.toggle("is-capture", captureMode);
+  document.body.classList.toggle("is-capture", captureMode || exportMode);
 
   if (contactMode) {
     renderContact();
