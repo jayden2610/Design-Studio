@@ -1,11 +1,10 @@
 (() => {
   const BEATS = Object.freeze([
-    { id: "logo", label: "01 / Mark", file: "01_logo_hierarchy", ms: 1700 },
-    { id: "colour", label: "02 / Colour", file: "02_color_palette", ms: 1600 },
-    { id: "type", label: "03 / Type", file: "03_typography_tagline", ms: 1700 },
-    { id: "pattern", label: "04 / Pattern", file: "04_brand_pattern", ms: 1700 },
+    { id: "logo", label: "01 / Mark", file: "01_logo_hierarchy", ms: 2800 },
+    { id: "colour", label: "02 / Colour", file: "02_color_palette", ms: 1500 },
+    { id: "type", label: "03 / Type", file: "03_typography_tagline", ms: 1600 },
+    { id: "pattern", label: "04 / Pattern", file: "04_brand_pattern", ms: 1800 },
     { id: "packaging", label: "05 / Packaging", file: "05_packaging_action", ms: 2300 },
-    { id: "grid", label: "06 / Grid", file: "06_outro_3x3_grid", ms: 3000 },
   ]);
 
   const params = new URLSearchParams(location.search);
@@ -139,7 +138,7 @@
     if (!contactWall || !contactRow || !stage) return;
     document.body.classList.add("is-contact");
     contactWall.hidden = false;
-    const scale = Math.min(0.22, Math.max(0.14, (window.innerWidth - 80) / 6 / 1080));
+    const scale = Math.min(0.26, Math.max(0.16, (window.innerWidth - 80) / 5 / 1080));
     document.documentElement.style.setProperty("--contact-scale", String(scale));
     BEATS.forEach((beat, beatIndex) => {
       const figure = document.createElement("figure");
@@ -205,7 +204,7 @@
     if (event.key === "ArrowRight") step(1);
     if (event.key === "ArrowLeft") step(-1);
     const numeric = Number.parseInt(event.key, 10);
-    if (numeric >= 1 && numeric <= 6) {
+    if (numeric >= 1 && numeric <= 5) {
       playing = false;
       window.clearTimeout(timer);
       show(numeric - 1, { animate: !reduced });
