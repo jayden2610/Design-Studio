@@ -292,16 +292,13 @@ button[aria-pressed="true"] {
   overflow: hidden;
   flex: 0 0 168px;
   background: var(--rice);
-  position: relative;
   box-shadow: 0 0 0 2px var(--ink);
 }
 .small-mark img {
-  position: absolute;
-  max-width: none;
-  width: 1169px;
-  height: 657px;
-  left: -928px;
-  top: -51px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 .lockup-meta {
   display: flex;
@@ -487,9 +484,9 @@ button[aria-pressed="true"] {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-rows: repeat(3, minmax(0, 1fr));
-  gap: 3px;
+  gap: 1px;
   min-height: 0;
-  background: var(--rice);
+  background: var(--line);
 }
 .tile {
   min-width: 0;
@@ -505,15 +502,15 @@ button[aria-pressed="true"] {
   display: block;
 }
 .tile-mark,
-.tile-roll,
-.tile-mat {
+.tile-badge,
+.tile-sticker-solo {
   display: grid;
   place-items: center;
-  padding: 12px;
+  padding: 16px;
 }
 .tile-mark img,
-.tile-roll img,
-.tile-mat img {
+.tile-badge img,
+.tile-sticker-solo img {
   object-fit: contain;
   mix-blend-mode: multiply;
   max-height: 100%;
