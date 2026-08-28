@@ -471,101 +471,45 @@ button[aria-pressed="true"] {
   align-items: end;
 }
 
-/* 06 grid */
-.grid-safe {
+/* 06 brand world — three applications */
+.world-safe {
   position: absolute;
-  inset: 80px 48px 160px;
+  inset: 80px 56px 148px;
   display: flex;
   flex-direction: column;
   gap: 28px;
 }
-.brand-grid {
+.world-stack {
   flex: 1;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-rows: repeat(3, minmax(0, 1fr));
-  gap: 1px;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 12px;
   min-height: 0;
-  background: var(--line);
 }
-.tile {
-  min-width: 0;
+.world-plate {
+  margin: 0;
   min-height: 0;
   overflow: hidden;
   background: var(--rice);
-  position: relative;
 }
-.tile img {
+.world-plate img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
-.tile-mark,
-.tile-badge,
-.tile-sticker-solo {
-  display: grid;
-  place-items: center;
-  padding: 16px;
-}
-.tile-mark img,
-.tile-badge img,
-.tile-sticker-solo img {
-  object-fit: contain;
-  mix-blend-mode: multiply;
-  max-height: 100%;
-}
-.tile-word {
-  display: grid;
-  place-items: center;
-  text-align: center;
-  font-size: 28px;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 0.9;
-  padding: 12px;
-}
-.tile-chilli {
-  background: var(--chilli);
-  color: var(--rice);
-  display: grid;
-  place-items: end start;
-  padding: 14px;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-.tile-stickers {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 16px;
-  gap: 10px;
-  align-items: center;
-  background: var(--rice);
-}
-.tile-stickers img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  mix-blend-mode: multiply;
-}
-.tile-wrap img { object-position: 50% 46%; }
+.world-street img { object-position: 50% 55%; }
+.world-wrap img { object-position: 38% 42%; }
+.world-shop img { object-position: 50% 18%; }
 
-.beat.is-active:not(.is-hold) .tile {
-  animation: tile-in 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+.beat.is-active:not(.is-hold) .world-plate {
+  animation: plate-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
-.beat.is-active:not(.is-hold) .tile:nth-child(1) { animation-delay: 0ms; }
-.beat.is-active:not(.is-hold) .tile:nth-child(2) { animation-delay: 80ms; }
-.beat.is-active:not(.is-hold) .tile:nth-child(3) { animation-delay: 160ms; }
-.beat.is-active:not(.is-hold) .tile:nth-child(4) { animation-delay: 240ms; }
-.beat.is-active:not(.is-hold) .tile:nth-child(5) { animation-delay: 320ms; }
-.beat.is-active:not(.is-hold) .tile:nth-child(6) { animation-delay: 400ms; }
-.beat.is-active:not(.is-hold) .tile:nth-child(7) { animation-delay: 480ms; }
-.beat.is-active:not(.is-hold) .tile:nth-child(8) { animation-delay: 560ms; }
-.beat.is-active:not(.is-hold) .tile:nth-child(9) { animation-delay: 640ms; }
-@keyframes tile-in {
-  from { opacity: 0; transform: scale(0.94); }
+.beat.is-active:not(.is-hold) .world-plate:nth-child(1) { animation-delay: 40ms; }
+.beat.is-active:not(.is-hold) .world-plate:nth-child(2) { animation-delay: 140ms; }
+.beat.is-active:not(.is-hold) .world-plate:nth-child(3) { animation-delay: 240ms; }
+@keyframes plate-in {
+  from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: none; }
 }
 
@@ -575,9 +519,9 @@ button[aria-pressed="true"] {
   align-items: baseline;
 }
 .grid-end .wordmark {
-  font-size: 42px;
+  font-size: 44px;
 }
-.grid-end .voice { font-size: 24px; }
+.grid-end .voice { font-size: 26px; }
 
 .progress {
   position: absolute;
@@ -648,7 +592,7 @@ button[aria-pressed="true"] {
   .beat.is-active .zoom,
   .beat.is-active .pattern-zoom,
   .beat.is-active .swatch,
-  .beat.is-active .tile {
+  .beat.is-active .world-plate {
     animation: none !important;
   }
 }
