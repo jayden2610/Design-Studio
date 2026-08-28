@@ -16,6 +16,7 @@
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const stage = document.getElementById("stage");
+  const stageFrame = document.getElementById("stage-frame");
   const shell = document.querySelector(".stage-shell");
   const beatNodes = Array.from(document.querySelectorAll(".beat"));
   const labelEl = document.getElementById("beat-label");
@@ -100,8 +101,13 @@
   function fitStage() {
     if (!stage || captureMode || contactMode) return;
     if (!shell) return;
-    const scale = Math.min(shell.clientWidth / 1080, shell.clientHeight / 1920);
-    stage.style.transform = `scale(${Math.max(scale, 0.12)})`;
+    const scale = Math.min(shell.clientWidth / 1080, shell.clientHeight / 1920, 1);
+    const safe = Math.max(scale, 0.12);
+    stage.style.transform = `scale(${safe})`;
+    if (stageFrame) {
+      stageFrame.style.width = `${1080 * safe}px`;
+      stageFrame.style.height = `${1920 * safe}px`;
+    }
   }
 
   function paintProgress() {

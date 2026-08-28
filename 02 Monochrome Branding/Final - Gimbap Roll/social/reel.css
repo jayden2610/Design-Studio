@@ -39,9 +39,9 @@ body.is-capture {
 a { color: inherit; }
 
 .player {
-  min-height: 100vh;
+  height: 100vh;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto minmax(0, 1fr) auto;
 }
 
 .chrome {
@@ -66,7 +66,11 @@ a { color: inherit; }
   min-height: 0;
   padding: 0 24px;
 }
-
+.stage-frame {
+  overflow: hidden;
+  width: var(--stage-w);
+  height: var(--stage-h);
+}
 .stage {
   width: var(--stage-w);
   height: var(--stage-h);
@@ -74,7 +78,7 @@ a { color: inherit; }
   color: var(--ink);
   position: relative;
   overflow: hidden;
-  transform-origin: center center;
+  transform-origin: top left;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
 }
 
@@ -90,6 +94,10 @@ body.is-capture .stage-shell {
   display: block;
   padding: 0;
   min-height: var(--stage-h);
+}
+body.is-capture .stage-frame {
+  width: var(--stage-w);
+  height: var(--stage-h);
 }
 
 body.is-capture .stage {
@@ -274,17 +282,11 @@ button[aria-pressed="true"] {
   gap: 28px;
 }
 .small-mark {
-  --src-w: 1280;
-  --src-h: 720;
-  --cx: 1108;
-  --cy: 147.5;
-  --d: 184;
-  --size: 168px;
-  width: var(--size);
-  height: var(--size);
+  width: 168px;
+  height: 168px;
   border-radius: 50%;
   overflow: hidden;
-  flex: 0 0 var(--size);
+  flex: 0 0 168px;
   background: var(--rice);
   position: relative;
   box-shadow: 0 0 0 2px var(--ink);
@@ -292,10 +294,10 @@ button[aria-pressed="true"] {
 .small-mark img {
   position: absolute;
   max-width: none;
-  width: calc(1px * var(--src-w) * var(--size) / var(--d));
-  height: calc(1px * var(--src-h) * var(--size) / var(--d));
-  left: calc(var(--size) / 2 - 1px * var(--cx) * var(--size) / var(--d));
-  top: calc(var(--size) / 2 - 1px * var(--cy) * var(--size) / var(--d));
+  width: 1169px;
+  height: 657px;
+  left: -928px;
+  top: -51px;
 }
 .lockup-meta {
   display: flex;
@@ -406,9 +408,9 @@ button[aria-pressed="true"] {
   margin-bottom: 8px;
 }
 .beat-03 .voice {
-  font-size: 48px;
-  line-height: 1.15;
-  max-width: 12ch;
+  font-size: 44px;
+  line-height: 1.2;
+  max-width: none;
 }
 
 /* 04 pattern */
@@ -434,6 +436,11 @@ button[aria-pressed="true"] {
   pointer-events: none;
 }
 .beat-04 .caption { color: var(--ink); }
+.pattern-copy {
+  align-self: flex-start;
+  background: linear-gradient(90deg, var(--rice) 0%, var(--rice) 72%, transparent 100%);
+  padding: 16px 48px 8px 0;
+}
 
 /* 05 packaging */
 .pack-photo {
@@ -444,12 +451,14 @@ button[aria-pressed="true"] {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 28% 50%;
+  object-position: 8% 42%;
+  transform: scale(2.35);
+  transform-origin: 12% 38%;
   display: block;
 }
 .seal {
   position: absolute;
-  left: 46%;
+  left: 48%;
   top: 44%;
   width: 220px;
   height: 220px;
@@ -620,11 +629,7 @@ button[aria-pressed="true"] {
   border-bottom: 1px solid rgba(240, 235, 220, 0.2);
   margin-bottom: 28px;
 }
-.contact-head h1 {
-  font-size: 28px;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-}
+.contact-head .chrome { padding: 0; }
 .contact-row {
   display: flex;
   gap: 16px;
