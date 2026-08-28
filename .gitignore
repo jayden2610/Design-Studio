@@ -26,6 +26,9 @@ tmp/
 # Inspect-only generated frames
 **/coffee-video-inspection/
 
+# Generated Instagram reel stills / masters
+**/social/export/
+
 # ffmpeg tool bundles
 **/tools/ffmpeg/
 **/tools/ffmpeg*

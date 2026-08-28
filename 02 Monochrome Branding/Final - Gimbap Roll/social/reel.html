@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gimbap Roll — On-the-go identity reel</title>
+  <link rel="stylesheet" href="reel.css" />
+</head>
+<body>
+  <div class="player">
+    <header class="chrome">
+      <span class="chilli">Gimbap Roll</span>
+      <span id="beat-label">01 / Mark</span>
+      <a href="contact.html">Contact sheet</a>
+    </header>
+
+    <div class="stage-shell">
+      <div class="stage-frame" id="stage-frame">
+      <div class="stage" id="stage">
+        <section class="beat beat-01 is-active" data-beat="logo">
+          <div class="safe">
+            <div class="kicker">01 / Mark <span class="dot"></span></div>
+            <h1 class="wordmark">Gimbap<br>Roll.</h1>
+            <div class="mark-wrap">
+              <img class="zoom ink" src="assets/logo-hand-roll-alpha.png" alt="Hand rolling gimbap on a bamboo mat" />
+            </div>
+            <div class="lockup-row rise rise-3">
+              <div class="small-mark" aria-hidden="true">
+                <img class="ink" src="assets/compact-mark-alpha.png" alt="" />
+              </div>
+              <div class="lockup-meta">
+                <strong>Primary / compact</strong>
+                <span class="caption">Hand-roll mark · cross-section</span>
+              </div>
+            </div>
+            <p class="voice rise rise-4">Rolled fresh. Ready when you are.</p>
+          </div>
+        </section>
+
+        <section class="beat beat-02" data-beat="colour">
+          <div class="palette">
+            <div class="swatch sw-ink">
+              <div class="kicker kicker-on-ink">02 / Colour <span class="dot"></span></div>
+              <div class="name">Ink</div>
+              <div class="hex">#1C1F1B</div>
+            </div>
+            <div class="swatch sw-rice">
+              <div class="name">Rice</div>
+              <div class="hex">#F0EBDC</div>
+            </div>
+            <div class="swatch sw-perilla">
+              <div class="name">Perilla</div>
+              <div class="hex">#5C6452</div>
+            </div>
+            <div class="swatch sw-chilli">
+              <div class="name">Chilli</div>
+              <div class="hex">#C2451F</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="beat beat-03" data-beat="type">
+          <div class="safe">
+            <div class="kicker rise">03 / Type <span class="dot"></span></div>
+            <div>
+              <div class="specimen rise rise-2">
+                <span class="aa">Aa</span>
+                <div class="use"><b>Archivo</b>Headlines &amp; utility</div>
+              </div>
+              <div class="specimen rise rise-3">
+                <span class="aa serif">Aa</span>
+                <div class="use"><b>Playfair Italic</b>Voice lines</div>
+              </div>
+            </div>
+            <p class="voice rise rise-4">Rolled fresh.<br>Ready when you are.</p>
+          </div>
+        </section>
+
+        <section class="beat beat-04" data-beat="pattern">
+          <div class="pattern-field pattern-zoom">
+            <img class="ink" src="assets/01-sesame-chicken-alpha.png" alt="" />
+            <img class="ink" src="assets/02-bulgogi-alpha.png" alt="" />
+            <img class="ink" src="assets/03-tofu-mushroom-alpha.png" alt="" />
+            <img class="ink" src="assets/04-spicy-tuna-alpha.png" alt="" />
+            <img class="ink" src="assets/05-vegetable-alpha.png" alt="" />
+            <img class="ink" src="assets/06-egg-alpha.png" alt="" />
+            <img class="ink" src="assets/03-tofu-mushroom-alpha.png" alt="" />
+            <img class="ink" src="assets/01-sesame-chicken-alpha.png" alt="" />
+            <img class="ink" src="assets/06-egg-alpha.png" alt="" />
+            <img class="ink" src="assets/02-bulgogi-alpha.png" alt="" />
+            <img class="ink" src="assets/04-spicy-tuna-alpha.png" alt="" />
+            <img class="ink" src="assets/05-vegetable-alpha.png" alt="" />
+          </div>
+          <div class="safe">
+            <div class="kicker rise">04 / Pattern <span class="dot"></span></div>
+            <div class="pattern-copy rise rise-2">
+              <div class="caption">Cross-section / filling marks</div>
+              <p class="voice pattern-line">The roll is the repeat.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="beat beat-05" data-beat="packaging">
+          <div class="pack-photo zoom">
+            <img src="assets/panel-stickers-logo.png" alt="Wrapped gimbap roll with compact mark sticker and filling-mark sheet" />
+          </div>
+          <div class="pack-bar">
+            <div class="kicker">05 / Packaging <span class="dot"></span></div>
+            <div class="caption">Takeaway / rolled to go</div>
+          </div>
+        </section>
+
+        <div class="progress" aria-hidden="true">
+          <div class="tick" style="--flex:28"><i></i></div>
+          <div class="tick" style="--flex:15"><i></i></div>
+          <div class="tick" style="--flex:16"><i></i></div>
+          <div class="tick" style="--flex:18"><i></i></div>
+          <div class="tick" style="--flex:23"><i></i></div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <footer class="controls">
+      <button type="button" id="prev-btn">Prev</button>
+      <button type="button" id="play-btn" aria-pressed="true">Pause</button>
+      <button type="button" id="next-btn">Next</button>
+      <div class="ticks" aria-hidden="true">
+        <div class="tick" style="--flex:28"><i></i></div>
+        <div class="tick" style="--flex:15"><i></i></div>
+        <div class="tick" style="--flex:16"><i></i></div>
+        <div class="tick" style="--flex:18"><i></i></div>
+        <div class="tick" style="--flex:23"><i></i></div>
+      </div>
+      <span class="hint">10s · 1080×1920 · click or 1–5</span>
+    </footer>
+  </div>
+
+  <div class="contact-wall" id="contact-wall" hidden>
+    <header class="contact-head">
+      <div>
+        <div class="kicker">Gimbap Roll <span class="dot"></span></div>
+        <h1>Five-beat contact sheet</h1>
+      </div>
+      <div class="chrome">
+        <a href="reel.html">Timed reel</a>
+        <span class="dim">Holds only · 9:16</span>
+      </div>
+    </header>
+    <div class="contact-row" id="contact-row"></div>
+  </div>
+
+  <script src="timeline.js"></script>
+</body>
+</html>
