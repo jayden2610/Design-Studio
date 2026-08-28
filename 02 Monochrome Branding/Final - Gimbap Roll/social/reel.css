@@ -630,6 +630,11 @@ button[aria-pressed="true"] {
   margin-bottom: 28px;
 }
 .contact-head .chrome { padding: 0; }
+.contact-head h1 {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
 .contact-row {
   display: flex;
   gap: 16px;
